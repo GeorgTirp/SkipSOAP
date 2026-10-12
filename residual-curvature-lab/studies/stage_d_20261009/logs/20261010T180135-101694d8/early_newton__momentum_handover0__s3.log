@@ -1,0 +1,22 @@
+early_newton__momentum_handover0__s3 step 10: val=1.6863 acc=41.50% train_s=2.9
+early_newton__momentum_handover0__s3 step 25: val=0.9616 acc=67.36% train_s=7.6
+early_newton__momentum_handover0__s3 step 50: val=0.5692 acc=82.34% train_s=15.0
+early_newton__momentum_handover0__s3 step 75: val=0.4204 acc=87.44% train_s=23.7
+early_newton__momentum_handover0__s3 step 100: val=0.3718 acc=88.58% train_s=30.6
+early_newton__momentum_handover0__s3 step 125: val=0.3338 acc=90.24% train_s=38.2
+early_newton__momentum_handover0__s3 step 150: val=0.3120 acc=90.26% train_s=45.3
+early_newton__momentum_handover0__s3 step 175: val=0.2912 acc=90.94% train_s=52.7
+early_newton__momentum_handover0__s3 step 200: val=0.2885 acc=91.06% train_s=60.1
+early_newton__momentum_handover0__s3 step 225: val=0.3030 acc=91.22% train_s=68.0
+early_newton__momentum_handover0__s3 step 250: val=0.2330 acc=93.42% train_s=75.1
+early_newton__momentum_handover0__s3 step 275: val=0.2308 acc=93.16% train_s=83.2
+early_newton__momentum_handover0__s3 step 300: val=0.2114 acc=93.70% train_s=90.1
+early_newton__momentum_handover0__s3 step 325: val=0.2148 acc=93.58% train_s=97.8
+early_newton__momentum_handover0__s3 step 350: val=0.2073 acc=93.94% train_s=105.3
+early_newton__momentum_handover0__s3 step 375: val=0.2116 acc=93.64% train_s=113.1
+early_newton__momentum_handover0__s3 step 400: val=0.1977 acc=94.08% train_s=120.3
+early_newton__momentum_handover0__s3 step 425: val=0.1921 acc=94.54% train_s=128.3
+early_newton__momentum_handover0__s3 step 450: val=0.1705 acc=95.04% train_s=135.6
+early_newton__momentum_handover0__s3 step 475: val=0.1965 acc=94.24% train_s=143.8
+early_newton__momentum_handover0__s3 step 500: val=0.2004 acc=94.06% train_s=150.7
+early_newton__momentum_handover0__s3: completed

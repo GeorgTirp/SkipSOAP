@@ -1,0 +1,22 @@
+searched_soap__default__s1 step 10: val=2.021306163932148 acc=30.42% train_s=11.6
+searched_soap__default__s1 step 25: val=1.3218889081978948 acc=54.10% train_s=30.9
+searched_soap__default__s1 step 50: val=0.7084585254520305 acc=77.82% train_s=63.5
+searched_soap__default__s1 step 75: val=0.4793881213097847 acc=84.86% train_s=95.4
+searched_soap__default__s1 step 100: val=0.40776894671905367 acc=87.50% train_s=126.8
+searched_soap__default__s1 step 125: val=0.32247921095765936 acc=90.50% train_s=157.6
+searched_soap__default__s1 step 150: val=0.28598215233076546 acc=91.52% train_s=189.1
+searched_soap__default__s1 step 175: val=0.2713014390556241 acc=91.74% train_s=220.6
+searched_soap__default__s1 step 200: val=0.2548946550706863 acc=92.32% train_s=252.0
+searched_soap__default__s1 step 225: val=0.305867129854933 acc=90.88% train_s=284.7
+searched_soap__default__s1 step 250: val=0.25728083271468427 acc=92.18% train_s=317.4
+searched_soap__default__s1 step 275: val=0.2604740547473992 acc=92.58% train_s=350.6
+searched_soap__default__s1 step 300: val=0.24596465910916163 acc=92.72% train_s=383.3
+searched_soap__default__s1 step 325: val=0.23439416203251084 acc=93.26% train_s=416.9
+searched_soap__default__s1 step 350: val=0.25835384728744476 acc=91.92% train_s=451.0
+searched_soap__default__s1 step 375: val=0.24983564713834436 acc=92.58% train_s=485.6
+searched_soap__default__s1 step 400: val=0.25322113390021583 acc=92.16% train_s=520.8
+searched_soap__default__s1 step 425: val=0.2471767574772386 acc=92.88% train_s=557.0
+searched_soap__default__s1 step 450: val=0.2798322182699776 acc=91.62% train_s=593.9
+searched_soap__default__s1 step 475: val=0.25419077582675365 acc=92.56% train_s=631.3
+searched_soap__default__s1 step 500: val=0.24810513337525208 acc=92.36% train_s=668.6
+searched_soap__default__s1: completed

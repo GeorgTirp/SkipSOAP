@@ -1,0 +1,102 @@
+# Ignore rules for residual-curvature-lab: environments, caches, datasets, run outputs, checkpoints and other
+# heavy or generated files. Full study runs live outside the repository (~/skipsoap-study-data/). Do not add
+# bare `models/` or `data/` patterns: src/residual_curvature/models and src/residual_curvature/data are source.
+
+# --- Python environments and packaging
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# --- Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+torch_compile_debug/
+.triton/
+
+# --- Datasets (MNIST is placed locally; never commit data)
+datasets/
+*-ubyte
+*-ubyte.gz
+cifar-10-batches-py/
+cifar-100-python/
+
+# --- Run outputs. The root runs/ is ignored except five small reference files that study scripts read as
+# gates (split manifest, baseline validation curves, a diagnostics record, a resolved config).
+/runs/*
+!/runs/20261005T135920-d7ce29b2/
+/runs/20261005T135920-d7ce29b2/*
+!/runs/20261005T135920-d7ce29b2/split_manifest.json
+!/runs/20261005T135920-d7ce29b2/validation.json
+!/runs/20261006T100557-f1efb932/
+/runs/20261006T100557-f1efb932/*
+!/runs/20261006T100557-f1efb932/validation.json
+!/runs/20261005T143029-9b582ed5/
+/runs/20261005T143029-9b582ed5/*
+!/runs/20261005T143029-9b582ed5/searched_soap-0010/
+/runs/20261005T143029-9b582ed5/searched_soap-0010/*
+!/runs/20261005T143029-9b582ed5/searched_soap-0010/diagnostics.json
+!/runs/20261002T121635-0dac3337/
+/runs/20261002T121635-0dac3337/*
+!/runs/20261002T121635-0dac3337/resolved.yaml
+# Light run mirrors inside studies (the RESULTS.md files and results/ summaries are kept)
+studies/*/runs/
+
+# --- Checkpoints, model weights and arrays
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+
+# --- Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+
+# --- Experiment trackers, profilers and job logs (GPU machines)
+wandb/
+mlruns/
+lightning_logs/
+events.out.tfevents.*
+*.nsys-rep
+*.qdrep
+*.prof
+slurm-*.out
+nohup.out
+
+# --- Secrets, OS and editor files
+.env
+.env.*
+.DS_Store
+._*
+Thumbs.db
+.idea/
+*.swp
+*~

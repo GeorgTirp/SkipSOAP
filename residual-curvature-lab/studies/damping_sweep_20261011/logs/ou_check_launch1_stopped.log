@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/damping_sweep_20261011/scripts/ou_check.py", line 197, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/damping_sweep_20261011/scripts/ou_check.py", line 145, in main
+    f, inverse, error = whitening(states[index], spec, eps)
+                        ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/damping_sweep_20261011/scripts/ou_check.py", line 90, in whitening
+    raise RuntimeError(f'{spec.name}: whitening check failed ({error:.2e}, inverse {back:.2e})')
+RuntimeError: input.cls_token: whitening check failed (2.16e-16, inverse 3.11e-07)

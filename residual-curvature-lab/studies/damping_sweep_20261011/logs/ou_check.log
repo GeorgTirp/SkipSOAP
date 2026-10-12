@@ -1,0 +1,212 @@
+soap step 20: spread ratio (eta*lambda >= 0.1) 2.1222744717905897
+soap step 40: spread ratio (eta*lambda >= 0.1) 2.9712724080894857
+soap step 60: spread ratio (eta*lambda >= 0.1) 2.9761262306499
+soap step 80: spread ratio (eta*lambda >= 0.1) 3.4545053820539966
+soap step 100: spread ratio (eta*lambda >= 0.1) 2.3436559745792898
+soap step 120: spread ratio (eta*lambda >= 0.1) 1.9965222196072951
+soap step 140: spread ratio (eta*lambda >= 0.1) 1.5993215186816727
+soap step 160: spread ratio (eta*lambda >= 0.1) 1.270351770728553
+soap step 180: spread ratio (eta*lambda >= 0.1) 1.0464347992291712
+soap step 200: spread ratio (eta*lambda >= 0.1) 0.7755716400445748
+soap step 220: spread ratio (eta*lambda >= 0.1) 0.6651116634889879
+soap step 240: spread ratio (eta*lambda >= 0.1) 0.6587151319271858
+soap step 260: spread ratio (eta*lambda >= 0.1) 0.6057243021364103
+soap step 280: spread ratio (eta*lambda >= 0.1) 0.4647388451360161
+soap step 300: spread ratio (eta*lambda >= 0.1) 0.4600316881380435
+soap step 320: spread ratio (eta*lambda >= 0.1) 0.5210069462664069
+soap step 340: spread ratio (eta*lambda >= 0.1) 0.34330671808418106
+soap step 360: spread ratio (eta*lambda >= 0.1) 0.5307084587419082
+soap step 380: spread ratio (eta*lambda >= 0.1) 0.3334416164416713
+soap step 400: spread ratio (eta*lambda >= 0.1) 0.36758440409205634
+soap step 420: spread ratio (eta*lambda >= 0.1) 0.5093360966359379
+soap step 440: spread ratio (eta*lambda >= 0.1) 0.3639396833690095
+soap step 460: spread ratio (eta*lambda >= 0.1) 0.27618746193584165
+soap step 480: spread ratio (eta*lambda >= 0.1) 0.40294336671934
+soap {
+ "0-0.01": {
+  "n": 2533,
+  "unstable_excluded": 0,
+  "spread_ratio": 2.0467723500167283,
+  "lag10_measured": 0.9443165984583706,
+  "lag10_predicted_residual": 0.9455606096572562,
+  "lag10_predicted_raw_mean": 0.9912937718210331
+ },
+ "0.01-0.1": {
+  "n": 5455,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.9408720841221347,
+  "lag10_measured": 0.947283886473776,
+  "lag10_predicted_residual": 0.8577248833664075,
+  "lag10_predicted_raw_mean": 0.9125345199473927
+ },
+ "0.1-1": {
+  "n": 5830,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.0261663930197156,
+  "lag10_measured": 0.8519045905659542,
+  "lag10_predicted_residual": 0.4207144874364658,
+  "lag10_predicted_raw_mean": 0.4774343491752618
+ },
+ "1-inf": {
+  "n": 251,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.4366594741708436,
+  "lag10_measured": 0.8562963680994053,
+  "lag10_predicted_residual": -0.618068289894401,
+  "lag10_predicted_raw_mean": -0.5948396648541362
+ }
+}
+brake step 20: spread ratio (eta*lambda >= 0.1) 2.838913837836652
+brake step 40: spread ratio (eta*lambda >= 0.1) 3.6141345838031707
+brake step 60: spread ratio (eta*lambda >= 0.1) 3.680449159211255
+brake step 80: spread ratio (eta*lambda >= 0.1) 3.181831063905706
+brake step 100: spread ratio (eta*lambda >= 0.1) 3.622321930719377
+brake step 120: spread ratio (eta*lambda >= 0.1) 3.5098731671082177
+brake step 140: spread ratio (eta*lambda >= 0.1) 2.7328068782122514
+brake step 160: spread ratio (eta*lambda >= 0.1) 1.823531416299893
+brake step 180: spread ratio (eta*lambda >= 0.1) 1.997287416381259
+brake step 200: spread ratio (eta*lambda >= 0.1) 1.3234350474657424
+brake step 220: spread ratio (eta*lambda >= 0.1) 1.2116861071092084
+brake step 240: spread ratio (eta*lambda >= 0.1) 1.0071040554289998
+brake step 260: spread ratio (eta*lambda >= 0.1) 0.8892202176407038
+brake step 280: spread ratio (eta*lambda >= 0.1) 0.8334894985782753
+brake step 300: spread ratio (eta*lambda >= 0.1) 0.6420403669002703
+brake step 320: spread ratio (eta*lambda >= 0.1) 0.6659007204362023
+brake step 340: spread ratio (eta*lambda >= 0.1) 0.568623611578699
+brake step 360: spread ratio (eta*lambda >= 0.1) 0.746186468929495
+brake step 380: spread ratio (eta*lambda >= 0.1) 0.5829472777490593
+brake step 400: spread ratio (eta*lambda >= 0.1) 0.6377051413915246
+brake step 420: spread ratio (eta*lambda >= 0.1) 0.6610872911634803
+brake step 440: spread ratio (eta*lambda >= 0.1) 0.5470502324414624
+brake step 460: spread ratio (eta*lambda >= 0.1) 0.48810192221358717
+brake step 480: spread ratio (eta*lambda >= 0.1) 0.5713816724276302
+brake {
+ "0-0.01": {
+  "n": 2245,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.6513889699329736,
+  "lag10_measured": 0.9346715250495052,
+  "lag10_predicted_residual": 0.9458288958148178,
+  "lag10_predicted_raw_mean": 0.9912960356198608
+ },
+ "0.01-0.1": {
+  "n": 4920,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.8155114311483622,
+  "lag10_measured": 0.9484030204044678,
+  "lag10_predicted_residual": 0.8809328146967279,
+  "lag10_predicted_raw_mean": 0.9279623618829377
+ },
+ "0.1-1": {
+  "n": 6370,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.3732764028241151,
+  "lag10_measured": 0.8479036093319089,
+  "lag10_predicted_residual": 0.7163310039643156,
+  "lag10_predicted_raw_mean": 0.7397614937133797
+ },
+ "1-inf": {
+  "n": 537,
+  "unstable_excluded": 0,
+  "spread_ratio": 5.019194389082774,
+  "lag10_measured": 0.8994756709625581,
+  "lag10_predicted_residual": 0.5401974502420929,
+  "lag10_predicted_raw_mean": 0.5723623738026089
+ }
+}
+topfree step 20: spread ratio (eta*lambda >= 0.1) 40.117606934997745
+topfree step 40: spread ratio (eta*lambda >= 0.1) 45.41323892923659
+topfree step 60: spread ratio (eta*lambda >= 0.1) 62.37270141763895
+topfree step 80: spread ratio (eta*lambda >= 0.1) 48.58917032237507
+topfree step 100: spread ratio (eta*lambda >= 0.1) 35.35010125964158
+topfree step 120: spread ratio (eta*lambda >= 0.1) 41.35611270473584
+topfree step 140: spread ratio (eta*lambda >= 0.1) 27.381669814377904
+topfree step 160: spread ratio (eta*lambda >= 0.1) 26.42288540401807
+topfree step 180: spread ratio (eta*lambda >= 0.1) 26.598692535715493
+topfree step 200: spread ratio (eta*lambda >= 0.1) 13.70820761593667
+topfree step 220: spread ratio (eta*lambda >= 0.1) 15.221522357093138
+topfree step 240: spread ratio (eta*lambda >= 0.1) 14.645035291233233
+topfree step 260: spread ratio (eta*lambda >= 0.1) 8.682472062446722
+topfree step 280: spread ratio (eta*lambda >= 0.1) 11.074569871673637
+topfree step 300: spread ratio (eta*lambda >= 0.1) 9.652682413421106
+topfree step 320: spread ratio (eta*lambda >= 0.1) 9.608057275074886
+topfree step 340: spread ratio (eta*lambda >= 0.1) 9.040396102191163
+topfree step 360: spread ratio (eta*lambda >= 0.1) 8.582269577034618
+topfree step 380: spread ratio (eta*lambda >= 0.1) 7.978490332161468
+topfree step 400: spread ratio (eta*lambda >= 0.1) 6.645413838119969
+topfree step 420: spread ratio (eta*lambda >= 0.1) 8.309446313118567
+topfree step 440: spread ratio (eta*lambda >= 0.1) 4.906589980263972
+topfree step 460: spread ratio (eta*lambda >= 0.1) 8.583903206555831
+topfree step 480: spread ratio (eta*lambda >= 0.1) 6.437957471670476
+topfree {
+ "0-0.01": {
+  "n": 1791,
+  "unstable_excluded": 0,
+  "spread_ratio": 1.2704632171976675,
+  "lag10_measured": 0.6842535951084814,
+  "lag10_predicted_residual": 0.783789171439146,
+  "lag10_predicted_raw_mean": 0.9727989307553127
+ },
+ "0.01-0.1": {
+  "n": 4642,
+  "unstable_excluded": 0,
+  "spread_ratio": 3.87697907228296,
+  "lag10_measured": 0.8931986059706495,
+  "lag10_predicted_residual": 0.731903295337863,
+  "lag10_predicted_raw_mean": 0.90026449427616
+ },
+ "0.1-1": {
+  "n": 6571,
+  "unstable_excluded": 0,
+  "spread_ratio": 15.907470609968286,
+  "lag10_measured": 0.866911203826877,
+  "lag10_predicted_residual": 0.694745769101557,
+  "lag10_predicted_raw_mean": 0.8623529689794223
+ },
+ "1-inf": {
+  "n": 1069,
+  "unstable_excluded": 0,
+  "spread_ratio": 109.96924931078131,
+  "lag10_measured": 0.9297194907987822,
+  "lag10_predicted_residual": 0.6868213374169129,
+  "lag10_predicted_raw_mean": 0.8556079352251126
+ }
+}
+{
+ "O1": "not adequate",
+ "verdicts": {
+  "primary|all": {
+   "per_arm": {
+    "soap": false,
+    "brake": false,
+    "topfree": false
+   },
+   "O1": "not adequate"
+  },
+  "literal|all": {
+   "per_arm": {
+    "soap": false,
+    "brake": false,
+    "topfree": false
+   },
+   "O1": "not adequate"
+  },
+  "primary|t>=100": {
+   "per_arm": {
+    "soap": false,
+    "brake": false,
+    "topfree": false
+   },
+   "O1": "not adequate"
+  },
+  "literal|t>=100": {
+   "per_arm": {
+    "soap": false,
+    "brake": false,
+    "topfree": false
+   },
+   "O1": "not adequate"
+  }
+ },
+ "whitening_check_max": 1.010370111009746e-14
+}

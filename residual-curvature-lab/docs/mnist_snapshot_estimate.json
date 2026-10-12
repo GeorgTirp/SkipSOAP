@@ -1,0 +1,78 @@
+{
+  "status": "validated; no data read or training performed",
+  "model": {
+    "kind": "mlp",
+    "input_dim": 196,
+    "width": 16,
+    "expansion": 32,
+    "blocks": 3,
+    "classes": 10,
+    "epsilon": 1e-05,
+    "branch_scale": 1.0
+  },
+  "parameters": 6634,
+  "stored_tensors": 22,
+  "outputs": 640,
+  "maximum_GGN_rank": 576,
+  "allocations": {
+    "jacobian_bytes": 33966080,
+    "factor_bytes": 33966080,
+    "dense_bytes": 352079648,
+    "dual_workspace_bytes": 13107200,
+    "sketch_bytes": 1698304,
+    "dual_total_bytes": 240200704,
+    "dense_total_bytes": 2342488768
+  },
+  "resources": {
+    "dense_cap": 2048,
+    "dual_cap": 2048,
+    "budget_mib": 256
+  },
+  "exact_reference": "output-dual; dense additionally audited below parameter cap",
+  "planned_methods": [
+    "native_soap",
+    "native_ray",
+    "frozen_minus_Pg",
+    "exact_diagonal",
+    "exact_full_output_dual",
+    "soap_preconditioned_CG",
+    "allocation_diagonal",
+    "allocation_cone",
+    "allocation_span",
+    "sketch_diagonal",
+    "sketch_coupled",
+    "sketch_one_sweep"
+  ],
+  "training_steps": 100,
+  "snapshot_steps": [
+    10,
+    50,
+    100
+  ],
+  "gammas": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "sketch_ranks": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "repeats": 2,
+  "operations_per_snapshot": {
+    "jacobian_reverse_rows": 640,
+    "probe_vjps": 64,
+    "microbatch_audit_vjps": 256,
+    "CG_max_iterations_per_gamma": 1000,
+    "CG_products_per_iteration": 2
+  },
+  "data": {
+    "dataset": "mnist",
+    "root": "datasets",
+    "automatic_download": false,
+    "task": "downsampled 14x14 MNIST"
+  },
+  "runtime_estimate": "not measured; no toy-to-MNIST extrapolation asserted"
+}

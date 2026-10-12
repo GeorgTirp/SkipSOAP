@@ -1,0 +1,17 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+searched_soap-10: gates max 0.0e+00, wiener identity 2.0e-08 | exact_ggn second +0.1319 gamma_x -0.0601 wiener -13.3612
+searched_soap-25: gates max 0.0e+00, wiener identity 1.5e-08 | exact_ggn second +0.0944 gamma_x +0.0730 wiener -4.9205
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 203, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 192, in main
+    states.append(state_steps(trajectory, step, c, x, y, reference))
+                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 161, in state_steps
+    selected, search = search_candidate(flat, wiener, native, objective)
+                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/scripts/run_mini_vit_allocation.py", line 37, in search_candidate
+    raise RuntimeError('Positive search selection reached the declared radius boundary')
+RuntimeError: Positive search selection reached the declared radius boundary

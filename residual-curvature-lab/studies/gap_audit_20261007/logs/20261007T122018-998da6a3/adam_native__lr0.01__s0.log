@@ -1,0 +1,22 @@
+adam_native__lr0.01__s0 step 10: val=2.2876386230367918 acc=18.24% train_s=1.0
+adam_native__lr0.01__s0 step 25: val=1.8463049983653534 acc=35.46% train_s=2.8
+adam_native__lr0.01__s0 step 50: val=1.2267700208653436 acc=59.14% train_s=5.3
+adam_native__lr0.01__s0 step 75: val=0.9819100630225784 acc=67.86% train_s=7.9
+adam_native__lr0.01__s0 step 100: val=0.7001782681158181 acc=78.00% train_s=10.5
+adam_native__lr0.01__s0 step 125: val=0.5958465163649437 acc=80.60% train_s=13.1
+adam_native__lr0.01__s0 step 150: val=0.4812279990553866 acc=85.10% train_s=15.9
+adam_native__lr0.01__s0 step 175: val=0.375622619098172 acc=89.04% train_s=18.7
+adam_native__lr0.01__s0 step 200: val=0.3361742587861361 acc=89.92% train_s=21.6
+adam_native__lr0.01__s0 step 225: val=0.3012034237648181 acc=90.98% train_s=24.4
+adam_native__lr0.01__s0 step 250: val=0.290217434299929 acc=91.68% train_s=27.2
+adam_native__lr0.01__s0 step 275: val=0.26848239581574523 acc=92.16% train_s=29.9
+adam_native__lr0.01__s0 step 300: val=0.25542436101956667 acc=92.50% train_s=32.5
+adam_native__lr0.01__s0 step 325: val=0.2714571752720733 acc=91.90% train_s=35.6
+adam_native__lr0.01__s0 step 350: val=0.22147562532756054 acc=93.40% train_s=38.4
+adam_native__lr0.01__s0 step 375: val=0.2075764445516419 acc=94.02% train_s=40.8
+adam_native__lr0.01__s0 step 400: val=0.2328016372081066 acc=93.00% train_s=43.4
+adam_native__lr0.01__s0 step 425: val=0.198870318121536 acc=93.88% train_s=45.8
+adam_native__lr0.01__s0 step 450: val=0.2082508187827632 acc=94.06% train_s=48.2
+adam_native__lr0.01__s0 step 475: val=0.1904265773070565 acc=94.16% train_s=50.9
+adam_native__lr0.01__s0 step 500: val=0.18263399297290858 acc=94.66% train_s=53.9
+adam_native__lr0.01__s0: completed

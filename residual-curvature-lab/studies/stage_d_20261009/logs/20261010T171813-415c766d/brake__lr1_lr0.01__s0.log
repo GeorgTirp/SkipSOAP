@@ -1,0 +1,22 @@
+brake__lr1_lr0.01__s0 step 10: val=1.9135 acc=29.68% train_s=1.1
+brake__lr1_lr0.01__s0 step 25: val=1.4540 acc=54.42% train_s=3.0
+brake__lr1_lr0.01__s0 step 50: val=0.8733 acc=72.94% train_s=5.5
+brake__lr1_lr0.01__s0 step 75: val=0.5547 acc=83.30% train_s=8.6
+brake__lr1_lr0.01__s0 step 100: val=0.4222 acc=87.32% train_s=11.2
+brake__lr1_lr0.01__s0 step 125: val=0.3365 acc=90.22% train_s=14.3
+brake__lr1_lr0.01__s0 step 150: val=0.2875 acc=91.30% train_s=16.9
+brake__lr1_lr0.01__s0 step 175: val=0.2369 acc=92.96% train_s=19.9
+brake__lr1_lr0.01__s0 step 200: val=0.2207 acc=93.68% train_s=22.5
+brake__lr1_lr0.01__s0 step 225: val=0.2194 acc=93.72% train_s=25.6
+brake__lr1_lr0.01__s0 step 250: val=0.1998 acc=93.84% train_s=28.3
+brake__lr1_lr0.01__s0 step 275: val=0.1882 acc=94.52% train_s=31.3
+brake__lr1_lr0.01__s0 step 300: val=0.1817 acc=94.70% train_s=33.9
+brake__lr1_lr0.01__s0 step 325: val=0.1718 acc=95.04% train_s=37.0
+brake__lr1_lr0.01__s0 step 350: val=0.1611 acc=95.28% train_s=39.6
+brake__lr1_lr0.01__s0 step 375: val=0.1680 acc=95.12% train_s=42.6
+brake__lr1_lr0.01__s0 step 400: val=0.1652 acc=95.14% train_s=45.2
+brake__lr1_lr0.01__s0 step 425: val=0.1621 acc=95.56% train_s=48.2
+brake__lr1_lr0.01__s0 step 450: val=0.1483 acc=95.76% train_s=50.8
+brake__lr1_lr0.01__s0 step 475: val=0.1535 acc=95.78% train_s=53.9
+brake__lr1_lr0.01__s0 step 500: val=0.1710 acc=95.16% train_s=56.4
+brake__lr1_lr0.01__s0: completed

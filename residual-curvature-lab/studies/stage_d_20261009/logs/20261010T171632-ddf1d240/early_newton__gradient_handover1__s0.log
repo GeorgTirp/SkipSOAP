@@ -1,0 +1,22 @@
+early_newton__gradient_handover1__s0 step 10: val=2.0516 acc=29.64% train_s=2.5
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 358, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 348, in main
+    work(args.run, args.unit)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 212, in work
+    write_compact(unit/'training.json', history)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/common.py", line 60, in write_compact
+    Path(path).write_text(json.dumps(value, separators=(',', ':'), allow_nan=False)+'\n')
+                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: inf

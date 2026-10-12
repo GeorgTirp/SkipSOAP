@@ -1,0 +1,5 @@
+2026-10-08T09:41:55Z queued: parsec_split__lr_perp0.01_lr_top0.1_rank16_refresh_every10__s0 parsec_split__lr_perp0.01_lr_top1_rank16_refresh_every10__s0
+2026-10-08T09:48:28Z queued: ot_tensor__gamma1__s0
+2026-10-08T09:56:07Z queued: parsec_default__lr0.003_rank8_refresh_every10__s0 parsec_default__lr0.003_rank32_refresh_every10__s0 parsec_split__lr_perp0.01_lr_top0.01_rank16_refresh_every100__s0
+Finalized /Users/georgtirpitz/skipsoap-study-data/geometry_followup_20261008/runs/20261008T092438-2c2b66dd; mirrored to /Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/geometry_followup_20261008/runs/20261008T092438-2c2b66dd
+2026-10-08T10:33:35Z evaluation run /Users/georgtirpitz/skipsoap-study-data/geometry_followup_20261008/runs/20261008T103332-f9ee97b7 queued

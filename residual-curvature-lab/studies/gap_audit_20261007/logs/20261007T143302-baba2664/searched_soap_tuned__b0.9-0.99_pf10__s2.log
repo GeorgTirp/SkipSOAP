@@ -1,0 +1,22 @@
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 10: val=2.096411750287774 acc=25.30% train_s=12.5
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 25: val=1.3654473796721376 acc=52.46% train_s=34.1
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 50: val=0.750658198083438 acc=75.12% train_s=69.6
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 75: val=0.5227796094132726 acc=84.20% train_s=105.3
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 100: val=0.4176341013588719 acc=88.18% train_s=140.9
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 125: val=0.3463401225316858 acc=89.66% train_s=176.9
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 150: val=0.30951291881548454 acc=90.44% train_s=212.1
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 175: val=0.27621712424688455 acc=91.48% train_s=246.5
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 200: val=0.28242260294445015 acc=91.34% train_s=281.1
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 225: val=0.2808934542010048 acc=91.82% train_s=315.6
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 250: val=0.24629470000524484 acc=92.58% train_s=347.5
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 275: val=0.2596055895806499 acc=91.92% train_s=377.9
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 300: val=0.26037525434083475 acc=92.44% train_s=409.1
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 325: val=0.23078738280370362 acc=92.82% train_s=441.3
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 350: val=0.22380403655294154 acc=93.54% train_s=474.6
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 375: val=0.23475364086703557 acc=92.88% train_s=507.7
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 400: val=0.234372973346908 acc=92.92% train_s=541.1
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 425: val=0.24529531634882337 acc=92.68% train_s=574.5
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 450: val=0.23810565519041685 acc=93.20% train_s=607.5
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 475: val=0.22895788802719602 acc=93.20% train_s=639.8
+searched_soap_tuned__b0.9-0.99_pf10__s2 step 500: val=0.2162503923644877 acc=93.48% train_s=670.9
+searched_soap_tuned__b0.9-0.99_pf10__s2: completed

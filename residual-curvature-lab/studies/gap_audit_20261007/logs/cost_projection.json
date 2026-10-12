@@ -1,0 +1,52 @@
+{
+  "seconds": {
+    "check1": {
+      "gate": 275.8960710200481,
+      "tuning": 4669.426531923818,
+      "tuning_edge_extensions_worst_case": 1343.1134558049962,
+      "evaluation_500": 12229.101341881324,
+      "evaluation_300_fallback": 7390.538808440091,
+      "total_500_worst_case": 18517.537400630186
+    },
+    "check2c": 653.8904352318496,
+    "check3": 784.871653153561,
+    "check4": {
+      "4a_dataset": 1886.5353906525531,
+      "4b_headroom": 2232.4835940211487,
+      "4c_predictor_cap_plus_evaluation": 12600.0,
+      "total": 16719.0189846737,
+      "total_without_4c": 4119.018984673702,
+      "fallback_without_step25_snapshots": 15728.722920379396
+    }
+  },
+  "cpu_hours": {
+    "check1_with_2a_2b": 5.1437603890639405,
+    "check1_300_step_fallback": 3.7997152408858206,
+    "check2c": 0.1816362320088471,
+    "check3": 0.21801990365376697,
+    "check4": 4.644171940187139,
+    "check4_without_4c": 1.1441719401871395
+  },
+  "budgets_cpu_hours": {
+    "check1_with_2a_2b": 12,
+    "check2c": 1,
+    "check3": 1,
+    "check4": 6
+  },
+  "inputs": {
+    "per_step_seconds": {
+      "native_soap": 0.07957068699761294,
+      "adam_native": 0.06862735401955433,
+      "searched_soap": 0.9055476879875641,
+      "searched_soap_tuned": 0.8989847910124809,
+      "ggn_exact_trace": 3.9331661045143846,
+      "dense_ef": 1.2095934380195104,
+      "soap_gradient_map": 0.9241474379959982,
+      "searched_soap_pf10_b9-99": 0.8784295209916309
+    },
+    "validation_seconds": 0.15940495900576934,
+    "candidate_evaluation_seconds": 0.9689229170326144,
+    "ggn_action_seconds": 0.06394216670305468,
+    "startup_seconds_assumed": 6.0
+  }
+}

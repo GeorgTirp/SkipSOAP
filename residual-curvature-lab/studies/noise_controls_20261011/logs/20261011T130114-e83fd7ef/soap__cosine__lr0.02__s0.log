@@ -1,0 +1,22 @@
+soap__cosine__lr0.02__s0 step 10: val=2.2062 ema.98=2.2602 lr=2.00e-02 train_s=0.6
+soap__cosine__lr0.02__s0 step 25: val=1.6064 ema.98=1.8527 lr=1.99e-02 train_s=1.4
+soap__cosine__lr0.02__s0 step 50: val=1.1499 ema.98=1.3873 lr=1.95e-02 train_s=2.9
+soap__cosine__lr0.02__s0 step 75: val=0.8055 ema.98=1.0707 lr=1.89e-02 train_s=4.3
+soap__cosine__lr0.02__s0 step 100: val=0.5817 ema.98=0.8119 lr=1.81e-02 train_s=5.7
+soap__cosine__lr0.02__s0 step 125: val=0.4547 ema.98=0.6263 lr=1.71e-02 train_s=7.2
+soap__cosine__lr0.02__s0 step 150: val=0.3778 ema.98=0.4881 lr=1.59e-02 train_s=8.6
+soap__cosine__lr0.02__s0 step 175: val=0.3513 ema.98=0.3980 lr=1.46e-02 train_s=10.1
+soap__cosine__lr0.02__s0 step 200: val=0.3160 ema.98=0.3362 lr=1.31e-02 train_s=11.6
+soap__cosine__lr0.02__s0 step 225: val=0.2760 ema.98=0.2934 lr=1.16e-02 train_s=13.1
+soap__cosine__lr0.02__s0 step 250: val=0.2639 ema.98=0.2625 lr=1.01e-02 train_s=14.7
+soap__cosine__lr0.02__s0 step 275: val=0.2384 ema.98=0.2407 lr=8.50e-03 train_s=16.2
+soap__cosine__lr0.02__s0 step 300: val=0.2285 ema.98=0.2238 lr=6.97e-03 train_s=17.8
+soap__cosine__lr0.02__s0 step 325: val=0.2095 ema.98=0.2112 lr=5.52e-03 train_s=19.4
+soap__cosine__lr0.02__s0 step 350: val=0.2034 ema.98=0.2008 lr=4.17e-03 train_s=21.0
+soap__cosine__lr0.02__s0 step 375: val=0.1908 ema.98=0.1916 lr=2.97e-03 train_s=22.7
+soap__cosine__lr0.02__s0 step 400: val=0.1874 ema.98=0.1858 lr=1.95e-03 train_s=24.3
+soap__cosine__lr0.02__s0 step 425: val=0.1789 ema.98=0.1819 lr=1.12e-03 train_s=26.0
+soap__cosine__lr0.02__s0 step 450: val=0.1783 ema.98=0.1793 lr=5.09e-04 train_s=27.8
+soap__cosine__lr0.02__s0 step 475: val=0.1758 ema.98=0.1775 lr=1.33e-04 train_s=29.5
+soap__cosine__lr0.02__s0 step 500: val=0.1756 ema.98=0.1765 lr=1.97e-07 train_s=31.3
+soap__cosine__lr0.02__s0: completed

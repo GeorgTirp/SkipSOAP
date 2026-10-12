@@ -1,0 +1,11 @@
+{
+  "seconds": {
+    "gate": 431.1225114999688,
+    "tuning": 9086.83392629202,
+    "eval_ggn_full": 14067.084248707979,
+    "eval_rest": 25112.97129825095,
+    "dryrun": 35.41028118133545
+  },
+  "cpu_hours_total": 13.537061740536737,
+  "method": "sum of unit_wall_seconds (perf_counter, single-threaded) plus dry-run duration"
+}

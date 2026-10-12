@@ -1,0 +1,8 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+searched_soap-10: gates max 0.0e+00, wiener identity 2.0e-08 | exact_ggn second +0.1319 gamma_x -0.0601 wiener -13.3612
+searched_soap-25: gates max 0.0e+00, wiener identity 1.5e-08 | exact_ggn second +0.0944 gamma_x +0.0730 wiener -4.9205
+searched_soap-50: gates max 0.0e+00, wiener identity 2.1e-08 | exact_ggn second +0.0288 gamma_x +0.0285 wiener -5.4791
+exact_tensor_ggn-10: gates max 0.0e+00, wiener identity 2.8e-09 | exact_ggn second +0.0582 gamma_x -0.0167 wiener -3.9467
+exact_tensor_ggn-25: gates max 0.0e+00, wiener identity 5.1e-09 | exact_ggn second +0.0399 gamma_x +0.0401 wiener -4.8539
+exact_tensor_ggn-50: gates max 0.0e+00, wiener identity 1.0e-08 | exact_ggn second +0.0391 gamma_x +0.0366 wiener -4.3483

@@ -1,0 +1,13 @@
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__sn0.95__s1
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__sn0.95__s2
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__sn0.95__s3
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__nosn__s1
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__nosn__s2
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 ggn__nosn__s3
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__sn0.95__s1
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__sn0.95__s2
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__sn0.95__s3
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__nosn__s1
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__nosn__s2
+studies/sn_ggn_20261008/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/sn_ggn_20261008/runs/20261008T182801-03c6c5c2 soap__nosn__s3
+STOP

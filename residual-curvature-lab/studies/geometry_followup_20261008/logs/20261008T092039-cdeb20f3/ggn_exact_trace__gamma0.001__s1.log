@@ -1,0 +1,6 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ggn_exact_trace__gamma0.001__s1 step 10: val=1.109737168312508 acc=70.06% train_s=36.5
+ggn_exact_trace__gamma0.001__s1 step 25: val=0.5219553522924307 acc=86.22% train_s=94.7
+ggn_exact_trace__gamma0.001__s1 step 50: val=0.34833268184735416 acc=90.18% train_s=193.9
+ggn_exact_trace__gamma0.001__s1: completed

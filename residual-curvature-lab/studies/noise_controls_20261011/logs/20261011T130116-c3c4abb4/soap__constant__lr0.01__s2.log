@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+soap__constant__lr0.01__s2 step 10: val=2.2324 ema.98=2.2689 lr=1.00e-02 train_s=0.6 S=13.09
+soap__constant__lr0.01__s2 step 25: val=1.6528 ema.98=1.9820 lr=1.00e-02 train_s=1.5 S=11.56
+soap__constant__lr0.01__s2 step 50: val=1.0103 ema.98=1.4238 lr=1.00e-02 train_s=2.9 S=27.19
+soap__constant__lr0.01__s2 step 75: val=0.5920 ema.98=1.0028 lr=1.00e-02 train_s=4.8
+soap__constant__lr0.01__s2 step 100: val=0.4212 ema.98=0.6759 lr=1.00e-02 train_s=6.4 S=16.73
+soap__constant__lr0.01__s2 step 125: val=0.3736 ema.98=0.4750 lr=1.00e-02 train_s=8.1
+soap__constant__lr0.01__s2 step 150: val=0.3107 ema.98=0.3607 lr=1.00e-02 train_s=9.8
+soap__constant__lr0.01__s2 step 175: val=0.2811 ema.98=0.2982 lr=1.00e-02 train_s=11.5
+soap__constant__lr0.01__s2 step 200: val=0.2446 ema.98=0.2581 lr=1.00e-02 train_s=13.1 S=11.32
+soap__constant__lr0.01__s2 step 225: val=0.2265 ema.98=0.2285 lr=1.00e-02 train_s=14.9
+soap__constant__lr0.01__s2 step 250: val=0.2134 ema.98=0.2094 lr=1.00e-02 train_s=16.4
+soap__constant__lr0.01__s2 step 275: val=0.2137 ema.98=0.1936 lr=1.00e-02 train_s=18.4
+soap__constant__lr0.01__s2 step 300: val=0.2063 ema.98=0.1808 lr=1.00e-02 train_s=20.1 S=12.80
+soap__constant__lr0.01__s2 step 325: val=0.1879 ema.98=0.1692 lr=1.00e-02 train_s=22.0
+soap__constant__lr0.01__s2 step 350: val=0.1816 ema.98=0.1583 lr=1.00e-02 train_s=23.5
+soap__constant__lr0.01__s2 step 375: val=0.1707 ema.98=0.1529 lr=1.00e-02 train_s=25.0
+soap__constant__lr0.01__s2 step 400: val=0.1752 ema.98=0.1462 lr=1.00e-02 train_s=26.4 S=10.46
+soap__constant__lr0.01__s2 step 425: val=0.1813 ema.98=0.1435 lr=1.00e-02 train_s=27.9
+soap__constant__lr0.01__s2 step 450: val=0.1597 ema.98=0.1376 lr=1.00e-02 train_s=29.4
+soap__constant__lr0.01__s2 step 475: val=0.1609 ema.98=0.1340 lr=1.00e-02 train_s=30.8
+soap__constant__lr0.01__s2 step 500: val=0.1571 ema.98=0.1319 lr=1.00e-02 train_s=32.3 S=9.85
+soap__constant__lr0.01__s2: completed

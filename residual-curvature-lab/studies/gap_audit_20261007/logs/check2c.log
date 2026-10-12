@@ -1,0 +1,128 @@
+/Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T123608-7f39721a
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+searched_soap-10 identity: gradient=0.033191 momentum=0.039564 gradient ray error=9.284e-01
+searched_soap-10 exact: gradient=0.135327 momentum=0.035343 gradient ray error=8.069e-32
+searched_soap-10 soap_basis_diag: gradient=0.044453 momentum=0.049824 gradient ray error=8.741e-01
+searched_soap-10 kron_basis_diag: gradient=0.069311 momentum=0.052777 gradient ray error=8.711e-01
+searched_soap-10 ks_1: gradient=0.040246 momentum=0.056984 gradient ray error=9.697e-01
+searched_soap-10 ks_2: gradient=0.046455 momentum=0.075470 gradient ray error=9.714e-01
+searched_soap-10 ks_3: gradient=0.046573 momentum=0.078689 gradient ray error=9.716e-01
+searched_soap-10 ks_2_ef: gradient=0.051885 momentum=0.086138 gradient ray error=9.685e-01
+searched_soap-10 pcg_block_2: gradient=0.044650 momentum=0.060035 gradient ray error=8.540e-01
+searched_soap-10 pcg_block_3: gradient=0.053648 momentum=0.080165 gradient ray error=7.880e-01
+searched_soap-10 pcg_block_5: gradient=0.072764 momentum=0.105671 gradient ray error=6.581e-01
+searched_soap-10 pcg_block_10: gradient=0.103624 momentum=0.143385 gradient ray error=4.618e-01
+searched_soap-10 pcg_full_2: gradient=0.055081 momentum=0.041771 gradient ray error=8.527e-01
+searched_soap-10 pcg_full_3: gradient=0.070792 momentum=0.086293 gradient ray error=8.512e-01
+searched_soap-10 pcg_full_5: gradient=0.165217 momentum=0.091297 gradient ray error=8.495e-01
+searched_soap-10 pcg_full_10: gradient=0.150223 momentum=0.021418 gradient ray error=8.854e-01
+searched_soap-10 exact_1d_only: gradient=0.034577 momentum=0.041975 gradient ray error=9.445e-01
+searched_soap-25 identity: gradient=0.025898 momentum=0.021822 gradient ray error=8.890e-01
+searched_soap-25 exact: gradient=0.085051 momentum=0.033845 gradient ray error=0.000e+00
+searched_soap-25 soap_basis_diag: gradient=0.040127 momentum=0.068798 gradient ray error=7.746e-01
+searched_soap-25 kron_basis_diag: gradient=0.059277 momentum=0.047987 gradient ray error=6.914e-01
+searched_soap-25 ks_1: gradient=0.045579 momentum=0.053179 gradient ray error=9.228e-01
+searched_soap-25 ks_2: gradient=0.044541 momentum=0.025584 gradient ray error=9.436e-01
+searched_soap-25 ks_3: gradient=0.045610 momentum=0.027828 gradient ray error=9.422e-01
+searched_soap-25 ks_2_ef: gradient=0.044166 momentum=0.024612 gradient ray error=9.547e-01
+searched_soap-25 pcg_block_2: gradient=0.035956 momentum=0.059319 gradient ray error=7.966e-01
+searched_soap-25 pcg_block_3: gradient=0.033363 momentum=0.071717 gradient ray error=7.399e-01
+searched_soap-25 pcg_block_5: gradient=0.040351 momentum=0.095761 gradient ray error=5.976e-01
+searched_soap-25 pcg_block_10: gradient=0.049679 momentum=0.117552 gradient ray error=3.897e-01
+searched_soap-25 pcg_full_2: gradient=0.042542 momentum=0.081213 gradient ray error=8.228e-01
+searched_soap-25 pcg_full_3: gradient=0.030777 momentum=0.060693 gradient ray error=8.371e-01
+searched_soap-25 pcg_full_5: gradient=0.056960 momentum=0.110068 gradient ray error=8.657e-01
+searched_soap-25 pcg_full_10: gradient=0.108300 momentum=0.077726 gradient ray error=8.668e-01
+searched_soap-25 exact_1d_only: gradient=0.029415 momentum=0.028533 gradient ray error=9.046e-01
+searched_soap-50 identity: gradient=0.002988 momentum=0.000640 gradient ray error=8.626e-01
+searched_soap-50 exact: gradient=-0.012308 momentum=0.045150 gradient ray error=3.588e-31
+searched_soap-50 soap_basis_diag: gradient=-0.001335 momentum=0.003981 gradient ray error=7.803e-01
+searched_soap-50 kron_basis_diag: gradient=-0.006971 momentum=0.019850 gradient ray error=7.918e-01
+searched_soap-50 ks_1: gradient=-0.000910 momentum=0.020902 gradient ray error=9.495e-01
+searched_soap-50 ks_2: gradient=-0.004651 momentum=-0.009178 gradient ray error=9.512e-01
+searched_soap-50 ks_3: gradient=-0.003012 momentum=0.012383 gradient ray error=9.479e-01
+searched_soap-50 ks_2_ef: gradient=0.001382 momentum=0.008333 gradient ray error=9.512e-01
+searched_soap-50 pcg_block_2: gradient=0.000859 momentum=-0.002352 gradient ray error=7.437e-01
+searched_soap-50 pcg_block_3: gradient=-0.004659 momentum=-0.003474 gradient ray error=6.496e-01
+searched_soap-50 pcg_block_5: gradient=-0.013070 momentum=-0.003185 gradient ray error=5.132e-01
+searched_soap-50 pcg_block_10: gradient=-0.015622 momentum=0.043099 gradient ray error=2.964e-01
+searched_soap-50 pcg_full_2: gradient=-0.013513 momentum=-0.013065 gradient ray error=7.927e-01
+searched_soap-50 pcg_full_3: gradient=-0.026564 momentum=-0.012211 gradient ray error=7.927e-01
+searched_soap-50 pcg_full_5: gradient=-0.024180 momentum=0.046088 gradient ray error=8.072e-01
+searched_soap-50 pcg_full_10: gradient=-0.019280 momentum=0.053339 gradient ray error=8.374e-01
+searched_soap-50 exact_1d_only: gradient=-0.000852 momentum=-0.001825 gradient ray error=9.021e-01
+exact_tensor_ggn-10 identity: gradient=0.015570 momentum=0.014364 gradient ray error=9.250e-01
+exact_tensor_ggn-10 exact: gradient=0.039168 momentum=0.037787 gradient ray error=5.615e-32
+exact_tensor_ggn-10 soap_basis_diag: gradient=0.027310 momentum=0.041757 gradient ray error=6.906e-01
+exact_tensor_ggn-10 kron_basis_diag: gradient=0.034918 momentum=0.054259 gradient ray error=6.196e-01
+exact_tensor_ggn-10 ks_1: gradient=0.021407 momentum=0.037612 gradient ray error=9.455e-01
+exact_tensor_ggn-10 ks_2: gradient=0.021154 momentum=0.035475 gradient ray error=9.338e-01
+exact_tensor_ggn-10 ks_3: gradient=0.020449 momentum=0.033334 gradient ray error=9.377e-01
+exact_tensor_ggn-10 ks_2_ef: gradient=0.024192 momentum=0.033899 gradient ray error=9.342e-01
+exact_tensor_ggn-10 pcg_block_2: gradient=0.017553 momentum=0.010136 gradient ray error=7.780e-01
+exact_tensor_ggn-10 pcg_block_3: gradient=0.018312 momentum=0.015096 gradient ray error=7.138e-01
+exact_tensor_ggn-10 pcg_block_5: gradient=0.023222 momentum=0.032650 gradient ray error=5.551e-01
+exact_tensor_ggn-10 pcg_block_10: gradient=0.030902 momentum=0.070800 gradient ray error=2.994e-01
+exact_tensor_ggn-10 pcg_full_2: gradient=0.014946 momentum=0.006243 gradient ray error=8.433e-01
+exact_tensor_ggn-10 pcg_full_3: gradient=0.019711 momentum=0.015224 gradient ray error=7.785e-01
+exact_tensor_ggn-10 pcg_full_5: gradient=0.036299 momentum=0.050935 gradient ray error=7.631e-01
+exact_tensor_ggn-10 pcg_full_10: gradient=0.091359 momentum=0.051240 gradient ray error=8.226e-01
+exact_tensor_ggn-10 exact_1d_only: gradient=0.015297 momentum=0.016278 gradient ray error=9.460e-01
+exact_tensor_ggn-25 identity: gradient=0.017390 momentum=-0.006423 gradient ray error=8.808e-01
+exact_tensor_ggn-25 exact: gradient=0.010830 momentum=-0.020162 gradient ray error=1.350e-31
+exact_tensor_ggn-25 soap_basis_diag: gradient=0.018176 momentum=-0.014042 gradient ray error=6.931e-01
+exact_tensor_ggn-25 kron_basis_diag: gradient=0.014938 momentum=-0.012156 gradient ray error=6.746e-01
+exact_tensor_ggn-25 ks_1: gradient=0.019776 momentum=-0.017984 gradient ray error=9.041e-01
+exact_tensor_ggn-25 ks_2: gradient=0.019106 momentum=-0.022613 gradient ray error=9.013e-01
+exact_tensor_ggn-25 ks_3: gradient=0.018703 momentum=-0.021969 gradient ray error=9.024e-01
+exact_tensor_ggn-25 ks_2_ef: gradient=0.019004 momentum=-0.024386 gradient ray error=8.804e-01
+exact_tensor_ggn-25 pcg_block_2: gradient=0.015770 momentum=-0.012348 gradient ray error=7.969e-01
+exact_tensor_ggn-25 pcg_block_3: gradient=0.017234 momentum=-0.018433 gradient ray error=7.017e-01
+exact_tensor_ggn-25 pcg_block_5: gradient=0.016462 momentum=-0.026704 gradient ray error=5.522e-01
+exact_tensor_ggn-25 pcg_block_10: gradient=0.012345 momentum=-0.028491 gradient ray error=2.873e-01
+exact_tensor_ggn-25 pcg_full_2: gradient=0.009080 momentum=-0.016843 gradient ray error=8.035e-01
+exact_tensor_ggn-25 pcg_full_3: gradient=0.000722 momentum=-0.023579 gradient ray error=7.995e-01
+exact_tensor_ggn-25 pcg_full_5: gradient=-0.001222 momentum=-0.017001 gradient ray error=7.854e-01
+exact_tensor_ggn-25 pcg_full_10: gradient=0.008827 momentum=0.005626 gradient ray error=8.258e-01
+exact_tensor_ggn-25 exact_1d_only: gradient=0.017089 momentum=-0.013121 gradient ray error=9.061e-01
+exact_tensor_ggn-50 identity: gradient=0.020846 momentum=0.005969 gradient ray error=9.059e-01
+exact_tensor_ggn-50 exact: gradient=0.017227 momentum=-0.036464 gradient ray error=2.079e-31
+exact_tensor_ggn-50 soap_basis_diag: gradient=0.020568 momentum=-0.009236 gradient ray error=7.042e-01
+exact_tensor_ggn-50 kron_basis_diag: gradient=0.017741 momentum=-0.015531 gradient ray error=7.515e-01
+exact_tensor_ggn-50 ks_1: gradient=0.014429 momentum=-0.005798 gradient ray error=9.051e-01
+exact_tensor_ggn-50 ks_2: gradient=0.014561 momentum=-0.005586 gradient ray error=9.075e-01
+exact_tensor_ggn-50 ks_3: gradient=0.017068 momentum=-0.007711 gradient ray error=9.012e-01
+exact_tensor_ggn-50 ks_2_ef: gradient=0.016111 momentum=-0.006475 gradient ray error=9.088e-01
+exact_tensor_ggn-50 pcg_block_2: gradient=0.016879 momentum=-0.007831 gradient ray error=7.968e-01
+exact_tensor_ggn-50 pcg_block_3: gradient=0.023671 momentum=-0.011344 gradient ray error=7.195e-01
+exact_tensor_ggn-50 pcg_block_5: gradient=0.023474 momentum=-0.017608 gradient ray error=5.744e-01
+exact_tensor_ggn-50 pcg_block_10: gradient=0.015371 momentum=-0.032037 gradient ray error=3.045e-01
+exact_tensor_ggn-50 pcg_full_2: gradient=0.016341 momentum=-0.015196 gradient ray error=8.477e-01
+exact_tensor_ggn-50 pcg_full_3: gradient=-0.001852 momentum=-0.019117 gradient ray error=8.112e-01
+exact_tensor_ggn-50 pcg_full_5: gradient=-0.010230 momentum=-0.024500 gradient ray error=7.873e-01
+exact_tensor_ggn-50 pcg_full_10: gradient=-0.011937 momentum=-0.035779 gradient ray error=7.887e-01
+exact_tensor_ggn-50 exact_1d_only: gradient=0.024830 momentum=0.008814 gradient ray error=9.274e-01
+{
+  "states": [
+    "searched_soap-10",
+    "searched_soap-25",
+    "searched_soap-50",
+    "exact_tensor_ggn-10",
+    "exact_tensor_ggn-25",
+    "exact_tensor_ggn-50"
+  ],
+  "gradient_aggregate_exact_headroom": 0.026568791648710004,
+  "momentum_aggregate_exact_headroom": 0.0032602819442386095,
+  "best_cheap_family": "kron_basis_diag",
+  "reproduction_max_absolute_difference": 5.153238946675742e-12,
+  "reproduction_within_1e-9": true,
+  "checks_max": {
+    "gradient_error": 0.0,
+    "max_ggn_action_error": 1.1340118059098767e-14,
+    "max_ef_action_error": 5.180920555221294e-15,
+    "cached_teacher_energy_error": 0.0
+  }
+}
+mirrored to /Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/runs/20261007T123608-7f39721a
+exit=0

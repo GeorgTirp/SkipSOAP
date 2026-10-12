@@ -1,0 +1,12 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 196, in <module>
+    main()
+    ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 185, in main
+    states.append(state_steps(trajectory, step, c, x, y, reference))
+                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/transfer_law_20261011/scripts/steps.py", line 169, in state_steps
+    raise RuntimeError(f'Gate failed: {checks}')
+RuntimeError: Gate failed: {'gradient_error': 0.0, 'gate_sgd_same': 0.0, 'gate_sgd_second': 0.0, 'gate_sgd_oracle': 0.0, 'gate_soap_map_same': 0.0, 'gate_soap_map_second': 0.0, 'gate_soap_map_oracle': 0.0, 'gate_exact_ggn_same': 0.0, 'gate_exact_ggn_second': 0.0, 'gate_exact_ggn_oracle': 0.0, 'gate_parsec_l_same': 0.0, 'gate_parsec_l_second': 0.0, 'gate_parsec_l_oracle': 0.0, 'wiener_identity_vs_exact_ggn': 1.961279001062333e-08}

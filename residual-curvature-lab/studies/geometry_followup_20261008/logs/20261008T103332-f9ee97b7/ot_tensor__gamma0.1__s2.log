@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ot_tensor__gamma0.1__s2 step 10: val=1.3600915940334777 acc=61.54% train_s=56.3
+ot_tensor__gamma0.1__s2 step 25: val=0.8316967613536795 acc=76.60% train_s=157.2
+ot_tensor__gamma0.1__s2 step 50: val=0.4978558883819285 acc=85.52% train_s=337.3
+ot_tensor__gamma0.1__s2 step 75: val=0.37179311300113344 acc=89.00% train_s=518.4
+ot_tensor__gamma0.1__s2 step 100: val=0.3242371356815632 acc=90.36% train_s=692.3
+ot_tensor__gamma0.1__s2 step 125: val=0.2873296977883967 acc=91.40% train_s=875.9
+ot_tensor__gamma0.1__s2 step 150: val=0.2682727175925695 acc=91.48% train_s=1064.4
+ot_tensor__gamma0.1__s2 step 175: val=0.24973438648713794 acc=92.18% train_s=1254.0
+ot_tensor__gamma0.1__s2 step 200: val=0.22838936584321246 acc=92.90% train_s=1440.0
+ot_tensor__gamma0.1__s2 step 225: val=0.2222485416336211 acc=93.06% train_s=1614.2
+ot_tensor__gamma0.1__s2 step 250: val=0.20342473968355737 acc=93.72% train_s=1792.6
+ot_tensor__gamma0.1__s2 step 275: val=0.2071168361059028 acc=93.56% train_s=2001.6
+ot_tensor__gamma0.1__s2 step 300: val=0.2191974686216654 acc=92.98% train_s=2186.1
+ot_tensor__gamma0.1__s2 step 325: val=0.1918746164066212 acc=94.10% train_s=2372.0
+ot_tensor__gamma0.1__s2 step 350: val=0.20446257402139056 acc=93.64% train_s=2562.7
+ot_tensor__gamma0.1__s2 step 375: val=0.1949875921064996 acc=94.08% train_s=2746.2
+ot_tensor__gamma0.1__s2 step 400: val=0.19030837678329218 acc=93.88% train_s=2901.1
+ot_tensor__gamma0.1__s2 step 425: val=0.19093473113330575 acc=93.96% train_s=3039.2
+ot_tensor__gamma0.1__s2 step 450: val=0.1819992738343297 acc=94.36% train_s=3153.4
+ot_tensor__gamma0.1__s2 step 475: val=0.17397368587551038 acc=94.48% train_s=3271.9
+ot_tensor__gamma0.1__s2 step 500: val=0.15891441749181348 acc=95.20% train_s=3387.3
+ot_tensor__gamma0.1__s2: completed

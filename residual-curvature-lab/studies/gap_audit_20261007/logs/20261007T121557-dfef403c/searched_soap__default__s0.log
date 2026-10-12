@@ -1,0 +1,4 @@
+searched_soap__default__s0 step 10: val=1.903207397208019 acc=31.70% train_s=9.8
+searched_soap__default__s0 step 25: val=1.2406849819954484 acc=58.56% train_s=23.8
+searched_soap__default__s0 step 50: val=0.7316230218634457 acc=77.40% train_s=47.1
+searched_soap__default__s0: completed

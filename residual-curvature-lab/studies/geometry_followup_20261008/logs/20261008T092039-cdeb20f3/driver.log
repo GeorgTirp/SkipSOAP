@@ -1,0 +1,6 @@
+2026-10-08T09:20:41Z start ggn_exact_trace__gamma0.001__s1
+2026-10-08T09:20:41Z start ot_tensor__gamma0.01__s0
+2026-10-08T09:20:41Z start parsec_default__lr0.003_rank16_refresh_every10__s0
+2026-10-08T09:21:01Z done parsec_default__lr0.003_rank16_refresh_every10__s0
+2026-10-08T09:24:05Z done ggn_exact_trace__gamma0.001__s1
+2026-10-08T09:24:18Z done ot_tensor__gamma0.01__s0

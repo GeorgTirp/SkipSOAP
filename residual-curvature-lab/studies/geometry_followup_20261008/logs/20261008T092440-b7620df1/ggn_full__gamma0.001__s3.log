@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ggn_full__gamma0.001__s3 step 10: val=1.5048053592695394 acc=66.70% train_s=76.3
+ggn_full__gamma0.001__s3 step 25: val=0.7662475883747436 acc=79.16% train_s=203.3
+ggn_full__gamma0.001__s3 step 50: val=0.7653016983806714 acc=77.98% train_s=419.0
+ggn_full__gamma0.001__s3 step 75: val=0.6341823975978345 acc=81.68% train_s=632.9
+ggn_full__gamma0.001__s3 step 100: val=0.6326622733673033 acc=81.72% train_s=851.0
+ggn_full__gamma0.001__s3 step 125: val=0.7031308398097746 acc=77.62% train_s=1065.3
+ggn_full__gamma0.001__s3 step 150: val=0.6080079881826338 acc=82.34% train_s=1288.2
+ggn_full__gamma0.001__s3 step 175: val=0.4862040396722322 acc=86.24% train_s=1536.5
+ggn_full__gamma0.001__s3 step 200: val=0.49189739935027865 acc=86.24% train_s=1772.2
+ggn_full__gamma0.001__s3 step 225: val=0.4314999192266756 acc=87.34% train_s=2007.7
+ggn_full__gamma0.001__s3 step 250: val=0.43875765457136984 acc=87.26% train_s=2237.6
+ggn_full__gamma0.001__s3 step 275: val=0.449286693774602 acc=86.28% train_s=2459.6
+ggn_full__gamma0.001__s3 step 300: val=0.4297521825543726 acc=86.88% train_s=2681.4
+ggn_full__gamma0.001__s3 step 325: val=0.468200095787091 acc=86.02% train_s=2907.4
+ggn_full__gamma0.001__s3 step 350: val=0.4151344459691076 acc=88.42% train_s=3143.8
+ggn_full__gamma0.001__s3 step 375: val=0.3874327150161537 acc=88.36% train_s=3378.7
+ggn_full__gamma0.001__s3 step 400: val=0.40303417776710837 acc=88.10% train_s=3639.8
+ggn_full__gamma0.001__s3 step 425: val=0.38508919896872623 acc=89.38% train_s=3885.3
+ggn_full__gamma0.001__s3 step 450: val=0.37580670814422995 acc=89.24% train_s=4125.5
+ggn_full__gamma0.001__s3 step 475: val=0.34916290840590125 acc=90.54% train_s=4385.6
+ggn_full__gamma0.001__s3 step 500: val=0.29350941302549044 acc=91.46% train_s=4642.2
+ggn_full__gamma0.001__s3: completed

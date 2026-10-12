@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+dense_ef__gamma0.001__s2 step 10: val=1.8820199066204688 acc=36.38% train_s=16.6
+dense_ef__gamma0.001__s2 step 25: val=1.3711775892846416 acc=53.84% train_s=45.5
+dense_ef__gamma0.001__s2 step 50: val=0.8987265396802624 acc=69.94% train_s=94.3
+dense_ef__gamma0.001__s2 step 75: val=0.6439782406751166 acc=80.34% train_s=142.7
+dense_ef__gamma0.001__s2 step 100: val=0.5383332260363728 acc=82.96% train_s=192.2
+dense_ef__gamma0.001__s2 step 125: val=0.48737319071948343 acc=85.46% train_s=239.7
+dense_ef__gamma0.001__s2 step 150: val=0.46064302876144764 acc=86.36% train_s=283.1
+dense_ef__gamma0.001__s2 step 175: val=0.40602919244348995 acc=88.04% train_s=326.1
+dense_ef__gamma0.001__s2 step 200: val=0.3801013107512947 acc=88.96% train_s=371.2
+dense_ef__gamma0.001__s2 step 225: val=0.3821939599136147 acc=89.30% train_s=417.5
+dense_ef__gamma0.001__s2 step 250: val=0.3520495828674911 acc=89.86% train_s=463.8
+dense_ef__gamma0.001__s2 step 275: val=0.340484479434637 acc=90.12% train_s=510.9
+dense_ef__gamma0.001__s2 step 300: val=0.32617443551290204 acc=90.76% train_s=558.1
+dense_ef__gamma0.001__s2 step 325: val=0.3196678898766567 acc=91.46% train_s=604.9
+dense_ef__gamma0.001__s2 step 350: val=0.31222463432742126 acc=91.08% train_s=653.7
+dense_ef__gamma0.001__s2 step 375: val=0.302109204292244 acc=91.72% train_s=702.9
+dense_ef__gamma0.001__s2 step 400: val=0.2783243680641621 acc=92.42% train_s=751.0
+dense_ef__gamma0.001__s2 step 425: val=0.28321590589186324 acc=92.14% train_s=799.2
+dense_ef__gamma0.001__s2 step 450: val=0.30312567438979704 acc=91.98% train_s=847.2
+dense_ef__gamma0.001__s2 step 475: val=0.31931101522020633 acc=91.64% train_s=908.9
+dense_ef__gamma0.001__s2 step 500: val=0.2826078541136696 acc=92.54% train_s=962.5
+dense_ef__gamma0.001__s2: completed

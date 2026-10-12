@@ -1,0 +1,22 @@
+/Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T121137-28c507f9
+native_soap {"step_seconds": [0.13082312501501292, 0.08031020796624944, 0.07883116602897644], "per_step_after_init": 0.07957068699761294, "parameters": 5738, "settings": {"lr": 0.003}}
+adam_native {"step_seconds": [0.07533295900793746, 0.0689589999965392, 0.06829570804256946], "per_step_after_init": 0.06862735401955433, "parameters": 5738, "settings": {"lr": 0.003}}
+searched_soap {"step_seconds": [0.07566783396760002, 0.927260041993577, 0.8838353339815512], "per_step_after_init": 0.9055476879875641, "parameters": 5738, "settings": {}}
+searched_soap_tuned {"step_seconds": [0.07336141698760912, 0.9117780409869738, 0.8861915410379879], "per_step_after_init": 0.8989847910124809, "parameters": 5738, "settings": {"betas": [0.9, 0.99], "precondition_frequency": 1}}
+ggn_exact_trace {"step_seconds": [0.07264254102483392, 3.9789166250266135, 3.887415584002156], "per_step_after_init": 3.9331661045143846, "parameters": 5738, "settings": {"gamma": 0.01}}
+dense_ef {"step_seconds": [0.08902920898981392, 1.2342420000350103, 1.1849448760040104], "per_step_after_init": 1.2095934380195104, "parameters": 5738, "settings": {"gamma": 0.01}}
+soap_gradient_map {"step_seconds": [0.0727322080056183, 0.894703583966475, 0.9535912920255214], "per_step_after_init": 0.9241474379959982, "parameters": 5738, "settings": {}}
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+b1_w8 {"step_seconds": [0.03172466700198129, 0.37278874998446554, 0.3616408749949187], "per_step_after_init": 0.3672148124896921, "parameters": 1250, "ggn_block_seconds": 1.047418208036106, "ggn_action_seconds": 0.039226566802244636, "largest_tensor": 392}
+b1_w16 {"step_seconds": [0.04376108304131776, 0.46280724997632205, 0.48677991703152657], "per_step_after_init": 0.4747935835039243, "parameters": 3514, "ggn_block_seconds": 1.6298676249571145, "ggn_action_seconds": 0.036740058206487444, "largest_tensor": 784}
+b1_w24 {"step_seconds": [0.05908670800272375, 0.863759666972328, 0.7354045840329491], "per_step_after_init": 0.7995821255026385, "parameters": 6802, "ggn_block_seconds": 2.4400547919794917, "ggn_action_seconds": 0.04825116680003703, "largest_tensor": 1176}
+b2_w8 {"step_seconds": [0.05538508400786668, 0.6675884999567643, 0.7270338329835795], "per_step_after_init": 0.6973111664701719, "parameters": 1850, "ggn_block_seconds": 1.8253465000307187, "ggn_action_seconds": 0.047765283391345295, "largest_tensor": 392}
+b2_w16 {"step_seconds": [0.07994237501407042, 0.9558498749975115, 0.8510774999740534], "per_step_after_init": 0.9034636874857824, "parameters": 5738, "ggn_block_seconds": 2.881277125037741, "ggn_action_seconds": 0.07021922499407082, "largest_tensor": 784}
+b2_w24 {"step_seconds": [0.11184041696833447, 1.3033666249830276, 1.3802442079759203], "per_step_after_init": 1.341805416479474, "parameters": 11674, "ggn_block_seconds": 5.031445458997041, "ggn_action_seconds": 0.10145699180429801, "largest_tensor": 1176}
+b3_w8 {"step_seconds": [0.0816962500102818, 1.0163425840437412, 0.9847909170202911], "per_step_after_init": 1.0005667505320162, "parameters": 2450, "ggn_block_seconds": 2.8451149169704877, "ggn_action_seconds": 0.07272050840547309, "largest_tensor": 392}
+b3_w16 {"step_seconds": [0.10762712499126792, 1.3533222919795662, 1.3151841670041904], "per_step_after_init": 1.3342532294918783, "parameters": 7962, "ggn_block_seconds": 4.713458292011637, "ggn_action_seconds": 0.10513840820640326, "largest_tensor": 784}
+b3_w24 {"step_seconds": [0.15106120804557577, 1.893147874972783, 2.148703166982159], "per_step_after_init": 2.020925520977471, "parameters": 16546, "ggn_block_seconds": 8.986431957979221, "ggn_action_seconds": 0.14258549159858375, "largest_tensor": 1176}
+fixed_state {"state": "runs/20261005T143029-9b582ed5/searched_soap-0010", "setup_seconds": 0.13952908298233524, "candidate_evaluation_seconds": 0.9689229170326144, "search_evaluations": 52, "ggn_action_seconds": 0.06394216670305468, "ot_block_seconds": 2.9873379999771714, "soap_map_independent_decrease": 0.0331905858578761, "capacity_screen_reference": 0.033191}
+mirrored to /Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/runs/20261007T121137-28c507f9
+exit=0

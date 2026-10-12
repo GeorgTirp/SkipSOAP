@@ -1,0 +1,92 @@
+seed: 0
+data_seed: 101
+probe_seed: 202
+analysis_seed: 303
+device: cpu
+dtype: float64
+threads: 1
+output: runs
+model:
+  kind: mlp
+  input_dim: 196
+  width: 16
+  expansion: 32
+  blocks: 3
+  classes: 10
+  epsilon: 1.0e-05
+  branch_scale: 1.0
+data:
+  dataset: mnist
+  root: datasets
+  samples: 128
+  resolution: 14
+  batch_size: 512
+  panel_batches: 4
+  train_size: 50000
+  validation_size: 5000
+  analysis_size: 5000
+soap:
+  lr: 0.003
+  betas:
+  - 0.95
+  - 0.95
+  shampoo_beta: -1
+  eps: 1.0e-08
+  weight_decay: 0.0
+  precondition_frequency: 10
+  max_precond_dim: 10000
+  merge_dims: false
+  precondition_1d: false
+  normalize_grads: false
+  data_format: channels_first
+  correct_bias: true
+damping:
+  gammas:
+  - 0.001
+  - 0.01
+  - 0.1
+  floor: 1.0e-08
+  metric: soap
+sketch:
+  ranks:
+  - 4
+  - 8
+  - 16
+  - 32
+  repeats: 2
+  microbatch: 16
+resources:
+  dense_cap: 2048
+  dual_cap: 2048
+  budget_mib: 768
+solver:
+  tolerance64: 1.0e-08
+  tolerance32: 0.0001
+  max_iterations: 1000
+training:
+  steps: 50
+  snapshots: []
+  method: soap
+  policy: native
+  gamma: 0.01
+  rank: 8
+  checkpoint_every: 25
+search:
+  grid_exponents:
+  - -8
+  - -7
+  - -6
+  - -5
+  - -4
+  - -3
+  - -2
+  - -1
+  - 0
+  - 1
+  - 2
+  - 3
+  initial: 1.0
+  armijo: 0.0001
+  max_evaluations: 16
+  minimum: 1.0e-08
+partition: tensor

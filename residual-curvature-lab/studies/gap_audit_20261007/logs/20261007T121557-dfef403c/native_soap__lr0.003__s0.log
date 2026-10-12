@@ -1,0 +1,4 @@
+native_soap__lr0.003__s0 step 10: val=2.205888922341648 acc=19.70% train_s=0.9
+native_soap__lr0.003__s0 step 25: val=1.804487200186555 acc=34.58% train_s=2.3
+native_soap__lr0.003__s0 step 50: val=1.3543558422225512 acc=62.02% train_s=4.7
+native_soap__lr0.003__s0: completed

@@ -1,0 +1,14 @@
+seed: 0
+data_seed: 101
+probe_seed: 202
+analysis_seed: 303
+device: cpu
+dtype: float64
+output: runs
+model: {kind: mlp, input_dim: 196, width: 16, expansion: 32, blocks: 3, classes: 10, epsilon: 0.00001, branch_scale: 1.0}
+data: {dataset: mnist, root: datasets, resolution: 14, batch_size: 64, panel_batches: 4, train_size: 50000, validation_size: 5000, analysis_size: 5000}
+soap: {lr: 0.003, betas: [0.95, 0.95], precondition_frequency: 10, weight_decay: 0.0}
+damping: {gammas: [0.001, 0.01, 0.1], floor: 0.00000001, metric: soap}
+sketch: {ranks: [4, 8, 16, 32], repeats: 2, microbatch: 16}
+resources: {dense_cap: 2048, dual_cap: 2048, budget_mib: 256}
+training: {steps: 100, snapshots: [], method: soap, policy: native, gamma: 0.01, rank: 8, checkpoint_every: 10}

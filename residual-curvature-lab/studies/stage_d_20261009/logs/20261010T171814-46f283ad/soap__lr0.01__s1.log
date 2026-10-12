@@ -1,0 +1,22 @@
+soap__lr0.01__s1 step 10: val=2.0631 acc=29.50% train_s=0.7
+soap__lr0.01__s1 step 25: val=1.4993 acc=49.76% train_s=1.8
+soap__lr0.01__s1 step 50: val=0.8848 acc=71.64% train_s=3.5
+soap__lr0.01__s1 step 75: val=0.6217 acc=79.68% train_s=5.1
+soap__lr0.01__s1 step 100: val=0.4417 acc=86.32% train_s=6.6
+soap__lr0.01__s1 step 125: val=0.3555 acc=89.06% train_s=8.2
+soap__lr0.01__s1 step 150: val=0.3082 acc=90.46% train_s=9.8
+soap__lr0.01__s1 step 175: val=0.2725 acc=91.86% train_s=11.6
+soap__lr0.01__s1 step 200: val=0.2603 acc=92.30% train_s=13.3
+soap__lr0.01__s1 step 225: val=0.2325 acc=93.04% train_s=14.9
+soap__lr0.01__s1 step 250: val=0.2206 acc=93.50% train_s=16.5
+soap__lr0.01__s1 step 275: val=0.2133 acc=93.76% train_s=18.0
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 370, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 360, in main
+    work(args.run, args.unit)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/stage_d_20261009/scripts/train.py", line 227, in work
+    raise RuntimeError(f'SOAP reproduction gate failed at step {step}: {gate[step]}')
+RuntimeError: SOAP reproduction gate failed at step 300: 2.2218152525566026e-06

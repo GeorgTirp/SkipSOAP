@@ -1,0 +1,162 @@
+[
+  {
+    "method": "native_soap",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "native_soap",
+    "step": 10,
+    "training_seconds": 0.8388086281483993,
+    "validation_loss": 2.205888922341648,
+    "validation_accuracy": 0.197,
+    "validation_examples": 5000
+  },
+  {
+    "method": "native_soap",
+    "step": 25,
+    "training_seconds": 2.0932624611305073,
+    "validation_loss": 1.804487200186555,
+    "validation_accuracy": 0.3458,
+    "validation_examples": 5000
+  },
+  {
+    "method": "native_soap",
+    "step": 50,
+    "training_seconds": 4.228793336020317,
+    "validation_loss": 1.3543558422225512,
+    "validation_accuracy": 0.6202,
+    "validation_examples": 5000
+  },
+  {
+    "method": "searched_soap",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "searched_soap",
+    "step": 10,
+    "training_seconds": 8.42972958291648,
+    "validation_loss": 1.903207397208019,
+    "validation_accuracy": 0.317,
+    "validation_examples": 5000
+  },
+  {
+    "method": "searched_soap",
+    "step": 25,
+    "training_seconds": 22.704531750874594,
+    "validation_loss": 1.2406849819954484,
+    "validation_accuracy": 0.5856,
+    "validation_examples": 5000
+  },
+  {
+    "method": "searched_soap",
+    "step": 50,
+    "training_seconds": 46.04190658283187,
+    "validation_loss": 0.7316230218634457,
+    "validation_accuracy": 0.774,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_diagonal",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_diagonal",
+    "step": 10,
+    "training_seconds": 29.29210216703359,
+    "validation_loss": 1.7708335248738403,
+    "validation_accuracy": 0.3774,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_diagonal",
+    "step": 25,
+    "training_seconds": 78.2731145011494,
+    "validation_loss": 1.2266684100936966,
+    "validation_accuracy": 0.5762,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_diagonal",
+    "step": 50,
+    "training_seconds": 164.09757287689717,
+    "validation_loss": 0.7480568488846329,
+    "validation_accuracy": 0.7562,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_full",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_full",
+    "step": 10,
+    "training_seconds": 29.632583043945488,
+    "validation_loss": 1.5780261700936475,
+    "validation_accuracy": 0.4296,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_full",
+    "step": 25,
+    "training_seconds": 78.69618087791605,
+    "validation_loss": 1.1004833422917448,
+    "validation_accuracy": 0.6238,
+    "validation_examples": 5000
+  },
+  {
+    "method": "allocation_full",
+    "step": 50,
+    "training_seconds": 159.5004748768406,
+    "validation_loss": 0.8166453988190918,
+    "validation_accuracy": 0.7288,
+    "validation_examples": 5000
+  },
+  {
+    "method": "exact_tensor_ggn",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "exact_tensor_ggn",
+    "step": 10,
+    "training_seconds": 38.89706245693378,
+    "validation_loss": 1.1072792377904528,
+    "validation_accuracy": 0.7332,
+    "validation_examples": 5000
+  },
+  {
+    "method": "exact_tensor_ggn",
+    "step": 25,
+    "training_seconds": 104.95739637396764,
+    "validation_loss": 0.5196207310160008,
+    "validation_accuracy": 0.8608,
+    "validation_examples": 5000
+  },
+  {
+    "method": "exact_tensor_ggn",
+    "step": 50,
+    "training_seconds": 219.32525937911123,
+    "validation_loss": 0.32571436237523976,
+    "validation_accuracy": 0.903,
+    "validation_examples": 5000
+  }
+]

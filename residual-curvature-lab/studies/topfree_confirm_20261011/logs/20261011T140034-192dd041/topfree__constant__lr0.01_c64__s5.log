@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+topfree__constant__lr0.01_c64__s5 step 10: val=2.0569 ema.98=2.0999 lr=1.00e-02 train_s=1.3 S=21.76
+topfree__constant__lr0.01_c64__s5 step 25: val=1.3711 ema.98=1.7148 lr=1.00e-02 train_s=3.6 S=28.75
+topfree__constant__lr0.01_c64__s5 step 50: val=0.7981 ema.98=1.1664 lr=1.00e-02 train_s=6.8 S=58.97
+topfree__constant__lr0.01_c64__s5 step 75: val=0.5360 ema.98=0.7998 lr=1.00e-02 train_s=10.4
+topfree__constant__lr0.01_c64__s5 step 100: val=0.4112 ema.98=0.5804 lr=1.00e-02 train_s=13.4 S=46.66
+topfree__constant__lr0.01_c64__s5 step 125: val=0.3328 ema.98=0.4516 lr=1.00e-02 train_s=17.1
+topfree__constant__lr0.01_c64__s5 step 150: val=0.2741 ema.98=0.3653 lr=1.00e-02 train_s=20.0
+topfree__constant__lr0.01_c64__s5 step 175: val=0.2258 ema.98=0.3025 lr=1.00e-02 train_s=23.6
+topfree__constant__lr0.01_c64__s5 step 200: val=0.2192 ema.98=0.2508 lr=1.00e-02 train_s=26.9 S=38.86
+topfree__constant__lr0.01_c64__s5 step 225: val=0.2050 ema.98=0.2132 lr=1.00e-02 train_s=30.6
+topfree__constant__lr0.01_c64__s5 step 250: val=0.1946 ema.98=0.1915 lr=1.00e-02 train_s=33.5
+topfree__constant__lr0.01_c64__s5 step 275: val=0.1796 ema.98=0.1766 lr=1.00e-02 train_s=37.0
+topfree__constant__lr0.01_c64__s5 step 300: val=0.1649 ema.98=0.1624 lr=1.00e-02 train_s=40.0 S=40.21
+topfree__constant__lr0.01_c64__s5 step 325: val=0.1683 ema.98=0.1514 lr=1.00e-02 train_s=43.9
+topfree__constant__lr0.01_c64__s5 step 350: val=0.1547 ema.98=0.1414 lr=1.00e-02 train_s=47.2
+topfree__constant__lr0.01_c64__s5 step 375: val=0.1539 ema.98=0.1330 lr=1.00e-02 train_s=50.9
+topfree__constant__lr0.01_c64__s5 step 400: val=0.1505 ema.98=0.1253 lr=1.00e-02 train_s=54.0 S=30.38
+topfree__constant__lr0.01_c64__s5 step 425: val=0.1460 ema.98=0.1238 lr=1.00e-02 train_s=57.7
+topfree__constant__lr0.01_c64__s5 step 450: val=0.1482 ema.98=0.1208 lr=1.00e-02 train_s=60.7
+topfree__constant__lr0.01_c64__s5 step 475: val=0.1390 ema.98=0.1164 lr=1.00e-02 train_s=64.3
+topfree__constant__lr0.01_c64__s5 step 500: val=0.1356 ema.98=0.1141 lr=1.00e-02 train_s=67.4 S=32.87
+topfree__constant__lr0.01_c64__s5: completed

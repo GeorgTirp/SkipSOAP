@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ggn_selected__gamma0.001__s2 step 10: val=1.2309 acc=71.38% train_s=38.3
+ggn_selected__gamma0.001__s2 step 25: val=0.6929 acc=81.66% train_s=105.6
+ggn_selected__gamma0.001__s2 step 50: val=0.4210 acc=87.68% train_s=216.4
+ggn_selected__gamma0.001__s2 step 75: val=0.3630 acc=89.40% train_s=329.6
+ggn_selected__gamma0.001__s2 step 100: val=0.2962 acc=90.98% train_s=445.6
+ggn_selected__gamma0.001__s2 step 125: val=0.2764 acc=91.70% train_s=558.1
+ggn_selected__gamma0.001__s2 step 150: val=0.2542 acc=92.32% train_s=669.4
+ggn_selected__gamma0.001__s2 step 175: val=0.2346 acc=92.68% train_s=784.4
+ggn_selected__gamma0.001__s2 step 200: val=0.2332 acc=93.20% train_s=897.3
+ggn_selected__gamma0.001__s2 step 225: val=0.2202 acc=93.36% train_s=1010.5
+ggn_selected__gamma0.001__s2 step 250: val=0.2150 acc=93.58% train_s=1126.9
+ggn_selected__gamma0.001__s2 step 275: val=0.2105 acc=93.68% train_s=1242.5
+ggn_selected__gamma0.001__s2 step 300: val=0.2028 acc=93.80% train_s=1358.2
+ggn_selected__gamma0.001__s2 step 325: val=0.1971 acc=94.28% train_s=1473.2
+ggn_selected__gamma0.001__s2 step 350: val=0.1945 acc=94.10% train_s=1599.5
+ggn_selected__gamma0.001__s2 step 375: val=0.1766 acc=94.86% train_s=1729.6
+ggn_selected__gamma0.001__s2 step 400: val=0.1772 acc=94.58% train_s=1858.3
+ggn_selected__gamma0.001__s2 step 425: val=0.1803 acc=94.90% train_s=1985.8
+ggn_selected__gamma0.001__s2 step 450: val=0.1706 acc=94.84% train_s=2116.5
+ggn_selected__gamma0.001__s2 step 475: val=0.1672 acc=94.82% train_s=2244.1
+ggn_selected__gamma0.001__s2 step 500: val=0.1780 acc=94.64% train_s=2371.4
+ggn_selected__gamma0.001__s2: completed

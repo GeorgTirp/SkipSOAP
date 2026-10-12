@@ -1,0 +1,14 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ggn__sn0.95__s1 step 10: val=1.1661 acc=72.04% active_sn=12 train_s=48.7
+ggn__sn0.95__s1 step 25: val=0.6894 acc=84.42% active_sn=12 train_s=134.8
+ggn__sn0.95__s1 step 50: val=0.3459 acc=89.56% active_sn=12 train_s=284.1
+ggn__sn0.95__s1 step 75: val=0.3029 acc=91.24% active_sn=12 train_s=432.7
+ggn__sn0.95__s1 step 100: val=0.2831 acc=91.74% active_sn=12 train_s=580.5
+ggn__sn0.95__s1 step 125: val=0.2603 acc=92.14% active_sn=12 train_s=731.5
+ggn__sn0.95__s1 step 150: val=0.2352 acc=92.60% active_sn=12 train_s=882.4
+ggn__sn0.95__s1 step 175: val=0.2443 acc=92.10% active_sn=12 train_s=1034.0
+ggn__sn0.95__s1 step 200: val=0.2181 acc=93.06% active_sn=12 train_s=1186.7
+ggn__sn0.95__s1 step 225: val=0.2405 acc=92.84% active_sn=12 train_s=1337.6
+ggn__sn0.95__s1 step 250: val=0.2088 acc=94.14% active_sn=12 train_s=1501.2
+ggn__sn0.95__s1: completed

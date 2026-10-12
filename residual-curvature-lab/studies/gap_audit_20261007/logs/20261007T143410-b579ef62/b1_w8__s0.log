@@ -1,0 +1,17 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/scripts/check4b_headroom.py", line 236, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/scripts/check4b_headroom.py", line 226, in main
+    work(args.run, args.unit)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/scripts/check4b_headroom.py", line 137, in work
+    rows, operators, oracle, info = score_state(source, unit, protocol['best_cheap_family'], x, y,
+                                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                 c['solver']['tolerance64'])
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/studies/gap_audit_20261007/scripts/check4b_headroom.py", line 101, in score_state
+    raise RuntimeError(f'Cached and shared solves disagree for {name}')
+RuntimeError: Cached and shared solves disagree for exact

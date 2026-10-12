@@ -1,0 +1,12 @@
+2026-10-11T14:05:01Z start topfree__constant__lr0.01_c64__s4
+2026-10-11T14:05:09Z start topfree__constant__lr0.01_c64__s5
+2026-10-11T14:05:11Z start topfree__constant__lr0.01_c64__s6
+2026-10-11T14:06:13Z start topfree__wsd__lr0.01_c64__s4
+2026-10-11T14:08:24Z done topfree__constant__lr0.01_c64__s4
+2026-10-11T14:08:24Z start topfree__wsd__lr0.01_c64__s5
+2026-10-11T14:08:34Z done topfree__constant__lr0.01_c64__s5
+2026-10-11T14:08:34Z start topfree__wsd__lr0.01_c64__s6
+2026-10-11T14:08:36Z done topfree__constant__lr0.01_c64__s6
+2026-10-11T14:08:51Z done topfree__wsd__lr0.01_c64__s4
+2026-10-11T14:10:15Z done topfree__wsd__lr0.01_c64__s5
+2026-10-11T14:10:24Z done topfree__wsd__lr0.01_c64__s6

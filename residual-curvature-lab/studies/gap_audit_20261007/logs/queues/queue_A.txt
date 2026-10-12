@@ -1,0 +1,28 @@
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T122018-998da6a3 ggn_exact_trace__gamma0.001__s0
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T122018-998da6a3 ggn_exact_trace__gamma0.01__s0
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T122018-998da6a3 ggn_exact_trace__gamma0.1__s0
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T122018-998da6a3 ggn_exact_trace__gamma0.0001__s0
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T122018-998da6a3 searched_soap_tuned__b0.9-0.99_pf100__s0
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 ggn_exact_trace__gamma0.001__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 ggn_exact_trace__gamma0.001__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 ggn_exact_trace__gamma0.001__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 dense_ef__gamma0.001__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 dense_ef__gamma0.001__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 dense_ef__gamma0.001__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap_tuned__b0.9-0.99_pf10__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap_tuned__b0.9-0.99_pf10__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap_tuned__b0.9-0.99_pf10__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 soap_gradient_map__default__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 soap_gradient_map__default__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 soap_gradient_map__default__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap__default__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap__default__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 searched_soap__default__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 native_soap__lr0.01__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 native_soap__lr0.01__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 native_soap__lr0.01__s3
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 adam_native__lr0.01__s1
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 adam_native__lr0.01__s2
+studies/gap_audit_20261007/scripts/check1_train.py /Users/georgtirpitz/skipsoap-study-data/gap_audit_20261007/runs/20261007T143302-baba2664 adam_native__lr0.01__s3
+STOP
+END

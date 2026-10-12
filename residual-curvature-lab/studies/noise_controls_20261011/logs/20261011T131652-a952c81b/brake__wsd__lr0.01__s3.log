@@ -1,0 +1,22 @@
+brake__wsd__lr0.01__s3 step 10: val=1.7525 ema.98=1.9475 lr=1.00e-02 train_s=1.2
+brake__wsd__lr0.01__s3 step 25: val=1.1972 ema.98=1.4874 lr=1.00e-02 train_s=3.4
+brake__wsd__lr0.01__s3 step 50: val=0.7555 ema.98=1.0205 lr=1.00e-02 train_s=6.3
+brake__wsd__lr0.01__s3 step 75: val=0.5088 ema.98=0.7340 lr=1.00e-02 train_s=9.6
+brake__wsd__lr0.01__s3 step 100: val=0.3885 ema.98=0.5410 lr=1.00e-02 train_s=12.8
+brake__wsd__lr0.01__s3 step 125: val=0.3112 ema.98=0.4147 lr=1.00e-02 train_s=16.2
+brake__wsd__lr0.01__s3 step 150: val=0.2611 ema.98=0.3271 lr=1.00e-02 train_s=19.0
+brake__wsd__lr0.01__s3 step 175: val=0.2601 ema.98=0.2671 lr=1.00e-02 train_s=22.4
+brake__wsd__lr0.01__s3 step 200: val=0.2283 ema.98=0.2286 lr=1.00e-02 train_s=25.3
+brake__wsd__lr0.01__s3 step 225: val=0.1998 ema.98=0.2034 lr=1.00e-02 train_s=28.6
+brake__wsd__lr0.01__s3 step 250: val=0.1980 ema.98=0.1862 lr=1.00e-02 train_s=31.3
+brake__wsd__lr0.01__s3 step 275: val=0.1872 ema.98=0.1707 lr=1.00e-02 train_s=34.8
+brake__wsd__lr0.01__s3 step 300: val=0.1858 ema.98=0.1590 lr=1.00e-02 train_s=38.0
+brake__wsd__lr0.01__s3 step 325: val=0.1764 ema.98=0.1538 lr=1.00e-02 train_s=41.5
+brake__wsd__lr0.01__s3 step 350: val=0.1845 ema.98=0.1458 lr=1.00e-02 train_s=44.3
+brake__wsd__lr0.01__s3 step 375: val=0.1706 ema.98=0.1400 lr=1.00e-02 train_s=47.8
+brake__wsd__lr0.01__s3 step 400: val=0.1627 ema.98=0.1361 lr=1.00e-02 train_s=50.4
+brake__wsd__lr0.01__s3 step 425: val=0.1497 ema.98=0.1316 lr=7.60e-03 train_s=54.5
+brake__wsd__lr0.01__s3 step 450: val=0.1492 ema.98=0.1283 lr=5.10e-03 train_s=57.5
+brake__wsd__lr0.01__s3 step 475: val=0.1354 ema.98=0.1251 lr=2.60e-03 train_s=61.5
+brake__wsd__lr0.01__s3 step 500: val=0.1306 ema.98=0.1245 lr=1.00e-04 train_s=64.6
+brake__wsd__lr0.01__s3: completed

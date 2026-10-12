@@ -1,0 +1,24 @@
+{
+  "seconds": {
+    "dryrun": 78.111493,
+    "gate": 253.64895241701743,
+    "tune": 11310.161306536116,
+    "eval": 19044.22850041598,
+    "check2c": 574.638516,
+    "check3": 606.781795,
+    "check4a": 1911.0,
+    "check4b": 2379.0
+  },
+  "cpu_hours": {
+    "section_4_dry_run": 0.021697636944444442,
+    "check1_with_2a_2b": 8.502232988713642,
+    "check2c": 0.15962181,
+    "check3": 0.1685504986111111,
+    "check4": 1.1916666666666667
+  },
+  "sleep_window_utc": [
+    "2026-10-07T13:00:05+00:00",
+    "2026-10-07T13:56:23+00:00"
+  ],
+  "method": "Actual CPU-hours per check: summed single-threaded process wall time, sleep excluded.\n\nCheck-1 units record their own wall time (perf_counter, which stops during sleep). Other\nunits use driver-log start/done stamps or run-file modification times, minus any overlap\nwith the recorded sleep window (DEVIATIONS #10). Interrupted attempts are counted.\nUsage: ledger.py RUN_ID ... (dry run, gate, tune, eval, 2c, 3, 4a, 4b in that order)"
+}

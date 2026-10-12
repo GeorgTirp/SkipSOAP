@@ -1,0 +1,258 @@
+[
+  {
+    "method": "adam_native",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_native",
+    "step": 10,
+    "training_seconds": 0.775981497077737,
+    "validation_loss": 2.111206175681445,
+    "validation_accuracy": 0.204,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_native",
+    "step": 25,
+    "training_seconds": 1.919646623195149,
+    "validation_loss": 1.7381995606263771,
+    "validation_accuracy": 0.402,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_native",
+    "step": 50,
+    "training_seconds": 3.8958802889101207,
+    "validation_loss": 1.2880076863671444,
+    "validation_accuracy": 0.5784,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_searched",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_searched",
+    "step": 10,
+    "training_seconds": 9.5272222510539,
+    "validation_loss": 1.9256581507544481,
+    "validation_accuracy": 0.259,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_searched",
+    "step": 25,
+    "training_seconds": 23.935466336086392,
+    "validation_loss": 1.6242072370615857,
+    "validation_accuracy": 0.4322,
+    "validation_examples": 5000
+  },
+  {
+    "method": "adam_searched",
+    "step": 50,
+    "training_seconds": 48.208139501162805,
+    "validation_loss": 1.2391080330459014,
+    "validation_accuracy": 0.5778,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_native",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_native",
+    "step": 10,
+    "training_seconds": 3.247537955874577,
+    "validation_loss": 2.122961286123975,
+    "validation_accuracy": 0.196,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_native",
+    "step": 25,
+    "training_seconds": 6.546500578930136,
+    "validation_loss": 1.7579657236751969,
+    "validation_accuracy": 0.4016,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_native",
+    "step": 50,
+    "training_seconds": 14.664172245946247,
+    "validation_loss": 1.2349576393154835,
+    "validation_accuracy": 0.6028,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_searched",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_searched",
+    "step": 10,
+    "training_seconds": 10.655971416039392,
+    "validation_loss": 1.932400934196792,
+    "validation_accuracy": 0.2334,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_searched",
+    "step": 25,
+    "training_seconds": 25.488545792235527,
+    "validation_loss": 1.4731137408086366,
+    "validation_accuracy": 0.4882,
+    "validation_examples": 5000
+  },
+  {
+    "method": "parsec_searched",
+    "step": 50,
+    "training_seconds": 54.318490876292344,
+    "validation_loss": 1.0070974347097867,
+    "validation_accuracy": 0.6488,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha0",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha0",
+    "step": 10,
+    "training_seconds": 0.7893616690998897,
+    "validation_loss": 2.120316272164237,
+    "validation_accuracy": 0.2438,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha0",
+    "step": 25,
+    "training_seconds": 1.950112920254469,
+    "validation_loss": 1.797664021186197,
+    "validation_accuracy": 0.349,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha0",
+    "step": 50,
+    "training_seconds": 3.817650709184818,
+    "validation_loss": 1.365507752905669,
+    "validation_accuracy": 0.609,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha1",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha1",
+    "step": 10,
+    "training_seconds": 0.7504706250037998,
+    "validation_loss": 2.1364066278981895,
+    "validation_accuracy": 0.2428,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha1",
+    "step": 25,
+    "training_seconds": 1.872569957980886,
+    "validation_loss": 1.8070054031503082,
+    "validation_accuracy": 0.3416,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ni_soap_alpha1",
+    "step": 50,
+    "training_seconds": 3.9301407068851404,
+    "validation_loss": 1.40689990178069,
+    "validation_accuracy": 0.5836,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ggn_exact_trace",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ggn_exact_trace",
+    "step": 10,
+    "training_seconds": 36.02315625094343,
+    "validation_loss": 1.0981246643377511,
+    "validation_accuracy": 0.731,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ggn_exact_trace",
+    "step": 25,
+    "training_seconds": 97.14759391889675,
+    "validation_loss": 0.5373672828857413,
+    "validation_accuracy": 0.8542,
+    "validation_examples": 5000
+  },
+  {
+    "method": "ggn_exact_trace",
+    "step": 50,
+    "training_seconds": 193.69007462786976,
+    "validation_loss": 0.3276759798859086,
+    "validation_accuracy": 0.902,
+    "validation_examples": 5000
+  },
+  {
+    "method": "wasserstein_tensor",
+    "step": 0,
+    "training_seconds": 0.0,
+    "validation_loss": 2.4571887046287366,
+    "validation_accuracy": 0.1034,
+    "validation_examples": 5000
+  },
+  {
+    "method": "wasserstein_tensor",
+    "step": 10,
+    "training_seconds": 36.371466834971216,
+    "validation_loss": 1.1291105998734094,
+    "validation_accuracy": 0.7236,
+    "validation_examples": 5000
+  },
+  {
+    "method": "wasserstein_tensor",
+    "step": 25,
+    "training_seconds": 96.76202479092171,
+    "validation_loss": 0.542093207497472,
+    "validation_accuracy": 0.8364,
+    "validation_examples": 5000
+  },
+  {
+    "method": "wasserstein_tensor",
+    "step": 50,
+    "training_seconds": 196.41229691682383,
+    "validation_loss": 0.38163004095896336,
+    "validation_accuracy": 0.8844,
+    "validation_examples": 5000
+  }
+]

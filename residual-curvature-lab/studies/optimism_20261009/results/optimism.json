@@ -1,0 +1,982 @@
+{
+ "readings": {
+  "calibration_spearman": 0.56,
+  "calibration_mae": 0.24070930476823627,
+  "ordering_r_states": 0,
+  "ordering_share_states": 3,
+  "sign_points_r_above_1": 2,
+  "sign_negative_held_out": 1,
+  "mechanism_spearman_gradient": 0.8626086956521739,
+  "mechanism_mae_gradient": 0.1529183742165969,
+  "mechanism_spearman_momentum": 0.9,
+  "calibration_verdict": "partial"
+ },
+ "states": [
+  {
+   "state": "searched_soap-10",
+   "mu": 0.0006173282105148748,
+   "mu_ef": 0.0005447458540982873,
+   "theory": {
+    "sgd": {
+     "optimism": 0.5857624632800922,
+     "signal": 6.659531718659106,
+     "signal_from_batch": 12.664789882190062,
+     "r": 0.08795850639750917,
+     "noise_scale_B_r": 45.034755275524695,
+     "predicted_search_share": 0.8383054024941432,
+     "predicted_fixed_share": 0.9191527012470716
+    },
+    "soap_map": {
+     "optimism": 0.15876416005886984,
+     "signal": 1.000249567942691,
+     "signal_from_batch": 1.703234747312172,
+     "r": 0.15872454750009568,
+     "noise_scale_B_r": 81.26696832004899,
+     "predicted_search_share": 0.7260357557065,
+     "predicted_fixed_share": 0.8630178778532499
+    },
+    "exact_ggn": {
+     "optimism": 3.230902459636135,
+     "signal": 9.296941751131298,
+     "signal_from_batch": 9.931257321171273,
+     "r": 0.3475231475170835,
+     "noise_scale_B_r": 177.93185152874676,
+     "predicted_search_share": 0.4842045598141717,
+     "predicted_fixed_share": 0.7421022799070859
+    },
+    "ef_newton": {
+     "optimism": 3.0513513262582426,
+     "signal": 12.246139228008078,
+     "signal_from_batch": 9.100819398684251,
+     "r": 0.2491684333687399,
+     "noise_scale_B_r": 127.57423788479483,
+     "predicted_search_share": 0.6010651138585276,
+     "predicted_fixed_share": 0.8005325569292638
+    }
+   },
+   "rows": [
+    {
+     "state": "searched_soap-10",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.050713225813045604,
+     "held_out_decrease": 0.02740231290452294,
+     "measured_share": 0.5403385894942202,
+     "realized_rho": 0.7056794873306053,
+     "realized_search_share": 0.4113589746612105,
+     "selected_alpha": 0.3146917517421331,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.056998739111449925,
+     "held_out_decrease": 0.03319058585788376,
+     "measured_share": 0.5823038610202593,
+     "realized_rho": 0.7041277394930848,
+     "realized_search_share": 0.40825547898616965,
+     "selected_alpha": 0.952349047099762,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.18615145548774414,
+     "held_out_decrease": 0.13532717510040598,
+     "measured_share": 0.7269734998624046,
+     "realized_rho": 0.6975865666479182,
+     "realized_search_share": 0.39517313329583637,
+     "selected_alpha": 31.935810756436616,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.14545574419159868,
+     "held_out_decrease": 0.1184517367282587,
+     "measured_share": 0.8143489786985003,
+     "realized_rho": 0.807185728772307,
+     "realized_search_share": 0.614371457544614,
+     "selected_alpha": 24.984510479427005,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.055680852393262814,
+     "held_out_decrease": 0.030303099012550294,
+     "measured_share": 0.5442283605596682,
+     "realized_rho": 0.7016097086126372,
+     "realized_search_share": 0.4032194172252743,
+     "selected_alpha": 0.45097320879806946,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.06790411890958703,
+     "held_out_decrease": 0.039564278384018714,
+     "measured_share": 0.5826491679642845,
+     "realized_rho": 0.7132485321324719,
+     "realized_search_share": 0.4264970642649437,
+     "selected_alpha": 2.0009062077075694,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.048855491927553896,
+     "held_out_decrease": 0.03534260102633041,
+     "measured_share": 0.7234110154645198,
+     "realized_rho": 0.9295863478043407,
+     "realized_search_share": 0.8591726956086814,
+     "selected_alpha": 61.81152808657687,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-10",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.03707893696667619,
+     "held_out_decrease": 0.028842822634306542,
+     "measured_share": 0.7778762012575587,
+     "realized_rho": 1.1769908794646107,
+     "realized_search_share": 1.3539817589292213,
+     "selected_alpha": 65.57346270166825,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -4.665939193757054e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  },
+  {
+   "state": "searched_soap-25",
+   "mu": 0.0007581516313266551,
+   "mu_ef": 0.000714096170788307,
+   "theory": {
+    "sgd": {
+     "optimism": 0.7906491845643068,
+     "signal": 5.70330961522095,
+     "signal_from_batch": 4.9360003014053815,
+     "r": 0.13862988999478973,
+     "noise_scale_B_r": 70.97850367733234,
+     "predicted_search_share": 0.7564970123954429,
+     "predicted_fixed_share": 0.8782485061977214
+    },
+    "soap_map": {
+     "optimism": 0.1941990900404291,
+     "signal": 0.6842022397286579,
+     "signal_from_batch": 0.6806135695402779,
+     "r": 0.28383287683689096,
+     "noise_scale_B_r": 145.32243294048817,
+     "predicted_search_share": 0.5578351638163391,
+     "predicted_fixed_share": 0.7789175819081696
+    },
+    "exact_ggn": {
+     "optimism": 4.581248164319461,
+     "signal": 7.787322113516247,
+     "signal_from_batch": 7.4326500575872645,
+     "r": 0.5882957064750038,
+     "noise_scale_B_r": 301.20740171520197,
+     "predicted_search_share": 0.2592113621201654,
+     "predicted_fixed_share": 0.6296056810600827
+    },
+    "ef_newton": {
+     "optimism": 3.4970452629371365,
+     "signal": 12.340537294672986,
+     "signal_from_batch": 5.681950126985621,
+     "r": 0.2833786876076051,
+     "noise_scale_B_r": 145.0898880550938,
+     "predicted_search_share": 0.5583864835158483,
+     "predicted_fixed_share": 0.7791932417579241
+    }
+   },
+   "rows": [
+    {
+     "state": "searched_soap-25",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.03686869018439287,
+     "held_out_decrease": 0.020542119925343827,
+     "measured_share": 0.5571697780042006,
+     "realized_rho": 0.8974525810597853,
+     "realized_search_share": 0.7949051621195706,
+     "selected_alpha": 0.7227125489040626,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.07062614950820789,
+     "held_out_decrease": 0.025897572980251304,
+     "measured_share": 0.3666853305834207,
+     "realized_rho": 0.7492382742070804,
+     "realized_search_share": 0.4984765484141609,
+     "selected_alpha": 3.392336898662469,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.2512297542519685,
+     "held_out_decrease": 0.08505148094035425,
+     "measured_share": 0.3385406366120658,
+     "realized_rho": 0.5696951126125146,
+     "realized_search_share": 0.1393902252250292,
+     "selected_alpha": 77.8074515590612,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.25163698539940127,
+     "held_out_decrease": 0.12002076691458463,
+     "measured_share": 0.4769599616848303,
+     "realized_rho": 0.6680396970682293,
+     "realized_search_share": 0.3360793941364586,
+     "selected_alpha": 92.89234172110031,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.046315545094271604,
+     "held_out_decrease": 0.01306933220280082,
+     "measured_share": 0.2821802523580201,
+     "realized_rho": 0.7094822654652877,
+     "realized_search_share": 0.4189645309305754,
+     "selected_alpha": 1.8487969339269703,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.09511003872185109,
+     "held_out_decrease": 0.021822475330885494,
+     "measured_share": 0.2294445005401084,
+     "realized_rho": 0.6436992810917005,
+     "realized_search_share": 0.287398562183401,
+     "selected_alpha": 11.290370648977925,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.06849931334402637,
+     "held_out_decrease": 0.033845412117742224,
+     "measured_share": 0.49409856048861817,
+     "realized_rho": 0.7964726387477988,
+     "realized_search_share": 0.5929452774955977,
+     "selected_alpha": 147.61498027712784,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-25",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.04104248183579373,
+     "held_out_decrease": 0.029230771102529696,
+     "measured_share": 0.7122076881090832,
+     "realized_rho": 1.2414876366641954,
+     "realized_search_share": 1.4829752733283907,
+     "selected_alpha": 116.62116258253107,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -4.130929982454101e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  },
+  {
+   "state": "searched_soap-50",
+   "mu": 0.0009194337782497416,
+   "mu_ef": 0.0009061046554590138,
+   "theory": {
+    "sgd": {
+     "optimism": 1.0027165146290817,
+     "signal": 3.9996832354430025,
+     "signal_from_batch": 6.531995812292184,
+     "r": 0.25069898179524747,
+     "noise_scale_B_r": 128.3578786791667,
+     "predicted_search_share": 0.5991058033238417,
+     "predicted_fixed_share": 0.7995529016619208
+    },
+    "soap_map": {
+     "optimism": 0.22135279922035161,
+     "signal": 0.4024306434483231,
+     "signal_from_batch": 0.6261032818722414,
+     "r": 0.5500396225387741,
+     "noise_scale_B_r": 281.62028673985236,
+     "predicted_search_share": 0.2902895970647809,
+     "predicted_fixed_share": 0.6451447985323904
+    },
+    "exact_ggn": {
+     "optimism": 5.836484912060749,
+     "signal": 3.8434256886699165,
+     "signal_from_batch": 3.5600735221540916,
+     "r": 1.5185632258394373,
+     "noise_scale_B_r": 777.5043716297919,
+     "predicted_search_share": -0.20589644941972823,
+     "predicted_fixed_share": 0.3970517752901359
+    },
+    "ef_newton": {
+     "optimism": 4.01822474862283,
+     "signal": 8.566850097347396,
+     "signal_from_batch": 3.165283027158398,
+     "r": 0.46904342937750443,
+     "noise_scale_B_r": 240.15023584128227,
+     "predicted_search_share": 0.36143013882679037,
+     "predicted_fixed_share": 0.6807150694133952
+    }
+   },
+   "rows": [
+    {
+     "state": "searched_soap-50",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.03612310956156928,
+     "held_out_decrease": 0.0057226069593883655,
+     "measured_share": 0.15841955548246997,
+     "realized_rho": 0.6021876759172308,
+     "realized_search_share": 0.20437535183446154,
+     "selected_alpha": 0.6837153270089107,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.05242980038948453,
+     "held_out_decrease": 0.0029877222872760067,
+     "measured_share": 0.05698519286896299,
+     "realized_rho": 0.524127384446818,
+     "realized_search_share": 0.04825476889363589,
+     "selected_alpha": 2.7584130635567754,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.19863951129756097,
+     "held_out_decrease": -0.012308147447687795,
+     "measured_share": -0.06196223182028601,
+     "realized_rho": 0.32472155783757306,
+     "realized_search_share": -0.3505568843248539,
+     "selected_alpha": 78.77225131726436,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.16755324840271024,
+     "held_out_decrease": -0.019627658068935128,
+     "measured_share": -0.11714280836716767,
+     "realized_rho": 0.4342227427443559,
+     "realized_search_share": -0.1315545145112882,
+     "selected_alpha": 76.95653096466368,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.03481155213304565,
+     "held_out_decrease": -0.0027365843897413644,
+     "measured_share": -0.07861138679718908,
+     "realized_rho": 0.4550624374577167,
+     "realized_search_share": -0.08987512508456663,
+     "selected_alpha": 1.6966876601463712,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.057969369389863856,
+     "held_out_decrease": 0.0006404694234010966,
+     "measured_share": 0.011048411085753244,
+     "realized_rho": 0.4954140883218784,
+     "realized_search_share": -0.009171823356243225,
+     "selected_alpha": 12.242747927120522,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.07622169832444892,
+     "held_out_decrease": 0.04514956906957149,
+     "measured_share": 0.5923453565333283,
+     "realized_rho": 1.0051865725602815,
+     "realized_search_share": 1.010373145120563,
+     "selected_alpha": 179.54036823775903,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "searched_soap-50",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.015129965246477917,
+     "held_out_decrease": 0.021261433796181062,
+     "measured_share": 1.4052533135282965,
+     "realized_rho": 2.1221660488036687,
+     "realized_search_share": 3.2443320976073373,
+     "selected_alpha": 73.66038148258951,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -3.1177548486506927e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  },
+  {
+   "state": "exact_tensor_ggn-10",
+   "mu": 0.011460881333679406,
+   "mu_ef": 0.008807406038409854,
+   "theory": {
+    "sgd": {
+     "optimism": 9.52076475556055,
+     "signal": 74.85338678280769,
+     "signal_from_batch": 179.05802999257133,
+     "r": 0.1271921707856147,
+     "noise_scale_B_r": 65.12239144223473,
+     "predicted_search_share": 0.7743203438026612,
+     "predicted_fixed_share": 0.8871601719013307
+    },
+    "soap_map": {
+     "optimism": 1.3157382247293932,
+     "signal": 4.8600241760645,
+     "signal_from_batch": 9.055851984195538,
+     "r": 0.2707266830501321,
+     "noise_scale_B_r": 138.61206172166763,
+     "predicted_search_share": 0.5739025761223407,
+     "predicted_fixed_share": 0.7869512880611704
+    },
+    "exact_ggn": {
+     "optimism": 3.629955681755732,
+     "signal": 6.239341265196134,
+     "signal_from_batch": 7.351380688729394,
+     "r": 0.5817850839485416,
+     "noise_scale_B_r": 297.8739629816533,
+     "predicted_search_share": 0.2643942722025717,
+     "predicted_fixed_share": 0.6321971361012859
+    },
+    "ef_newton": {
+     "optimism": 4.04322303740436,
+     "signal": 10.595410516566817,
+     "signal_from_batch": 7.457525550749443,
+     "r": 0.38160135759557784,
+     "noise_scale_B_r": 195.37989508893585,
+     "predicted_search_share": 0.4475955665537495,
+     "predicted_fixed_share": 0.7237977832768747
+    }
+   },
+   "rows": [
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.028424053238703673,
+     "held_out_decrease": 0.00838806602665959,
+     "measured_share": 0.2951045002701431,
+     "realized_rho": 0.6107255689575345,
+     "realized_search_share": 0.22145113791506899,
+     "selected_alpha": 0.04965510232141649,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.04925592557070435,
+     "held_out_decrease": 0.015570399989159545,
+     "measured_share": 0.3161122201796622,
+     "realized_rho": 0.6236958878008633,
+     "realized_search_share": 0.24739177560172654,
+     "selected_alpha": 0.3028356514987967,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.1698486324401398,
+     "held_out_decrease": 0.03916771325972124,
+     "measured_share": 0.2306036421784274,
+     "realized_rho": 0.5714933254519996,
+     "realized_search_share": 0.1429866509039992,
+     "selected_alpha": 7.4303783326290365,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.14140315937517678,
+     "held_out_decrease": 0.052105280547044386,
+     "measured_share": 0.3684873858355348,
+     "realized_rho": 0.6692698706542367,
+     "realized_search_share": 0.3385397413084734,
+     "selected_alpha": 6.955492543033419,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.018507694349833237,
+     "held_out_decrease": 0.0071656059366791425,
+     "measured_share": 0.3871690228525796,
+     "realized_rho": 0.6375325488764563,
+     "realized_search_share": 0.27506509775291255,
+     "selected_alpha": 0.049988732684128366,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.03459749556250702,
+     "held_out_decrease": 0.014363650647977622,
+     "measured_share": 0.4151644624688781,
+     "realized_rho": 0.6679065007381015,
+     "realized_search_share": 0.3358130014762031,
+     "selected_alpha": 0.5734021207289425,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.05352261514171586,
+     "held_out_decrease": 0.03778712171748594,
+     "measured_share": 0.7060029039581518,
+     "realized_rho": 0.8795307497554626,
+     "realized_search_share": 0.7590614995109253,
+     "selected_alpha": 20.754146452864333,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-10",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.01588673732733703,
+     "held_out_decrease": 0.01921905500870391,
+     "measured_share": 1.2097546911430839,
+     "realized_rho": 1.1477988863903936,
+     "realized_search_share": 1.2955977727807872,
+     "selected_alpha": 6.98316905044861,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -2.338684693455802e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  },
+  {
+   "state": "exact_tensor_ggn-25",
+   "mu": 0.02656200619903188,
+   "mu_ef": 0.021520512135475806,
+   "theory": {
+    "sgd": {
+     "optimism": 24.05112846014881,
+     "signal": 67.39782147992922,
+     "signal_from_batch": 34.292091739826304,
+     "r": 0.35685320284886557,
+     "noise_scale_B_r": 182.70883985861917,
+     "predicted_search_share": 0.47399880532453736,
+     "predicted_fixed_share": 0.7369994026622687
+    },
+    "soap_map": {
+     "optimism": 2.2915873426415474,
+     "signal": 5.5798955330931985,
+     "signal_from_batch": 3.5113842634412333,
+     "r": 0.41068642397525545,
+     "noise_scale_B_r": 210.2714490753308,
+     "predicted_search_share": 0.4177495196729004,
+     "predicted_fixed_share": 0.7088747598364502
+    },
+    "exact_ggn": {
+     "optimism": 3.9474819795169593,
+     "signal": 4.128883117891236,
+     "signal_from_batch": 1.99440509340095,
+     "r": 0.9560653248845357,
+     "noise_scale_B_r": 489.50544634088226,
+     "predicted_search_share": 0.022460740219940125,
+     "predicted_fixed_share": 0.5112303701099701
+    },
+    "ef_newton": {
+     "optimism": 3.2372597683444986,
+     "signal": 8.55041824803432,
+     "signal_from_batch": 2.5138430754500543,
+     "r": 0.3786083527655178,
+     "noise_scale_B_r": 193.8474766159451,
+     "predicted_search_share": 0.45073834493165327,
+     "predicted_fixed_share": 0.7253691724658267
+    }
+   },
+   "rows": [
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.017101767117262023,
+     "held_out_decrease": 0.012315495822326245,
+     "measured_share": 0.7201300156809727,
+     "realized_rho": 0.8955796753670375,
+     "realized_search_share": 0.7911593507340751,
+     "selected_alpha": 0.09612375934019096,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.04059948040046085,
+     "held_out_decrease": 0.017390475636888947,
+     "measured_share": 0.42834232027983155,
+     "realized_rho": 0.7540760662923472,
+     "realized_search_share": 0.5081521325846945,
+     "selected_alpha": 0.7192034052561498,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.17180734155364924,
+     "held_out_decrease": 0.01082992054730103,
+     "measured_share": 0.06303526059693576,
+     "realized_rho": 0.45080491970685005,
+     "realized_search_share": -0.0983901605862999,
+     "selected_alpha": 14.555896337834712,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.13320468999576462,
+     "held_out_decrease": -0.002457175467988265,
+     "measured_share": -0.018446613764623403,
+     "realized_rho": 0.6118536462972852,
+     "realized_search_share": 0.22370729259457045,
+     "selected_alpha": 13.3147060431596,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.0,
+     "held_out_decrease": 0.0,
+     "measured_share": NaN,
+     "realized_rho": NaN,
+     "realized_search_share": NaN,
+     "selected_alpha": 0.0,
+     "bracketed": false,
+     "rejected": true
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.0016056732821373987,
+     "held_out_decrease": -0.006423033235358672,
+     "measured_share": -4.000211815699283,
+     "realized_rho": -1.1655906498822082,
+     "realized_search_share": -3.3311812997644163,
+     "selected_alpha": 0.6738486138865921,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.06932862153326419,
+     "held_out_decrease": -0.020162419923550307,
+     "measured_share": -0.29082389751361615,
+     "realized_rho": 0.6704563722376765,
+     "realized_search_share": 0.340912744475353,
+     "selected_alpha": 51.35610788011104,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-25",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.02382475799355016,
+     "held_out_decrease": -0.015221339764034114,
+     "measured_share": -0.6388874870483401,
+     "realized_rho": 0.7272040664197699,
+     "realized_search_share": 0.45440813283953974,
+     "selected_alpha": 20.193058006878253,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -3.26542413874707e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  },
+  {
+   "state": "exact_tensor_ggn-50",
+   "mu": 0.04699341774926163,
+   "mu_ef": 0.04311901462059,
+   "theory": {
+    "sgd": {
+     "optimism": 48.073360033672394,
+     "signal": 224.07147061512248,
+     "signal_from_batch": 128.13025205426715,
+     "r": 0.21454476065918204,
+     "noise_scale_B_r": 109.8469174575012,
+     "predicted_search_share": 0.646707527612667,
+     "predicted_fixed_share": 0.8233537638063335
+    },
+    "soap_map": {
+     "optimism": 3.510127749284504,
+     "signal": 6.803258171558201,
+     "signal_from_batch": 6.114316792726818,
+     "r": 0.515948044417746,
+     "noise_scale_B_r": 264.16539874188595,
+     "predicted_search_share": 0.3193064283203528,
+     "predicted_fixed_share": 0.6596532141601764
+    },
+    "exact_ggn": {
+     "optimism": 3.884426251074259,
+     "signal": 2.8564477396482433,
+     "signal_from_batch": 1.2014347074577318,
+     "r": 1.3598800346169142,
+     "noise_scale_B_r": 696.2585777238601,
+     "predicted_search_share": -0.15249929205631613,
+     "predicted_fixed_share": 0.42375035397184196
+    },
+    "ef_newton": {
+     "optimism": 2.6454988199479494,
+     "signal": 5.875146042200078,
+     "signal_from_batch": 1.4806306163117382,
+     "r": 0.4502864781480877,
+     "noise_scale_B_r": 230.5466768118209,
+     "predicted_search_share": 0.37903788674487066,
+     "predicted_fixed_share": 0.6895189433724354
+    }
+   },
+   "rows": [
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "sgd",
+     "rhs": "gradient",
+     "own_decrease": 0.01690158604302705,
+     "held_out_decrease": 0.019655025691126593,
+     "measured_share": 1.1629101340602,
+     "realized_rho": 0.9990782403946014,
+     "realized_search_share": 0.9981564807892027,
+     "selected_alpha": 0.0759575862648264,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "soap_map",
+     "rhs": "gradient",
+     "own_decrease": 0.034902079180125944,
+     "held_out_decrease": 0.020845758956357055,
+     "measured_share": 0.597264101338327,
+     "realized_rho": 0.6481990846610164,
+     "realized_search_share": 0.2963981693220328,
+     "selected_alpha": 0.6048618445131321,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "exact_ggn",
+     "rhs": "gradient",
+     "own_decrease": 0.17141179802291592,
+     "held_out_decrease": 0.017227123199981945,
+     "measured_share": 0.10050138554452864,
+     "realized_rho": 0.35947719044402987,
+     "realized_search_share": -0.28104561911194026,
+     "selected_alpha": 20.019672141721124,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "ef_newton",
+     "rhs": "gradient",
+     "own_decrease": 0.12576400792239767,
+     "held_out_decrease": 0.0013892172743422693,
+     "measured_share": 0.011046222979785138,
+     "realized_rho": 0.5587538260771885,
+     "realized_search_share": 0.11750765215437697,
+     "selected_alpha": 17.057458792717963,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "sgd",
+     "rhs": "momentum",
+     "own_decrease": 0.004497536545292891,
+     "held_out_decrease": 0.007580781999241684,
+     "measured_share": 1.6855409451148784,
+     "realized_rho": 1.2987384463597929,
+     "realized_search_share": 1.5974768927195857,
+     "selected_alpha": 0.0407547637687452,
+     "bracketed": true,
+     "rejected": false
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "soap_map",
+     "rhs": "momentum",
+     "own_decrease": 0.015751847936218533,
+     "held_out_decrease": 0.00596880237119865,
+     "measured_share": 0.37892711987616806,
+     "realized_rho": 0.5962664031158127,
+     "realized_search_share": 0.1925328062316254,
+     "selected_alpha": 1.825764389220975,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "exact_ggn",
+     "rhs": "momentum",
+     "own_decrease": 0.04163973299016038,
+     "held_out_decrease": -0.03646394942002519,
+     "measured_share": -0.8757008463200701,
+     "realized_rho": 0.18617166305861538,
+     "realized_search_share": -0.6276566738827692,
+     "selected_alpha": 38.88197679454893,
+     "bracketed": true,
+     "rejected": false,
+     "gate_difference": 0.0
+    },
+    {
+     "state": "exact_tensor_ggn-50",
+     "operator": "ef_newton",
+     "rhs": "momentum",
+     "own_decrease": 0.00911560299127201,
+     "held_out_decrease": -0.01664103019844941,
+     "measured_share": -1.8255545150861476,
+     "realized_rho": 0.2343386546071793,
+     "realized_search_share": -0.5313226907856414,
+     "selected_alpha": 13.261920147777868,
+     "bracketed": true,
+     "rejected": false
+    }
+   ],
+   "checks": {
+    "gradient_error": 0.0,
+    "sigma_min_eigenvalue_relative": -2.1391135610799238e-16,
+    "gate_soap_map_gradient": 0.0,
+    "gate_exact_ggn_gradient": 0.0,
+    "gate_soap_map_momentum": 0.0,
+    "gate_exact_ggn_momentum": 0.0
+   }
+  }
+ ]
+}

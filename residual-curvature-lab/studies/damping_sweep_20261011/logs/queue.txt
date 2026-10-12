@@ -1,0 +1,14 @@
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1024__s4
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1024__s5
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1024__s6
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1e+09__s4
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1e+09__s5
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c1e+09__s6
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c256__s4
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c256__s5
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c256__s6
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c4096__s4
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c4096__s5
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c4096__s6
+studies/damping_sweep_20261011/scripts/train.py /Users/georgtirpitz/skipsoap-study-data/damping_sweep_20261011/runs/20261011T141750-48966bdf topfree__constant__lr0.01_c64__s4
+STOP

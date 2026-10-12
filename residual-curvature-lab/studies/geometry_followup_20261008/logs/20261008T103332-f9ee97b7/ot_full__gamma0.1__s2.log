@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ot_full__gamma0.1__s2 step 10: val=0.7973488364476152 acc=79.62% train_s=81.6
+ot_full__gamma0.1__s2 step 25: val=0.4723110741972917 acc=85.78% train_s=214.3
+ot_full__gamma0.1__s2 step 50: val=0.3790561568498343 acc=88.46% train_s=436.4
+ot_full__gamma0.1__s2 step 75: val=0.3749438479466153 acc=88.40% train_s=688.3
+ot_full__gamma0.1__s2 step 100: val=0.37756541813057826 acc=87.40% train_s=906.6
+ot_full__gamma0.1__s2 step 125: val=0.3606511135760001 acc=89.40% train_s=1146.0
+ot_full__gamma0.1__s2 step 150: val=0.35597354707498496 acc=88.76% train_s=1372.3
+ot_full__gamma0.1__s2 step 175: val=0.3517666432480458 acc=88.30% train_s=1599.5
+ot_full__gamma0.1__s2 step 200: val=0.31972122069310016 acc=89.86% train_s=1839.4
+ot_full__gamma0.1__s2 step 225: val=0.324417978537973 acc=89.88% train_s=2058.2
+ot_full__gamma0.1__s2 step 250: val=0.3205594278938418 acc=90.64% train_s=2272.6
+ot_full__gamma0.1__s2 step 275: val=0.3344696199028542 acc=89.74% train_s=2476.1
+ot_full__gamma0.1__s2 step 300: val=0.30635239124992425 acc=90.58% train_s=2695.6
+ot_full__gamma0.1__s2 step 325: val=0.2818335164804518 acc=90.94% train_s=2914.8
+ot_full__gamma0.1__s2 step 350: val=0.30895367890282494 acc=91.04% train_s=3118.9
+ot_full__gamma0.1__s2 step 375: val=0.29320886386641276 acc=91.28% train_s=3347.9
+ot_full__gamma0.1__s2 step 400: val=0.3219687657629571 acc=90.60% train_s=3571.1
+ot_full__gamma0.1__s2 step 425: val=0.2965716782533931 acc=91.44% train_s=3794.9
+ot_full__gamma0.1__s2 step 450: val=0.3095902754750025 acc=90.58% train_s=4005.6
+ot_full__gamma0.1__s2 step 475: val=0.2898443259309356 acc=91.32% train_s=4225.4
+ot_full__gamma0.1__s2 step 500: val=0.2833973335315956 acc=91.32% train_s=4462.1
+ot_full__gamma0.1__s2: completed

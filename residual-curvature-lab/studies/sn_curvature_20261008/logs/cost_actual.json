@@ -1,0 +1,5 @@
+{
+  "main_run_seconds": 11119.0,
+  "cpu_hours": 3.088611111111111,
+  "method": "sum of per-unit wall time from driver start/done stamps (single-threaded processes); dry run excluded (~0.1 h)"
+}

@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ot_full__gamma0.1__s3 step 10: val=0.7703773116644704 acc=81.54% train_s=81.7
+ot_full__gamma0.1__s3 step 25: val=0.47113190215275347 acc=85.62% train_s=212.3
+ot_full__gamma0.1__s3 step 50: val=0.3934868663889706 acc=87.90% train_s=431.4
+ot_full__gamma0.1__s3 step 75: val=0.37044687168059093 acc=88.52% train_s=682.4
+ot_full__gamma0.1__s3 step 100: val=0.34082877913611637 acc=89.24% train_s=905.3
+ot_full__gamma0.1__s3 step 125: val=0.31360909427039424 acc=90.20% train_s=1137.8
+ot_full__gamma0.1__s3 step 150: val=0.3654826907489931 acc=88.40% train_s=1366.0
+ot_full__gamma0.1__s3 step 175: val=0.3091551749117219 acc=90.46% train_s=1592.8
+ot_full__gamma0.1__s3 step 200: val=0.34346852479939294 acc=88.98% train_s=1834.2
+ot_full__gamma0.1__s3 step 225: val=0.31868732432981994 acc=90.50% train_s=2052.6
+ot_full__gamma0.1__s3 step 250: val=0.31575525361975754 acc=90.42% train_s=2267.8
+ot_full__gamma0.1__s3 step 275: val=0.3271352181975385 acc=89.56% train_s=2468.7
+ot_full__gamma0.1__s3 step 300: val=0.32003041289497025 acc=90.30% train_s=2690.3
+ot_full__gamma0.1__s3 step 325: val=0.29543277039234955 acc=91.04% train_s=2908.5
+ot_full__gamma0.1__s3 step 350: val=0.30094351366963873 acc=90.52% train_s=3111.7
+ot_full__gamma0.1__s3 step 375: val=0.27163951023981925 acc=91.74% train_s=3342.2
+ot_full__gamma0.1__s3 step 400: val=0.275337792039427 acc=91.44% train_s=3565.6
+ot_full__gamma0.1__s3 step 425: val=0.27445683194067244 acc=91.36% train_s=3788.1
+ot_full__gamma0.1__s3 step 450: val=0.28107691475783786 acc=91.52% train_s=3999.7
+ot_full__gamma0.1__s3 step 475: val=0.28039557816093974 acc=92.08% train_s=4224.7
+ot_full__gamma0.1__s3 step 500: val=0.2701778633885366 acc=91.46% train_s=4454.9
+ot_full__gamma0.1__s3: completed

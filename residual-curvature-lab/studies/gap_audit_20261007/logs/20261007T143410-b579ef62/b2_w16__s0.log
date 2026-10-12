@@ -1,0 +1,5 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+b2_w16__s0 step 10: headroom=0.102137 best=0.036120
+b2_w16__s0 step 25: headroom=0.059154 best=0.033380
+b2_w16__s0 step 50: headroom=-0.015296 best=-0.009959

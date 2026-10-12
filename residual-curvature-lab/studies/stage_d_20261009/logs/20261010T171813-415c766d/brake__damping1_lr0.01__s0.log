@@ -1,0 +1,22 @@
+brake__damping1_lr0.01__s0 step 10: val=1.7816 acc=38.50% train_s=1.1
+brake__damping1_lr0.01__s0 step 25: val=1.3336 acc=59.88% train_s=3.2
+brake__damping1_lr0.01__s0 step 50: val=0.7791 acc=78.92% train_s=5.8
+brake__damping1_lr0.01__s0 step 75: val=0.5155 acc=85.24% train_s=9.0
+brake__damping1_lr0.01__s0 step 100: val=0.3926 acc=88.06% train_s=11.7
+brake__damping1_lr0.01__s0 step 125: val=0.3222 acc=90.78% train_s=14.8
+brake__damping1_lr0.01__s0 step 150: val=0.2813 acc=91.74% train_s=17.4
+brake__damping1_lr0.01__s0 step 175: val=0.2540 acc=92.44% train_s=20.7
+brake__damping1_lr0.01__s0 step 200: val=0.2396 acc=92.96% train_s=23.3
+brake__damping1_lr0.01__s0 step 225: val=0.2171 acc=93.32% train_s=26.8
+brake__damping1_lr0.01__s0 step 250: val=0.1943 acc=94.40% train_s=29.3
+brake__damping1_lr0.01__s0 step 275: val=0.1905 acc=94.18% train_s=32.6
+brake__damping1_lr0.01__s0 step 300: val=0.1732 acc=94.74% train_s=35.3
+brake__damping1_lr0.01__s0 step 325: val=0.1757 acc=94.72% train_s=38.6
+brake__damping1_lr0.01__s0 step 350: val=0.1700 acc=94.74% train_s=41.2
+brake__damping1_lr0.01__s0 step 375: val=0.1746 acc=94.80% train_s=44.3
+brake__damping1_lr0.01__s0 step 400: val=0.1802 acc=94.58% train_s=47.0
+brake__damping1_lr0.01__s0 step 425: val=0.1731 acc=94.82% train_s=50.1
+brake__damping1_lr0.01__s0 step 450: val=0.1646 acc=95.28% train_s=52.7
+brake__damping1_lr0.01__s0 step 475: val=0.1591 acc=95.12% train_s=55.9
+brake__damping1_lr0.01__s0 step 500: val=0.1579 acc=95.20% train_s=58.5
+brake__damping1_lr0.01__s0: completed

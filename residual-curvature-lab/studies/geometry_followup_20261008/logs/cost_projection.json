@@ -1,0 +1,25 @@
+{
+  "sequential_seconds": {
+    "gate": 394.23829164972994,
+    "tuning_worst_case": 5721.078599981265,
+    "evaluation_500": 20553.99162452377
+  },
+  "load_factor": 1.6,
+  "projected_cpu_hours": 11.853026007179896,
+  "budget_cpu_hours": 18,
+  "fallback_needed": false,
+  "inputs": {
+    "per_step": {
+      "parsec_default": 0.0726143539941404,
+      "parsec_split": 0.06636652100132778,
+      "ot_tensor": 3.666399604000617,
+      "ggn_full": 4.652277646033326,
+      "ot_full": 4.807251374993939
+    },
+    "lanczos_refresh_seconds": {
+      "8": 1.1397621249780059,
+      "16": 2.1575187499984168,
+      "32": 4.260822292009834
+    }
+  }
+}

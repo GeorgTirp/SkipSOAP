@@ -1,0 +1,12 @@
+soap__nosn__s3 step 10: val=1.8988 acc=32.94% active_sn=0 train_s=1.2
+soap__nosn__s3 step 25: val=1.2831 acc=57.74% active_sn=0 train_s=2.9
+soap__nosn__s3 step 50: val=0.8172 acc=73.24% active_sn=0 train_s=5.5
+soap__nosn__s3 step 75: val=0.5683 acc=81.42% active_sn=0 train_s=8.1
+soap__nosn__s3 step 100: val=0.4294 acc=86.54% active_sn=0 train_s=10.9
+soap__nosn__s3 step 125: val=0.3272 acc=90.14% active_sn=0 train_s=13.6
+soap__nosn__s3 step 150: val=0.2761 acc=91.76% active_sn=0 train_s=16.2
+soap__nosn__s3 step 175: val=0.2217 acc=93.08% active_sn=0 train_s=18.9
+soap__nosn__s3 step 200: val=0.2033 acc=93.84% active_sn=0 train_s=21.5
+soap__nosn__s3 step 225: val=0.2007 acc=94.00% active_sn=0 train_s=24.1
+soap__nosn__s3 step 250: val=0.2042 acc=93.86% active_sn=0 train_s=26.8
+soap__nosn__s3: completed

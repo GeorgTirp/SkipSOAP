@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 10: val=1.9500982045975237 acc=29.46% train_s=8.7
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 25: val=1.5744537199161461 acc=47.86% train_s=17.9
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 50: val=1.0692577336916367 acc=69.00% train_s=43.8
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 75: val=0.7253234366613575 acc=79.64% train_s=62.4
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 100: val=0.562317895878547 acc=83.02% train_s=85.1
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 125: val=0.4337117643377489 acc=87.18% train_s=100.1
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 150: val=0.3627444250850542 acc=89.16% train_s=121.5
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 175: val=0.30652362596847504 acc=91.30% train_s=136.6
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 200: val=0.2901650040733022 acc=91.76% train_s=158.2
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 225: val=0.2528288082926324 acc=92.62% train_s=173.5
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 250: val=0.2372607336207695 acc=93.20% train_s=196.0
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 275: val=0.21873409834236612 acc=93.84% train_s=211.6
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 300: val=0.21079745103268283 acc=93.82% train_s=231.7
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 325: val=0.19524681562671473 acc=94.50% train_s=245.8
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 350: val=0.21038741240280356 acc=94.12% train_s=265.1
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 375: val=0.20487735979294366 acc=93.74% train_s=279.1
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 400: val=0.17039382535040362 acc=95.12% train_s=298.7
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 425: val=0.1728300773815383 acc=95.12% train_s=313.7
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 450: val=0.16304090644044067 acc=95.36% train_s=332.7
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 475: val=0.16601060466459494 acc=95.14% train_s=346.6
+parsec_default__lr0.003_rank32_refresh_every10__s3 step 500: val=0.17521047325251443 acc=94.66% train_s=366.2
+parsec_default__lr0.003_rank32_refresh_every10__s3: completed

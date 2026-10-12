@@ -1,0 +1,4 @@
+3a88217fd6845a39b4c389caf2d724e08bfa3b9dd7a93b1b5179a09f08f7405a  DEVIATIONS.md
+written before ou_check launch at 2026-10-11T14:24:52Z
+05b76ac484a16078228f35ce0b30b2f50a31e4b72cb579d8206934f9c3551e4d  DEVIATIONS.md
+updated before ou_check relaunch at 2026-10-11T14:26:43Z

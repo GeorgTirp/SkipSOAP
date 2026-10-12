@@ -1,0 +1,22 @@
+early_newton__gradient_handover1__s0 step 10: val=2.0516 acc=29.64% train_s=2.5
+early_newton__gradient_handover1__s0 step 25: val=1.2987 acc=65.68% train_s=7.0
+early_newton__gradient_handover1__s0 step 50: val=0.8614 acc=79.42% train_s=13.6
+early_newton__gradient_handover1__s0 step 75: val=0.6647 acc=84.06% train_s=20.6
+early_newton__gradient_handover1__s0 step 100: val=0.5707 acc=86.30% train_s=26.9
+early_newton__gradient_handover1__s0 step 125: val=0.5076 acc=87.82% train_s=34.6
+early_newton__gradient_handover1__s0 step 150: val=0.4376 acc=89.66% train_s=40.7
+early_newton__gradient_handover1__s0 step 175: val=0.3964 acc=90.30% train_s=47.3
+early_newton__gradient_handover1__s0 step 200: val=0.3641 acc=90.90% train_s=53.6
+early_newton__gradient_handover1__s0 step 225: val=0.3341 acc=91.72% train_s=60.5
+early_newton__gradient_handover1__s0 step 250: val=0.3225 acc=91.92% train_s=66.1
+early_newton__gradient_handover1__s0 step 275: val=0.3036 acc=92.52% train_s=72.3
+early_newton__gradient_handover1__s0 step 300: val=0.2983 acc=92.54% train_s=77.9
+early_newton__gradient_handover1__s0 step 325: val=0.2944 acc=92.52% train_s=84.5
+early_newton__gradient_handover1__s0 step 350: val=0.2714 acc=93.22% train_s=90.9
+early_newton__gradient_handover1__s0 step 375: val=0.2689 acc=93.14% train_s=97.6
+early_newton__gradient_handover1__s0 step 400: val=0.2610 acc=93.24% train_s=103.3
+early_newton__gradient_handover1__s0 step 425: val=0.2551 acc=93.32% train_s=109.8
+early_newton__gradient_handover1__s0 step 450: val=0.2470 acc=93.48% train_s=116.2
+early_newton__gradient_handover1__s0 step 475: val=0.2452 acc=93.46% train_s=122.9
+early_newton__gradient_handover1__s0 step 500: val=0.2351 acc=93.36% train_s=129.9
+early_newton__gradient_handover1__s0: completed

@@ -1,0 +1,10 @@
+2026-10-10T17:16:39Z start early_newton__gradient_handover0__s0
+2026-10-10T17:16:52Z FAILED early_newton__gradient_handover0__s0
+2026-10-10T17:16:52Z start early_newton__gradient_handover1__s0
+2026-10-10T17:17:04Z FAILED early_newton__gradient_handover1__s0
+2026-10-10T17:17:04Z start early_newton__momentum_handover0__s0
+2026-10-10T17:17:17Z FAILED early_newton__momentum_handover0__s0
+2026-10-10T17:17:17Z start early_newton__momentum_handover1__s0
+2026-10-10T17:17:17Z start brake__damping1_lr0.01__s0
+2026-10-10T17:17:17Z start brake__damping1_lr0.02__s0
+2026-10-10T17:17:17Z start brake__damping1_lr0.03__s0

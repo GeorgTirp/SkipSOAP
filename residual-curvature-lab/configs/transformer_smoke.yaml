@@ -1,0 +1,2 @@
+# Deferred Stage 4. The CLI deliberately fails with a clear status.
+model: {kind: transformer}

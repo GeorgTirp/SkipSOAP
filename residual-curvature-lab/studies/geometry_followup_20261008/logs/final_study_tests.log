@@ -1,0 +1,8 @@
+......                                                                   [100%]
+=============================== warnings summary ===============================
+studies/geometry_followup_20261008/tests/test_followup.py::test_study_ot_copy_is_bitwise_identical_at_gamma_01
+  /Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 5.07s

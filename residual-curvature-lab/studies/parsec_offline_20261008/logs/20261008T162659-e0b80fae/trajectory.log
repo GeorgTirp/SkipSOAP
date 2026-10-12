@@ -1,0 +1,33 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+step 20: 
+step 21: r4 drift=0.238 probe_track=0.130 fresh=0.044, r8 drift=0.219 probe_track=0.102 fresh=0.058, r16 drift=0.187 probe_track=0.090 fresh=0.045
+step 22: r4 drift=0.133 probe_track=0.134 fresh=0.033, r8 drift=0.125 probe_track=0.128 fresh=0.049, r16 drift=0.110 probe_track=0.091 fresh=0.054
+step 23: r4 drift=0.162 probe_track=0.142 fresh=0.061, r8 drift=0.176 probe_track=0.133 fresh=0.055, r16 drift=0.161 probe_track=0.100 fresh=0.063
+step 24: r4 drift=0.100 probe_track=0.124 fresh=0.059, r8 drift=0.069 probe_track=0.109 fresh=0.040, r16 drift=0.079 probe_track=0.089 fresh=0.056
+step 25: r4 drift=0.054 probe_track=0.093 fresh=0.067, r8 drift=0.038 probe_track=0.114 fresh=0.062, r16 drift=0.036 probe_track=0.086 fresh=0.071
+step 26: r4 drift=0.128 probe_track=0.135 fresh=0.025, r8 drift=0.099 probe_track=0.097 fresh=0.048, r16 drift=0.101 probe_track=0.087 fresh=0.050
+step 27: r4 drift=0.105 probe_track=0.118 fresh=0.024, r8 drift=0.057 probe_track=0.088 fresh=0.054, r16 drift=0.059 probe_track=0.079 fresh=0.059
+step 28: r4 drift=0.014 probe_track=0.097 fresh=0.030, r8 drift=0.023 probe_track=0.081 fresh=0.037, r16 drift=0.014 probe_track=0.069 fresh=0.061
+step 29: r4 drift=0.051 probe_track=0.091 fresh=0.034, r8 drift=0.037 probe_track=0.081 fresh=0.038, r16 drift=0.032 probe_track=0.064 fresh=0.055
+step 30: r4 drift=0.055 probe_track=0.088 fresh=0.065, r8 drift=0.047 probe_track=0.084 fresh=0.047, r16 drift=0.045 probe_track=0.065 fresh=0.059
+step 31: r4 drift=0.056 probe_track=0.102 fresh=0.040, r8 drift=0.028 probe_track=0.084 fresh=0.085, r16 drift=0.049 probe_track=0.071 fresh=0.081
+step 32: r4 drift=0.029 probe_track=0.084 fresh=0.069, r8 drift=0.026 probe_track=0.060 fresh=0.041, r16 drift=0.036 probe_track=0.060 fresh=0.067
+step 33: r4 drift=0.106 probe_track=0.085 fresh=0.030, r8 drift=0.057 probe_track=0.052 fresh=0.053, r16 drift=0.057 probe_track=0.060 fresh=0.061
+step 34: r4 drift=0.078 probe_track=0.067 fresh=0.037, r8 drift=0.041 probe_track=0.051 fresh=0.049, r16 drift=0.048 probe_track=0.061 fresh=0.066
+step 35: r4 drift=0.069 probe_track=0.061 fresh=0.032, r8 drift=0.074 probe_track=0.078 fresh=0.051, r16 drift=0.066 probe_track=0.073 fresh=0.081
+step 36: r4 drift=0.116 probe_track=0.074 fresh=0.045, r8 drift=0.138 probe_track=0.099 fresh=0.061, r16 drift=0.119 probe_track=0.088 fresh=0.069
+step 37: r4 drift=0.027 probe_track=0.076 fresh=0.061, r8 drift=0.023 probe_track=0.078 fresh=0.054, r16 drift=0.017 probe_track=0.077 fresh=0.082
+step 38: r4 drift=0.062 probe_track=0.078 fresh=0.037, r8 drift=0.057 probe_track=0.079 fresh=0.051, r16 drift=0.050 probe_track=0.075 fresh=0.072
+step 39: r4 drift=0.071 probe_track=0.066 fresh=0.044, r8 drift=0.073 probe_track=0.090 fresh=0.051, r16 drift=0.074 probe_track=0.084 fresh=0.085
+step 40: r4 drift=0.036 probe_track=0.069 fresh=0.031, r8 drift=0.038 probe_track=0.078 fresh=0.056, r16 drift=0.058 probe_track=0.086 fresh=0.074
+step 41: r4 drift=0.095 probe_track=0.109 fresh=0.041, r8 drift=0.079 probe_track=0.095 fresh=0.056, r16 drift=0.076 probe_track=0.097 fresh=0.084
+step 42: r4 drift=0.087 probe_track=0.102 fresh=0.068, r8 drift=0.077 probe_track=0.082 fresh=0.075, r16 drift=0.084 probe_track=0.092 fresh=0.094
+step 43: r4 drift=0.038 probe_track=0.106 fresh=0.034, r8 drift=0.019 probe_track=0.074 fresh=0.062, r16 drift=0.024 probe_track=0.083 fresh=0.092
+step 44: r4 drift=0.052 probe_track=0.103 fresh=0.083, r8 drift=0.040 probe_track=0.085 fresh=0.082, r16 drift=0.040 probe_track=0.080 fresh=0.088
+step 45: r4 drift=0.049 probe_track=0.080 fresh=0.048, r8 drift=0.051 probe_track=0.064 fresh=0.075, r16 drift=0.041 probe_track=0.071 fresh=0.090
+step 46: r4 drift=0.016 probe_track=0.077 fresh=0.057, r8 drift=0.022 probe_track=0.063 fresh=0.078, r16 drift=0.033 probe_track=0.074 fresh=0.086
+step 47: r4 drift=0.035 probe_track=0.088 fresh=0.032, r8 drift=0.060 probe_track=0.088 fresh=0.061, r16 drift=0.052 probe_track=0.077 fresh=0.081
+step 48: r4 drift=0.164 probe_track=0.076 fresh=0.075, r8 drift=0.124 probe_track=0.069 fresh=0.081, r16 drift=0.123 probe_track=0.075 fresh=0.099
+step 49: r4 drift=0.001 probe_track=0.062 fresh=0.049, r8 drift=0.001 probe_track=0.058 fresh=0.069, r16 drift=0.001 probe_track=0.063 fresh=0.092
+step 50: r4 drift=0.019 probe_track=0.072 fresh=0.049, r8 drift=0.021 probe_track=0.070 fresh=0.069, r16 drift=0.023 probe_track=0.066 fresh=0.095

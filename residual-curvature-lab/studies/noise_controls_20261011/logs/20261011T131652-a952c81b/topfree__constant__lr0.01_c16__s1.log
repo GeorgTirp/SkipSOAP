@@ -1,0 +1,22 @@
+topfree__constant__lr0.01_c16__s1 step 10: val=2.1146 ema.98=2.2194 lr=1.00e-02 train_s=1.2
+topfree__constant__lr0.01_c16__s1 step 25: val=1.3217 ema.98=1.7905 lr=1.00e-02 train_s=3.7
+topfree__constant__lr0.01_c16__s1 step 50: val=0.7687 ema.98=1.1206 lr=1.00e-02 train_s=6.9
+topfree__constant__lr0.01_c16__s1 step 75: val=0.4936 ema.98=0.7424 lr=1.00e-02 train_s=10.5
+topfree__constant__lr0.01_c16__s1 step 100: val=0.3552 ema.98=0.5174 lr=1.00e-02 train_s=13.3
+topfree__constant__lr0.01_c16__s1 step 125: val=0.2899 ema.98=0.3832 lr=1.00e-02 train_s=17.2
+topfree__constant__lr0.01_c16__s1 step 150: val=0.2535 ema.98=0.3066 lr=1.00e-02 train_s=20.1
+topfree__constant__lr0.01_c16__s1 step 175: val=0.2274 ema.98=0.2589 lr=1.00e-02 train_s=23.9
+topfree__constant__lr0.01_c16__s1 step 200: val=0.2151 ema.98=0.2229 lr=1.00e-02 train_s=27.2
+topfree__constant__lr0.01_c16__s1 step 225: val=0.2040 ema.98=0.2000 lr=1.00e-02 train_s=31.1
+topfree__constant__lr0.01_c16__s1 step 250: val=0.1872 ema.98=0.1827 lr=1.00e-02 train_s=34.1
+topfree__constant__lr0.01_c16__s1 step 275: val=0.1855 ema.98=0.1703 lr=1.00e-02 train_s=37.7
+topfree__constant__lr0.01_c16__s1 step 300: val=0.1840 ema.98=0.1625 lr=1.00e-02 train_s=40.7
+topfree__constant__lr0.01_c16__s1 step 325: val=0.1779 ema.98=0.1563 lr=1.00e-02 train_s=44.2
+topfree__constant__lr0.01_c16__s1 step 350: val=0.1735 ema.98=0.1492 lr=1.00e-02 train_s=46.9
+topfree__constant__lr0.01_c16__s1 step 375: val=0.1817 ema.98=0.1431 lr=1.00e-02 train_s=50.2
+topfree__constant__lr0.01_c16__s1 step 400: val=0.1597 ema.98=0.1372 lr=1.00e-02 train_s=53.1
+topfree__constant__lr0.01_c16__s1 step 425: val=0.1623 ema.98=0.1321 lr=1.00e-02 train_s=56.7
+topfree__constant__lr0.01_c16__s1 step 450: val=0.1577 ema.98=0.1323 lr=1.00e-02 train_s=59.7
+topfree__constant__lr0.01_c16__s1 step 475: val=0.1528 ema.98=0.1280 lr=1.00e-02 train_s=63.2
+topfree__constant__lr0.01_c16__s1 step 500: val=0.1402 ema.98=0.1235 lr=1.00e-02 train_s=66.3
+topfree__constant__lr0.01_c16__s1: completed

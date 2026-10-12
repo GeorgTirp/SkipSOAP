@@ -1,0 +1,94 @@
+{
+ "R1_brake_vs_soap_step500": "better",
+ "R2_early_newton_no_handover_vs_soap": {
+  "50": "mixed",
+  "100": "mixed"
+ },
+ "R2_early_newton_handover_vs_soap": {
+  "50": "mixed",
+  "100": "mixed"
+ },
+ "R3_ggn_selected_vs_same_batch": {
+  "200": "better",
+  "500": "mixed"
+ },
+ "gate_soap_reproduction_per_seed": {
+  "1": 2.2218152525566026e-06,
+  "2": 2.0405361150777068e-08,
+  "3": 2.465418855179813e-08
+ },
+ "own_soap_completed_seeds": [
+  2,
+  3
+ ]
+}
+{
+ "brake": {
+  "calibration": "lr",
+  "strength": 4.0,
+  "lr": 0.01,
+  "unit": "brake__lr4_lr0.01__s0",
+  "final_validation_loss": 0.14681050467538898
+ },
+ "brake_grid": {
+  "brake__lr1_lr0.01__s0": 0.17098818007143335,
+  "brake__lr1_lr0.02__s0": 0.16749239587239997,
+  "brake__lr1_lr0.03__s0": 0.2145804350935262,
+  "brake__lr4_lr0.01__s0": 0.14681050467538898,
+  "brake__lr4_lr0.02__s0": 0.1802918616804158,
+  "brake__lr4_lr0.03__s0": 0.1754424260846659,
+  "brake__lr30_lr0.01__s0": 0.163871689520939,
+  "brake__lr30_lr0.02__s0": 0.1784445158808671,
+  "brake__lr30_lr0.03__s0": 0.17756508091833673,
+  "brake__damping1_lr0.01__s0": 0.1578521908953374,
+  "brake__damping1_lr0.02__s0": 0.1675546530763799,
+  "brake__damping1_lr0.03__s0": 0.16097864420533967
+ },
+ "early_newton_rhs": "momentum",
+ "early_newton_rhs_step100": {
+  "momentum": 0.3851137384697716,
+  "gradient": 0.5567244666442233
+ }
+}
+SOAP, lr 1e-2 (this study)                                 | 0.9041±0.0980 | 0.4308±0.0104 | 0.2361±0.0294 | 0.1552±0.0027 | s/step 0.066 | T50 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 9.191987682754794} | T100 {'reached': 3, 'steps': 191.66666666666666, 'seconds': 12.632573961629532} | examples (221866.66666666666, 0) | transfer {'1-50': (0.752061630753604, 0.02664251847883699), '51-200': (0.22667174731005293, 0.050555542010711975), '201-500': (-0.017682460934292234, 0.022324775949123698)}
+SOAP, lr 2e-2                                              | 0.8687±0.0295 | 0.4398±0.0398 | 0.2532±0.0144 | 0.1771±0.0144 | s/step 0.071 | T50 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 10.248071210303655} | T100 {'reached': 3, 'steps': 191.66666666666666, 'seconds': 13.641447169551006} | examples (256000, 0) | transfer {'1-50': (0.6677557296437144, 0.06308029304616998), '51-200': (0.20758853781280884, 0.047461596786109374), '201-500': (0.007158398996888542, 0.009968295068390691)}
+SOAP, lr 3e-2                                              | 1.0117±0.0593 | 0.5022±0.0264 | 0.2656±0.0170 | 0.1773±0.0118 | s/step 0.068 | T50 {'reached': 3, 'steps': 150, 'seconds': 10.321601598154908} | T100 {'reached': 3, 'steps': 216.66666666666666, 'seconds': 14.89168515355171} | examples (256000, 0) | transfer {'1-50': (0.6056050562267101, 0.06882095046568924), '51-200': (0.21701875901064532, 0.03030839454821928), '201-500': (-0.008424672766980989, 0.011111676558509365)}
+PARSEC-L brake (lr-calibrated, c = 4, lr 0.01)             | 0.8023±0.1008 | 0.3845±0.0400 | 0.2142±0.0162 | 0.1489±0.0060 | s/step 0.336 | T50 {'reached': 3, 'steps': 116.66666666666667, 'seconds': 37.79470073552026} | T100 {'reached': 3, 'steps': 158.33333333333334, 'seconds': 47.50324833212653} | examples (256000, 0) | transfer {'1-50': (0.7559180029424256, 0.004062759790581016), '51-200': (0.23197434142756604, 0.018423942832978744), '201-500': (0.004122188592694542, 0.011693462518043592)}
+PARSEC-L Early-Newton (momentum, no hand-over)             | 0.8272±0.4788 | 0.4999±0.2565 | 0.3149±0.1309 | 0.2146±0.0369 | s/step 0.320 | T50 {'reached': 3, 'steps': 166.66666666666666, 'seconds': 56.382377526936274} | T100 {'reached': 3, 'steps': 291.6666666666667, 'seconds': 96.92547740259518} | examples (256000, 64000) | transfer {'1-50': (0.5572616843259482, 0.04931153251897968), '51-200': (0.12213416017153703, 0.04540028657978922), '201-500': (0.007528813416814165, 0.038077666115578584)}
+PARSEC-L Early-Newton (momentum, hand-over)                | 0.8365±0.4949 | 0.5121±0.3161 | 0.3062±0.1585 | 0.2096±0.0484 | s/step 0.603 | T50 {'reached': 3, 'steps': 183.33333333333334, 'seconds': 74.99905478131647} | T100 {'reached': 3, 'steps': 283.3333333333333, 'seconds': 145.733578294341} | examples (256000, 64000) | transfer {'1-50': (0.5495883108662363, 0.03539354469049174), '51-200': (0.1518207504165086, 0.058373933762120425), '201-500': (-0.003161577051090575, 0.015240033012832457)}
+Exact tensor GGN, selected step                            | 0.3968±0.0272 | 0.2920±0.0177 | 0.2248±0.0107 | 0.1786±0.0040 | s/step 4.738 | T50 {'reached': 3, 'steps': 83.33333333333333, 'seconds': 367.2772087499616} | T100 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 630.9331182233096} | examples (256000, 64000) | transfer {'1-50': (0.2938487562234643, 0.011754152198301528), '51-200': (0.008007098911589126, 0.002291684497155636), '201-500': (-0.0016221399933269698, 0.004583551007928978)}
+Native SOAP, lr 1e-2 (gap audit)                           | 0.9041±0.0980 | 0.4308±0.0104 | 0.2361±0.0294 | 0.1607±0.0097 | s/step 0.108 | T50 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 15.000889487467552} | T100 {'reached': 3, 'steps': 191.66666666666666, 'seconds': 20.264674932152655} | examples (256000, 0) | transfer None
+Adam, lr 1e-2 (gap audit)                                  | 1.1126±0.2119 | 0.6504±0.0922 | 0.3119±0.0396 | 0.2019±0.0110 | s/step 0.088 | T50 {'reached': 3, 'steps': 175, 'seconds': 16.184301227350563} | T100 {'reached': 3, 'steps': 275, 'seconds': 24.905719755314447} | examples (256000, 0) | transfer None
+Searched SOAP, tuned (gap audit)                           | 0.6973±0.0644 | 0.3676±0.0453 | 0.2617±0.0185 | 0.2098±0.0074 | s/step 1.369 | T50 {'reached': 3, 'steps': 108.33333333333333, 'seconds': 156.09275819277778} | T100 {'reached': 3, 'steps': 200, 'seconds': 285.0565234020275} | examples (256000, 0) | transfer None
+Exact tensor GGN, same-batch search (gap audit)            | 0.3550±0.0114 | 0.2654±0.0183 | 0.2355±0.0077 | 0.1824±0.0021 | s/step 6.470 | T50 {'reached': 3, 'steps': 58.333333333333336, 'seconds': 349.9374921370181} | T100 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 918.5265417646345} | examples (256000, 0) | transfer None
+Dense empirical Fisher (gap audit)                         | 0.7051±0.1695 | 0.4993±0.0345 | 0.4112±0.0452 | 0.3056±0.0927 | s/step 1.862 | T50 {'reached': 2, 'steps': None, 'seconds': None} | T100 {'reached': 1, 'steps': None, 'seconds': None} | examples (256000, 0) | transfer None
+Original PARSEC, default (geometry)                        | 1.3804±0.3296 | 0.7454±0.1992 | 0.3570±0.0699 | 0.1856±0.0100 | s/step 0.831 | T50 {'reached': 3, 'steps': 200, 'seconds': 167.2977853223953} | T100 {'reached': 3, 'steps': 275, 'seconds': 230.11185136439357} | examples (256000, 0) | transfer None
+Original PARSEC, split (geometry)                          | 1.0766±0.2645 | 0.6110±0.1252 | 0.3420±0.0208 | 0.1916±0.0130 | s/step 0.162 | T50 {'reached': 3, 'steps': 191.66666666666666, 'seconds': 27.582063432685874} | T100 {'reached': 3, 'steps': 300, 'seconds': 45.01792475241624} | examples (256000, 0) | transfer None
+Tensor OT, gamma 0.1 (geometry)                            | 0.4511±0.0505 | 0.2965±0.0265 | 0.2190±0.0084 | 0.1654±0.0056 | s/step 6.587 | T50 {'reached': 3, 'steps': 83.33333333333333, 'seconds': 603.7096951005515} | T100 {'reached': 3, 'steps': 141.66666666666666, 'seconds': 1043.328729404874} | examples (256000, 0) | transfer None
+Full GGN (geometry)                                        | 0.6698±0.0830 | 0.5679±0.1079 | 0.4785±0.0378 | 0.3303±0.0352 | s/step 9.311 | T50 {'reached': 3, 'steps': 441.6666666666667, 'seconds': 4057.430296257177} | T100 {'reached': 0, 'steps': None, 'seconds': None} | examples (256000, 0) | transfer None
+seed0 brake__damping1_lr0.01__s0                    loss100 0.39262951126535844 loss500 0.1578521908953374
+seed0 brake__damping1_lr0.02__s0                    loss100 0.38474952058111817 loss500 0.1675546530763799
+seed0 brake__damping1_lr0.03__s0                    loss100 0.4493425517305308 loss500 0.16097864420533967
+seed0 brake__lr1_lr0.01__s0                         loss100 0.4221647578309602 loss500 0.17098818007143335
+seed0 brake__lr1_lr0.02__s0                         loss100 0.4782114196174968 loss500 0.16749239587239997
+seed0 brake__lr1_lr0.03__s0                         loss100 0.44085770092388865 loss500 0.2145804350935262
+seed0 brake__lr30_lr0.01__s0                        loss100 0.3639170062409755 loss500 0.163871689520939
+seed0 brake__lr30_lr0.02__s0                        loss100 0.37719958715566304 loss500 0.1784445158808671
+seed0 brake__lr30_lr0.03__s0                        loss100 0.3734967305380178 loss500 0.17756508091833673
+seed0 brake__lr4_lr0.01__s0                         loss100 0.38528944986337527 loss500 0.14681050467538898
+seed0 brake__lr4_lr0.02__s0                         loss100 0.42535749314309995 loss500 0.1802918616804158
+seed0 brake__lr4_lr0.03__s0                         loss100 0.47059941037310626 loss500 0.1754424260846659
+seed0 early_newton__gradient_handover0__s0          loss100 0.5427629614218175 loss500 0.22464449516834803
+seed0 early_newton__gradient_handover1__s0          loss100 0.5706859718666291 loss500 0.23512471770203133
+seed0 early_newton__momentum_handover0__s0          loss100 0.39902999567110253 loss500 0.19321746128898926
+seed0 early_newton__momentum_handover1__s0          loss100 0.3711974812684406 loss500 0.1902706525313781
+seed0 soap__lr0.01__s0                              loss100 0.5150903532036524 loss500 0.17133504200839492
+seed0 soap__lr0.02__s0                              loss100 0.572523448964162 loss500 0.1929580287380208
+seed0 soap__lr0.03__s0                              loss100 0.5011104364320343 loss500 0.23055659884383609
+SOAP, lr 1e-2 (this study)                                 etaλmax med 1-50/51-200/201-500 [None, None, None] r_soap [0.593, 1.11, 1.522] r_own [0.593, 1.11, 1.522] alpha med None handover [None, None, None] parsec-wins []
+SOAP, lr 2e-2                                              etaλmax med 1-50/51-200/201-500 [None, None, None] r_soap [0.414, 0.925, 1.322] r_own [0.414, 0.925, 1.322] alpha med None handover [None, None, None] parsec-wins []
+SOAP, lr 3e-2                                              etaλmax med 1-50/51-200/201-500 [None, None, None] r_soap [0.393, 0.812, 1.4] r_own [0.393, 0.812, 1.4] alpha med None handover [None, None, None] parsec-wins []
+PARSEC-L brake (lr-calibrated, c = 4, lr 0.01)             etaλmax med 1-50/51-200/201-500 [3.818, 4.065, 2.585] r_soap [0.748, 1.708, 2.207] r_own [0.847, 2.261, 2.852] alpha med None handover [None, None, None] parsec-wins []
+PARSEC-L Early-Newton (momentum, no hand-over)             etaλmax med 1-50/51-200/201-500 [4.299, 2.169, 1.476] r_soap [0.754, 1.569, 1.706] r_own [0.974, 2.863, 2.897] alpha med 4.46027997661428 handover [None, None, None] parsec-wins [1, 1, 1]
+PARSEC-L Early-Newton (momentum, hand-over)                etaλmax med 1-50/51-200/201-500 [3.327, 1.722, 1.412] r_soap [0.774, 1.481, 1.739] r_own [0.95, 2.34, 2.636] alpha med 4.7978205969181325 handover [None, None, None] parsec-wins [0.8036072144288577, 0.8777555110220441, 0.7535070140280561]
+Exact tensor GGN, selected step                            etaλmax med 1-50/51-200/201-500 [None, None, None] r_soap [1.219, 2.781, 2.778] r_own [5.6, 15.032, 16.32] alpha med None handover [None, None, None] parsec-wins []

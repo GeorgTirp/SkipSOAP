@@ -1,0 +1,19 @@
+# Derived from configs/mini_vit_allocation.yaml. Identical except `output`, which
+# scripts/common.py replaces with $GAP_AUDIT_DATA/runs at load time (rule 3).
+# Per-arm seeds, SOAP settings and architectures are set in code and recorded
+# in each unit's resolved_arm.json.
+seed: 0
+data_seed: 101
+probe_seed: 202
+analysis_seed: 303
+device: cpu
+dtype: float64
+threads: 1
+output: GAP_AUDIT_DATA/runs
+model: {kind: vit, input_dim: 784, width: 16, expansion: 32, blocks: 2, classes: 10, epsilon: 0.00001, branch_scale: 1.0}
+vit: {image_size: 28, patch_size: 7, heads: 2}
+data: {dataset: mnist, root: datasets, resolution: 28, batch_size: 512, panel_batches: 4, train_size: 50000, validation_size: 5000, analysis_size: 5000}
+soap: {lr: 0.003, betas: [0.95, 0.95], precondition_frequency: 10, weight_decay: 0.0}
+damping: {gammas: [0.01], floor: 0.00000001, metric: soap}
+resources: {dense_cap: 2048, dual_cap: 2048, budget_mib: 768}
+training: {steps: 50, snapshots: [10, 25, 50], method: soap, policy: native, gamma: 0.01, rank: 8, checkpoint_every: 25}

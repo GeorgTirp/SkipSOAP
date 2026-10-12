@@ -1,0 +1,14 @@
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee vit__sn2__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee vit__sn2__s1
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee vit__sn6__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee vit__sn6__s1
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__nosn__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__nosn__s1
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn0.95__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn0.95__s1
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn2__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn2__s1
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn6__s0
+studies/sn_curvature_20261008/scripts/run.py /Users/georgtirpitz/skipsoap-study-data/sn_curvature_20261008/runs/20261008T130821-44610eee mlp__sn6__s1
+STOP
+END

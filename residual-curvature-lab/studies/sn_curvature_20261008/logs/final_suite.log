@@ -1,0 +1,9 @@
+........................................................................ [ 67%]
+..................................                                       [100%]
+=============================== warnings summary ===============================
+tests/test_curvature.py::test_dense_matrixfree_factor_linearized_hessian[0]
+  /Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+106 passed, 1 warning in 3.90s

@@ -1,0 +1,17 @@
+native_soap__lr0.0003__s0
+native_soap__lr0.001__s0
+native_soap__lr0.003__s0
+native_soap__lr0.01__s0
+native_soap__lr0.03__s0
+adam_native__lr0.0003__s0
+adam_native__lr0.001__s0
+adam_native__lr0.003__s0
+adam_native__lr0.01__s0
+adam_native__lr0.03__s0
+searched_soap_tuned__b0.95-0.95_pf1__s0
+searched_soap_tuned__b0.95-0.95_pf10__s0
+searched_soap_tuned__b0.9-0.99_pf1__s0
+searched_soap_tuned__b0.9-0.99_pf10__s0
+ggn_exact_trace__gamma0.001__s0
+ggn_exact_trace__gamma0.01__s0
+ggn_exact_trace__gamma0.1__s0

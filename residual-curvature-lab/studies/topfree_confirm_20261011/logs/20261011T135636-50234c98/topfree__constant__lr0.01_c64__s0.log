@@ -1,0 +1,22 @@
+topfree__constant__lr0.01_c64__s0 step 10: val=2.1081 ema.98=2.0852 lr=1.00e-02 train_s=1.2
+topfree__constant__lr0.01_c64__s0 step 25: val=1.4059 ema.98=1.7360 lr=1.00e-02 train_s=3.3
+topfree__constant__lr0.01_c64__s0 step 50: val=0.7688 ema.98=1.1924 lr=1.00e-02 train_s=5.9
+topfree__constant__lr0.01_c64__s0 step 75: val=0.4840 ema.98=0.8030 lr=1.00e-02 train_s=9.0
+topfree__constant__lr0.01_c64__s0 step 100: val=0.3689 ema.98=0.5667 lr=1.00e-02 train_s=11.6
+topfree__constant__lr0.01_c64__s0 step 125: val=0.2984 ema.98=0.4144 lr=1.00e-02 train_s=14.7
+topfree__constant__lr0.01_c64__s0 step 150: val=0.2585 ema.98=0.3176 lr=1.00e-02 train_s=17.2
+topfree__constant__lr0.01_c64__s0 step 175: val=0.2149 ema.98=0.2545 lr=1.00e-02 train_s=20.3
+topfree__constant__lr0.01_c64__s0 step 200: val=0.1916 ema.98=0.2143 lr=1.00e-02 train_s=22.8
+topfree__constant__lr0.01_c64__s0 step 225: val=0.1808 ema.98=0.1867 lr=1.00e-02 train_s=25.9
+topfree__constant__lr0.01_c64__s0 step 250: val=0.1718 ema.98=0.1682 lr=1.00e-02 train_s=28.4
+topfree__constant__lr0.01_c64__s0 step 275: val=0.1727 ema.98=0.1538 lr=1.00e-02 train_s=31.7
+topfree__constant__lr0.01_c64__s0 step 300: val=0.1632 ema.98=0.1430 lr=1.00e-02 train_s=34.4
+topfree__constant__lr0.01_c64__s0 step 325: val=0.1605 ema.98=0.1363 lr=1.00e-02 train_s=38.1
+topfree__constant__lr0.01_c64__s0 step 350: val=0.1573 ema.98=0.1317 lr=1.00e-02 train_s=41.0
+topfree__constant__lr0.01_c64__s0 step 375: val=0.1515 ema.98=0.1281 lr=1.00e-02 train_s=44.5
+topfree__constant__lr0.01_c64__s0 step 400: val=0.1549 ema.98=0.1249 lr=1.00e-02 train_s=47.7
+topfree__constant__lr0.01_c64__s0 step 425: val=0.1401 ema.98=0.1219 lr=1.00e-02 train_s=51.7
+topfree__constant__lr0.01_c64__s0 step 450: val=0.1399 ema.98=0.1200 lr=1.00e-02 train_s=54.5
+topfree__constant__lr0.01_c64__s0 step 475: val=0.1316 ema.98=0.1189 lr=1.00e-02 train_s=57.9
+topfree__constant__lr0.01_c64__s0 step 500: val=0.1385 ema.98=0.1124 lr=1.00e-02 train_s=60.9
+topfree__constant__lr0.01_c64__s0: completed

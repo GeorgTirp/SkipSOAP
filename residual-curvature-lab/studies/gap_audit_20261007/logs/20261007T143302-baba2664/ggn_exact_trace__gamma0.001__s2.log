@@ -1,0 +1,24 @@
+/Users/georgtirpitz/Library/CloudStorage/OneDrive-Persönlich/Uni/Eigene Projekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.13/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ggn_exact_trace__gamma0.001__s2 step 10: val=1.2151442027391717 acc=69.94% train_s=40.0
+ggn_exact_trace__gamma0.001__s2 step 25: val=0.5898297566391516 acc=83.64% train_s=124.3
+ggn_exact_trace__gamma0.001__s2 step 50: val=0.3681564176210738 acc=89.14% train_s=285.7
+ggn_exact_trace__gamma0.001__s2 step 75: val=0.3266699911784097 acc=90.62% train_s=445.1
+ggn_exact_trace__gamma0.001__s2 step 100: val=0.2798451927228574 acc=91.74% train_s=615.5
+ggn_exact_trace__gamma0.001__s2 step 125: val=0.2826156544802755 acc=91.48% train_s=778.2
+ggn_exact_trace__gamma0.001__s2 step 150: val=0.28285777745187035 acc=91.38% train_s=947.4
+ggn_exact_trace__gamma0.001__s2 step 175: val=0.2611224113131697 acc=91.60% train_s=1118.5
+ggn_exact_trace__gamma0.001__s2 step 200: val=0.24280840390030595 acc=92.24% train_s=1295.5
+ggn_exact_trace__gamma0.001__s2 step 225: val=0.2405191436342986 acc=92.44% train_s=1464.2
+ggn_exact_trace__gamma0.001__s2 step 250: val=0.22290686059681242 acc=93.38% train_s=1640.9
+ggn_exact_trace__gamma0.001__s2 step 275: val=0.21607045962040902 acc=93.10% train_s=1809.2
+ggn_exact_trace__gamma0.001__s2 step 300: val=0.2166090308383468 acc=93.28% train_s=1974.0
+ggn_exact_trace__gamma0.001__s2 step 325: val=0.20860130389849105 acc=93.34% train_s=2130.4
+ggn_exact_trace__gamma0.001__s2 step 350: val=0.20921133858876714 acc=93.24% train_s=2292.9
+ggn_exact_trace__gamma0.001__s2 step 375: val=0.21434843695964823 acc=93.38% train_s=2449.9
+ggn_exact_trace__gamma0.001__s2 step 400: val=0.21219669644847858 acc=93.48% train_s=2584.9
+ggn_exact_trace__gamma0.001__s2 step 425: val=0.20632933057479635 acc=93.58% train_s=2721.2
+ggn_exact_trace__gamma0.001__s2 step 450: val=0.21263256634767536 acc=93.10% train_s=2859.6
+ggn_exact_trace__gamma0.001__s2 step 475: val=0.18979903627793973 acc=94.08% train_s=3004.4
+ggn_exact_trace__gamma0.001__s2 step 500: val=0.1801793111793984 acc=94.54% train_s=3148.5
+ggn_exact_trace__gamma0.001__s2: completed

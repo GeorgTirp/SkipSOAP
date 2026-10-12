@@ -1,0 +1,11 @@
+2026-10-07T12:20:30Z start       17 units
+2026-10-07T13:00:00Z start ggn_exact_trace__gamma0.001__s0
+2026-10-07T13:00:00Z start ggn_exact_trace__gamma0.01__s0
+2026-10-07T13:00:00Z start ggn_exact_trace__gamma0.1__s0
+2026-10-07T14:14:59Z done ggn_exact_trace__gamma0.1__s0
+2026-10-07T14:15:51Z done ggn_exact_trace__gamma0.001__s0
+2026-10-07T14:15:53Z done ggn_exact_trace__gamma0.01__s0
+2026-10-07T14:16:50Z start ggn_exact_trace__gamma0.0001__s0
+2026-10-07T14:16:50Z start searched_soap_tuned__b0.9-0.99_pf100__s0
+2026-10-07T14:26:59Z done searched_soap_tuned__b0.9-0.99_pf100__s0
+2026-10-07T14:32:30Z done ggn_exact_trace__gamma0.0001__s0

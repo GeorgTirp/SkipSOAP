@@ -1,0 +1,230 @@
+[
+ {
+  "state": "searched_soap-10",
+  "eta": 0.0002591435352081907,
+  "beta_damping": 11.487979080153801,
+  "beta_ratio_lr_over_damping": 2.255780006214298e-05,
+  "kappa_max_damping": 7279.12451572268,
+  "directions_kappa_above_1_damping": 1802,
+  "damping_gradient": {
+   "own": 0.0038000744171857725,
+   "held": 0.0025046926599265884,
+   "norm_ratio_to_soap": 0.37915838747097413
+  },
+  "damping_momentum": {
+   "own": 0.006543528063670978,
+   "held": 0.005544603260810577,
+   "norm_ratio_to_soap": 0.7914922144554706
+  },
+  "kappa_max_lr": 0.16420103545311573,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.04860062142006427,
+   "held": 0.03038078441170583,
+   "norm_ratio_to_soap": 0.9574231713014382
+  },
+  "lr_momentum": {
+   "own": 0.04808232726332751,
+   "held": 0.031139901514253554,
+   "norm_ratio_to_soap": 0.9851070472059135
+  },
+  "soap_gradient": {
+   "own": 0.05012573707207002,
+   "held": 0.030958961426933385
+  },
+  "soap_momentum": {
+   "own": 0.049947411562557775,
+   "held": 0.03201280755836161
+  }
+ },
+ {
+  "state": "searched_soap-25",
+  "eta": 0.0002812964215959934,
+  "beta_damping": 11.501416233917118,
+  "beta_ratio_lr_over_damping": 2.4457546433843855e-05,
+  "kappa_max_damping": 4917.860345860788,
+  "directions_kappa_above_1_damping": 2162,
+  "damping_gradient": {
+   "own": 0.0034757630550437124,
+   "held": 0.0017646282148110481,
+   "norm_ratio_to_soap": 0.47539214348669506
+  },
+  "damping_momentum": {
+   "own": 0.004604223320128664,
+   "held": 0.0037237799716257625,
+   "norm_ratio_to_soap": 0.8500063439269904
+  },
+  "kappa_max_lr": 0.12027879776404957,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.02500091682758332,
+   "held": 0.017556108330087916,
+   "norm_ratio_to_soap": 0.9892454174507579
+  },
+  "lr_momentum": {
+   "own": 0.015549865590385625,
+   "held": 0.009771886527901785,
+   "norm_ratio_to_soap": 0.9977207701242089
+  },
+  "soap_gradient": {
+   "own": 0.02537788077992298,
+   "held": 0.017833568187699822
+  },
+  "soap_momentum": {
+   "own": 0.015703885256083794,
+   "held": 0.009796153891559023
+  }
+ },
+ {
+  "state": "searched_soap-50",
+  "eta": 0.00019340598440776327,
+  "beta_damping": 12.480983918770809,
+  "beta_ratio_lr_over_damping": 1.5496052688353347e-05,
+  "kappa_max_damping": 2156.5258163751355,
+  "directions_kappa_above_1_damping": 2847,
+  "damping_gradient": {
+   "own": 0.0019244808411946757,
+   "held": 0.00042356054586800695,
+   "norm_ratio_to_soap": 0.5699035886548298
+  },
+  "damping_momentum": {
+   "own": 0.002443554167187889,
+   "held": 0.00129751781469023,
+   "norm_ratio_to_soap": 0.8858213531585616
+  },
+  "kappa_max_lr": 0.03341763767434333,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.013220787720951144,
+   "held": 0.006484438910741519,
+   "norm_ratio_to_soap": 0.9942530015087281
+  },
+  "lr_momentum": {
+   "own": 0.008637125629927023,
+   "held": 0.00409397031848957,
+   "norm_ratio_to_soap": 0.9991671513960673
+  },
+  "soap_gradient": {
+   "own": 0.01334740555841274,
+   "held": 0.006548522688528624
+  },
+  "soap_momentum": {
+   "own": 0.008699129472440559,
+   "held": 0.00412076178890014
+  }
+ },
+ {
+  "state": "exact_tensor_ggn-10",
+  "eta": 0.00032654296865798296,
+  "beta_damping": 1.5439023297471546,
+  "beta_ratio_lr_over_damping": 0.00021150493937751943,
+  "kappa_max_damping": 3137.8971413078334,
+  "directions_kappa_above_1_damping": 2681,
+  "damping_gradient": {
+   "own": 0.01360511703020828,
+   "held": 0.007127659065662817,
+   "norm_ratio_to_soap": 0.5034988451714671
+  },
+  "damping_momentum": {
+   "own": 0.0182768260232411,
+   "held": 0.015113005753482789,
+   "norm_ratio_to_soap": 0.8523785083824535
+  },
+  "kappa_max_lr": 0.6636807446452045,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.04734695618163842,
+   "held": -0.0048742231420240145,
+   "norm_ratio_to_soap": 0.9577656085334991
+  },
+  "lr_momentum": {
+   "own": 0.03291993059893894,
+   "held": 0.004369036855720265,
+   "norm_ratio_to_soap": 0.98581718411179
+  },
+  "soap_gradient": {
+   "own": 0.01748343696274479,
+   "held": -0.039595199290726024
+  },
+  "soap_momentum": {
+   "own": 0.020017959621965398,
+   "held": -0.011637832464528597
+  }
+ },
+ {
+  "state": "exact_tensor_ggn-25",
+  "eta": 0.00034151445346748373,
+  "beta_damping": 1.0365822726795955,
+  "beta_ratio_lr_over_damping": 0.00032946198528425427,
+  "kappa_max_damping": 1981.927545047558,
+  "directions_kappa_above_1_damping": 2508,
+  "damping_gradient": {
+   "own": 0.010984499388815683,
+   "held": 0.0037211564388083818,
+   "norm_ratio_to_soap": 0.567355654176011
+  },
+  "damping_momentum": {
+   "own": 0.005928490513080975,
+   "held": 0.001513436390029238,
+   "norm_ratio_to_soap": 0.8928541351708206
+  },
+  "kappa_max_lr": 0.6529697836809171,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.04127237898195213,
+   "held": 0.022346879640223277,
+   "norm_ratio_to_soap": 0.9683330183027395
+  },
+  "lr_momentum": {
+   "own": 0.003019412371655983,
+   "held": -0.008915642216431374,
+   "norm_ratio_to_soap": 0.9971805162648874
+  },
+  "soap_gradient": {
+   "own": 0.03987395079200001,
+   "held": 0.0202260105964151
+  },
+  "soap_momentum": {
+   "own": 0.0012670195659013062,
+   "held": -0.011227795225654896
+  }
+ },
+ {
+  "state": "exact_tensor_ggn-50",
+  "eta": 0.00020644630512839723,
+  "beta_damping": 0.743985060617447,
+  "beta_ratio_lr_over_damping": 0.0002774871648055186,
+  "kappa_max_damping": 1542.2699914784375,
+  "directions_kappa_above_1_damping": 2205,
+  "damping_gradient": {
+   "own": 0.006429923900992618,
+   "held": 0.0013305422613594658,
+   "norm_ratio_to_soap": 0.5522646805111813
+  },
+  "damping_momentum": {
+   "own": 0.004301654079915229,
+   "held": -0.0005265302711775915,
+   "norm_ratio_to_soap": 0.9103273681782789
+  },
+  "kappa_max_lr": 0.42796012729998306,
+  "directions_kappa_above_1_lr": 0,
+  "lr_gradient": {
+   "own": 0.032780661610640194,
+   "held": 0.019779745907477136,
+   "norm_ratio_to_soap": 0.9717783549752271
+  },
+  "lr_momentum": {
+   "own": 0.012014283848916396,
+   "held": 0.005034443345875481,
+   "norm_ratio_to_soap": 0.9974168280610721
+  },
+  "soap_gradient": {
+   "own": 0.033056800579083556,
+   "held": 0.020701208049877046
+  },
+  "soap_momentum": {
+   "own": 0.012757059763579326,
+   "held": 0.00643898046321395
+  }
+ }
+]

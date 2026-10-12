@@ -1,0 +1,4 @@
+studies/stage_d_20261009/scripts/train.py: line 1: 63988 Terminated: 15          .venv/bin/python "$0" work --run "$1" --unit "$2" > "$L/$2.log" 2>&1
+studies/stage_d_20261009/scripts/train.py: line 1: 63810 Terminated: 15          .venv/bin/python "$0" work --run "$1" --unit "$2" > "$L/$2.log" 2>&1
+studies/stage_d_20261009/scripts/train.py: line 1: 63812 Terminated: 15          .venv/bin/python "$0" work --run "$1" --unit "$2" > "$L/$2.log" 2>&1
+studies/stage_d_20261009/scripts/train.py: line 1: 63811 Terminated: 15          .venv/bin/python "$0" work --run "$1" --unit "$2" > "$L/$2.log" 2>&1

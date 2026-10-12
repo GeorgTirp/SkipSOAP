@@ -1,0 +1,2 @@
+early_newton__momentum_handover0__s0 step 10: val=1.7884 acc=37.70% train_s=2.2
+early_newton__momentum_handover0__s0 step 25: val=0.9991 acc=67.08% train_s=6.1

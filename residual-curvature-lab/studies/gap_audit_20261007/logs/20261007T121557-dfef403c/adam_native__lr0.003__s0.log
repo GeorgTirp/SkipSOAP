@@ -1,0 +1,4 @@
+adam_native__lr0.003__s0 step 10: val=2.111206175681445 acc=20.40% train_s=0.8
+adam_native__lr0.003__s0 step 25: val=1.7381995606263771 acc=40.20% train_s=2.1
+adam_native__lr0.003__s0 step 50: val=1.2880076863671444 acc=57.84% train_s=4.3
+adam_native__lr0.003__s0: completed

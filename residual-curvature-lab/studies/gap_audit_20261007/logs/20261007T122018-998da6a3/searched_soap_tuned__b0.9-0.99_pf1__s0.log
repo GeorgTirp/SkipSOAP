@@ -1,0 +1,22 @@
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 10: val=1.8808546275488982 acc=32.08% train_s=12.2
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 25: val=1.1324816244980134 acc=63.94% train_s=33.0
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 50: val=0.5908138863694363 acc=82.74% train_s=67.3
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 75: val=0.4035076108562965 acc=87.66% train_s=100.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 100: val=0.33370790727959054 acc=90.36% train_s=142.9
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 125: val=0.33610654470391715 acc=89.86% train_s=177.1
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 150: val=0.2909575864726223 acc=91.68% train_s=212.0
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 175: val=0.2625351052264028 acc=92.46% train_s=246.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 200: val=0.2726556088195503 acc=92.06% train_s=286.1
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 225: val=0.2601220854587631 acc=92.46% train_s=324.3
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 250: val=0.24354636780007435 acc=92.88% train_s=358.0
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 275: val=0.22904400319702967 acc=93.22% train_s=391.7
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 300: val=0.2177848524637178 acc=93.52% train_s=425.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 325: val=0.22954508200408277 acc=93.42% train_s=460.1
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 350: val=0.21607657970778218 acc=93.36% train_s=494.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 375: val=0.20693693019358156 acc=94.00% train_s=528.0
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 400: val=0.20248873113503657 acc=94.06% train_s=562.8
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 425: val=0.21715566718963278 acc=93.62% train_s=597.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 450: val=0.21113068393310522 acc=94.20% train_s=633.1
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 475: val=0.19590250646298135 acc=94.08% train_s=670.6
+searched_soap_tuned__b0.9-0.99_pf1__s0 step 500: val=0.22615384894456403 acc=93.48% train_s=705.6
+searched_soap_tuned__b0.9-0.99_pf1__s0: completed
