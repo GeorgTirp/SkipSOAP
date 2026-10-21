@@ -1,0 +1,20 @@
+| Model | Optimizer | Parameters | s/step plain | s/step probe | mean s/step | peak GiB | status |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| M1 | adamw | 208,074 | 0.0325 | — | 0.0339 | 1.28 | completed |
+| M1 | soap_upstream | 208,074 | 0.0357 | — | 0.0388 | 1.29 | completed |
+| M1 | soap | 208,074 | 0.0406 | — | 0.0456 | 1.29 | completed |
+| M1 | topfree_s1 | 208,074 | 0.0867 | 0.3573 | 0.1158 | 1.88 | completed |
+| M1 | topfree_s4 | 208,074 | 0.1186 | — | 0.1186 | 5.69 | out_of_memory |
+| M2 | adamw | 1,205,898 | 0.0720 | — | 0.0720 | 2.46 | completed |
+| M2 | soap_upstream | 1,205,898 | 0.0783 | — | 0.0857 | 2.49 | completed |
+| M2 | soap | 1,205,898 | 0.0881 | — | 0.0993 | 2.51 | completed |
+| M2 | topfree_s1 | 1,205,898 | — | — | — | 5.95 | out_of_memory |
+| M2 | topfree_s4 | 1,205,898 | — | — | — | 6.29 | out_of_memory |
+G1_copy_equals_original {'soap': True, 'topfree': True}
+G2_gpu_repeatable {'soap_gpu64': True, 'soap_gpu32': True, 'topfree_gpu64': True, 'topfree_gpu32': True}
+G3_cpu_replay_bitwise {'soap': True, 'topfree': True}
+R1_pass True
+device_floor 0.0024983770723684684
+R1 {'soap': {'steps': 36, 'max_relative_update_error_plain': 1.432451466587311e-10, 'max_relative_update_error_probe': None, 'max_state_difference_non_refresh': {'Q': 0.0, 'exp_avg': 1.1275702593849246e-16, 'exp_avg_sq': 3.3306690738754696e-16, 'held_operator_abs': 0.0}, 'pass': True}, 'topfree': {'steps': 36, 'max_relative_update_error_plain': 3.2786945885529437e-10, 'max_relative_update_error_probe': 3.114196825273724e-10, 'max_state_difference_non_refresh': {'Q': 0.0, 'exp_avg': 2.706168622523819e-16, 'exp_avg_sq': 6.661338147750939e-16, 'held_operator_abs': 3.775996425673374e-12}, 'pass': True}}
+R0 {'soap_s0': (0.02348, 0.00278), 'soap_s4': (0.01204, 0.00284), 'soap_s5': (0.01509, 0.00434), 'soap_s6': (0.02309, 0.00347), 'topfree_s0': (0.0082, 0.00388), 'topfree_s4': (0.00528, 0.00358), 'topfree_s5': (0.00768, 0.00475), 'topfree_s6': (0.00743, 0.00327)}
+R3 {'a_step500_ema0.98_abs_difference': {'soap_s0': 0.0078087266308228265, 'soap_s4': 0.002770454277962159, 'soap_s5': 0.0038002320167201398, 'soap_s6': 0.004103871584393459, 'topfree_s0': 0.0023112827535896607, 'topfree_s4': 0.003169781669109445, 'topfree_s5': 0.0026950054403124812, 'topfree_s6': 0.0077786851111976}, 'a_holds': False, 'a_excused_by_floor': True, 'b_soap_topfree_ema0.98_step500': {'gpu32': {4: [0.1401031681060791, 0.13387081985473634], 5: [0.1339574436187744, 0.12031817874908447], 6: [0.1352368293762207, 0.1138452880859375]}, 'cpu64': {4: [0.13733271382811693, 0.1307010381856269], 5: [0.13015721160205426, 0.11762317330877199], 6: [0.13113295779182724, 0.1216239731971351]}}, 'b_holds': True, 'adequate': True}

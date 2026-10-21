@@ -1,0 +1,20 @@
+== soap 09:08:00
+  value += float(part_loss)
+soap__lr0.003__s0__measure step 10: val=2.0460 acc=0.2540 ema.98=2.2253 train_s=2.5
+soap__lr0.003__s0__measure: completed
+{"arm": "soap", "steps": 12, "median_step_seconds": 0.22131399400041118, "max_step_seconds": 0.39895053199961694, "gpu_peak_GiB": 4.8455681800842285, "measurement_seconds": [41.92025232500055]}
+== topfree 09:08:55
+  value += float(part_loss)
+topfree__lr0.003__s0__measure step 10: val=2.0358 acc=0.2536 ema.98=2.2388 train_s=4.2
+topfree__lr0.003__s0__measure: completed
+{"arm": "topfree", "steps": 12, "median_step_seconds": 0.2907153100004507, "max_step_seconds": 1.5539109840001402, "gpu_peak_GiB": 4.848117828369141, "measurement_seconds": [42.00807670500035]}
+== ggn 09:09:53
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/ggn.py", line 139, in tensor_ggn_step
+    chol = torch.linalg.cholesky(system)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch._C._LinAlgError: linalg.cholesky: The factorization could not be completed because the input is not positive-definite (the leading minor of order 3966 is not positive-definite).
+== ggn_sn 09:10:11
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/ggn.py", line 145, in tensor_ggn_step
+    raise RuntimeError(f'Exact tensor solve failed for {spec.name}: {residual}')
+RuntimeError: Exact tensor solve failed for blocks.1.w2.parametrizations.weight.original: 0.00010496914910618216

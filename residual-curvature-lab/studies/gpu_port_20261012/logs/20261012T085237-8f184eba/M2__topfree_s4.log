@@ -1,0 +1,7 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/gpu_port_20261012/scripts/cost.py:91: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  rows.append({'step': step, 'seconds': time.perf_counter()-began, 'loss': float(loss),
+[W1012 10:55:11.466148466 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 67108864 bytes (free: 50659328, total: 8219852800).
+[W1012 10:55:11.499249275 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 18874368 bytes (free: 29687808, total: 8219852800).
+[W1012 10:55:11.499381875 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 18874368 bytes (free: 29687808, total: 8219852800).
+M2__topfree_s4: out_of_memory D=1205898 plain=None probe=None peak=6.29 GiB

@@ -1,0 +1,794 @@
+{
+  "run": "/home/georg/skipsoap-study-data/gpu_port_20261012/runs/20261012T084322-39ae45d3",
+  "units": 24,
+  "G1_copy_equals_original": {
+    "soap": true,
+    "topfree": true
+  },
+  "G2_gpu_repeatable": {
+    "soap_gpu64": true,
+    "soap_gpu32": true,
+    "topfree_gpu64": true,
+    "topfree_gpu32": true
+  },
+  "G3_cpu_replay_bitwise": {
+    "soap": true,
+    "topfree": true
+  },
+  "R1_one_step": {
+    "soap": {
+      "steps": 36,
+      "max_relative_update_error_plain": 1.432451466587311e-10,
+      "max_relative_update_error_probe": null,
+      "refresh_steps": [
+        {
+          "step": 51,
+          "Q": 1.043081283569336e-05,
+          "exp_avg": 4.453698362123955e-08,
+          "exp_avg_sq": 5.551115123125783e-17
+        },
+        {
+          "step": 61,
+          "Q": 6.644055247306824e-06,
+          "exp_avg": 2.9109897486980494e-08,
+          "exp_avg_sq": 1.1102230246251565e-16
+        },
+        {
+          "step": 251,
+          "Q": 5.7220458984375e-06,
+          "exp_avg": 8.123735140315447e-09,
+          "exp_avg_sq": 2.7755575615628914e-17
+        },
+        {
+          "step": 261,
+          "Q": 3.6954879760742188e-06,
+          "exp_avg": 8.78443969800323e-09,
+          "exp_avg_sq": 2.7755575615628914e-17
+        },
+        {
+          "step": 491,
+          "Q": 4.842877388000488e-06,
+          "exp_avg": 9.013289762986598e-09,
+          "exp_avg_sq": 1.3877787807814457e-17
+        }
+      ],
+      "max_state_difference_non_refresh": {
+        "Q": 0.0,
+        "exp_avg": 1.1275702593849246e-16,
+        "exp_avg_sq": 3.3306690738754696e-16,
+        "held_operator_abs": 0.0
+      },
+      "pass": true
+    },
+    "topfree": {
+      "steps": 36,
+      "max_relative_update_error_plain": 3.2786945885529437e-10,
+      "max_relative_update_error_probe": 3.114196825273724e-10,
+      "refresh_steps": [
+        {
+          "step": 51,
+          "Q": 1.1995434761047363e-05,
+          "exp_avg": 3.7526791256381996e-08,
+          "exp_avg_sq": 5.551115123125783e-17,
+          "held_operator_abs": 0.0,
+          "held_operator_rel": 0.0,
+          "held_operator_rel_tensor": 39
+        },
+        {
+          "step": 61,
+          "Q": 1.049041748046875e-05,
+          "exp_avg": 2.9510590088244713e-08,
+          "exp_avg_sq": 5.828670879282072e-16,
+          "held_operator_abs": 0.0,
+          "held_operator_rel": 0.0,
+          "held_operator_rel_tensor": 39
+        },
+        {
+          "step": 251,
+          "Q": 6.794929504394531e-06,
+          "exp_avg": 1.0917784503663899e-08,
+          "exp_avg_sq": 2.7755575615628914e-16,
+          "held_operator_abs": 0.0,
+          "held_operator_rel": 0.0,
+          "held_operator_rel_tensor": 39
+        },
+        {
+          "step": 261,
+          "Q": 3.069639205932617e-06,
+          "exp_avg": 1.0501289327696783e-08,
+          "exp_avg_sq": 5.551115123125783e-17,
+          "held_operator_abs": 0.0,
+          "held_operator_rel": 0.0,
+          "held_operator_rel_tensor": 39
+        },
+        {
+          "step": 491,
+          "Q": 5.21540641784668e-06,
+          "exp_avg": 5.9424272245256455e-09,
+          "exp_avg_sq": 2.7755575615628914e-17,
+          "held_operator_abs": 0.0,
+          "held_operator_rel": 0.0,
+          "held_operator_rel_tensor": 39
+        }
+      ],
+      "max_state_difference_non_refresh": {
+        "Q": 0.0,
+        "exp_avg": 2.706168622523819e-16,
+        "exp_avg_sq": 6.661338147750939e-16,
+        "held_operator_abs": 3.775996425673374e-12
+      },
+      "pass": true
+    }
+  },
+  "R0_laptop": {
+    "soap_s0": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.02347713400442389,
+      "max_abs_ema0.98": 0.0027847458659210345,
+      "step500_here": [
+        0.16456934828593786,
+        0.13436259397091072
+      ],
+      "step500_laptop": [
+        0.1713,
+        0.1359
+      ]
+    },
+    "soap_s4": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.012037062289243478,
+      "max_abs_ema0.98": 0.002840807686205926,
+      "step500_here": [
+        0.16472610647885516,
+        0.13733271382811693
+      ],
+      "step500_laptop": [
+        0.1645,
+        0.136
+      ]
+    },
+    "soap_s5": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.015093326365033216,
+      "max_abs_ema0.98": 0.004342788397945746,
+      "step500_here": [
+        0.16059405223934198,
+        0.13015721160205426
+      ],
+      "step500_laptop": [
+        0.1699,
+        0.1345
+      ]
+    },
+    "soap_s6": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.02308582529172029,
+      "max_abs_ema0.98": 0.0034670422081727603,
+      "step500_here": [
+        0.15708223985453898,
+        0.13113295779182724
+      ],
+      "step500_laptop": [
+        0.1658,
+        0.1346
+      ]
+    },
+    "topfree_s0": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.008204039627905307,
+      "max_abs_ema0.98": 0.0038760127216864726,
+      "step500_here": [
+        0.14085392234794128,
+        0.11526221654450604
+      ],
+      "step500_laptop": [
+        0.1385,
+        0.1124
+      ]
+    },
+    "topfree_s4": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.005281871704254759,
+      "max_abs_ema0.98": 0.0035814344637024043,
+      "step500_here": [
+        0.15263048859354644,
+        0.1307010381856269
+      ],
+      "step500_laptop": [
+        0.1501,
+        0.1292
+      ]
+    },
+    "topfree_s5": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.0076781874358551605,
+      "max_abs_ema0.98": 0.0047508179582385485,
+      "step500_here": [
+        0.13701422448374562,
+        0.11762317330877199
+      ],
+      "step500_laptop": [
+        0.1356,
+        0.1141
+      ]
+    },
+    "topfree_s6": {
+      "steps_compared": 21,
+      "max_abs_validation": 0.0074257186841239775,
+      "max_abs_ema0.98": 0.0032738517189976613,
+      "step500_here": [
+        0.14157831018230282,
+        0.1216239731971351
+      ],
+      "step500_laptop": [
+        0.1397,
+        0.1195
+      ]
+    }
+  },
+  "R2_trajectory": {
+    "soap": {
+      "by_step": {
+        "0": {
+          "raw": 0.0,
+          "ema0.98": 0.0
+        },
+        "10": {
+          "raw": 1.5452459312115252e-08,
+          "ema0.98": 4.005264120365837e-09
+        },
+        "25": {
+          "raw": -5.2117856745859115e-06,
+          "ema0.98": -7.361025798391374e-05
+        },
+        "50": {
+          "raw": 0.00021365378457938178,
+          "ema0.98": -0.00013091530964093323
+        },
+        "75": {
+          "raw": 0.001801164049395232,
+          "ema0.98": 3.290633743802118e-05
+        },
+        "100": {
+          "raw": -0.0005623852343930036,
+          "ema0.98": 0.00019088737406514067
+        },
+        "125": {
+          "raw": 0.0004905624612367987,
+          "ema0.98": 0.0006770086011882448
+        },
+        "150": {
+          "raw": -0.003103597302730854,
+          "ema0.98": 0.0013573372823073582
+        },
+        "175": {
+          "raw": -0.007249388609656182,
+          "ema0.98": 0.001564086692186606
+        },
+        "200": {
+          "raw": 0.004202563189965369,
+          "ema0.98": 0.0011244083344628675
+        },
+        "225": {
+          "raw": 0.006496528381901345,
+          "ema0.98": 0.0005494405452263207
+        },
+        "250": {
+          "raw": 0.000718993939866408,
+          "ema0.98": 0.00189494641403945
+        },
+        "275": {
+          "raw": -0.0039048304969352965,
+          "ema0.98": 0.00134479770535198
+        },
+        "300": {
+          "raw": 0.006918808712116031,
+          "ema0.98": 0.0010147445258749943
+        },
+        "325": {
+          "raw": 0.0034395491811023138,
+          "ema0.98": 0.002485069524161082
+        },
+        "350": {
+          "raw": -0.012234158995244049,
+          "ema0.98": 0.0018129458351826278
+        },
+        "375": {
+          "raw": -0.008242419451856331,
+          "ema0.98": 0.0017169891820137673
+        },
+        "400": {
+          "raw": -0.02406826257956754,
+          "ema0.98": 0.0004996204670012216
+        },
+        "425": {
+          "raw": 0.005814535248133967,
+          "ema0.98": -0.002745057019427344
+        },
+        "450": {
+          "raw": -0.008843414493953566,
+          "ema0.98": 0.0005821309507585692
+        },
+        "475": {
+          "raw": 0.0007046627120239068,
+          "ema0.98": 0.0008063887753848586
+        },
+        "500": {
+          "raw": 0.00831609575522757,
+          "ema0.98": 0.0024983770723684684
+        }
+      },
+      "step500_ema0.98_abs": 0.0024983770723684684
+    },
+    "topfree": {
+      "by_step": {
+        "0": {
+          "raw": 0.0,
+          "ema0.98": 0.0
+        },
+        "10": {
+          "raw": 1.4040543292903607e-05,
+          "ema0.98": -7.914435240508055e-08
+        },
+        "25": {
+          "raw": -0.0008096244883553094,
+          "ema0.98": -2.6165264113364728e-05
+        },
+        "50": {
+          "raw": -0.002348949371497433,
+          "ema0.98": -0.001747360894090555
+        },
+        "75": {
+          "raw": 0.0027199449835669243,
+          "ema0.98": -0.0029107495218680945
+        },
+        "100": {
+          "raw": 0.000681771116532337,
+          "ema0.98": -0.0017742122888968481
+        },
+        "125": {
+          "raw": -0.003710454399495522,
+          "ema0.98": -0.0020369355394874167
+        },
+        "150": {
+          "raw": -0.0011420916908551626,
+          "ema0.98": -0.0021021606692276373
+        },
+        "175": {
+          "raw": -0.008135497364371469,
+          "ema0.98": -0.0002558173912785011
+        },
+        "200": {
+          "raw": -0.0002221031279013852,
+          "ema0.98": -0.0009938221213977583
+        },
+        "225": {
+          "raw": 0.001215314565272102,
+          "ema0.98": -0.0018734213620829054
+        },
+        "250": {
+          "raw": 0.0008598476107788688,
+          "ema0.98": -0.0016487230155916022
+        },
+        "275": {
+          "raw": 0.002204222550940882,
+          "ema0.98": -0.00020990702777609616
+        },
+        "300": {
+          "raw": 0.0028586807343449483,
+          "ema0.98": 0.0017869163549368017
+        },
+        "325": {
+          "raw": 0.0015270368084097097,
+          "ema0.98": 0.002390816484264674
+        },
+        "350": {
+          "raw": 0.0017913824159023206,
+          "ema0.98": 0.0014385496847834356
+        },
+        "375": {
+          "raw": 0.002930896666449412,
+          "ema0.98": 0.0021814495695920977
+        },
+        "400": {
+          "raw": 0.0052432806916317964,
+          "ema0.98": 0.0020716653410784575
+        },
+        "425": {
+          "raw": 0.012598055312361883,
+          "ema0.98": 0.0029912777838005805
+        },
+        "450": {
+          "raw": 0.0014542754315537698,
+          "ema0.98": 0.002068028163624544
+        },
+        "475": {
+          "raw": 0.00027820595765157274,
+          "ema0.98": 0.0004370769916912931
+        },
+        "500": {
+          "raw": -0.0034581682677508607,
+          "ema0.98": -0.00036698825938100144
+        }
+      },
+      "step500_ema0.98_abs": 0.00036698825938100144
+    }
+  },
+  "device_floor": 0.0024983770723684684,
+  "R3_float32": {
+    "a_step500_ema0.98_abs_difference": {
+      "soap_s0": 0.0078087266308228265,
+      "soap_s4": 0.002770454277962159,
+      "soap_s5": 0.0038002320167201398,
+      "soap_s6": 0.004103871584393459,
+      "topfree_s0": 0.0023112827535896607,
+      "topfree_s4": 0.003169781669109445,
+      "topfree_s5": 0.0026950054403124812,
+      "topfree_s6": 0.0077786851111976
+    },
+    "a_holds": false,
+    "a_excused_by_floor": true,
+    "b_soap_topfree_ema0.98_step500": {
+      "gpu32": {
+        "4": [
+          0.1401031681060791,
+          0.13387081985473634
+        ],
+        "5": [
+          0.1339574436187744,
+          0.12031817874908447
+        ],
+        "6": [
+          0.1352368293762207,
+          0.1138452880859375
+        ]
+      },
+      "cpu64": {
+        "4": [
+          0.13733271382811693,
+          0.1307010381856269
+        ],
+        "5": [
+          0.13015721160205426,
+          0.11762317330877199
+        ],
+        "6": [
+          0.13113295779182724,
+          0.1216239731971351
+        ]
+      }
+    },
+    "b_holds": true,
+    "adequate": true
+  },
+  "gates_pass": true,
+  "R1_pass": true,
+  "C1_cost": [
+    {
+      "cell": "M1__adamw",
+      "spec": {
+        "model": "M1",
+        "optimizer": "adamw",
+        "samples": null
+      },
+      "parameters": 208074,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.03248418400016817,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.03387143563336394,
+      "peak_allocated_bytes": 1375384064,
+      "peak_reserved_bytes": 1501560832,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M1__soap_upstream",
+      "spec": {
+        "model": "M1",
+        "optimizer": "soap_upstream",
+        "samples": null
+      },
+      "parameters": 208074,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.035729147999973065,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.038752616250000455,
+      "peak_allocated_bytes": 1381075456,
+      "peak_reserved_bytes": 1509949440,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M1__soap",
+      "spec": {
+        "model": "M1",
+        "optimizer": "soap",
+        "samples": null
+      },
+      "parameters": 208074,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.04056070600017847,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.045601883266742034,
+      "peak_allocated_bytes": 1384764416,
+      "peak_reserved_bytes": 1514143744,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M1__topfree_s1",
+      "spec": {
+        "model": "M1",
+        "optimizer": "topfree_s1",
+        "samples": 1
+      },
+      "parameters": 208074,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.0866558000002442,
+      "median_seconds_probe_step": 0.3572835519998989,
+      "mean_seconds_per_step": 0.1158055866666776,
+      "peak_allocated_bytes": 2016357888,
+      "peak_reserved_bytes": 3279945728,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M1__topfree_s4",
+      "spec": {
+        "model": "M1",
+        "optimizer": "topfree_s4",
+        "samples": 4
+      },
+      "parameters": 208074,
+      "outcome": {
+        "status": "out_of_memory",
+        "step": 12,
+        "error": "CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 7.66 GiB of which 1.13 GiB is free. Including non-PyTorch memory, this process has 5.71 GiB memory in use. Of the allocated memory 2.70 GiB is allocated by PyTorch, and 2.74 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+      },
+      "median_seconds_plain_step": 0.1186097299996618,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.1186097299996618,
+      "peak_allocated_bytes": 6106712576,
+      "peak_reserved_bytes": 6771703808,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M2__adamw",
+      "spec": {
+        "model": "M2",
+        "optimizer": "adamw",
+        "samples": null
+      },
+      "parameters": 1205898,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.07199500500018985,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.07199754726671018,
+      "peak_allocated_bytes": 2644981248,
+      "peak_reserved_bytes": 2764046336,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M2__soap_upstream",
+      "spec": {
+        "model": "M2",
+        "optimizer": "soap_upstream",
+        "samples": null
+      },
+      "parameters": 1205898,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.07829654750003101,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.08573698791668297,
+      "peak_allocated_bytes": 2678590976,
+      "peak_reserved_bytes": 2803892224,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M2__soap",
+      "spec": {
+        "model": "M2",
+        "optimizer": "soap",
+        "samples": null
+      },
+      "parameters": 1205898,
+      "outcome": {
+        "status": "completed"
+      },
+      "median_seconds_plain_step": 0.08813242900032492,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": 0.09934479351674479,
+      "peak_allocated_bytes": 2700219904,
+      "peak_reserved_bytes": 2833252352,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M2__topfree_s1",
+      "spec": {
+        "model": "M2",
+        "optimizer": "topfree_s1",
+        "samples": 1
+      },
+      "parameters": 1205898,
+      "outcome": {
+        "status": "out_of_memory",
+        "step": 2,
+        "error": "CUDA out of memory. Tried to allocate 3.00 GiB. GPU 0 has a total capacity of 7.66 GiB of which 2.64 GiB is free. Including non-PyTorch memory, this process has 4.21 GiB memory in use. Of the allocated memory 3.73 GiB is allocated by PyTorch, and 205.44 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+      },
+      "median_seconds_plain_step": null,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": null,
+      "peak_allocated_bytes": 6388513792,
+      "peak_reserved_bytes": 7000293376,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "cell": "M2__topfree_s4",
+      "spec": {
+        "model": "M2",
+        "optimizer": "topfree_s4",
+        "samples": 4
+      },
+      "parameters": 1205898,
+      "outcome": {
+        "status": "out_of_memory",
+        "step": 2,
+        "error": "CUDA out of memory. Tried to allocate 18.00 MiB. GPU 0 has a total capacity of 7.66 GiB of which 27.44 MiB is free. Including non-PyTorch memory, this process has 6.82 GiB memory in use. Of the allocated memory 6.29 GiB is allocated by PyTorch, and 254.50 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+      },
+      "median_seconds_plain_step": null,
+      "median_seconds_probe_step": null,
+      "mean_seconds_per_step": null,
+      "peak_allocated_bytes": 6758601216,
+      "peak_reserved_bytes": 7025459200,
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda": "13.0",
+        "cuda_available": true,
+        "cublas_workspace_config": ":4096:8",
+        "tf32_matmul": false,
+        "tf32_cudnn": false,
+        "float32_matmul_precision": "highest",
+        "threads": 1,
+        "gpu": "NVIDIA GeForce RTX 3070",
+        "compute_capability": [
+          8,
+          6
+        ]
+      }
+    }
+  ]
+}

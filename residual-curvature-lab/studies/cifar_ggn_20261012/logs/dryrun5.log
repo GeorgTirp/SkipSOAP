@@ -1,0 +1,4 @@
+== ggn_sn 09:56:21
+ggn_sn__gamma0.01__s0__measure step 10: val=1.5953 acc=0.4598 ema.98=1.8757 train_s=796.1
+ggn_sn__gamma0.01__s0__measure: completed
+{"arm": "ggn_sn", "steps": 12, "median_step_seconds": 80.67989761699937, "max_step_seconds": 146.69446673399943, "gpu_peak_GiB": 5.605350017547607, "measurement_seconds": [26.08093752499917]}

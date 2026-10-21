@@ -1,0 +1,9 @@
+{
+  "run": "/home/georg/skipsoap-study-data/ggn_ot_fairness_20261014/runs/20261014T184201-ec924e59",
+  "reference": "/home/georg/skipsoap-study-data/ot_tuned_1000_20261014/runs/20261014T162934-085e376e",
+  "checks": {
+    "topfree_ot__lr0.09__c4096__s1/validation.json": true,
+    "topfree_ot__lr0.09__c4096__s1/training.json": true
+  },
+  "passed": true
+}

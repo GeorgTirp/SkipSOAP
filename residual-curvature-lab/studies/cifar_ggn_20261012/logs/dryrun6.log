@@ -1,0 +1,8 @@
+== ggn 10:14:31
+ggn__gamma0.01__s0__measure step 10: val=1.5056 acc=0.5012 ema.98=1.7661 train_s=259.0
+ggn__gamma0.01__s0__measure: completed
+{"arm": "ggn", "steps": 12, "median_step_seconds": 23.27425036400018, "max_step_seconds": 72.03959356799896, "gpu_peak_GiB": 4.79915189743042, "measurement_seconds": [7.699955195999792]}
+== ggn_sn 10:19:56
+ggn_sn__gamma0.01__s0__measure step 10: val=1.6361 acc=0.4512 ema.98=1.8997 train_s=460.9
+ggn_sn__gamma0.01__s0__measure: completed
+{"arm": "ggn_sn", "steps": 12, "median_step_seconds": 39.33841990600013, "max_step_seconds": 141.20904736199918, "gpu_peak_GiB": 4.804816722869873, "measurement_seconds": [18.235317553999266]}

@@ -1,0 +1,15 @@
+== ggn 09:19:33
+[W1012 11:19:56.345583987 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1073741824 bytes (free: 140836864, total: 8219852800).
+ggn__gamma0.01__s0__measure step 10: val=1.5056 acc=0.5012 ema.98=1.7661 train_s=269.0
+ggn__gamma0.01__s0__measure: completed
+{"arm": "ggn", "steps": 12, "median_step_seconds": 24.32416639800067, "max_step_seconds": 74.10494586599998, "gpu_peak_GiB": 4.79915189743042, "measurement_seconds": [7.206712730000618]}
+== ggn_sn 09:25:08
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 594, in grad
+             ^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: expected mat1 and mat2 to have the same dtype, but got: double != float
+== soap 09:35:47
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+soap__lr0.003__s0__measure step 10: val=2.0460 acc=0.2540 ema.98=2.2253 train_s=2.4
+soap__lr0.003__s0__measure: completed
+{"arm": "soap", "steps": 12, "median_step_seconds": 0.2170514049994381, "max_step_seconds": 0.3952980630001548, "gpu_peak_GiB": 4.716412544250488, "measurement_seconds": [7.642322609000985]}

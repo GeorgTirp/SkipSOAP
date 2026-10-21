@@ -1,0 +1,16 @@
+tests: 106 passed, 1 warning in 7.59s
+studies/parsec_l_20261009/tests: 22 passed, 2 warnings in 14.28s
+studies/cifar_ggn_20261012/tests: 11 passed, 1 warning in 6.29s
+studies/cifar_sn_soap_20261012/tests: 12 passed, 2 warnings in 9.91s
+studies/basis_refresh_snr_20261013/tests: 9 passed in 6.37s
+studies/n9_training_20261013/tests: 9 passed, 1 warning in 4.00s
+studies/probe_variants_20261013/tests: 6 passed, 1 warning in 6.03s
+studies/ladder_mechanism_20261013/tests: 6 passed, 1 warning in 5.21s
+studies/long_run_20261013/tests: 4 passed, 1 warning in 2.70s
+studies/ggn_c_control_20261013/tests: 3 passed, 1 warning in 2.66s
+studies/ot_1000_20261013/tests: 4 passed, 1 warning in 2.90s
+studies/ot_tuned_1000_20261014/tests: 4 passed, 1 warning in 2.26s
+studies/ggn_ot_fairness_20261014/tests: 4 passed, 1 warning in 2.62s
+studies/bulk_krylov_20261014/tests: 10 passed, 2 warnings in 11.36s
+studies/spectral_rotation_20261020/tests: 6 passed, 1 warning in 4.37s
+studies/queue_curvature_20261020/tests: 7 passed in 9.92s

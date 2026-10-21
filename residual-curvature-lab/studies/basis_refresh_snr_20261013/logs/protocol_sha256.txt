@@ -1,0 +1,4 @@
+# first version (superseded before any run: age range of the real trajectory corrected, section 5):
+367a4cc405ee30052cba1529433dc56647d79270f59eb9544648780b9e4031bc
+# version run:
+132f0882f72e9c77921435c10432c46c86263c70726e2d2fc0b926cbfaaca36a  studies/basis_refresh_snr_20261013/PROTOCOL.md

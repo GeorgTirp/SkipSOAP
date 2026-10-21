@@ -1,0 +1,5 @@
+# scripts/time_float64_action.py, 2026-10-12 (output as printed)
+sn None micro 128 seconds/action 4.01 peak GiB 1.10
+sn None micro 256 seconds/action 3.91 peak GiB 2.08
+sn 1.0 micro 128 seconds/action 20.69 peak GiB 1.11
+sn 1.0 micro 256 seconds/action 12.26 peak GiB 2.10

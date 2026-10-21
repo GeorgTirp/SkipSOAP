@@ -1,0 +1,24 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.12/site-packages/torch/autograd/graph.py:1072: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:410.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+topfree__gpu32rep__s0 step 10: val=2.135443 ema.98=2.057174 train_s=1.2
+topfree__gpu32rep__s0 step 25: val=1.449086 ema.98=1.736134 train_s=2.3
+topfree__gpu32rep__s0 step 50: val=0.774287 ema.98=1.221032 train_s=3.8
+topfree__gpu32rep__s0 step 75: val=0.474732 ema.98=0.815134 train_s=5.5
+topfree__gpu32rep__s0 step 100: val=0.357657 ema.98=0.553509 train_s=7.1
+topfree__gpu32rep__s0 step 125: val=0.290677 ema.98=0.407932 train_s=8.8
+topfree__gpu32rep__s0 step 150: val=0.254636 ema.98=0.316732 train_s=10.3
+topfree__gpu32rep__s0 step 175: val=0.226859 ema.98=0.259502 train_s=12.1
+topfree__gpu32rep__s0 step 200: val=0.205545 ema.98=0.222163 train_s=13.8
+topfree__gpu32rep__s0 step 225: val=0.198797 ema.98=0.195584 train_s=15.6
+topfree__gpu32rep__s0 step 250: val=0.177409 ema.98=0.177583 train_s=17.2
+topfree__gpu32rep__s0 step 275: val=0.175569 ema.98=0.164096 train_s=19.0
+topfree__gpu32rep__s0 step 300: val=0.173816 ema.98=0.152887 train_s=20.6
+topfree__gpu32rep__s0 step 325: val=0.163355 ema.98=0.146724 train_s=22.5
+topfree__gpu32rep__s0 step 350: val=0.150490 ema.98=0.141015 train_s=24.1
+topfree__gpu32rep__s0 step 375: val=0.152829 ema.98=0.134890 train_s=25.9
+topfree__gpu32rep__s0 step 400: val=0.152528 ema.98=0.129703 train_s=27.4
+topfree__gpu32rep__s0 step 425: val=0.146706 ema.98=0.126368 train_s=29.1
+topfree__gpu32rep__s0 step 450: val=0.146730 ema.98=0.123580 train_s=30.6
+topfree__gpu32rep__s0 step 475: val=0.135367 ema.98=0.121188 train_s=32.3
+topfree__gpu32rep__s0 step 500: val=0.148798 ema.98=0.117573 train_s=33.8
+topfree__gpu32rep__s0: completed

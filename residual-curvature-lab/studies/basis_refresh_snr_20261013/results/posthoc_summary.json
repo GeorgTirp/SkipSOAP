@@ -1,0 +1,1178 @@
+{
+ "states": {
+  "s1_t0010": {
+   "step": 10,
+   "seed": 1,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.019890666007995605,
+     "selection_decrease": 0.023121565580368042
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.021225780248641968,
+     "selection_decrease": 0.02317693829536438
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.035059839487075806,
+     "selection_decrease": 0.034787386655807495
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03345325589179993,
+     "selection_decrease": 0.03364410996437073
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.033825069665908813,
+     "selection_decrease": 0.033939629793167114
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.027026981115341187,
+     "selection_decrease": 0.027912944555282593
+    },
+    "ggn": {
+     "k": -8,
+     "interior": true,
+     "evaluation_decrease": 0.0631578266620636,
+     "selection_decrease": 0.06089514493942261
+    }
+   }
+  },
+  "s1_t0025": {
+   "step": 25,
+   "seed": 1,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.018588483333587646,
+     "selection_decrease": 0.015031754970550537
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.032628387212753296,
+     "selection_decrease": 0.029943794012069702
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03453841805458069,
+     "selection_decrease": 0.029900431632995605
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03346344828605652,
+     "selection_decrease": 0.03105795383453369
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03353258967399597,
+     "selection_decrease": 0.031066954135894775
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.032236248254776,
+     "selection_decrease": 0.0290585458278656
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.06684574484825134,
+     "selection_decrease": 0.061708003282547
+    }
+   }
+  },
+  "s1_t0050": {
+   "step": 50,
+   "seed": 1,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.04735279083251953,
+     "selection_decrease": 0.039324432611465454
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.050065845251083374,
+     "selection_decrease": 0.04270380735397339
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.0512751042842865,
+     "selection_decrease": 0.04336842894554138
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04901158809661865,
+     "selection_decrease": 0.04287925362586975
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04916965961456299,
+     "selection_decrease": 0.04311069846153259
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.047402411699295044,
+     "selection_decrease": 0.04266667366027832
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.04893037676811218,
+     "selection_decrease": 0.04967772960662842
+    }
+   }
+  },
+  "s1_t0100": {
+   "step": 100,
+   "seed": 1,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.0509924590587616,
+     "selection_decrease": 0.06085728108882904
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.048533856868743896,
+     "selection_decrease": 0.05568575859069824
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04932457208633423,
+     "selection_decrease": 0.05796054005622864
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04044023156166077,
+     "selection_decrease": 0.05434766411781311
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04081133008003235,
+     "selection_decrease": 0.05452987551689148
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.044199466705322266,
+     "selection_decrease": 0.056919753551483154
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.046258896589279175,
+     "selection_decrease": 0.0446983277797699
+    }
+   }
+  },
+  "s1_t0250": {
+   "step": 250,
+   "seed": 1,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.02322004735469818,
+     "selection_decrease": 0.02227438986301422
+    },
+    "soap_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02312856912612915,
+     "selection_decrease": 0.021956071257591248
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02357529103755951,
+     "selection_decrease": 0.022589102387428284
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.022570908069610596,
+     "selection_decrease": 0.02261914312839508
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02260221540927887,
+     "selection_decrease": 0.022653251886367798
+    },
+    "kron_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.019969046115875244,
+     "selection_decrease": 0.020104795694351196
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.02526894211769104,
+     "selection_decrease": 0.01632058620452881
+    }
+   }
+  },
+  "s2_t0010": {
+   "step": 10,
+   "seed": 2,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.06803816556930542,
+     "selection_decrease": 0.07100749015808105
+    },
+    "soap_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.07220423221588135,
+     "selection_decrease": 0.07780131697654724
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.07928934693336487,
+     "selection_decrease": 0.07905527949333191
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.08822047710418701,
+     "selection_decrease": 0.08273941278457642
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.08838146924972534,
+     "selection_decrease": 0.08278864622116089
+    },
+    "kron_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.08320239186286926,
+     "selection_decrease": 0.07543757557868958
+    },
+    "ggn": {
+     "k": -8,
+     "interior": true,
+     "evaluation_decrease": 0.09609460830688477,
+     "selection_decrease": 0.1009470522403717
+    }
+   }
+  },
+  "s2_t0025": {
+   "step": 25,
+   "seed": 2,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.0067823827266693115,
+     "selection_decrease": 0.007225543260574341
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.015197277069091797,
+     "selection_decrease": 0.013543784618377686
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.016673415899276733,
+     "selection_decrease": 0.014734834432601929
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.021189212799072266,
+     "selection_decrease": 0.016614317893981934
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.021515607833862305,
+     "selection_decrease": 0.016866028308868408
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.016421616077423096,
+     "selection_decrease": 0.011868894100189209
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.05319365859031677,
+     "selection_decrease": 0.04648521542549133
+    }
+   }
+  },
+  "s2_t0050": {
+   "step": 50,
+   "seed": 2,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.03398829698562622,
+     "selection_decrease": 0.03278017044067383
+    },
+    "soap_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.03669258952140808,
+     "selection_decrease": 0.03851836919784546
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04143151640892029,
+     "selection_decrease": 0.04326316714286804
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.047141700983047485,
+     "selection_decrease": 0.05040434002876282
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04707026481628418,
+     "selection_decrease": 0.05035603046417236
+    },
+    "kron_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.04088854789733887,
+     "selection_decrease": 0.046102672815322876
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.03964579105377197,
+     "selection_decrease": 0.04062291979789734
+    }
+   }
+  },
+  "s2_t0100": {
+   "step": 100,
+   "seed": 2,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03432929515838623,
+     "selection_decrease": 0.03545472025871277
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03972826898097992,
+     "selection_decrease": 0.03921234607696533
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03515070676803589,
+     "selection_decrease": 0.0341474711894989
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03638683259487152,
+     "selection_decrease": 0.03686225414276123
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03642697632312775,
+     "selection_decrease": 0.03687205910682678
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03791151940822601,
+     "selection_decrease": 0.03910985589027405
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.04718020558357239,
+     "selection_decrease": 0.048753559589385986
+    }
+   }
+  },
+  "s2_t0250": {
+   "step": 250,
+   "seed": 2,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03909765183925629,
+     "selection_decrease": 0.036880552768707275
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.042548537254333496,
+     "selection_decrease": 0.03693203628063202
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.04303532838821411,
+     "selection_decrease": 0.03585757315158844
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.0366431325674057,
+     "selection_decrease": 0.03280623257160187
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.03670415282249451,
+     "selection_decrease": 0.03287303447723389
+    },
+    "kron_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.03824451565742493,
+     "selection_decrease": 0.02931170165538788
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.035463571548461914,
+     "selection_decrease": 0.027995824813842773
+    }
+   }
+  },
+  "s3_t0010": {
+   "step": 10,
+   "seed": 3,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.048135846853256226,
+     "selection_decrease": 0.056691884994506836
+    },
+    "soap_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.04530435800552368,
+     "selection_decrease": 0.05417346954345703
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.055730968713760376,
+     "selection_decrease": 0.06377115845680237
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.06599363684654236,
+     "selection_decrease": 0.07674458622932434
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.06614232063293457,
+     "selection_decrease": 0.07686516642570496
+    },
+    "kron_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.05414232611656189,
+     "selection_decrease": 0.06671476364135742
+    },
+    "ggn": {
+     "k": -8,
+     "interior": true,
+     "evaluation_decrease": 0.07984212040901184,
+     "selection_decrease": 0.0874178409576416
+    }
+   }
+  },
+  "s3_t0025": {
+   "step": 25,
+   "seed": 3,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.01655137538909912,
+     "selection_decrease": 0.022274762392044067
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.02219042181968689,
+     "selection_decrease": 0.027847230434417725
+    },
+    "soapeigh_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.026432037353515625,
+     "selection_decrease": 0.036419451236724854
+    },
+    "probe_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.030679434537887573,
+     "selection_decrease": 0.04129853844642639
+    },
+    "probe_probe": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.030482620000839233,
+     "selection_decrease": 0.04099932312965393
+    },
+    "kron_exact": {
+     "k": -4,
+     "interior": true,
+     "evaluation_decrease": 0.024915486574172974,
+     "selection_decrease": 0.035880982875823975
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.05025559663772583,
+     "selection_decrease": 0.058672815561294556
+    }
+   }
+  },
+  "s3_t0050": {
+   "step": 50,
+   "seed": 3,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.013532042503356934,
+     "selection_decrease": 0.012068897485733032
+    },
+    "soap_exact": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.02185767889022827,
+     "selection_decrease": 0.019654542207717896
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.015931129455566406,
+     "selection_decrease": 0.016017377376556396
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.022821813821792603,
+     "selection_decrease": 0.021676719188690186
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.022942453622817993,
+     "selection_decrease": 0.021849215030670166
+    },
+    "kron_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.018486469984054565,
+     "selection_decrease": 0.017168104648590088
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.03776359558105469,
+     "selection_decrease": 0.045181483030319214
+    }
+   }
+  },
+  "s3_t0100": {
+   "step": 100,
+   "seed": 3,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -5,
+     "interior": true,
+     "evaluation_decrease": 0.022165000438690186,
+     "selection_decrease": 0.01747754216194153
+    },
+    "soap_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.022311389446258545,
+     "selection_decrease": 0.016333967447280884
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02555668354034424,
+     "selection_decrease": 0.017701178789138794
+    },
+    "probe_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02396485209465027,
+     "selection_decrease": 0.015977442264556885
+    },
+    "probe_probe": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.02408754825592041,
+     "selection_decrease": 0.016063392162322998
+    },
+    "kron_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.020736753940582275,
+     "selection_decrease": 0.014548838138580322
+    },
+    "ggn": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.02950325608253479,
+     "selection_decrease": 0.01627713441848755
+    }
+   }
+  },
+  "s3_t0250": {
+   "step": 250,
+   "seed": 3,
+   "quadratic_reproduced": true,
+   "candidates": {
+    "soap_map": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.014515548944473267,
+     "selection_decrease": 0.013860255479812622
+    },
+    "soap_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.014033868908882141,
+     "selection_decrease": 0.013720959424972534
+    },
+    "soapeigh_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.017424359917640686,
+     "selection_decrease": 0.015675649046897888
+    },
+    "probe_exact": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.012634769082069397,
+     "selection_decrease": 0.011500313878059387
+    },
+    "probe_probe": {
+     "k": -7,
+     "interior": true,
+     "evaluation_decrease": 0.012594655156135559,
+     "selection_decrease": 0.011488854885101318
+    },
+    "kron_exact": {
+     "k": -6,
+     "interior": true,
+     "evaluation_decrease": 0.014770016074180603,
+     "selection_decrease": 0.012267827987670898
+    },
+    "ggn": {
+     "k": -8,
+     "interior": true,
+     "evaluation_decrease": 0.015698209404945374,
+     "selection_decrease": 0.01602676510810852
+    }
+   }
+  }
+ },
+ "reproduced": true,
+ "early_counts": {
+  "probe_exact_vs_soap_exact": 8,
+  "probe_probe_vs_soap_map": 9,
+  "of": 9
+ },
+ "interior_fraction": 1,
+ "by_step": {
+  "10": {
+   "soap_map": {
+    "decrease": [
+     0.019890666007995605,
+     0.06803816556930542,
+     0.048135846853256226
+    ],
+    "k": [
+     -5,
+     -4,
+     -4
+    ]
+   },
+   "soap_exact": {
+    "decrease": [
+     0.021225780248641968,
+     0.07220423221588135,
+     0.04530435800552368
+    ],
+    "k": [
+     -5,
+     -4,
+     -4
+    ]
+   },
+   "soapeigh_exact": {
+    "decrease": [
+     0.035059839487075806,
+     0.07928934693336487,
+     0.055730968713760376
+    ],
+    "k": [
+     -5,
+     -5,
+     -5
+    ]
+   },
+   "probe_exact": {
+    "decrease": [
+     0.03345325589179993,
+     0.08822047710418701,
+     0.06599363684654236
+    ],
+    "k": [
+     -6,
+     -5,
+     -5
+    ]
+   },
+   "probe_probe": {
+    "decrease": [
+     0.033825069665908813,
+     0.08838146924972534,
+     0.06614232063293457
+    ],
+    "k": [
+     -6,
+     -5,
+     -5
+    ]
+   },
+   "kron_exact": {
+    "decrease": [
+     0.027026981115341187,
+     0.08320239186286926,
+     0.05414232611656189
+    ],
+    "k": [
+     -5,
+     -4,
+     -4
+    ]
+   },
+   "ggn": {
+    "decrease": [
+     0.0631578266620636,
+     0.09609460830688477,
+     0.07984212040901184
+    ],
+    "k": [
+     -8,
+     -8,
+     -8
+    ]
+   }
+  },
+  "25": {
+   "soap_map": {
+    "decrease": [
+     0.018588483333587646,
+     0.0067823827266693115,
+     0.01655137538909912
+    ],
+    "k": [
+     -4,
+     -5,
+     -4
+    ]
+   },
+   "soap_exact": {
+    "decrease": [
+     0.032628387212753296,
+     0.015197277069091797,
+     0.02219042181968689
+    ],
+    "k": [
+     -5,
+     -5,
+     -5
+    ]
+   },
+   "soapeigh_exact": {
+    "decrease": [
+     0.03453841805458069,
+     0.016673415899276733,
+     0.026432037353515625
+    ],
+    "k": [
+     -5,
+     -6,
+     -5
+    ]
+   },
+   "probe_exact": {
+    "decrease": [
+     0.03346344828605652,
+     0.021189212799072266,
+     0.030679434537887573
+    ],
+    "k": [
+     -6,
+     -6,
+     -5
+    ]
+   },
+   "probe_probe": {
+    "decrease": [
+     0.03353258967399597,
+     0.021515607833862305,
+     0.030482620000839233
+    ],
+    "k": [
+     -6,
+     -6,
+     -5
+    ]
+   },
+   "kron_exact": {
+    "decrease": [
+     0.032236248254776,
+     0.016421616077423096,
+     0.024915486574172974
+    ],
+    "k": [
+     -5,
+     -5,
+     -4
+    ]
+   },
+   "ggn": {
+    "decrease": [
+     0.06684574484825134,
+     0.05319365859031677,
+     0.05025559663772583
+    ],
+    "k": [
+     -7,
+     -7,
+     -7
+    ]
+   }
+  },
+  "50": {
+   "soap_map": {
+    "decrease": [
+     0.04735279083251953,
+     0.03398829698562622,
+     0.013532042503356934
+    ],
+    "k": [
+     -4,
+     -4,
+     -5
+    ]
+   },
+   "soap_exact": {
+    "decrease": [
+     0.050065845251083374,
+     0.03669258952140808,
+     0.02185767889022827
+    ],
+    "k": [
+     -5,
+     -4,
+     -5
+    ]
+   },
+   "soapeigh_exact": {
+    "decrease": [
+     0.0512751042842865,
+     0.04143151640892029,
+     0.015931129455566406
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "probe_exact": {
+    "decrease": [
+     0.04901158809661865,
+     0.047141700983047485,
+     0.022821813821792603
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "probe_probe": {
+    "decrease": [
+     0.04916965961456299,
+     0.04707026481628418,
+     0.022942453622817993
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "kron_exact": {
+    "decrease": [
+     0.047402411699295044,
+     0.04088854789733887,
+     0.018486469984054565
+    ],
+    "k": [
+     -5,
+     -4,
+     -6
+    ]
+   },
+   "ggn": {
+    "decrease": [
+     0.04893037676811218,
+     0.03964579105377197,
+     0.03776359558105469
+    ],
+    "k": [
+     -7,
+     -7,
+     -7
+    ]
+   }
+  },
+  "100": {
+   "soap_map": {
+    "decrease": [
+     0.0509924590587616,
+     0.03432929515838623,
+     0.022165000438690186
+    ],
+    "k": [
+     -4,
+     -5,
+     -5
+    ]
+   },
+   "soap_exact": {
+    "decrease": [
+     0.048533856868743896,
+     0.03972826898097992,
+     0.022311389446258545
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "soapeigh_exact": {
+    "decrease": [
+     0.04932457208633423,
+     0.03515070676803589,
+     0.02555668354034424
+    ],
+    "k": [
+     -5,
+     -6,
+     -6
+    ]
+   },
+   "probe_exact": {
+    "decrease": [
+     0.04044023156166077,
+     0.03638683259487152,
+     0.02396485209465027
+    ],
+    "k": [
+     -5,
+     -6,
+     -6
+    ]
+   },
+   "probe_probe": {
+    "decrease": [
+     0.04081133008003235,
+     0.03642697632312775,
+     0.02408754825592041
+    ],
+    "k": [
+     -5,
+     -6,
+     -6
+    ]
+   },
+   "kron_exact": {
+    "decrease": [
+     0.044199466705322266,
+     0.03791151940822601,
+     0.020736753940582275
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "ggn": {
+    "decrease": [
+     0.046258896589279175,
+     0.04718020558357239,
+     0.02950325608253479
+    ],
+    "k": [
+     -7,
+     -7,
+     -7
+    ]
+   }
+  },
+  "250": {
+   "soap_map": {
+    "decrease": [
+     0.02322004735469818,
+     0.03909765183925629,
+     0.014515548944473267
+    ],
+    "k": [
+     -5,
+     -5,
+     -6
+    ]
+   },
+   "soap_exact": {
+    "decrease": [
+     0.02312856912612915,
+     0.042548537254333496,
+     0.014033868908882141
+    ],
+    "k": [
+     -6,
+     -5,
+     -6
+    ]
+   },
+   "soapeigh_exact": {
+    "decrease": [
+     0.02357529103755951,
+     0.04303532838821411,
+     0.017424359917640686
+    ],
+    "k": [
+     -6,
+     -5,
+     -6
+    ]
+   },
+   "probe_exact": {
+    "decrease": [
+     0.022570908069610596,
+     0.0366431325674057,
+     0.012634769082069397
+    ],
+    "k": [
+     -6,
+     -6,
+     -7
+    ]
+   },
+   "probe_probe": {
+    "decrease": [
+     0.02260221540927887,
+     0.03670415282249451,
+     0.012594655156135559
+    ],
+    "k": [
+     -6,
+     -6,
+     -7
+    ]
+   },
+   "kron_exact": {
+    "decrease": [
+     0.019969046115875244,
+     0.03824451565742493,
+     0.014770016074180603
+    ],
+    "k": [
+     -6,
+     -5,
+     -6
+    ]
+   },
+   "ggn": {
+    "decrease": [
+     0.02526894211769104,
+     0.035463571548461914,
+     0.015698209404945374
+    ],
+    "k": [
+     -7,
+     -7,
+     -8
+    ]
+   }
+  }
+ }
+}

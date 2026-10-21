@@ -1,0 +1,27 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+soap__lr0.01__s2 step 10: val=1.9837 acc=0.2736 ema.98=1.9896 train_s=2.4
+soap__lr0.01__s2 step 25: val=1.7485 acc=0.3500 ema.98=1.8225 train_s=5.8
+soap__lr0.01__s2 step 50: val=1.4504 acc=0.4840 ema.98=1.6525 train_s=11.3
+soap__lr0.01__s2 step 75: val=1.2202 acc=0.5598 ema.98=1.4648 train_s=16.8
+soap__lr0.01__s2 step 100: val=1.1026 acc=0.6020 ema.98=1.2726 train_s=22.3
+soap__lr0.01__s2 step 125: val=0.9729 acc=0.6522 ema.98=1.1171 train_s=27.9
+soap__lr0.01__s2 step 150: val=0.9195 acc=0.6750 ema.98=0.9943 train_s=33.4
+soap__lr0.01__s2 step 175: val=0.8582 acc=0.6954 ema.98=0.9008 train_s=38.9
+soap__lr0.01__s2 step 200: val=0.7924 acc=0.7164 ema.98=0.8254 train_s=44.4
+soap__lr0.01__s2 step 225: val=0.7716 acc=0.7274 ema.98=0.7705 train_s=50.1
+soap__lr0.01__s2 step 250: val=0.7537 acc=0.7400 ema.98=0.7268 train_s=55.6
+soap__lr0.01__s2 step 275: val=0.7282 acc=0.7462 ema.98=0.6808 train_s=61.2
+soap__lr0.01__s2 step 300: val=0.6873 acc=0.7668 ema.98=0.6443 train_s=66.8
+soap__lr0.01__s2 step 325: val=0.6775 acc=0.7640 ema.98=0.6168 train_s=72.4
+soap__lr0.01__s2 step 350: val=0.6568 acc=0.7686 ema.98=0.5967 train_s=78.0
+soap__lr0.01__s2 step 375: val=0.6481 acc=0.7792 ema.98=0.5730 train_s=83.6
+soap__lr0.01__s2 step 400: val=0.6547 acc=0.7708 ema.98=0.5548 train_s=89.1
+soap__lr0.01__s2 step 425: val=0.6274 acc=0.7932 ema.98=0.5452 train_s=94.7
+soap__lr0.01__s2 step 450: val=0.6034 acc=0.7970 ema.98=0.5394 train_s=100.3
+soap__lr0.01__s2 step 475: val=0.5781 acc=0.8092 ema.98=0.5350 train_s=105.9
+soap__lr0.01__s2 step 500: val=0.5772 acc=0.8086 ema.98=0.5380 train_s=111.5
+soap__lr0.01__s2: completed

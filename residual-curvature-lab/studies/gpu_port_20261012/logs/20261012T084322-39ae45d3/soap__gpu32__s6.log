@@ -1,0 +1,24 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.12/site-packages/torch/autograd/graph.py:1072: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:410.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+soap__gpu32__s6 step 10: val=2.126360 ema.98=2.238232 train_s=0.5
+soap__gpu32__s6 step 25: val=1.495614 ema.98=1.842062 train_s=0.8
+soap__gpu32__s6 step 50: val=0.970763 ema.98=1.308104 train_s=1.4
+soap__gpu32__s6 step 75: val=0.691795 ema.98=0.958405 train_s=2.0
+soap__gpu32__s6 step 100: val=0.500969 ema.98=0.710331 train_s=2.6
+soap__gpu32__s6 step 125: val=0.382136 ema.98=0.530036 train_s=3.1
+soap__gpu32__s6 step 150: val=0.323189 ema.98=0.400311 train_s=3.7
+soap__gpu32__s6 step 175: val=0.281597 ema.98=0.321166 train_s=4.3
+soap__gpu32__s6 step 200: val=0.248528 ema.98=0.267615 train_s=4.9
+soap__gpu32__s6 step 225: val=0.243372 ema.98=0.233306 train_s=5.4
+soap__gpu32__s6 step 250: val=0.233283 ema.98=0.211317 train_s=6.0
+soap__gpu32__s6 step 275: val=0.228856 ema.98=0.194346 train_s=6.6
+soap__gpu32__s6 step 300: val=0.214655 ema.98=0.185236 train_s=7.2
+soap__gpu32__s6 step 325: val=0.198829 ema.98=0.176711 train_s=7.7
+soap__gpu32__s6 step 350: val=0.187935 ema.98=0.167950 train_s=8.3
+soap__gpu32__s6 step 375: val=0.191475 ema.98=0.160472 train_s=8.9
+soap__gpu32__s6 step 400: val=0.188600 ema.98=0.153865 train_s=9.4
+soap__gpu32__s6 step 425: val=0.174369 ema.98=0.147550 train_s=10.0
+soap__gpu32__s6 step 450: val=0.174527 ema.98=0.142918 train_s=10.6
+soap__gpu32__s6 step 475: val=0.171371 ema.98=0.139096 train_s=11.1
+soap__gpu32__s6 step 500: val=0.179785 ema.98=0.135237 train_s=11.7
+soap__gpu32__s6: completed

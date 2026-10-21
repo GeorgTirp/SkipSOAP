@@ -1,0 +1,17 @@
+ladder s1 t10: 46 s (run in the foreground before the queue)
+[W1013 10:30:29.530731608 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1073741824 bytes (free: 832176128, total: 8222998528).
+ladder s1 t25: 46 s
+ladder s1 t50: 45 s
+ladder s1 t100: 45 s
+ladder s1 t250: 45 s
+[W1013 10:33:35.078704505 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1073741824 bytes (free: 584712192, total: 8222998528).
+ladder s2 t10: 50 s
+ladder s2 t25: 46 s
+ladder s2 t50: 45 s
+ladder s2 t100: 46 s
+ladder s2 t250: 47 s
+ladder s3 t10: 46 s
+ladder s3 t25: 45 s
+ladder s3 t50: 45 s
+ladder s3 t100: 46 s
+ladder s3 t250: 48 s

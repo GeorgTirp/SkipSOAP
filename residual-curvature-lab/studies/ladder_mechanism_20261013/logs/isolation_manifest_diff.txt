@@ -1,0 +1,34 @@
+# Paths outside this study that differ between the before and after manifests: other studies' own folders
+# (written by their own preparation and runs) and ideas/parsec.md (insight-bank updates). No shared code or data changed.
+./studies/ggn_c_control_20261013/PROTOCOL.md
+./studies/ggn_c_control_20261013/README.md
+./studies/ggn_c_control_20261013/logs/protocol_sha256.txt
+./studies/ggn_c_control_20261013/scripts/common.py
+./studies/ggn_c_control_20261013/scripts/g1.py
+./studies/ggn_c_control_20261013/scripts/isolation_manifest.sh
+./studies/ggn_c_control_20261013/scripts/orchestrate.sh
+./studies/ggn_c_control_20261013/scripts/probes_ot.py
+./studies/ggn_c_control_20261013/scripts/run_queue.sh
+./studies/ggn_c_control_20261013/scripts/summarize.py
+./studies/ggn_c_control_20261013/scripts/train.py
+./studies/ggn_c_control_20261013/tests/conftest.py
+./studies/ggn_c_control_20261013/tests/test_control.py
+./studies/long_run_20261013/logs/20261013T120559-5d587678/queue.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/soap__lr0.003__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/soap__lr0.01__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/soap__lr0.03__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree__lr0.003__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree__lr0.01__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree__lr0.03__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree_n9__lr0.003__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree_n9__lr0.01__s0.log
+./studies/long_run_20261013/logs/20261013T120559-5d587678/topfree_n9__lr0.03__s0.log
+./studies/long_run_20261013/logs/baseline_suite.log
+./studies/long_run_20261013/logs/isolation_manifest_before.time
+./studies/long_run_20261013/logs/isolation_manifest_before.txt
+./studies/long_run_20261013/logs/orchestrate.log
+./studies/long_run_20261013/logs/orchestrate.start
+./studies/long_run_20261013/logs/run_tune.txt
+./studies/probe_variants_20261013/RESULTS.md
+./studies/probe_variants_20261013/logs/isolation_manifest_after.time
+./studies/probe_variants_20261013/logs/isolation_manifest_after.txt

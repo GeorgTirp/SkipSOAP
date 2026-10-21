@@ -1,0 +1,16 @@
+2026-10-12T10:38:10Z start soap__lr0.001__s0
+2026-10-12T10:40:29Z done soap__lr0.001__s0
+2026-10-12T10:40:29Z start soap__lr0.003__s0
+2026-10-12T10:42:47Z done soap__lr0.003__s0
+2026-10-12T10:42:47Z start soap__lr0.01__s0
+2026-10-12T10:45:06Z done soap__lr0.01__s0
+2026-10-12T10:45:06Z start soap__lr0.03__s0
+2026-10-12T10:47:25Z done soap__lr0.03__s0
+2026-10-12T10:47:25Z start topfree__lr0.001__s0
+2026-10-12T10:50:57Z done topfree__lr0.001__s0
+2026-10-12T10:50:57Z start topfree__lr0.003__s0
+2026-10-12T10:54:28Z done topfree__lr0.003__s0
+2026-10-12T10:54:28Z start topfree__lr0.01__s0
+2026-10-12T10:58:00Z done topfree__lr0.01__s0
+2026-10-12T10:58:00Z start topfree__lr0.03__s0
+2026-10-12T11:01:31Z done topfree__lr0.03__s0

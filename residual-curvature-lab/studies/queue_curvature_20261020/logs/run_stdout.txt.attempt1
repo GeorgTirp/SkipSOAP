@@ -1,0 +1,21 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+[W1020 21:07:56.941370507 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 268435456 bytes (free: 213843968, total: 8219852800).
+[W1020 21:08:21.872407807 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2147483648 bytes (free: 497876992, total: 8219852800).
+[W1020 21:08:22.004420425 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2147483648 bytes (free: 1852637184, total: 8219852800).
+[W1020 21:08:22.004619414 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2147483648 bytes (free: 1852637184, total: 8219852800).
+Traceback (most recent call last):
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/queue_curvature_20261020/scripts/run.py", line 139, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/queue_curvature_20261020/scripts/run.py", line 124, in main
+    out = trajectory(seed, device, data)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/queue_curvature_20261020/scripts/run.py", line 99, in trajectory
+    result = queue_analysis.analyse(model, registry, data, snap, seed)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/queue_curvature_20261020/scripts/queue_analysis.py", line 161, in analyse
+    total = float(z.double().square().sum())
+                  ^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 7.66 GiB of which 1.73 GiB is free. Including non-PyTorch memory, this process has 4.88 GiB memory in use. Of the allocated memory 4.41 GiB is allocated by PyTorch, and 193.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

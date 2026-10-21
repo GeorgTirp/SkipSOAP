@@ -1,0 +1,31 @@
+# Paths outside this study that differ between the before and after manifests: other studies' own folders
+# (written by their own write-ups and preparation) and ideas/parsec.md. No shared code or data changed.
+./ideas/parsec.md
+./studies/ggn_c_control_20261013/DEVIATIONS.md
+./studies/ggn_c_control_20261013/PROTOCOL.md
+./studies/ggn_c_control_20261013/README.md
+./studies/ggn_c_control_20261013/logs/protocol_sha256.txt
+./studies/ggn_c_control_20261013/scripts/common.py
+./studies/ggn_c_control_20261013/scripts/g1.py
+./studies/ggn_c_control_20261013/scripts/isolation_manifest.sh
+./studies/ggn_c_control_20261013/scripts/orchestrate.sh
+./studies/ggn_c_control_20261013/scripts/probes_ot.py
+./studies/ggn_c_control_20261013/scripts/run_queue.sh
+./studies/ggn_c_control_20261013/scripts/summarize.py
+./studies/ggn_c_control_20261013/scripts/train.py
+./studies/ggn_c_control_20261013/tests/conftest.py
+./studies/ggn_c_control_20261013/tests/test_control.py
+./studies/ladder_mechanism_20261013/HANDOFF_PROPOSED_ENTRY.md
+./studies/ladder_mechanism_20261013/README.md
+./studies/ladder_mechanism_20261013/RESULTS.md
+./studies/ladder_mechanism_20261013/logs/final_suite.log
+./studies/ladder_mechanism_20261013/logs/isolation_manifest_after.time
+./studies/ladder_mechanism_20261013/logs/isolation_manifest_after.txt
+./studies/ladder_mechanism_20261013/logs/isolation_manifest_diff.txt
+./studies/probe_variants_20261013/HANDOFF_PROPOSED_ENTRY.md
+./studies/probe_variants_20261013/README.md
+./studies/probe_variants_20261013/RESULTS.md
+./studies/probe_variants_20261013/logs/final_suite.log
+./studies/probe_variants_20261013/logs/isolation_manifest_after.time
+./studies/probe_variants_20261013/logs/isolation_manifest_after.txt
+./studies/probe_variants_20261013/logs/isolation_manifest_diff.txt

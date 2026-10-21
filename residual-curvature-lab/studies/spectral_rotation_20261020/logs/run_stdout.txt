@@ -1,0 +1,93 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+soap s1 t10: 52 s
+soap s1 t20: 26 s
+soap s1 t50: 53 s
+soap s1 t60: 26 s
+soap s1 t100: 51 s
+soap s1 t110: 26 s
+soap s1 t150: 26 s
+soap s1 t250: 54 s
+soap s1 t260: 27 s
+soap s1 t300: 27 s
+soap s1 t400: 53 s
+soap s1 t410: 27 s
+soap s1 t450: 27 s
+soap s1 t500: 27 s
+soap s1: done in 617 s
+soap s2 t10: 51 s
+soap s2 t20: 27 s
+soap s2 t50: 55 s
+soap s2 t60: 26 s
+soap s2 t100: 51 s
+soap s2 t110: 27 s
+soap s2 t150: 27 s
+soap s2 t250: 53 s
+soap s2 t260: 26 s
+soap s2 t300: 26 s
+soap s2 t400: 54 s
+soap s2 t410: 28 s
+soap s2 t450: 28 s
+soap s2 t500: 27 s
+soap s2: done in 623 s
+soap s3 t10: 50 s
+soap s3 t20: 25 s
+soap s3 t50: 50 s
+soap s3 t60: 26 s
+soap s3 t100: 51 s
+soap s3 t110: 27 s
+soap s3 t150: 26 s
+soap s3 t250: 51 s
+soap s3 t260: 26 s
+soap s3 t300: 26 s
+soap s3 t400: 52 s
+soap s3 t410: 28 s
+soap s3 t450: 27 s
+soap s3 t500: 27 s
+soap s3: done in 606 s
+topfree s1 t10: 50 s
+topfree s1 t20: 25 s
+topfree s1 t50: 52 s
+topfree s1 t60: 27 s
+topfree s1 t100: 52 s
+topfree s1 t110: 27 s
+topfree s1 t150: 27 s
+topfree s1 t250: 53 s
+topfree s1 t260: 27 s
+topfree s1 t300: 27 s
+topfree s1 t400: 54 s
+topfree s1 t410: 28 s
+topfree s1 t450: 28 s
+topfree s1 t500: 28 s
+topfree s1: done in 697 s
+topfree s2 t10: 52 s
+topfree s2 t20: 26 s
+topfree s2 t50: 53 s
+topfree s2 t60: 27 s
+topfree s2 t100: 51 s
+topfree s2 t110: 26 s
+topfree s2 t150: 28 s
+topfree s2 t250: 55 s
+topfree s2 t260: 27 s
+topfree s2 t300: 26 s
+topfree s2 t400: 52 s
+topfree s2 t410: 27 s
+topfree s2 t450: 27 s
+topfree s2 t500: 27 s
+topfree s2: done in 695 s
+topfree s3 t10: 50 s
+topfree s3 t20: 25 s
+topfree s3 t50: 51 s
+topfree s3 t60: 26 s
+topfree s3 t100: 51 s
+topfree s3 t110: 26 s
+topfree s3 t150: 26 s
+topfree s3 t250: 53 s
+topfree s3 t260: 27 s
+topfree s3 t300: 26 s
+topfree s3 t400: 53 s
+topfree s3 t410: 28 s
+topfree s3 t450: 27 s
+topfree s3 t500: 27 s
+topfree s3: done in 683 s

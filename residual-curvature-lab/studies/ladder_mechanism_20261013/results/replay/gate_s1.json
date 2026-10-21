@@ -1,0 +1,1 @@
+{"passed": true, "checks": {"soap_s1_t50": true, "soap_s1_t100": true, "soap_s2_t50": true, "soap_s2_t100": true, "soap_s3_t50": true, "soap_s3_t100": true, "topfree_s1_t50": true, "topfree_s1_t100": true, "topfree_s2_t50": true, "topfree_s2_t100": true, "topfree_s3_t50": true, "topfree_s3_t100": true}}

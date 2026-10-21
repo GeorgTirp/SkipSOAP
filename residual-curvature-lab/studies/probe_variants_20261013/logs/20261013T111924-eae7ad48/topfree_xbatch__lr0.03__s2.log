@@ -1,0 +1,25 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/probe_variants_20261013/scripts/train.py:177: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+topfree_xbatch__lr0.03__s2 step 10: val=2.0483 acc=0.2362 ema.98=1.9821 train_s=4.1
+topfree_xbatch__lr0.03__s2 step 25: val=1.7822 acc=0.3386 ema.98=1.8574 train_s=10.0
+topfree_xbatch__lr0.03__s2 step 50: val=1.5693 acc=0.4278 ema.98=1.7289 train_s=18.7
+topfree_xbatch__lr0.03__s2 step 75: val=1.2856 acc=0.5336 ema.98=1.5808 train_s=28.2
+topfree_xbatch__lr0.03__s2 step 100: val=1.1577 acc=0.5826 ema.98=1.4180 train_s=36.9
+topfree_xbatch__lr0.03__s2 step 125: val=1.0516 acc=0.6264 ema.98=1.2175 train_s=46.5
+topfree_xbatch__lr0.03__s2 step 150: val=0.9730 acc=0.6460 ema.98=1.0960 train_s=55.2
+topfree_xbatch__lr0.03__s2 step 175: val=0.9208 acc=0.6746 ema.98=1.0115 train_s=64.8
+topfree_xbatch__lr0.03__s2 step 200: val=0.8507 acc=0.6994 ema.98=0.9315 train_s=73.5
+topfree_xbatch__lr0.03__s2 step 225: val=0.8067 acc=0.7164 ema.98=0.8599 train_s=83.1
+topfree_xbatch__lr0.03__s2 step 250: val=0.8073 acc=0.7186 ema.98=0.7911 train_s=91.8
+topfree_xbatch__lr0.03__s2 step 275: val=0.7311 acc=0.7388 ema.98=0.7435 train_s=101.4
+topfree_xbatch__lr0.03__s2 step 300: val=0.7159 acc=0.7522 ema.98=0.7080 train_s=110.1
+topfree_xbatch__lr0.03__s2 step 325: val=0.6684 acc=0.7716 ema.98=0.6630 train_s=119.8
+topfree_xbatch__lr0.03__s2 step 350: val=0.6507 acc=0.7738 ema.98=0.6232 train_s=128.5
+topfree_xbatch__lr0.03__s2 step 375: val=0.6413 acc=0.7812 ema.98=0.5932 train_s=138.0
+topfree_xbatch__lr0.03__s2 step 400: val=0.6408 acc=0.7792 ema.98=0.5749 train_s=146.8
+topfree_xbatch__lr0.03__s2 step 425: val=0.6234 acc=0.7850 ema.98=0.5627 train_s=156.3
+topfree_xbatch__lr0.03__s2 step 450: val=0.5716 acc=0.7996 ema.98=0.5447 train_s=165.1
+topfree_xbatch__lr0.03__s2 step 475: val=0.5506 acc=0.8104 ema.98=0.5289 train_s=174.6
+topfree_xbatch__lr0.03__s2 step 500: val=0.5401 acc=0.8172 ema.98=0.5165 train_s=183.4
+topfree_xbatch__lr0.03__s2: completed

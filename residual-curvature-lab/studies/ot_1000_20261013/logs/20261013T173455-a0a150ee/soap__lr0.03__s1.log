@@ -1,0 +1,8 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/ot_1000_20261013/scripts/train.py:153: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+soap__lr0.03__s1 step 10: val=1.9946 acc=0.2646 ema.98=1.9552 train_s=2.4
+soap__lr0.03__s1 step 25: val=1.7535 acc=0.3288 ema.98=1.8168 train_s=5.8
+soap__lr0.03__s1 step 50: val=1.5952 acc=0.4080 ema.98=1.6111 train_s=11.4
+soap__lr0.03__s1 step 100: val=1.1859 acc=0.5682 ema.98=1.2554 train_s=22.5
+soap__lr0.03__s1 step 200: val=0.9016 acc=0.6742 ema.98=0.8694 train_s=44.8

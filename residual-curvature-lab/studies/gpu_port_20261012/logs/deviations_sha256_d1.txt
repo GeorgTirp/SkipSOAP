@@ -1,0 +1,1 @@
+19a89d602acbacbd56216a025b425c675d30f8cbf223bcce7a4b4d40ef3e7cfb  studies/gpu_port_20261012/DEVIATIONS.md

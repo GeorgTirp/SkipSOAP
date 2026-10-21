@@ -1,0 +1,27 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+[W1012 14:00:58.223099413 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1073741824 bytes (free: 943652864, total: 8219852800).
+ggn__gamma0.01__s1 step 10: val=1.4816 acc=0.4908 ema.98=1.7266 train_s=273.2
+ggn__gamma0.01__s1 step 25: val=1.2843 acc=0.5454 ema.98=1.4262 train_s=630.7
+ggn__gamma0.01__s1 step 50: val=1.1774 acc=0.5836 ema.98=1.2705 train_s=1243.6
+ggn__gamma0.01__s1 step 75: val=1.1137 acc=0.6136 ema.98=1.1917 train_s=1844.2
+Traceback (most recent call last):
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 456, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 448, in main
+    work(args.run, args.unit)
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 292, in work
+    run(spec, unit, STEPS)
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 321, in run
+    info = arm.step(t, x, y, selection_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 217, in step
+    return self.ggn_step(t, x, y, selection_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py", line 247, in ggn_step
+    delta, solve = ggn.tensor_ggn_step(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/ggn.py", line 167, in tensor_ggn_step
+    raise RuntimeError(f'Curvature action audit failed for {spec.name}: {info["action_checks"][spec.name]}')
+RuntimeError: Curvature action audit failed for head.weight: 0.00035989351303346165

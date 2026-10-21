@@ -1,0 +1,12 @@
+tests: 106 passed, 1 warning in 7.29s
+studies/parsec_l_20261009/tests: 22 passed, 2 warnings in 13.92s
+studies/cifar_ggn_20261012/tests: 11 passed, 1 warning in 6.01s
+studies/cifar_sn_soap_20261012/tests: 12 passed, 2 warnings in 9.19s
+studies/basis_refresh_snr_20261013/tests: 9 passed in 6.20s
+studies/n9_training_20261013/tests: 9 passed, 1 warning in 3.84s
+studies/probe_variants_20261013/tests: 6 passed, 1 warning in 5.87s
+studies/ladder_mechanism_20261013/tests: 6 passed, 1 warning in 5.05s
+studies/long_run_20261013/tests: 4 passed, 1 warning in 2.63s
+studies/ggn_c_control_20261013/tests: 3 passed, 1 warning in 2.47s
+studies/ot_1000_20261013/tests: 4 passed, 1 warning in 2.77s
+studies/ot_tuned_1000_20261014/tests: 4 passed, 1 warning in 2.15s

@@ -1,0 +1,15 @@
+== ggn 09:18:04
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/ggn.py", line 162, in tensor_ggn_step
+    raise RuntimeError(f'Curvature action audit failed for {spec.name}: {info["action_checks"][spec.name]}')
+RuntimeError: Curvature action audit failed for blocks.0.attention.key.bias: 1.710334062576294
+== ggn_sn 09:18:23
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/ggn.py", line 162, in tensor_ggn_step
+    raise RuntimeError(f'Curvature action audit failed for {spec.name}: {info["action_checks"][spec.name]}')
+RuntimeError: Curvature action audit failed for blocks.0.attention.key.bias: 1.2535526752471924
+== soap 09:18:52
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+soap__lr0.003__s0__measure step 10: val=2.0460 acc=0.2540 ema.98=2.2253 train_s=2.4
+soap__lr0.003__s0__measure: completed
+{"arm": "soap", "steps": 12, "median_step_seconds": 0.21806923500025732, "max_step_seconds": 0.3938659940004072, "gpu_peak_GiB": 4.717064380645752, "measurement_seconds": [7.653749074999723]}

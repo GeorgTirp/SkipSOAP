@@ -1,0 +1,1 @@
+5a3d39e504e7971727fcc8bffffd6211ca5cc8ec479649b0380e1215079e8815  studies/ggn_ot_fairness_20261014/PROTOCOL.md

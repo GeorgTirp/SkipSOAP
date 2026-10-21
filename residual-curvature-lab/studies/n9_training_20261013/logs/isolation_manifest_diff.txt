@@ -1,0 +1,43 @@
+# Differences between the before and after manifests (paths outside this study):
+# only files of the three subsequent studies, created during this study's run (probe_variants, ladder_mechanism,
+# long_run), each written by its own preparation; no shared code, data or other study changed.
+> ./studies/ladder_mechanism_20261013/PROTOCOL.md
+> ./studies/ladder_mechanism_20261013/README.md
+> ./studies/ladder_mechanism_20261013/logs/protocol_sha256.txt
+> ./studies/ladder_mechanism_20261013/scripts/algebra.py
+> ./studies/ladder_mechanism_20261013/scripts/common.py
+> ./studies/ladder_mechanism_20261013/scripts/control.py
+> ./studies/ladder_mechanism_20261013/scripts/isolation_manifest.sh
+> ./studies/ladder_mechanism_20261013/scripts/ladder.py
+> ./studies/ladder_mechanism_20261013/scripts/run.py
+> ./studies/ladder_mechanism_20261013/scripts/states.py
+> ./studies/ladder_mechanism_20261013/scripts/summarize.py
+> ./studies/ladder_mechanism_20261013/tests/conftest.py
+> ./studies/ladder_mechanism_20261013/tests/test_ladder.py
+> ./studies/long_run_20261013/PROTOCOL.md
+> ./studies/long_run_20261013/README.md
+> ./studies/long_run_20261013/logs/protocol_sha256.txt
+> ./studies/long_run_20261013/scripts/common.py
+> ./studies/long_run_20261013/scripts/isolation_manifest.sh
+> ./studies/long_run_20261013/scripts/orchestrate.sh
+> ./studies/long_run_20261013/scripts/run_queue.sh
+> ./studies/long_run_20261013/scripts/summarize.py
+> ./studies/long_run_20261013/scripts/train.py
+> ./studies/long_run_20261013/tests/conftest.py
+> ./studies/long_run_20261013/tests/test_long.py
+> ./studies/probe_variants_20261013/PROTOCOL.md
+> ./studies/probe_variants_20261013/README.md
+> ./studies/probe_variants_20261013/logs/baseline_suite.log
+> ./studies/probe_variants_20261013/logs/isolation_manifest_before.time
+> ./studies/probe_variants_20261013/logs/isolation_manifest_before.txt
+> ./studies/probe_variants_20261013/logs/protocol_sha256.txt
+> ./studies/probe_variants_20261013/scripts/common.py
+> ./studies/probe_variants_20261013/scripts/g1.py
+> ./studies/probe_variants_20261013/scripts/isolation_manifest.sh
+> ./studies/probe_variants_20261013/scripts/orchestrate.sh
+> ./studies/probe_variants_20261013/scripts/probes_ot.py
+> ./studies/probe_variants_20261013/scripts/run_queue.sh
+> ./studies/probe_variants_20261013/scripts/summarize.py
+> ./studies/probe_variants_20261013/scripts/train.py
+> ./studies/probe_variants_20261013/tests/conftest.py
+> ./studies/probe_variants_20261013/tests/test_variants.py

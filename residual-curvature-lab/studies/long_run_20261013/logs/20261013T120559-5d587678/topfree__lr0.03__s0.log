@@ -1,0 +1,27 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/long_run_20261013/scripts/train.py:184: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+topfree__lr0.03__s0 step 10: val=1.9696 acc=0.2776 ema.98=2.0343 train_s=4.1
+topfree__lr0.03__s0 step 25: val=1.7026 acc=0.3836 ema.98=1.8177 train_s=10.0
+topfree__lr0.03__s0 step 50: val=1.4221 acc=0.4834 ema.98=1.5951 train_s=18.7
+topfree__lr0.03__s0 step 100: val=1.2063 acc=0.5626 ema.98=1.1990 train_s=36.9
+topfree__lr0.03__s0 step 200: val=0.8480 acc=0.6978 ema.98=0.8697 train_s=73.4
+topfree__lr0.03__s0 step 300: val=0.7110 acc=0.7518 ema.98=0.6322 train_s=109.8
+topfree__lr0.03__s0 step 400: val=0.6733 acc=0.7602 ema.98=0.5520 train_s=146.5
+topfree__lr0.03__s0 step 500: val=0.5986 acc=0.7900 ema.98=0.5173 train_s=182.9
+topfree__lr0.03__s0 step 600: val=0.5817 acc=0.8012 ema.98=0.4755 train_s=219.4
+topfree__lr0.03__s0 step 700: val=0.5637 acc=0.8136 ema.98=0.4588 train_s=255.9
+topfree__lr0.03__s0 step 800: val=0.5765 acc=0.8088 ema.98=0.4546 train_s=292.4
+topfree__lr0.03__s0 step 900: val=0.5765 acc=0.8104 ema.98=0.4489 train_s=329.0
+topfree__lr0.03__s0 step 1000: val=0.5842 acc=0.8128 ema.98=0.4606 train_s=365.4
+topfree__lr0.03__s0 step 1100: val=0.5682 acc=0.8162 ema.98=0.4681 train_s=401.7
+topfree__lr0.03__s0 step 1200: val=0.6126 acc=0.8078 ema.98=0.4757 train_s=438.3
+topfree__lr0.03__s0 step 1300: val=0.6036 acc=0.8150 ema.98=0.4783 train_s=474.7
+topfree__lr0.03__s0 step 1400: val=0.6054 acc=0.8176 ema.98=0.4798 train_s=511.0
+topfree__lr0.03__s0 step 1500: val=0.6292 acc=0.8072 ema.98=0.4873 train_s=547.4
+topfree__lr0.03__s0 step 1600: val=0.6281 acc=0.8148 ema.98=0.4880 train_s=583.9
+topfree__lr0.03__s0 step 1700: val=0.6493 acc=0.8170 ema.98=0.5098 train_s=620.3
+topfree__lr0.03__s0 step 1800: val=0.6687 acc=0.8286 ema.98=0.5416 train_s=656.7
+topfree__lr0.03__s0 step 1900: val=0.7195 acc=0.8372 ema.98=0.6076 train_s=693.1
+topfree__lr0.03__s0 step 2000: val=0.7762 acc=0.8438 ema.98=0.7198 train_s=729.7
+topfree__lr0.03__s0: completed

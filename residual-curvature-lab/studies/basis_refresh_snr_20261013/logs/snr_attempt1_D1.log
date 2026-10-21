@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/basis_refresh_snr_20261013/scripts/run.py", line 115, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/basis_refresh_snr_20261013/scripts/run.py", line 109, in main
+    out = snr.run_state(seed, step, device, data)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/basis_refresh_snr_20261013/scripts/snr.py", line 49, in run_state
+    model, registry, optimizer, _ = states.topfree(seed, step, device)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/basis_refresh_snr_20261013/scripts/states.py", line 141, in topfree
+    optimizer.load_state_dict(to(checkpoint['optimizer'], device))
+  File "/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/gpu_port_20261012/gpu_parsec/optimizer.py", line 689, in load_state_dict
+    self._generator.set_state(saved['generator'])
+TypeError: RNG state must be a torch.ByteTensor

@@ -1,0 +1,9 @@
+tests: 106 passed, 1 warning in 7.77s
+studies/parsec_l_20261009/tests: 22 passed, 2 warnings in 14.54s
+studies/cifar_ggn_20261012/tests: 11 passed, 1 warning in 6.52s
+studies/cifar_sn_soap_20261012/tests: 12 passed, 2 warnings in 9.88s
+studies/basis_refresh_snr_20261013/tests: 9 passed in 6.57s
+studies/n9_training_20261013/tests: 9 passed, 1 warning in 4.13s
+studies/probe_variants_20261013/tests: 6 passed, 1 warning in 6.21s
+studies/ladder_mechanism_20261013/tests: 6 passed, 1 warning in 5.29s
+studies/long_run_20261013/tests: 3 passed, 1 warning in 2.29s

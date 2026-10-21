@@ -1,0 +1,25 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+soap__lr0.03__s0 step 10: val=2.0581 acc=0.2190 ema.98=2.0023 train_s=2.4
+soap__lr0.03__s0 step 25: val=1.8094 acc=0.3184 ema.98=1.9069 train_s=5.8
+soap__lr0.03__s0 step 50: val=1.6085 acc=0.4108 ema.98=1.7209 train_s=11.4
+soap__lr0.03__s0 step 75: val=1.3674 acc=0.4966 ema.98=1.5558 train_s=17.0
+soap__lr0.03__s0 step 100: val=1.2581 acc=0.5458 ema.98=1.3958 train_s=22.5
+soap__lr0.03__s0 step 125: val=1.1695 acc=0.5738 ema.98=1.2680 train_s=28.2
+soap__lr0.03__s0 step 150: val=1.0740 acc=0.6128 ema.98=1.1608 train_s=33.7
+soap__lr0.03__s0 step 175: val=1.0176 acc=0.6392 ema.98=1.0671 train_s=39.3
+soap__lr0.03__s0 step 200: val=0.9260 acc=0.6660 ema.98=0.9851 train_s=44.8
+soap__lr0.03__s0 step 225: val=0.9050 acc=0.6728 ema.98=0.9111 train_s=50.4
+soap__lr0.03__s0 step 250: val=0.8408 acc=0.7032 ema.98=0.8409 train_s=56.0
+soap__lr0.03__s0 step 275: val=0.8004 acc=0.7132 ema.98=0.7836 train_s=61.6
+soap__lr0.03__s0 step 300: val=0.7618 acc=0.7316 ema.98=0.7354 train_s=67.1
+soap__lr0.03__s0 step 325: val=0.7403 acc=0.7384 ema.98=0.6985 train_s=72.7
+soap__lr0.03__s0 step 350: val=0.7374 acc=0.7402 ema.98=0.6617 train_s=78.3
+soap__lr0.03__s0 step 375: val=0.6925 acc=0.7542 ema.98=0.6350 train_s=83.9
+soap__lr0.03__s0 step 400: val=0.6580 acc=0.7728 ema.98=0.6092 train_s=89.4
+soap__lr0.03__s0 step 425: val=0.6635 acc=0.7732 ema.98=0.5842 train_s=95.1
+soap__lr0.03__s0 step 450: val=0.6291 acc=0.7834 ema.98=0.5654 train_s=100.6
+soap__lr0.03__s0 step 475: val=0.5852 acc=0.8004 ema.98=0.5506 train_s=106.2
+soap__lr0.03__s0 step 500: val=0.5694 acc=0.8066 ema.98=0.5432 train_s=111.8
+soap__lr0.03__s0: completed

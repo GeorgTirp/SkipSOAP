@@ -1,0 +1,22 @@
+{
+  "run": "/home/georg/skipsoap-study-data/cifar_sn_soap_20261012/runs/20261012T173632-18f98b9d",
+  "reference": "/home/georg/skipsoap-study-data/cifar_ggn_20261012/runs/20261012T110529-d747f9fc",
+  "units": {
+    "soap__lr0.01__s1": {
+      "validation.json": "bitwise equal",
+      "training.json": "bitwise equal",
+      "measurements.json": "bitwise equal"
+    },
+    "soap__lr0.01__s2": {
+      "validation.json": "bitwise equal",
+      "training.json": "bitwise equal",
+      "measurements.json": "bitwise equal"
+    },
+    "soap__lr0.01__s3": {
+      "validation.json": "bitwise equal",
+      "training.json": "bitwise equal",
+      "measurements.json": "bitwise equal"
+    }
+  },
+  "passed": true
+}

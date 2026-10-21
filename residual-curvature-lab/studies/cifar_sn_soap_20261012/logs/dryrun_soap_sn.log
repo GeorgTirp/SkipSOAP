@@ -1,0 +1,5 @@
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+soap_sn__lr0.01__s0__measure step 10: val=1.9668 acc=0.2700 ema.98=2.0391 train_s=4.5
+soap_sn__lr0.01__s0__measure: completed
+{"arm": "soap_sn", "steps": 20, "median_step_seconds": 0.42393150700081605, "max_step_seconds": 0.5992545949993655, "gpu_peak_GiB": 2.5169782638549805, "measurement_seconds": [18.646928185000434, 18.170033178001177], "sn_active": [30, 31]}

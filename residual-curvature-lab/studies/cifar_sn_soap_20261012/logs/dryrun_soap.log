@@ -1,0 +1,3 @@
+soap__lr0.01__s0: completed
+{"arm": "soap", "steps": 25, "median_step_seconds": 0.21652296249885694, "max_step_seconds": 0.39073074200132396, "gpu_peak_GiB": 1.3213863372802734, "measurement_seconds": [], "sn_active": []}
+pre-run G1 check, 25 steps vs cifar_ggn tuning unit soap__lr0.01__s0: training bitwise equal | validation steps [0, 10, 25] bitwise equal

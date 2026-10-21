@@ -1,0 +1,22 @@
+topfree__cpu64__s6 step 10: val=2.220163 ema.98=2.081636 train_s=1.4
+topfree__cpu64__s6 step 25: val=1.355016 ema.98=1.662228 train_s=3.6
+topfree__cpu64__s6 step 50: val=0.780307 ema.98=1.170246 train_s=6.5
+topfree__cpu64__s6 step 75: val=0.493469 ema.98=0.806598 train_s=10.3
+topfree__cpu64__s6 step 100: val=0.349898 ema.98=0.551730 train_s=13.2
+topfree__cpu64__s6 step 125: val=0.295682 ema.98=0.399258 train_s=17.0
+topfree__cpu64__s6 step 150: val=0.260884 ema.98=0.307966 train_s=20.1
+topfree__cpu64__s6 step 175: val=0.244395 ema.98=0.257506 train_s=23.8
+topfree__cpu64__s6 step 200: val=0.213150 ema.98=0.221818 train_s=26.5
+topfree__cpu64__s6 step 225: val=0.204889 ema.98=0.201474 train_s=29.8
+topfree__cpu64__s6 step 250: val=0.195727 ema.98=0.187524 train_s=32.6
+topfree__cpu64__s6 step 275: val=0.186926 ema.98=0.175244 train_s=36.0
+topfree__cpu64__s6 step 300: val=0.180246 ema.98=0.163660 train_s=38.6
+topfree__cpu64__s6 step 325: val=0.171476 ema.98=0.156872 train_s=42.0
+topfree__cpu64__s6 step 350: val=0.166843 ema.98=0.150131 train_s=44.6
+topfree__cpu64__s6 step 375: val=0.158155 ema.98=0.144983 train_s=47.8
+topfree__cpu64__s6 step 400: val=0.151964 ema.98=0.136381 train_s=50.3
+topfree__cpu64__s6 step 425: val=0.160037 ema.98=0.131973 train_s=53.5
+topfree__cpu64__s6 step 450: val=0.158019 ema.98=0.129212 train_s=56.0
+topfree__cpu64__s6 step 475: val=0.149003 ema.98=0.125984 train_s=59.2
+topfree__cpu64__s6 step 500: val=0.141578 ema.98=0.121624 train_s=61.7
+topfree__cpu64__s6: completed

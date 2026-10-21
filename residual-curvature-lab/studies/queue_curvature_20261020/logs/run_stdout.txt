@@ -1,0 +1,18 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+seed 1 t50: 229 s
+seed 1 t100: 229 s
+seed 1 t250: 233 s
+seed 1 t400: 224 s
+seed 1: done in 1070 s
+seed 2 t50: 222 s
+seed 2 t100: 223 s
+seed 2 t250: 223 s
+seed 2 t400: 223 s
+seed 2: done in 1043 s
+seed 3 t50: 223 s
+seed 3 t100: 224 s
+seed 3 t250: 223 s
+seed 3 t400: 223 s
+seed 3: done in 1044 s

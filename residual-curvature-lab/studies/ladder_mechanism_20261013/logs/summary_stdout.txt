@@ -1,0 +1,38 @@
+L {
+ "L1_information_present": {
+  "states": 0,
+  "of": 9,
+  "verdict": "not shown"
+ },
+ "L2_staleness_matters": {
+  "states": 4,
+  "of": 9,
+  "verdict": "not shown"
+ },
+ "L3_estimation_matters": {
+  "states": 0,
+  "of": 9,
+  "verdict": "not shown"
+ },
+ "L4_directions_missing": {
+  "states": 9,
+  "of": 9,
+  "verdict": "directions are missing",
+  "consequence": "'close the GGN gap with PARSEC-L' formally dropped"
+ },
+ "L5_transfer": {
+  "interior_fraction": 1.0
+ }
+}
+N {
+ "N1_selection": {
+  "points": 11,
+  "of": 18,
+  "verdict": "not shown"
+ },
+ "N2_global_change": {
+  "points": 8,
+  "of": 18,
+  "verdict": "not shown"
+ }
+}

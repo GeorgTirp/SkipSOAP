@@ -1,0 +1,4 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/gpu_port_20261012/scripts/cost.py:91: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  rows.append({'step': step, 'seconds': time.perf_counter()-began, 'loss': float(loss),
+M1__adamw: completed D=208074 plain=0.03248418400016817 probe=None peak=1.28 GiB

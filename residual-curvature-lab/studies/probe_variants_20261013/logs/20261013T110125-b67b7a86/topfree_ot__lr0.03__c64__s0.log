@@ -1,0 +1,25 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/probe_variants_20261013/scripts/train.py:177: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+topfree_ot__lr0.03__c64__s0 step 10: val=2.0514 acc=0.2178 ema.98=2.0062 train_s=4.0
+topfree_ot__lr0.03__c64__s0 step 25: val=1.9212 acc=0.2708 ema.98=1.9161 train_s=9.9
+topfree_ot__lr0.03__c64__s0 step 50: val=1.6780 acc=0.3768 ema.98=1.7815 train_s=18.6
+topfree_ot__lr0.03__c64__s0 step 75: val=1.5235 acc=0.4362 ema.98=1.6394 train_s=28.0
+topfree_ot__lr0.03__c64__s0 step 100: val=1.4420 acc=0.4756 ema.98=1.4979 train_s=36.7
+topfree_ot__lr0.03__c64__s0 step 125: val=1.2873 acc=0.5334 ema.98=1.3802 train_s=46.1
+topfree_ot__lr0.03__c64__s0 step 150: val=1.2494 acc=0.5498 ema.98=1.2930 train_s=54.8
+topfree_ot__lr0.03__c64__s0 step 175: val=1.1765 acc=0.5750 ema.98=1.2309 train_s=64.4
+topfree_ot__lr0.03__c64__s0 step 200: val=1.1413 acc=0.5838 ema.98=1.1711 train_s=73.1
+topfree_ot__lr0.03__c64__s0 step 225: val=1.1509 acc=0.5814 ema.98=1.1247 train_s=82.5
+topfree_ot__lr0.03__c64__s0 step 250: val=1.1389 acc=0.6002 ema.98=1.0860 train_s=91.1
+topfree_ot__lr0.03__c64__s0 step 275: val=1.1047 acc=0.6114 ema.98=1.0518 train_s=100.6
+topfree_ot__lr0.03__c64__s0 step 300: val=1.0489 acc=0.6244 ema.98=1.0209 train_s=109.2
+topfree_ot__lr0.03__c64__s0 step 325: val=1.0956 acc=0.6084 ema.98=0.9923 train_s=118.7
+topfree_ot__lr0.03__c64__s0 step 350: val=0.9974 acc=0.6442 ema.98=0.9683 train_s=127.4
+topfree_ot__lr0.03__c64__s0 step 375: val=1.0298 acc=0.6316 ema.98=0.9470 train_s=136.8
+topfree_ot__lr0.03__c64__s0 step 400: val=0.9775 acc=0.6532 ema.98=0.9252 train_s=145.4
+topfree_ot__lr0.03__c64__s0 step 425: val=0.9304 acc=0.6688 ema.98=0.8981 train_s=154.9
+topfree_ot__lr0.03__c64__s0 step 450: val=0.8604 acc=0.6976 ema.98=0.8678 train_s=163.5
+topfree_ot__lr0.03__c64__s0 step 475: val=0.8135 acc=0.7134 ema.98=0.8373 train_s=172.9
+topfree_ot__lr0.03__c64__s0 step 500: val=0.7973 acc=0.7180 ema.98=0.8133 train_s=181.5
+topfree_ot__lr0.03__c64__s0: completed

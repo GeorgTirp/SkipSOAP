@@ -1,0 +1,12 @@
+== ggn_sn 09:39:34
+ggn_sn__gamma0.01__s0__measure step 10: val=1.6362 acc=0.4512 ema.98=1.8996 train_s=612.5
+ggn_sn__gamma0.01__s0__measure: completed
+{"arm": "ggn_sn", "steps": 12, "median_step_seconds": 56.51416429299934, "max_step_seconds": 159.91009279799982, "gpu_peak_GiB": 4.8048319816589355, "measurement_seconds": [18.395200584000122]}
+== chunk profile
+group sizes [26, 22, 16, 16, 16, 8] group 2 params 49984
+chunk   64 group pass   2.66 s peak 2.77 GiB
+chunk   64 pass1(all)   4.53 s peak 3.75 GiB
+chunk  128 group pass   2.49 s peak 3.01 GiB
+chunk  128 pass1(all)   4.07 s peak 4.73 GiB
+chunk  256 group pass   2.43 s peak 3.50 GiB
+chunk 256 pass1 OOM

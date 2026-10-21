@@ -1,0 +1,17 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/ot_tuned_1000_20261014/scripts/train.py:196: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+topfree_ot__lr0.27__c4096__s0 step 10: val=2.3326 acc=0.1390 ema.98=2.1384 train_s=4.1
+topfree_ot__lr0.27__c4096__s0 step 25: val=2.0219 acc=0.2302 ema.98=2.0543 train_s=9.9
+topfree_ot__lr0.27__c4096__s0 step 50: val=1.9317 acc=0.2532 ema.98=1.9928 train_s=18.5
+topfree_ot__lr0.27__c4096__s0 step 100: val=1.8122 acc=0.3150 ema.98=2.3445 train_s=36.6
+topfree_ot__lr0.27__c4096__s0 step 200: val=2.2755 acc=0.1988 ema.98=1.9181 train_s=72.7
+topfree_ot__lr0.27__c4096__s0 step 300: val=2.2185 acc=0.1742 ema.98=2.1003 train_s=108.9
+topfree_ot__lr0.27__c4096__s0 step 400: val=2.0803 acc=0.2094 ema.98=2.1141 train_s=145.4
+topfree_ot__lr0.27__c4096__s0 step 500: val=2.2109 acc=0.1716 ema.98=2.1511 train_s=181.6
+topfree_ot__lr0.27__c4096__s0 step 600: val=2.0171 acc=0.2304 ema.98=2.0106 train_s=217.9
+topfree_ot__lr0.27__c4096__s0 step 700: val=2.0525 acc=0.2132 ema.98=2.0403 train_s=254.2
+topfree_ot__lr0.27__c4096__s0 step 800: val=1.9965 acc=0.2488 ema.98=2.0942 train_s=290.5
+topfree_ot__lr0.27__c4096__s0 step 900: val=2.0362 acc=0.2302 ema.98=2.2412 train_s=326.7
+topfree_ot__lr0.27__c4096__s0 step 1000: val=1.8832 acc=0.3024 ema.98=1.9426 train_s=362.9
+topfree_ot__lr0.27__c4096__s0: completed

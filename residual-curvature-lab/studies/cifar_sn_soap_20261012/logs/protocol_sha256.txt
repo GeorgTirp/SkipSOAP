@@ -1,0 +1,4 @@
+# superseded before launch (owner asked for measures A-D):
+11b2fbc2c3dc232cd47d9956fbeede936c53837179e88cfb23e1068f243b65c1  first version
+# approved version (owner, 2026-10-12: 'add the measures and then launch'):
+4b0d80e6f8798227ee7ae71747f4e11cc8b4b8a2fe43c277c3e1be0d758329f8  studies/cifar_sn_soap_20261012/PROTOCOL.md

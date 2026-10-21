@@ -1,0 +1,25 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/n9_training_20261013/scripts/train.py:191: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+soap_n9__lr0.09__s0 step 10: val=2.2149 acc=0.1444 ema.98=2.1762 train_s=3.3
+soap_n9__lr0.09__s0 step 25: val=2.1197 acc=0.1964 ema.98=2.0541 train_s=7.6
+soap_n9__lr0.09__s0 step 50: val=1.9524 acc=0.2552 ema.98=2.0356 train_s=14.1
+soap_n9__lr0.09__s0 step 75: val=1.8514 acc=0.2870 ema.98=1.9664 train_s=21.1
+soap_n9__lr0.09__s0 step 100: val=1.6979 acc=0.3486 ema.98=1.8521 train_s=27.7
+soap_n9__lr0.09__s0 step 125: val=1.5396 acc=0.4334 ema.98=1.7405 train_s=34.6
+soap_n9__lr0.09__s0 step 150: val=1.4365 acc=0.4756 ema.98=1.6116 train_s=41.3
+soap_n9__lr0.09__s0 step 175: val=1.2976 acc=0.5286 ema.98=1.4884 train_s=48.8
+soap_n9__lr0.09__s0 step 200: val=1.2564 acc=0.5342 ema.98=1.3787 train_s=55.9
+soap_n9__lr0.09__s0 step 225: val=1.2098 acc=0.5646 ema.98=1.2852 train_s=63.5
+soap_n9__lr0.09__s0 step 250: val=1.1630 acc=0.5782 ema.98=1.2065 train_s=70.5
+soap_n9__lr0.09__s0 step 275: val=1.1554 acc=0.5902 ema.98=1.1510 train_s=78.1
+soap_n9__lr0.09__s0 step 300: val=1.0996 acc=0.6036 ema.98=1.1095 train_s=85.1
+soap_n9__lr0.09__s0 step 325: val=1.1099 acc=0.6064 ema.98=1.0632 train_s=92.4
+soap_n9__lr0.09__s0 step 350: val=1.0898 acc=0.6038 ema.98=1.0369 train_s=99.4
+soap_n9__lr0.09__s0 step 375: val=1.0767 acc=0.6154 ema.98=1.0148 train_s=107.0
+soap_n9__lr0.09__s0 step 400: val=1.0703 acc=0.6142 ema.98=0.9861 train_s=114.1
+soap_n9__lr0.09__s0 step 425: val=1.0142 acc=0.6364 ema.98=0.9606 train_s=121.8
+soap_n9__lr0.09__s0 step 450: val=0.9794 acc=0.6500 ema.98=0.9281 train_s=128.9
+soap_n9__lr0.09__s0 step 475: val=0.9105 acc=0.6706 ema.98=0.8987 train_s=136.6
+soap_n9__lr0.09__s0 step 500: val=0.8360 acc=0.6996 ema.98=0.8688 train_s=143.7
+soap_n9__lr0.09__s0: completed

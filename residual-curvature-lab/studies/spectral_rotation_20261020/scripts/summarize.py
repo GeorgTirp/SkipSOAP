@@ -1,0 +1,127 @@
+"""Readings M1-M3, V, E, T, B and S (PROTOCOL.md, section 4) from results/spectra/*.json.
+
+Usage (from residual-curvature-lab/): summarize.py
+Writes studies/spectral_rotation_20261020/results/summary.json and summary.md. Pair statistics are medians over the
+matrix tensors of one trajectory.
+"""
+import json
+import math
+import statistics
+import sys
+from pathlib import Path
+
+STUDY = Path(__file__).resolve().parents[1]
+RESULTS = STUDY/'results'
+ARMS, SEEDS = ['soap', 'topfree'], [1, 2, 3]
+ANCHORS = [10, 50, 100, 250, 400]
+LATE_GAP10, LATE_GAP50 = [(250, 260), (400, 410)], [(250, 300), (400, 450)]
+EARLY = [(10, 20), (50, 60), (100, 110), (10, 60), (50, 100), (100, 150)]
+SHAPE10, SHAPE50, ROTATE, STILL = .10, .20, .90, .95
+KS = ['1', '4', '16', '64', '200']
+
+
+def median(values):
+    values = [v for v in values if v is not None]
+    return statistics.median(values) if values else None
+
+
+def shape_distance(values_a, trace_a, values_t, trace_t):
+    """(RMS_i |log(l_i(t)/tr(t)) - log(l_i(a)/tr(a))| over ranks where both are positive, number of ranks excluded)."""
+    pairs = [(a, t) for a, t in zip(values_a, values_t) if a > 0 and t > 0]
+    excluded = min(len(values_a), len(values_t))-len(pairs)
+    if not pairs or trace_a <= 0 or trace_t <= 0:
+        return None, excluded
+    d = [math.log(t/trace_t)-math.log(a/trace_a) for a, t in pairs]
+    return math.sqrt(sum(x*x for x in d)/len(d)), excluded
+
+
+def pair(out, a, t):
+    """Median over tensors of d_shape, log trace ratio, capture_k and overlap_k for anchor a -> state t."""
+    sa, st = out['states'][str(a)]['A'], out['states'][str(t)]['A']
+    shape, scale, cap, ovl, excluded = [], [], {k: [] for k in KS}, {k: [] for k in KS}, 0
+    for name, rt in st.items():
+        ra = sa[name]
+        value, dropped = shape_distance(ra['values'], ra['trace'], rt['values'], rt['trace'])
+        shape.append(value)
+        excluded += dropped
+        scale.append(math.log(rt['trace']/ra['trace']) if ra['trace'] > 0 and rt['trace'] > 0 else None)
+        p = rt['pairs'][str(a)]
+        for k in KS:
+            cap[k].append(p['capture'][k])
+            ovl[k].append(p['overlap'][k])
+    return {'gap': t-a, 'd_shape': median(shape), 'excluded_ranks': excluded, 'log_trace_ratio': median(scale),
+            'capture': {k: median(v) for k, v in cap.items()}, 'overlap': {k: median(v) for k, v in ovl.items()}}
+
+
+def floor(out, a):
+    rb = out['states'][str(a)]['B']
+    return {'capture': {k: median([r['floor']['capture'][k] for r in rb.values()]) for k in KS},
+            'overlap': {k: median([r['floor']['overlap'][k] for r in rb.values()]) for k in KS}}
+
+
+def spectrum(out, t):
+    rs = out['states'][str(t)]['A'].values()
+    return {f'alpha_{label}': median([r['fits'][label]['alpha'] for r in rs]) for label in ['all', 'top', 'bulk']} | {
+        f'r2_{label}': median([r['fits'][label]['r2'] for r in rs]) for label in ['all', 'top', 'bulk']} | {
+        'top16_trace_share': median([r['top16_trace_share'] for r in rs]),
+        'max_ritz_residual': max((r['ritz_residual_last'] or 0.) for r in rs), 'lr_factor': out['states'][str(t)]['lr_factor']}
+
+
+def main():
+    outs = {(arm, s): json.loads((RESULTS/'spectra'/f'{arm}_s{s}.json').read_text()) for arm in ARMS for s in SEEDS
+            if (RESULTS/'spectra'/f'{arm}_s{s}.json').exists()}
+    summary = {'complete': len(outs) == len(ARMS)*len(SEEDS), 'trajectories': {}, 'readings': {}}
+    for (arm, s), out in outs.items():
+        steps = sorted(int(t) for t in out['states'])
+        pairs = {f'{a}->{t}': pair(out, a, t) for a in ANCHORS for t in steps if t > a and str(a) in out['states']}
+        summary['trajectories'][f'{arm}_s{s}'] = {
+            'gate': out['gate'], 'pairs': pairs, 'floor': {str(a): floor(out, a) for a in ANCHORS},
+            'spectrum': {str(t): spectrum(out, t) for t in steps}, 'seconds': out['total_seconds']}
+    for arm in ARMS:
+        trs = [summary['trajectories'][f'{arm}_s{s}'] for s in SEEDS if f'{arm}_s{s}' in summary['trajectories']]
+        if len(trs) < len(SEEDS):
+            continue
+        get = lambda tr, a, t: tr['pairs'][f'{a}->{t}']
+        m1 = all(get(tr, a, t)['d_shape'] <= SHAPE10 for tr in trs for a, t in LATE_GAP10) and \
+            all(get(tr, a, t)['d_shape'] <= SHAPE50 for tr in trs for a, t in LATE_GAP50)
+        m2 = all(get(tr, a, t)['capture']['16'] <= ROTATE for tr in trs for a, t in LATE_GAP50)
+        m3 = all(get(tr, a, t)['capture']['16'] >= STILL for tr in trs for a, t in LATE_GAP50)
+        verdict = ('stable spectrum, rotating eigenvectors' if m1 and m2 else 'stable spectrum and eigenvectors' if m1 and m3
+                   else 'spectrum not stable' if not m1 else 'mixed')
+        summary['readings'][arm] = {'M1': m1, 'M2': m2, 'M3': m3, 'V': verdict}
+    (RESULTS/'summary.json').write_text(json.dumps(summary, indent=1)+'\n')
+    lines = ['# spectral_rotation_20261020 summary (generated by scripts/summarize.py)', '',
+             f"Complete: {summary['complete']}", '']
+    for arm, r in summary['readings'].items():
+        lines.append(f"- {arm}: M1 {r['M1']}, M2 {r['M2']}, M3 {r['M3']}; **{r['V']}**")
+    lines += ['', '| trajectory | pair | gap | d_shape | log tr ratio | capture_1 | capture_16 | capture_64 | capture_200 | overlap_16 |',
+              '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
+    for key, tr in summary['trajectories'].items():
+        for a, t in EARLY+LATE_GAP10+LATE_GAP50+[(250, 500), (400, 500)]:
+            p = tr['pairs'].get(f'{a}->{t}')
+            if p is None:
+                continue
+            f = lambda v: '' if v is None else f'{v:.3f}'
+            lines.append(f"| {key} | {a}->{t} | {p['gap']} | {f(p['d_shape'])} | {f(p['log_trace_ratio'])} | {f(p['capture']['1'])} | "
+                         f"{f(p['capture']['16'])} | {f(p['capture']['64'])} | {f(p['capture']['200'])} | {f(p['overlap']['16'])} |")
+    lines += ['', '| trajectory | anchor | floor capture_16 | floor capture_64 | floor capture_200 | +10 capture_16 | +10 capture_200 |',
+              '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+    for key, tr in summary['trajectories'].items():
+        for a in ANCHORS:
+            fl, p = tr['floor'][str(a)], tr['pairs'].get(f'{a}->{a+10}')
+            f = lambda v: '' if v is None else f'{v:.3f}'
+            lines.append(f"| {key} | {a} | {f(fl['capture']['16'])} | {f(fl['capture']['64'])} | {f(fl['capture']['200'])} | "
+                         f"{f(p['capture']['16']) if p else ''} | {f(p['capture']['200']) if p else ''} |")
+    lines += ['', '| trajectory | step | lr factor | alpha_all | R² all | alpha_top | alpha_bulk | top-16 trace share | max Ritz residual |',
+              '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
+    for key, tr in summary['trajectories'].items():
+        for t, sp in tr['spectrum'].items():
+            f = lambda v: '' if v is None else f'{v:.3g}'
+            lines.append(f"| {key} | {t} | {f(sp['lr_factor'])} | {f(sp['alpha_all'])} | {f(sp['r2_all'])} | {f(sp['alpha_top'])} | "
+                         f"{f(sp['alpha_bulk'])} | {f(sp['top16_trace_share'])} | {f(sp['max_ritz_residual'])} |")
+    (RESULTS/'summary.md').write_text('\n'.join(lines)+'\n')
+    print('\n'.join(lines[:8]))
+
+
+if __name__ == '__main__':
+    sys.exit(main())
