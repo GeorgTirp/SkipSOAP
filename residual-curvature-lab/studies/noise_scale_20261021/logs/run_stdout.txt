@@ -1,0 +1,45 @@
+/home/georg/Documents/Master/EigeneProjekte/SkipSOAP/residual-curvature-lab/studies/cifar_ggn_20261012/scripts/train.py:226: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  value += float(part_loss)
+topfree s1 t10: 104 s, G2 {'blocks.0.attention.query.weight': 5.683075865808957e-05, 'blocks.0.attention.key.weight': 9.772907460552682e-05, 'blocks.0.attention.value.weight': 7.972366847614432e-05, 'blocks.0.attention.output.weight': 6.0221099223861324e-05}
+topfree s1 t25: 98 s, G2 -
+topfree s1 t50: 98 s, G2 -
+topfree s1 t100: 99 s, G2 -
+topfree s1 t200: 99 s, G2 -
+topfree s1 t400: 104 s, G2 {'blocks.0.attention.query.weight': 5.994169874341178e-06, 'blocks.0.attention.key.weight': 1.6345921347620536e-05, 'blocks.0.attention.value.weight': 2.8281017079211966e-05, 'blocks.0.attention.output.weight': 1.4232817871143783e-05}
+topfree s1: done in 749 s, peak 4.1 GiB
+topfree s2 t10: 104 s, G2 {'blocks.0.attention.query.weight': 8.790435658243471e-05, 'blocks.0.attention.key.weight': 0.00012061998513989791, 'blocks.0.attention.value.weight': 8.091677299209702e-05, 'blocks.0.attention.output.weight': 0.00010264635484180479}
+topfree s2 t25: 99 s, G2 -
+topfree s2 t50: 100 s, G2 -
+topfree s2 t100: 99 s, G2 -
+topfree s2 t200: 99 s, G2 -
+topfree s2 t400: 106 s, G2 {'blocks.0.attention.query.weight': 5.4639269877162156e-06, 'blocks.0.attention.key.weight': 6.951236023095956e-06, 'blocks.0.attention.value.weight': 2.3600011535364072e-05, 'blocks.0.attention.output.weight': 1.9057256850013556e-05}
+topfree s2: done in 755 s, peak 4.1 GiB
+topfree s3 t10: 105 s, G2 {'blocks.0.attention.query.weight': 0.00010678383156456323, 'blocks.0.attention.key.weight': 7.513175776427428e-05, 'blocks.0.attention.value.weight': 7.572150634411823e-05, 'blocks.0.attention.output.weight': 6.898855543460776e-05}
+topfree s3 t25: 99 s, G2 -
+topfree s3 t50: 99 s, G2 -
+topfree s3 t100: 101 s, G2 -
+topfree s3 t200: 100 s, G2 -
+topfree s3 t400: 105 s, G2 {'blocks.0.attention.query.weight': 5.644710273582766e-06, 'blocks.0.attention.key.weight': 8.444700939238874e-06, 'blocks.0.attention.value.weight': 3.0763463469854336e-05, 'blocks.0.attention.output.weight': 1.679157467540515e-05}
+topfree s3: done in 756 s, peak 4.1 GiB
+soap s1 t10: 105 s, G2 {'blocks.0.attention.query.weight': 5.633572027097523e-05, 'blocks.0.attention.key.weight': 5.099380964722844e-05, 'blocks.0.attention.value.weight': 7.299787015655107e-05, 'blocks.0.attention.output.weight': 7.788520979773229e-05}
+soap s1 t25: 99 s, G2 -
+soap s1 t50: 99 s, G2 -
+soap s1 t100: 102 s, G2 -
+soap s1 t200: 100 s, G2 -
+soap s1 t400: 106 s, G2 {'blocks.0.attention.query.weight': 6.634798404006363e-06, 'blocks.0.attention.key.weight': 9.856439215579114e-06, 'blocks.0.attention.value.weight': 2.782557362486337e-05, 'blocks.0.attention.output.weight': 1.8953635432767686e-05}
+soap s1: done in 705 s, peak 3.8 GiB
+soap s2 t10: 106 s, G2 {'blocks.0.attention.query.weight': 5.460782789839741e-05, 'blocks.0.attention.key.weight': 5.1370107620181455e-05, 'blocks.0.attention.value.weight': 7.44549238420191e-05, 'blocks.0.attention.output.weight': 8.286371130801211e-05}
+soap s2 t25: 100 s, G2 -
+soap s2 t50: 100 s, G2 -
+soap s2 t100: 100 s, G2 -
+soap s2 t200: 99 s, G2 -
+soap s2 t400: 109 s, G2 {'blocks.0.attention.query.weight': 9.222234114271405e-06, 'blocks.0.attention.key.weight': 6.674954209357336e-06, 'blocks.0.attention.value.weight': 2.8107875064407397e-05, 'blocks.0.attention.output.weight': 2.144983150921996e-05}
+soap s2: done in 704 s, peak 3.8 GiB
+soap s3 t10: 117 s, G2 {'blocks.0.attention.query.weight': 6.158079721882838e-05, 'blocks.0.attention.key.weight': 4.6237833939632625e-05, 'blocks.0.attention.value.weight': 0.00012427719516038807, 'blocks.0.attention.output.weight': 7.753421031988525e-05}
+soap s3 t25: 111 s, G2 -
+soap s3 t50: 112 s, G2 -
+soap s3 t100: 112 s, G2 -
+soap s3 t200: 109 s, G2 -
+soap s3 t400: 105 s, G2 {'blocks.0.attention.query.weight': 7.014639362578354e-06, 'blocks.0.attention.key.weight': 9.809588806513497e-06, 'blocks.0.attention.value.weight': 2.8923887850703944e-05, 'blocks.0.attention.output.weight': 1.3793041887688874e-05}
+soap s3: done in 762 s, peak 3.8 GiB

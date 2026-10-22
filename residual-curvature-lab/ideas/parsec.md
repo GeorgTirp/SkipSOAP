@@ -5,6 +5,9 @@ Living document, started 8 October 2026. It banks what the lab has *learned* abo
 derivations and kill criteria, are in [PARSEC_ideas.md](PARSEC_ideas.md); this file does not replace
 them.
 
+**Companion file.** Batch-noise theory and evidence (noise scales, transfer, pooling, queue effects) are kept
+separately in [batch_noise.md](batch_noise.md).
+
 **How to maintain this file.**
 
 - Update it after every study that touches PARSEC: the design rules, the idea-status table and the
@@ -30,6 +33,30 @@ Per tensor b, with SOAP's frozen factor F0_b (SOAP's preconditioner is P_b = F0_
 native step, shrunk along the r directions where the curvature is large compared with SOAP's own
 metric. With r = 0 it is plain SOAP. With exact eigenpairs it equals the capacity screen's
 damping-calibrated `teacher_r` core.
+
+**Growing noise scales stop full Newton early; a fractional power keeps a one-step gain (2026-10-21, [L], 6
+replayed CIFAR runs, steps 10–400).**
+- **Setup:**
+  - SOAP and top-free, seeds 1–3, replayed bitwise.
+  - Steps −A^{−ν}z in SOAP-whitened coordinates, with A the damped per-tensor GGN (4,096 reference examples) and
+    ν ∈ {0, ¼, ½, ¾, 1}.
+  - Noise from 43 batch gradients of 1,024. Decreases are scored on an independent evaluation batch, with the step
+    size selected on another batch.
+- **Noise scales:**
+  - Newton's K₁ grows from 1,340–2,170 to 17,300–20,400 examples between steps 10 and 400. At B = 2,048 its
+    noise-to-signal ratio goes from 0.63–1.01 to 8.1–9.5.
+  - K₁ > K½ holds everywhere. K½ > K₀ fails in two step-10 states (N1 not supported).
+- **Break:** full Newton stops paying at B = 2,048 from step 25–50 (N3), and ¾ beats 1 in 35 of 36 states.
+- **Fractional optimum:** interior in 35 of 36 states, about ¾ early and ½ late (F1, F2). Late, ν = ½ gives 1.3–2.0×
+  the one-step decrease of SOAP's direction.
+- **Theory:**
+  - [batch_noise.md](batch_noise.md)'s tuned-step law gets the trend right and puts the optimum within one grid step
+    (P1, 32 of 36).
+  - But its optimum is about ¼ too high, and it overstates the gains (1.5–3.8× at ν = ½).
+- **Identity:** the family is the geodesic from SOAP's metric to the damped GGN, so ν = ½ is their matrix geometric
+  mean.
+
+([../studies/noise_scale_20261021/RESULTS.md](../studies/noise_scale_20261021/RESULTS.md))
 
 **For curvature estimates the data queue does not matter, but staleness and pooling do (2026-10-20, [L], top-free
 replays, seeds 1–3, steps 50–400).**
@@ -377,6 +404,13 @@ subspace's invariance residual is 0.5–0.86.
    target in 58 steps (native SOAP 142) but needs 350 s against SOAP's 15 s. Tuned searched SOAP's loss
    is 1.8–2.1 times GGN's at step 50 and 1.09–1.20 times at step 500. PARSEC-L must
    keep its overhead within a small multiple of SOAP's 0.11 s per step.
+
+   Mechanism [L, noise_scale, CIFAR, 36 states]:
+   - The noise scale of strongly preconditioned steps grows about tenfold during training (Newton's K₁ 1,340–2,170
+     → 17,300–20,400 examples).
+   - So at B = 2,048 the full GGN step stops paying from step 25–50, while a fractional power (about ¾ early, ½ late)
+     keeps a one-step gain over SOAP's direction (1.3–2.0× late).
+   - The training consequence is untested (N29).
 10. **Rank around 16, with diminishing returns.** [L] Share of exact-GGN headroom: r = 8 about 57–61%,
     r = 16 about 63%. In PARSEC default training, a larger rank and more frequent refreshes helped
     (seed-0 tuning: rank 8 0.2126, 16 0.1826, 32 0.1738).
@@ -484,6 +518,7 @@ IDs I1–I15 and SN-1 refer to [PARSEC_ideas.md](PARSEC_ideas.md); N-IDs are add
 | N26 | Bulk correction by a few curvature products: top-16 probe deflation plus Krylov (CG) in the deflated bulk; online, matrix-free full-GGN CG on a sub-batch | **Supported locally, untested in training** [L, bulk_krylov] | Deflated Krylov: 2/4/8 products close medians of 35/51/70% of the per-tensor gap, and the 4- and 8-product steps beat the exact step on held-out loss at median. Chebyshev with a power-law interval fails. 5-step full-GGN CG on 256 examples matches the exact step held out at median (7/9 vs top-free), at 0.07 s per product. Next: an interval from Lanczos rather than the power law, then a training test against tuned SOAP and top-free with decay and EMA. |
 | N27 | Calibrate spectral quantities rarely and refresh directions often: late in training the per-tensor GGN spectrum is stationary while its eigenvectors rotate (owner's Meterez question, 2026-10-20) | **Supported offline, late training only** [L, spectral_rotation] | Late shape change is 0.03–0.08 over 10–50 steps; top-16 capture by a cached subspace is 0.84–0.88 after 10 steps and 0.70–0.81 after 50. Early (steps 10–100) the spectrum itself changes. Rotation exceeds batch noise (ratio 0.02–0.6), so pooling batches is not the lever; refresh is. The queue test of pooling sources is `queue_curvature_20261020`. |
 | N28 | Curvature along the data queue (owner's queue theory, 2026-10-20): pool probe statistics over the coming or past batches; the window is set by drift vs batch noise, plus random-reshuffling corrections | **Queue corrections negligible; drift-vs-noise trade-off confirmed** [L, queue_curvature] | The visit phase shows in per-example loss (0.04–0.08 nats) but not in curvature subspaces. Next/last/random 8 batches are equivalent at current weights. Staleness costs 0.03–0.09 capture; pooling gains up to 0.07. The trailing pool beats a fresh batch only late (after about step 250). Probe-row CG doubles the one-step held-out gain over the plain step. Rademacher probes are marginally better than sampled labels. |
+| N29 | Fractional curvature power on top of SOAP: steps −A^{−ν}z in whitened coordinates (A the damped per-tensor GGN), with ν set by the noise-scale law of batch_noise.md T1–T2 (owner's batch-noise discussion, 2026-10-21) | **Supported offline, untested in training** [L, noise_scale] | Best ν is interior in 35 of 36 states, about ¾ early and ½ late. ¾ beats full Newton in 35 of 36 states, and ½ beats ν = 0 in 35 of 36. The late gain is 1.3–2.0× SOAP's direction, one step ahead. Newton's noise scale grows about tenfold (K₁ 1,340–2,170 → 17,300–20,400 examples), which moves the optimum. The tuned-step law predicts the optimum about ¼ too high and overstates the gains (1.5–3.8× at ν = ½). ν = ½ is the matrix geometric mean of SOAP's metric and the damped GGN. Next: a curvature-estimation-noise term in T1 (offline), then a training test with falling ν against SOAP with WSD and EMA. Online cost needs Lanczos on probe rows (N26, N28). |
 
 **Does SN help optimizers? Not at matched settings (first direct test).** [T, SN x GGN study]
 Per-tensor GGN (γ 0.001, same-batch search) and native SOAP (lr 1e-2), each with and without SN at
@@ -552,6 +587,11 @@ question was then run for SOAP (`studies/cifar_sn_soap_20261012`).
   - `ggn_ot_fairness`: at matched tuning, OT adds only 0.006 over GGN probes (N23).
   - `bulk_krylov`: a spectrum alone cannot precondition the bulk (N25), but a few deflated Krylov products can, locally
     (N26).
+- **Done (2026-10-20 and 21), offline analysis studies after the stop:**
+  - `spectral_rotation`: late in training the spectrum is stable while its eigenvectors rotate (N27).
+  - `queue_curvature`: queue position does not matter for curvature; staleness and pooling do (N28).
+  - `noise_scale`: noise scales grow about tenfold during training, and full Newton stops paying at B = 2,048 from
+    step 25–50. The best power is interior and falls from ¾ to ½ (N29).
 - **Still open:**
   - a **training test of N9**: SOAP, and top-free PARSEC-L, with probe-factor bases (done: n9_training);
   - cheaper or more refresh work for SOAP's basis (more power steps), since staleness starts at once;
@@ -734,3 +774,13 @@ list below predates stage D and is kept for its remaining items.
   - F1 not supported: the trailing pool overtakes a fresh batch earlier than predicted.
   - Probe-row CG doubles the one-step held-out gain. D1: an out-of-memory crash before output; fixed and rerun.
     N28 added.
+- **2026-10-21** Created the companion file [batch_noise.md](batch_noise.md) for batch-noise theory and results
+  (N1, N16, N20, N24, I11, N27, N28 consolidated; no new study).
+- **2026-10-21** Noise scales, break time and fractional Newton (`noise_scale_20261021`, 6 replayed runs, 36
+  states).
+  - Noise scales grow with training (N2), and the full Newton power stops paying at B = 2,048 from step 25–50 (N3).
+  - N1 not supported: K½ < K₀ in two step-10 states.
+  - The best power is interior and falls from ¾ to ½ (F1, F2). The tuned-step law is within one grid step (P1), but
+    about ¼ too high and too optimistic about the gains.
+  - G1 bitwise 18 of 18, G2 worst 1.2e-4, D1 before launch.
+  - N29 added, rule 9 extended with the mechanism ([L]), batch_noise.md R8 added.
