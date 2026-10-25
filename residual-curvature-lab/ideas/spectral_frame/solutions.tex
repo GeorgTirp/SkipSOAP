@@ -1,0 +1,511 @@
+% Appendix B of workbook.tex: solutions. Input only when \withsolutions is defined (workbook_solutions.tex).
+\clearpage
+\section{Solutions}\label{app:solutions}
+
+\newcommand{\sol}[2]{\paragraph{#1~\ref{#2}.}}
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:frame}}
+
+\sol{Warm-up}{wu:spectrum}
+(a) $\tr A=\tr(U\Lambda U^\top)=\tr(\Lambda U^\top U)=\tr\Lambda$. Likewise $\norm{A}_\F^2=\tr(A^\top A)$, which
+equals $\tr(U\Lambda^2U^\top)=\sum_k\lambda_k^2$.
+\newline (b) For $v=Uz$,
+\[\norm{Av}=\norm{U\Lambda z}=\norm{\Lambda z}\le\max_k\abs{\lambda_k}\,\norm{z}=\max_k\abs{\lambda_k}\,\norm{v},\]
+with equality for $z=e_k$ at the largest $\abs{\lambda_k}$.
+\newline (c) $v^\top Av=z^\top\Lambda z=\sum_k\lambda_kz_k^2$ lies between $\lambda_D\sum_kz_k^2$ and $\lambda_1\sum_kz_k^2$,
+and $\sum_kz_k^2=\norm{v}^2$; equality at $z=e_D$ and $z=e_1$.
+\newline (d) If $\lambda_D\ge0$, (c) gives $v^\top Av\ge0$. If $A$ is PSD, $\lambda_D=u_D^\top Au_D\ge0$.
+
+\sol{Warm-up}{wu:orthogonal}
+$u^\top Aw=\mu\,u^\top w$ and, by symmetry, $u^\top Aw=(Au)^\top w=\lambda\,u^\top w$. So $(\lambda-\mu)u^\top w=0$.
+
+\sol{Exercise}{ex:fwelldef}
+(a) $A^i=U\Lambda^iU^\top$ by induction, so $p(A)=Up(\Lambda)U^\top=U\diag(p(\lambda_k))U^\top=U\diag(f(\lambda_k))U^\top$.
+\newline (b) $p$ depends only on $f$ and the values $\lambda_k$, and $p(A)$ is computed from $A$ without any frame.
+\newline (c) $p(A)A=Ap(A)$ because powers of $A$ commute. $A^2$ is $f(A)$ for $f(\lambda)=\lambda^2$. For $\delta>-\lambda_D$,
+$(A+\delta I)\,U\diag(1/(\lambda_k+\delta))U^\top=U\diag((\lambda_k+\delta)/(\lambda_k+\delta))U^\top=I$, so the inverse is
+$f(A)$ with $f(\lambda)=1/(\lambda+\delta)$. For PSD $A$, $U\diag(\lambda_k^{1/2})U^\top$ is PSD and squares to $A$;
+$(A+\delta I)^{-\nu}$ is defined as $f(A)$ with $f(\lambda)=(\lambda+\delta)^{-\nu}$, which agrees with the inverse
+for $\nu=1$.
+
+\sol{Warm-up}{wu:rotate}
+$\norm{Qv}^2=v^\top Q^\top Qv=\norm{v}^2$. $(QAQ^\top)(Qu_k)=QAu_k=\lambda_kQu_k$, and the $Qu_k$ are orthonormal, so
+$QAQ^\top=(QU)\Lambda(QU)^\top$ has spectrum $\sigma(A)$ and frame $QU$. Hence
+$f(QAQ^\top)=QUf(\Lambda)U^\top Q^\top=Qf(A)Q^\top$.
+
+\sol{Guided proof}{gp:orbit}
+(a) $\frac{d}{dt}(Q^\top Q)=Q'^\top Q+Q^\top Q'=0$; at $t=0$ this is $W^\top+W=0$. For skew $W$,
+$(e^{tW})^\top=e^{tW^\top}=e^{-tW}$, and $e^{-tW}e^{tW}=I$ because $tW$ and $-tW$ commute.
+\newline (b) $W_{ii}=-W_{ii}$ forces a zero diagonal, and the entries below the diagonal are fixed by those above, which are
+free: $D(D-1)/2$ numbers.
+\newline (c) $A'=Q'\Lambda Q^\top+Q\Lambda Q'^\top$, which at $t=0$ is $W\Lambda+\Lambda W^\top=W\Lambda-\Lambda W$.
+\newline (d) $(W\Lambda)_{ij}=W_{ij}\lambda_j$ and $(\Lambda W)_{ij}=\lambda_iW_{ij}$.
+\newline (e) If $(\lambda_j-\lambda_i)W_{ij}=0$ for all $i\ne j$ and the $\lambda$'s are distinct, every off-diagonal $W_{ij}$
+vanishes; the diagonal vanishes anyway, so $W=0$. The image is symmetric, since
+$(W\Lambda-\Lambda W)^\top=-\Lambda W+W\Lambda$, and has zero diagonal by (d). Conversely, for symmetric $S$ with zero
+diagonal, $W_{ij}=S_{ij}/(\lambda_j-\lambda_i)$ ($i\ne j$) is skew-symmetric and maps to $S$. So the orbit has
+$D(D-1)/2$ independent directions at $\Lambda$, the diagonal matrices add $D$ more, and together they span $\Sym^D$,
+of dimension $D(D+1)/2$.
+\newline (f) $W_{ij}(\lambda_j-\lambda_i)=0$ for all $i,j$ allows $W_{ij}\ne0$ exactly when $\lambda_i=\lambda_j$, that is,
+inside the diagonal blocks of equal values. Inside a block of size $m_j$, $W$ is an arbitrary skew-symmetric
+$m_j\times m_j$ matrix, so the kernel has dimension $\sum_jm_j(m_j-1)/2$ and the image $D(D-1)/2-\sum_jm_j(m_j-1)/2$.
+\newline (g) $Q\Lambda Q^\top=\Lambda$ means $Q\Lambda=\Lambda Q$, that is, $Q_{ij}(\lambda_j-\lambda_i)=0$, so $Q$ is
+diagonal; a diagonal orthogonal matrix satisfies $Q_{ii}^2=1$. If $U\Lambda U^\top=V\Lambda V^\top$, then
+$Q=U^\top V$ satisfies $Q\Lambda Q^\top=\Lambda$, so $V=UQ$: the columns agree up to sign.
+
+\sol{Exercise}{ex:invariant}
+If $F$ is invariant, $F(A)=F(U^\top AU)=F(\diag\sigma(A))$. Conversely, if $F(A)=\varphi(\sigma(A))$, then
+$F(QAQ^\top)=\varphi(\sigma(QAQ^\top))=\varphi(\sigma(A))$ by Warm-up~\ref{wu:rotate}.
+
+\sol{Warm-up}{wu:examples}
+(a) $\tr A$, $\det A$, $\lambda_1(A)$ and $\norm{A}_\F$ are functions of the spectrum, hence invariant. $A_{11}$ and
+$v^\top Av$ are not: for $A=\diag(1,0)$ and $Q$ the swap of the two coordinates, $(QAQ^\top)_{11}=0\ne1$.
+\newline (b) $A^2$, $(A+\delta I)^{-1}$ and $\Pi_k(A)$ are equivariant, by Warm-up~\ref{wu:rotate}: each is a function of $A$
+(for $\Pi_k$, the indicator of $[\lambda_k,\infty)$). $\Diag(A)$ is not: for
+$A=\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$, $\Diag(A)=0$, but with $Q=U^\top$ ($U$ a frame of $A$),
+$QAQ^\top=\diag(1,-1)$ has $\Diag(QAQ^\top)=\diag(1,-1)\ne Q\,0\,Q^\top$. $A+B_0$ is equivariant only if
+$QB_0Q^\top=B_0$ for all $Q$, which forces $B_0=cI$.
+
+\sol{Guided proof}{gp:equivariant}
+(a) $R_k^\top=R_k$ and $R_k^2=I-4u_ku_k^\top+4u_k(u_k^\top u_k)u_k^\top=I$. $R_ku_k=u_k-2u_k=-u_k$ and $R_ku_j=u_j$
+for $j\ne k$. Since the $u_j$ form a basis, the $-1$ eigenspace is $\spn(u_k)$.
+\newline (b) $R_kAR_ku_j=R_kA(\pm u_j)=\pm\lambda_jR_ku_j=\lambda_ju_j=Au_j$ for every $j$.
+\newline (c) Equivariance with $Q=R_k$: $G(A)=G(R_kAR_k^\top)=R_kG(A)R_k$.
+\newline (d) By (c), $G(A)u_k=R_kG(A)R_ku_k=-R_kG(A)u_k$, so $R_k(G(A)u_k)=-G(A)u_k$ and $G(A)u_k\in\spn(u_k)$.
+\newline (e) $G(A)U=U\diag(\varphi)$, so $G(A)=U\diag(\varphi)U^\top$, which commutes with $A=U\Lambda U^\top$. For distinct
+eigenvalues choose $p$ with $p(\lambda_k)=\varphi_k$; then $p(A)=U\diag(\varphi)U^\top$.
+
+\sol{Exercise}{ex:krylovequiv}
+$(Qb)^\top(QAQ^\top)^i(Qb)=b^\top Q^\top QA^iQ^\top Qb=b^\top A^ib$, so $p_{QAQ^\top,Qb}=p_{A,b}=:p$ and
+$F(QAQ^\top,Qb)=p(QAQ^\top)Qb=Qp(A)Q^\top Qb=QF(A,b)$. With a stored frame,
+$x'=U_{\mathrm{old}}\diag(\varphi)U_{\mathrm{old}}^\top Qb$ is in general not $Qx$: the result depends on how $A$ and $b$
+sit relative to $U_{\mathrm{old}}$. The stored frame is a third argument, and only rotating it along ($QU_{\mathrm{old}}$)
+restores equivariance.
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:faces}}
+
+\sol{Warm-up}{wu:small}
+$\mu_A=\frac14\delta_3+\frac12\delta_1+\frac14\delta_0$. $N_A(t)=4$ for $t\le0$, $3$ for $0<t\le1$, $1$ for $1<t\le3$
+and $0$ for $t>3$; it jumps down just after each eigenvalue. The rank function is $(3,1,1,0)$. At $t=1$, $N_A=3$:
+for $k=2,3$ both $\lambda_k=1\ge1$ and $3\ge k$ hold; for $k=4$ both fail.
+
+\sol{Exercise}{ex:quantile}
+(a) If $\lambda_k\ge t$, then $\lambda_1,\dots,\lambda_k\ge t$, so $N_A(t)\ge k$. If at least $k$ eigenvalues are
+$\ge t$, the $k$ largest are, and in particular $\lambda_k$.
+\newline (b) By (a), $\{t:N_A(t)\ge k\}=(-\infty,\lambda_k]$, whose maximum is $\lambda_k$.
+\newline (c) $\mu_A([t,\infty))\ge k/D$ if and only if $N_A(t)\ge k$, so $Q_A(k/D)=\max\{t:N_A(t)\ge k\}=\lambda_k$.
+
+\sol{Guided proof}{gp:faces}
+(a) For $k>K$: $\lambda_k\le\lambda_{K+1}<\lambda_K\le t$.
+\newline (b) $ck^{-\alpha}\ge t\iff k^\alpha\le c/t\iff k\le(c/t)^{1/\alpha}$, and $t\ge\lambda_K=cK^{-\alpha}$ gives
+$(c/t)^{1/\alpha}\le K$.
+\newline (c) $N_A(t)$ counts the integers $1\le k\le(c/t)^{1/\alpha}$, all of which are $\le K$.
+\newline (d) Divide by $D$. Without the floor, $\mu_A([t,\infty))=(c/t)^{1/\alpha}/D=\frac KD(t/\lambda_K)^{-1/\alpha}$ on
+$[\lambda_K,c]$: $K/D$ times the tail of a Pareto law with index $1/\alpha$ and minimum $\lambda_K$. The density is
+$-\frac{d}{dt}\bigl[(c/t)^{1/\alpha}/D\bigr]=\frac1\alpha c^{1/\alpha}t^{-1/\alpha-1}/D$.
+\newline (e) With $t=ce^{-v}$, $(c/t)^{1/\alpha}=e^{v/\alpha}$, and $t\ge\lambda_K\iff v\le\alpha\ln K$.
+\newline (f) Let $k\le K$ and $t_k=ck^{-\alpha}\ge cK^{-\alpha}$. Then $N_A(t_k)=k$, so $\lambda_k\ge t_k$ by
+Exercise~\ref{ex:quantile}\ref{st:quantile-a}. For $t>t_k$, $(c/t)^{1/\alpha}<k$, so $N_A(t)<k$ and $\lambda_k<t$.
+Hence $\lambda_k=t_k$.
+
+\sol{Exercise}{ex:reading}
+(a) $c(2k)^{-\alpha}/(ck^{-\alpha})=2^{-\alpha}$.
+\newline (b) $(c/(t/2))^{1/\alpha}=2^{1/\alpha}(c/t)^{1/\alpha}$.
+\newline (c) $\lambda_k=c/k\ge c/10$ if and only if $k\le10$: $10/4096=\NumDirWithinTen\%$ of the directions, carrying
+$H_{10}/H_{4096}=\NumTraceWithinTen$ of the trace. Within a factor 1{,}000: $k\le1000$, that is \NumDirWithinThousand\%
+of the directions, carrying $H_{1000}/H_{4096}=\NumTraceWithinThousand$. The bottom three quarters of the directions
+carry the remaining sixth of the trace.
+
+\sol{Exercise}{ex:transform}
+(a) $s\lambda_k=(sc)k^{-\alpha}$.
+\newline (b) $A^p$ has eigenvalues $\lambda_k^p=c^pk^{-\alpha p}$, in the same frame and the same order.
+\newline (c) $P^{1/2}=A^{-\nu/2}$, and all three matrices are functions of $A$ with the frame $U$, so
+$P^{1/2}AP^{1/2}=U\Lambda^{-\nu/2}\Lambda\Lambda^{-\nu/2}U^\top=A^{1-\nu}$. Exponent $\alpha(1-\nu)$, scale $c^{1-\nu}$,
+condition number $K^{\alpha(1-\nu)}$ on the window.
+\newline (d) $P^{1/2}=\diag(\varepsilon^{-1/2},1)$ and $P^{1/2}AP^{1/2}=\diag(1/\varepsilon,\varepsilon)$, with condition number
+$\varepsilon^{-2}$ against $\varepsilon^{-1}$ for $A$: the wrong frame squares the condition number instead of
+reducing it. Statements like (c) use that $P$ and $A$ share a frame. Otherwise the result depends on the relative
+frame, not on the two spectra alone.
+
+\sol{Exercise}{ex:broken}
+For $t\ge\lambda_{k_b}=ck_b^{-\alpha_1}$, $N_A(t)=(c/t)^{1/\alpha_1}$ as in Guided proof~\ref{gp:faces}. For
+$\lambda_K\le t<\lambda_{k_b}$, $\lambda_{k_b}(k/k_b)^{-\alpha_2}\ge t\iff k\le k_b(\lambda_{k_b}/t)^{1/\alpha_2}$, so
+$N_A(t)=k_b(\lambda_{k_b}/t)^{1/\alpha_2}$. Both formulas give $k_b$ at $t=\lambda_{k_b}$. So $\mu_A$ has a Pareto
+piece with tail index $1/\alpha_1$ on $[\lambda_{k_b},c]$ and one with tail index $1/\alpha_2$ on
+$[\lambda_K,\lambda_{k_b})$.
+
+\sol{Warm-up}{wu:kron}
+The mixed-product rule gives $(R\otimes L)(v\otimes w)=(Rv)\otimes(Lw)$, and for eigenvectors this is
+$(r_jv_j)\otimes(\ell_iw_i)=r_j\ell_i\,(v_j\otimes w_i)$. Also
+$(v_j\otimes w_i)^\top(v_{j'}\otimes w_{i'})=(v_j^\top v_{j'})(w_i^\top w_{i'})$, which is 1 if $(j,i)=(j',i')$ and 0
+otherwise: $mn$ orthonormal vectors in $\R^{mn}$, a full frame.
+
+\sol{Guided proof}{gp:kron}
+(a) $(ij)^{-\alpha}\ge t\iff ij\le x$. For each $i\le x$ the allowed $j$ are $1,\dots,\floor{x/i}$, all $\le n$
+because $x\le n$; and $i\le x\le m$.
+\newline (b) $\sum_{i\le x}(x/i-1)<N\le\sum_{i\le x}x/i$, that is, $xH_{\floor x}-\floor x<N\le xH_{\floor x}$, and
+$H_{\floor x}=\ln x+O(1)$.
+\newline (c) If $i>\sqrt x$ and $j>\sqrt x$, then $ij>x$; so every counted point has $i\le s$ or $j\le s$, with
+$s=\floor{\sqrt x}$. The strip $i\le s$ holds $\sum_{i\le s}\floor{x/i}$ points, the strip $j\le s$ as many, and both
+strips share the $s^2$ points with $i,j\le s$ (all counted, since $ij\le s^2\le x$). Then
+$\sum_{i\le s}\floor{x/i}=xH_s+O(s)=x(\tfrac12\ln x+\gamma)+O(\sqrt x)$, using $\ln s=\frac12\ln x+O(1/\sqrt x)$, and
+$s^2=x+O(\sqrt x)$. So $N=x\ln x+2\gamma x-x+O(\sqrt x)$.
+\newline (d) $x\ln x=k$ gives $x=k/\ln x$, and taking logarithms $\ln x=\ln k-\ln\ln x=\ln k\,(1+o(1))$. So
+$x=(k/\ln k)(1+o(1))$ and $\lambda_k=x^{-\alpha}\approx(k/\ln k)^{-\alpha}$.
+\newline (e) $\ln k=\ln x+\ln\ln x$, so $d\ln k/d\ln x=1+1/\ln x$; with $\ln\lambda=-\alpha\ln x$,
+$d\ln\lambda/d\ln k=-\alpha/(1+1/\ln x)$.
+
+\sol{Compute}{cp:kron}
+\begin{verbatim}
+lam = np.sort(np.outer(1/np.arange(1, 65), 1/np.arange(1, 257)).ravel())[::-1]
+k = np.arange(17, 201)
+slope = np.polyfit(np.log(k), np.log(lam[k-1]), 1)[0]          # about -0.77
+km = np.exp(np.mean(np.log(k))); x = km/np.log(km)
+predicted = 1/(1+1/np.log(x))                                  # about 0.75
+\end{verbatim}
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:controls}}
+
+\sol{Warm-up}{wu:integral}
+For $x\in[k,k+1]$, $f(k+1)\le f(x)\le f(k)$; integrate: $f(k+1)\le\int_k^{k+1}f\le f(k)$. Summing the right
+inequality over $k=m,\dots,M$ gives the lower bound. Summing the left one over $k=m,\dots,M-1$ gives
+$\sum_{k=m+1}^Mf(k)\le\int_m^Mf$; add $f(m)$. With $f(x)=1/x$, $m=1$ and $M=n$: $\ln(n+1)\le H_n\le1+\ln n$.
+
+\sol{Guided proof}{gp:sums}
+(a) $\sum_{k>m}k^{-s}\le\int_m^\infty x^{-s}dx=m^{1-s}/(s-1)$; divide by $\zeta(s)$. For $s=2$, $m=16$:
+$(1/16)/\zeta(2)=\NumTailBoundTwo$, against the true \NumTailTrueTwo.
+\newline (b) With $f(x)=1/x$ on the block, $\ln2=\int_{2^j}^{2^{j+1}}dx/x\le\sum_{k=2^j}^{2^{j+1}-1}1/k\le2^{-j}+\int_{2^j}^{2^{j+1}-1}dx/x\le2^{-j}+\ln2$.
+\newline (c) With $m=1$, $M=K$: $((K+1)^{1-s}-1)/(1-s)\le S_s(K)\le1+(K^{1-s}-1)/(1-s)$, and
+$0\le(K+1)^{1-s}-K^{1-s}\le(1-s)K^{-s}\le1-s$ by the mean value theorem; so both bounds are $K^{1-s}/(1-s)+O(1)$. Then
+$S_s(K)-S_s(K/2)=(K^{1-s}-(K/2)^{1-s})/(1-s)+O(1)$, and dividing by $S_s(K)$, with $K^{1-s}\to\infty$, gives
+$1-2^{s-1}+o(1)$.
+\newline (d) For increasing $f(x)=x^{-s}=x^{\abs s}$: $\int_{k-1}^kf\le f(k)\le\int_k^{k+1}f$, so
+$K^{1-s}/(1-s)=\int_0^Kf\le S_s(K)\le\int_1^{K+1}f\le(K+1)^{1-s}/(1-s)$, and both bounds are
+$K^{1-s}/(1-s)\,(1+o(1))$.
+
+\sol{Exercise}{ex:table}
+With $s=\alpha q$: head-dominated if $\alpha q>1$ (case (a)); marginal at $\alpha q=1$, with equal contributions per
+octave (case (b)); tail-dominated if $\alpha q<1$, where the ranks above $D/2$ keep a fixed share (cases (c) and (d)).
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Functional & head when & marginal at & tail when\\
+\midrule
+$\tr A^2$ & $\alpha>1/2$ & $\alpha=1/2$ & $\alpha<1/2$\\
+$\tr A$ & $\alpha>1$ & $\alpha=1$ & $\alpha<1$\\
+$\tr A^{1/2}$ & $\alpha>2$ & $\alpha=2$ & $\alpha<2$\\
+$\tr A^{-1}$ & never & --- & always; $\approx c^{-1}D^{1+\alpha}/(1+\alpha)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At $\alpha\approx1$ a fit on ranks 1--200 decides $\tr A^2$ (by (a), ranks beyond 200 carry at most about $0.3\%$ of
+it), decides $\tr A$ only up to the logarithm of the unseen ranks, and decides neither $\tr A^{1/2}$ nor any negative
+power.
+
+\sol{Exercise}{ex:octave}
+(a) $c/k\in[t,2t)\iff c/(2t)<k\le c/t$: one dyadic block of ranks, up to rounding at its ends, starting near
+$a=c/(2t)$. By Guided proof~\ref{gp:sums}(b) its sum is $c(\ln2+O(1/a))=c\ln2+O(t)$.
+\newline (b) $\sum_{j\le k}(c/j)/\sum_{j\le D}(c/j)=H_k/H_D$, and $H_n\approx\ln n$.
+\newline (c) $H_{16}=3.381$, $H_{640}=7.039$, $H_{4096}=8.895$ and $H_{16384}=10.281$ give \NumShareSixForty, \NumShareFourK{}
+and \NumShareSixteenK.
+
+\sol{Warm-up}{wu:deff}
+Terms with $\lambda_k\ge\delta$ lie in $[\frac12,1]$, and there are $N_A(\delta)$ of them. Terms with $\lambda_k<\delta$
+lie in $[0,\lambda_k/\delta]$. Add.
+
+\sol{Guided proof}{gp:deff}
+(a) $\lambda_k/(\lambda_k+\delta)=1/(1+\delta/\lambda_k)=1/(1+ak^\alpha)=f(k)$. $f$ decreases on $[0,\infty)$ and
+$f(0)=1$. For $k\ge1$, $f(k)\le\int_{k-1}^kf$, so $\sum_{k\ge1}f(k)\le\int_0^\infty f$; and $\int_k^{k+1}f\le f(k)$
+with $\int_0^1f\le1$ gives $\int_0^\infty f\le1+\sum_{k\ge1}f(k)$. The integral is finite because
+$f(x)\sim(ax^\alpha)^{-1}$ and $\alpha>1$.
+\newline (b) $x=a^{-1/\alpha}u$ turns $ax^\alpha$ into $u^\alpha$ and $dx$ into $a^{-1/\alpha}du$.
+\newline (c) $u=w^{1/\alpha}$, $du=\frac1\alpha w^{1/\alpha-1}dw$, so
+$\int_0^\infty du/(1+u^\alpha)=\frac1\alpha\int_0^\infty w^{1/\alpha-1}/(1+w)\,dw=(\pi/\alpha)/\sin(\pi/\alpha)$ with
+$s=1/\alpha\in(0,1)$. For $\alpha=2$: $\int_0^\infty du/(1+u^2)=\pi/2=(\pi/2)/\sin(\pi/2)$.
+\newline (d) $a^{-1/\alpha}=(c/\delta)^{1/\alpha}$; combine with (a). The factor exceeds 1 because $\sin y<y$; it is
+$\pi/2\approx1.57$ at $\alpha=2$, tends to 1 as $\alpha\to\infty$ and to $\infty$ as $\alpha\downarrow1$.
+\newline (e) With $f(x)=1/(1+\delta x/c)$: $\sum_{k=1}^Df(k)\le\int_0^Df\le1+\sum_{k=1}^{D-1}f(k)$, and
+$\int_0^Ddx/(1+\delta x/c)=(c/\delta)\ln(1+D\delta/c)$.
+
+\sol{Compute}{cp:deff}
+\begin{verbatim}
+k = np.arange(1, 10**7+1, dtype=float)
+print(np.sum(1/(1+1e-6*k**2)), 1e3*np.pi/2)                      # alpha = 2
+k = np.arange(1, 4097, dtype=float)
+print(np.sum(1/(1+1e-3*k)), 1e3*np.log(1+4.096))                 # alpha = 1
+\end{verbatim}
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:distribution}}
+
+\sol{Warm-up}{wu:haar}
+(a) $Rg$ is Gaussian with mean 0 and covariance $RIR^\top=I$.
+\newline (b) For fixed $R$, $R(Q^\top v)=(QR^\top)^\top v$, and $QR^\top$ is Haar distributed. So $Q^\top v$ and $RQ^\top v$
+have the same law for every $R$: the law of $Q^\top v$ on the sphere is rotation invariant, hence uniform.
+\newline (c) $\sum_kw_k=\norm{Q^\top v}^2=1$. With $R$ a permutation matrix, (b) shows that the coordinates of $Q^\top v$ are
+exchangeable, so all $\E w_k$ are equal, and they sum to 1.
+
+\sol{Guided proof}{gp:haar}
+(a) $v^\top f(A)v=v^\top Qf(\Lambda)Q^\top v=\psi^\top f(\Lambda)\psi=\sum_kf(\lambda_k)\psi_k^2$.
+\newline (b) $g_k=\norm{g}\psi_k$, so $g_k^4=\norm{g}^4w_k^2$ and $g_k^2g_l^2=\norm{g}^4w_kw_l$; since $\psi$ and $\norm{g}$
+are independent, the expectations factor.
+\newline (c) $\E\norm{g}^4=\sum_k\E g_k^4+\sum_{k\ne l}\E g_k^2\,\E g_l^2=3D+D(D-1)=D(D+2)$. Divide.
+\newline (d) $\Var w_k=\frac{3}{D(D+2)}-\frac1{D^2}=\frac{2(D-1)}{D^2(D+2)}$ and $\Cov(w_k,w_l)=\frac1{D(D+2)}-\frac1{D^2}=-\frac{2}{D^2(D+2)}$.
+\newline (e) $\E\sum_kf_kw_k=\frac1D\sum_kf_k=\int f\,d\mu_A$. With $f_k=f(\lambda_k)$,
+\[\begin{aligned}
+\Var\sum_kf_kw_k&=\frac{2}{D^2(D+2)}\Bigl[(D-1)\sum_kf_k^2-\sum_{k\ne l}f_kf_l\Bigr]\\
+&=\frac{2}{D^2(D+2)}\Bigl[D\sum_kf_k^2-\Bigl(\sum_kf_k\Bigr)^2\Bigr]=\frac{2\Var_{\mu_A}(f)}{D+2}.
+\end{aligned}\]
+\newline (f) For $\lambda_k=1/k$ and $D=4{,}096$: mean $H_D/D=2.17\times10^{-3}$, second moment
+$\frac1D\sum_kk^{-2}\approx\zeta(2)/D=4.0\times10^{-4}$, standard deviation $0.0199$, coefficient of variation $9.2$;
+times $\sqrt{2/4098}$ this is \NumHaarRelSd. The spectrum spans a factor of 4{,}096, yet the Rayleigh quotient of a
+random direction is within about 20\% of $\tr A/D$.
+
+\sol{Exercise}{ex:dirichlet}
+(a) Differentiate $\Pr(g^2\le y)=\Pr(\abs g\le\sqrt y)$ in $y$. The density of $g^2$ is
+\[\frac{y^{-1/2}e^{-y/2}}{\sqrt{2\pi}}=\frac{y^{a-1}e^{-y/\theta}}{\Gamma(a)\,\theta^a}\quad\text{with }a=\tfrac12,\ \theta=2,\]
+because $\Gamma(\frac12)=\sqrt\pi$: the Gamma density.
+\newline (b) $w_k=g_k^2/\sum_lg_l^2$ with independent Gamma$(\frac12,2)$ numerators.
+\newline (c) With $a_k=\frac12$ and $a_0=D/2$: $\E w_k=1/D$, and
+\[\Var w_k=\frac{\frac12(\frac D2-\frac12)}{\frac{D^2}4(\frac D2+1)}=\frac{2(D-1)}{D^2(D+2)},\qquad
+\Cov(w_k,w_l)=-\frac{\frac14}{\frac{D^2}4(\frac D2+1)}=-\frac{2}{D^2(D+2)},\]
+as in Guided proof~\ref{gp:haar}(d).
+
+\sol{Exercise}{ex:mixture}
+$\Pr(I=k)=\E[\Pr(I=k\mid Q)]=\E w_k=1/D$, so $\lambda_I\sim\mu_A$. And
+$\E[f(\lambda_I)\mid Q]=\sum_kw_kf(\lambda_k)=v^\top f(A)v$ by Guided proof~\ref{gp:haar}(a).
+
+\sol{Compute}{cp:haar}
+\begin{verbatim}
+rng = np.random.default_rng(0); D = 256; lam = 1/np.arange(1, D+1)
+vals = []
+for _ in range(10):
+    g = rng.standard_normal((20_000, D))
+    vals.append((g**2 @ lam)/np.sum(g**2, 1))
+vals = np.concatenate(vals)
+print(vals.var()/(2*lam.var()/(D+2)))   # close to 1
+print(vals.mean()/lam.mean())            # close to 1
+\end{verbatim}
+
+\sol{Warm-up}{wu:seen}
+(a) Since $f(A)=\sum_kf(\lambda_k)u_ku_k^\top$, we get $v^\top f(A)v=\sum_kf(\lambda_k)(u_k^\top v)^2=\int f\,d\mu_{A,v}$.
+With $f=1$ the mass is $\sum_k(u_k^\top v)^2=\norm{v}^2$.
+\newline (b) $QAQ^\top$ has eigenvalues $\lambda_k$ with eigenvectors $Qu_k$, and $(Qu_k)^\top Qv=u_k^\top v$.
+\newline (c) In the Haar model $u_k=q_k$, and $\E(q_k^\top v)^2=\norm{v}^2/D$ by Warm-up~\ref{wu:haar}(c) applied to
+$v/\norm{v}$. So every atom $\lambda_k$ has expected weight $\norm{v}^2/D$, that is, $\E\mu_{A,v}=\norm{v}^2\mu_A$.
+\newline (d) The weights are $v_k^2$. For $v=e_1$, $\nu_{A,v}=\delta_{\lambda_1}$: this vector sees only $\lambda_1$. For
+$v=(1,\dots,1)/\sqrt D$, all weights are $1/D$ and $\nu_{A,v}=\mu_A$.
+
+\sol{Guided proof}{gp:lanczos}
+(a) $T_m^0e_1=e_1$. If $T_m^je_1$ is supported on the first $j+1$ positions, multiplying by a tridiagonal matrix
+extends the support by one.
+\newline (b) $j=0$: $v_1=V_me_1$. If $A^jv_1=V_mT_m^je_1$ with $j\le m-2$, then
+$A^{j+1}v_1=AV_mT_m^je_1=V_mT_m^{j+1}e_1+\beta_mv_{m+1}(e_m^\top T_m^je_1)$, and $e_m^\top T_m^je_1=0$ because
+$T_m^je_1$ is supported on the first $j+1\le m-1$ positions. The identity thus holds for $j\le m-1$; at $j=m$ the
+vector $A^mv_1$ leaves $\mathcal{K}_m$ in general.
+\newline (c) For $i=2j$, $j\le m-1$: $v_1^\top A^{2j}v_1=\norm{A^jv_1}^2=\norm{V_mT_m^je_1}^2=e_1^\top T_m^{2j}e_1$, since $V_m$
+has orthonormal columns and $T_m$ is symmetric. For $i=2j+1$, $j\le m-1$:
+\[v_1^\top A^{2j+1}v_1=(A^jv_1)^\top A(A^jv_1)=e_1^\top T_m^jV_m^\top AV_mT_m^je_1=e_1^\top T_m^{2j+1}e_1.\]
+Together these cover $0\le i\le2m-1$.
+\newline (d) $e_1^\top T_m^ie_1=e_1^\top S\Theta^iS^\top e_1=\sum_jS_{1j}^2\theta_j^i$. By Warm-up~\ref{wu:seen}(a),
+$v_1^\top A^iv_1=\int\lambda^i\,d\nu_{A,v_1}$. An $m$-point rule that is exact for all polynomials of degree $\le2m-1$ is the Gauss
+rule.
+\newline (e) Lanczos produces $v_{j+1}=p_j(A)v_1$ with polynomials $p_j$ of degree $j$, so
+$v_i^\top v_j=\int p_{i-1}p_{j-1}\,d\nu_{A,v_1}$. The diagonal entries
+\[(T_m)_{jj}=v_j^\top Av_j=\int\lambda\,p_{j-1}(\lambda)^2\,d\nu_{A,v_1}(\lambda)\]
+involve degree at most $2m-1$, and the off-diagonal entries $\beta_j$, $j\le m-1$, are norms of
+$(A-\alpha_j)v_j-\beta_{j-1}v_{j-1}$, of degree at most $2m-2$. So $T_m$ is a function of the moments
+$\int\lambda^i\,d\nu_{A,v_1}$, $i\le2m-1$.
+
+\sol{Guided proof}{gp:cg}
+(a) $b=Ax$, so $y=q(A)Ax$ and $x-y=(I-Aq(A))x=p(A)x$. Conversely, if $p(0)=1$, then $p(\lambda)-1=-\lambda q(\lambda)$
+for a polynomial $q$ of degree $<m$.
+\newline (b) $\norm{p(A)x}_A^2=x^\top p(A)Ap(A)x=b^\top A^{-1}p(A)Ap(A)A^{-1}b=b^\top p(A)^2A^{-1}b$, because functions of $A$
+commute; this is $\int p^2\lambda^{-1}\,d\mu_{A,b}$ by Warm-up~\ref{wu:seen}(a).
+\newline (c) Fact~\ref{fact:cg} with (a) and (b). The right-hand side depends on $A$ and $b$ only through $\mu_{A,b}$.
+\newline (d) $p(\lambda)=\prod_{j=1}^r(1-\lambda/\lambda_j)$ over the atoms has degree $r$, $p(0)=1$, and vanishes on the support
+of $\mu_{A,b}$, so the error at step $r$ is 0.
+
+\sol{Exercise}{ex:step}
+$q(\eta f(A)g)=\frac12\eta^2\,g^\top f(A)Af(A)g-\eta\,g^\top f(A)g$. Write $a=g^\top f(A)g=\int f\,d\mu_{A,g}$ and
+$b=g^\top f(A)Af(A)g=\int\lambda f^2\,d\mu_{A,g}>0$. The minimum over $\eta$ is at $\eta=a/b$, with value
+$-a^2/(2b)$, and $q(0)=0$.
+
+\sol{Guided proof}{gp:kantorovich}
+(a) Newton: $a=b=\int\lambda^{-1}d\mu_{A,g}$, decrease $\frac12\int\lambda^{-1}d\mu_{A,g}$. Gradient: $a=\norm{g}^2$,
+$b=\int\lambda\,d\mu_{A,g}$, decrease $\norm{g}^4/(2\int\lambda\,d\mu_{A,g})$. The ratio is
+$\int\lambda^{-1}d\mu_{A,g}\int\lambda\,d\mu_{A,g}/\norm{g}^4=\E_\nu[\lambda^{-1}]\,\E_\nu[\lambda]$.
+\newline (b) $1=(\E[\lambda^{1/2}\lambda^{-1/2}])^2\le\E[\lambda]\,\E[\lambda^{-1}]$ by Cauchy--Schwarz.
+\newline (c) Both factors are $\ge0$ on $[m,M]$. Expanding, $-\lambda^2+(m+M)\lambda-mM\ge0$; divide by $\lambda>0$.
+\newline (d) $\E\lambda+mM\,\E\lambda^{-1}\le m+M$, and $2\sqrt{mM\,\E\lambda\,\E\lambda^{-1}}\le\E\lambda+mM\,\E\lambda^{-1}$.
+So $\E\lambda\,\E\lambda^{-1}\le(m+M)^2/(4mM)=(\kappa+1)^2/(4\kappa)$. Equality holds for mass $\frac12$ at each of
+$m$ and $M$.
+
+\sol{Exercise}{ex:kantpower}
+$\E_\mu\lambda=cH_D/D$ and $\E_\mu\lambda^{-1}=\frac1{cD}\sum_kk=(D+1)/(2c)$, so the product is
+$H_D(D+1)/(2D)\approx\frac12(\ln D+\gamma)$: \NumKantFourK{} and \NumKantSixteenK. The spectrum would allow Newton to
+beat a tuned gradient step by a factor of about \NumKantWorstFourK, but a gradient with uniform weights gains only
+\NumKantFourK. The weights, that is, how the gradient sits relative to the frame, decide.
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:perturbation}}
+
+\sol{Warm-up}{wu:twobytwo}
+(a) $(a-\lambda)(b-\lambda)-\delta^2=0$ gives $\lambda=\frac{a+b}2\pm\sqrt{g^2/4+\delta^2}$. The top eigenvalue moves
+by $\sqrt{g^2/4+\delta^2}-g/2\in[0,\delta]$, and the bottom one by the same amount. For $\delta\ll g$,
+$\sqrt{g^2/4+\delta^2}=\frac g2\sqrt{1+4\delta^2/g^2}\approx\frac g2+\delta^2/g$.
+\newline (b) The rows of the eigenvector equation are $a\cos\theta+\delta\sin\theta=\lambda_+\cos\theta$ and
+$\delta\cos\theta+b\sin\theta=\lambda_+\sin\theta$. Multiply the first by $\sin\theta$, the second by $\cos\theta$, and
+subtract: $(a-b)\sin\theta\cos\theta=\delta(\cos^2\theta-\sin^2\theta)$, that is, $\frac g2\sin2\theta=\delta\cos2\theta$.
+\newline (c) $g=\delta=0.01$: the eigenvalues move by \NumTwoShift{} (0.6\% of $a$), and $2\theta=\arctan2$, so
+$\theta=\NumTwoAngle^\circ$.
+\newline (d) $\tan2\theta\to\infty$, so $\theta\to45^\circ$ however small $\delta$ is. Once the gap is much smaller than the
+perturbation, the eigenvectors are those of $E$, not of $A$.
+
+\sol{Guided proof}{gp:courant}
+(a) For unit $v=\sum_{i\le k}z_iu_i$, $v^\top Av=\sum_{i\le k}\lambda_iz_i^2\ge\lambda_k$, with equality at $v=u_k$.
+\newline (b) $\dim S+\dim\spn(u_k,\dots,u_D)=k+(D-k+1)>D$.
+\newline (c) For unit $v=\sum_{i\ge k}z_iu_i$, $v^\top Av=\sum_{i\ge k}\lambda_iz_i^2\le\lambda_k$. So every $S$ has inner minimum
+at most $\lambda_k$, and the $S$ of (a) attains it.
+
+\sol{Guided proof}{gp:weyl}
+(a) $v^\top Bv=v^\top Av+v^\top Ev\le v^\top Av+\norm{E}_\op$.
+\newline (b) For every $S$, $\min_Sv^\top Bv\le\min_Sv^\top Av+\norm{E}_\op$ (evaluate at the minimiser for $A$). Taking the
+maximum over $S$ gives $\lambda_k(B)\le\lambda_k(A)+\norm{E}_\op$. Exchanging $A$ and $B$ ($E\to-E$) gives the other
+inequality.
+
+\sol{Exercise}{ex:rearrange}
+If $i<j$ and $\pi(i)>\pi(j)$, then $b_{\pi(i)}\le b_{\pi(j)}$, and swapping the two values changes the sum by
+$a_ib_{\pi(j)}+a_jb_{\pi(i)}-a_ib_{\pi(i)}-a_jb_{\pi(j)}=(a_i-a_j)(b_{\pi(j)}-b_{\pi(i)})\ge0$. Each such swap
+removes at least one inversion, so finitely many swaps reach the identity without decreasing the sum.
+
+\sol{Guided proof}{gp:hw}
+(a) $\norm{A-B}_\F^2=\tr(A-B)^2=\tr A^2+\tr B^2-2\tr(AB)$, with $\tr A^2=\sum_ia_i^2$ and $\tr B^2=\sum_jb_j^2$.
+\newline (b) $\tr(AB)=\tr(U_A\diag(a)U_A^\top U_B\diag(b)U_B^\top)=\tr(\diag(a)W\diag(b)W^\top)=\sum_{i,j}a_iW_{ij}b_jW_{ij}$.
+\newline (c) The rows and columns of the orthogonal matrix $W$ are unit vectors, so the rows and columns of $P$ sum to 1.
+\newline (d) $\tr(AB)=\sum_{i,j}a_ib_jP_{ij}$ is linear in $P$, so it is at most its maximum over permutations,
+$\max_\pi\sum_ia_ib_{\pi(i)}=\sum_ia_ib_i$. Hence $\norm{A-B}_\F^2\ge\sum_ia_i^2+\sum_ib_i^2-2\sum_ia_ib_i=\sum_i(a_i-b_i)^2$.
+
+\sol{Exercise}{ex:wasserstein}
+Couplings of the two uniform measures are $\frac1D$ times doubly stochastic matrices, and the cost
+$\frac1D\sum_{i,j}(a_i-b_j)^2P_{ij}$ is linear in $P$, so a permutation is optimal. For a permutation the cost is
+$\frac1D\bigl[\sum_ia_i^2+\sum_ib_i^2-2\sum_ia_ib_{\pi(i)}\bigr]$, which the sorted coupling minimises. So
+$W_2(\mu_A,\mu_B)^2=\frac1D\sum_i(a_i-b_i)^2\le\norm{A-B}_\F^2/D$ by Hoffman--Wielandt.
+
+\sol{Guided proof}{gp:sintheta}
+(a) $(A+E)v=\mu v$.
+\newline (b) $Auu^\top=\lambda_kuu^\top=uu^\top A$, so $AP=PA$.
+\newline (c) For $z=\sum_{j\ne k}z_ju_j$, $\norm{(A-\mu I)z}^2=\sum_{j\ne k}(\lambda_j-\mu)^2z_j^2\ge\min_{j\ne k}(\lambda_j-\mu)^2\norm{z}^2$.
+For $j\ne k$, $\abs{\lambda_j-\mu}\ge\abs{\lambda_j-\lambda_k}-\abs{\lambda_k-\mu}\ge g_k-\norm{E}_\op$, by Weyl.
+\newline (d) $(g_k-\norm{E}_\op)\norm{Pv}\le\norm{(A-\mu I)Pv}=\norm{P(A-\mu I)v}=\norm{PEv}\le\norm{E}_\op$, and
+$\norm{Pv}^2=1-(u^\top v)^2=\sin^2\angle(u,v)$.
+\newline (e) If $\norm{E}_\op\le g_k/2$, then $g_k-\norm{E}_\op\ge g_k/2$ and (d) gives the claim. If $\norm{E}_\op>g_k/2$, then
+$2\norm{E}_\op/g_k>1\ge\sin\angle(u,v)$.
+
+\sol{Exercise}{ex:gaps}
+(a) $h'(x)=\alpha(1+x)^{-\alpha-1}>0$ and $h''(x)=-\alpha(\alpha+1)(1+x)^{-\alpha-2}<0$. A concave function lies below
+its tangents: at $x$, $h(0)\le h(x)-xh'(x)$; at 0, $h(x)\le h(0)+xh'(0)=\alpha x$.
+\newline (b) $(\lambda_k-\lambda_{k+1})/\lambda_k=1-(1+1/k)^{-\alpha}=h(1/k)$; insert $x=1/k$.
+\newline (c) $\varphi(x)=cx^{-\alpha}$ is convex and decreasing, so $\varphi(k-1)-\varphi(k)\ge\varphi(k)-\varphi(k+1)$: the gap
+above $\lambda_k$ is at least the gap below, and gaps to non-neighbours are larger still.
+
+\sol{Guided proof}{gp:resolution}
+(a) Weyl: $\abs{\Delta\lambda_k}\le\eta\le sck^{-\alpha}$ if and only if $k\le(sc/\eta)^{1/\alpha}$.
+\newline (b) By Exercise~\ref{ex:gaps}, $g_k=\lambda_k-\lambda_{k+1}\ge ck^{-\alpha}\frac\alpha k(1+\frac1k)^{-\alpha-1}\ge\alpha ck^{-\alpha-1}2^{-\alpha-1}$.
+\newline (c) $\sin\le2\eta/g_k\le2^{\alpha+2}\eta k^{\alpha+1}/(\alpha c)\le s$ if and only if $k^{\alpha+1}\le s\alpha c/(2^{\alpha+2}\eta)$.
+\newline (d) $K_{\text{vec}}/K_{\text{val}}\propto\eta^{-1/(\alpha+1)}/\eta^{-1/\alpha}=\eta^{1/(\alpha(\alpha+1))}\to0$.
+
+\sol{Exercise}{ex:resnumbers}
+$K_{\text{val}}=0.5/\eta=\NumKvalWeyl$ and $K_{\text{vec}}=(0.5/(8\eta))^{1/2}=\NumKvecWorst$. The simulation resolves
+eigenvalues to rank \NumKvalSim{} (about three times the guarantee) and eigenvectors to rank \NumKvecSim{} (about
+twenty times the guarantee). A worst-case $E$ puts its whole size $\norm{E}_\op\approx2\varepsilon\sqrt D$ on the
+pair of directions with the smallest gap. A random $E$ spreads its size over all $D^2$ entries: each pair of
+eigenvectors feels only an entry $u_j^\top Eu_k$ of size about $\varepsilon$, a factor of order $\sqrt D$ smaller.
+
+\sol{Guided proof}{gp:firstorder}
+(a) Product rule; the derivative of $A(\varepsilon)$ is $E$.
+\newline (b) The left side gives $u_k^\top Eu_k+\lambda_ku_k^\top u_k'$ and the right side $\lambda_k'+\lambda_ku_k^\top u_k'$.
+\newline (c) $u_j^\top Eu_k+\lambda_ju_j^\top u_k'=\lambda_ku_j^\top u_k'$, using $u_j^\top u_k=0$.
+\newline (d) $2u_k^\top u_k'=0$. Expand $u_k'=\sum_j(u_j^\top u_k')u_j$ and insert (c). Since
+$u_k(\varepsilon)=u_k+\varepsilon u_k'+O(\varepsilon^2)$ with $u_k'\perp u_k$, the component orthogonal to $u_k$ has
+norm $\varepsilon\norm{u_k'}+O(\varepsilon^2)$. In the eigenbasis, $u_j^\top Eu_k=(\lambda_k-\lambda_j)\,u_j^\top u_k'$:
+the formula of Guided proof~\ref{gp:orbit}\ref{st:orbit-entries} with $W_{jk}=u_j^\top u_k'$.
+
+\sol{Exercise}{ex:typical}
+(a) With $Q=U$, $U^\top GU$ has the law of $G$: its off-diagonal entries $u_j^\top Gu_k$ are independent
+$\mathcal{N}(0,1)$ and its diagonal entries $\mathcal{N}(0,2)$. By Guided proof~\ref{gp:firstorder},
+$\E\sin^2\approx\varepsilon^2\E\norm{\sum_{j\ne k}u_j^\top Gu_k\,u_j/(\lambda_k-\lambda_j)}^2=\varepsilon^2\sum_{j\ne k}(\lambda_k-\lambda_j)^{-2}$,
+and $\lambda_k$ moves by $\varepsilon u_k^\top Gu_k$, of standard deviation $\sqrt2\varepsilon$.
+\newline (b) For $\abs m\ll k$, $\lambda_k-\lambda_{k+m}\approx-mg_k$, so these terms sum to
+$g_k^{-2}\sum_{m\ne0}m^{-2}=2\zeta(2)/g_k^2=2\zeta(2)k^{2\alpha+2}/(\alpha^2c^2)$. For $j\gg k$, $\lambda_j\ll\lambda_k$
+and each term is about $\lambda_k^{-2}=k^{2\alpha}/c^2$; there are about $D$ of them.
+\newline (c) The ratio of the two parts is $2\zeta(2)k^2/(\alpha^2D)$, which exceeds 1 for $k>\alpha\sqrt{D/(2\zeta(2))}$;
+for $\alpha=1$ and $D=\NumSimDim$ this is \NumNeighbourRank.
+\newline (d) $\varepsilon\sqrt{2\zeta(2)}\,k^{\alpha+1}/(\alpha c)=s$ gives the formula. With $\alpha=c=1$, $s=\frac12$,
+$\varepsilon=10^{-5}$: $(0.5/(1.814\times10^{-5}))^{1/2}=\NumKvecPred$.
+
+\sol{Compute}{cp:resolution}
+If $A=U\Lambda U^\top$, then $A+E=U(\Lambda+U^\top EU)U^\top$, and $U^\top EU$ has the law of $E$: the eigenvalues have
+the law of those of $\Lambda+E$, and the eigenvectors are rotated by $U$, which leaves all angles unchanged.
+\begin{verbatim}
+rng = np.random.default_rng(0); D = 2000; eps = 1e-5
+lam = 1/np.arange(1, D+1)
+z = rng.standard_normal((D, D)); E = eps*(z+z.T)/np.sqrt(2)
+w, v = np.linalg.eigh(np.diag(lam)+E); w, v = w[::-1], v[:, ::-1]
+rel = np.abs(w-lam)/lam                             # (a)
+sines = np.sqrt(np.clip(1-np.diag(v)**2, 0, None))  # (b)
+\end{verbatim}
+
+\sol{Guided proof}{gp:lipschitz}
+(a) $U_A^\top(A-B)U_B=\diag(a)U_A^\top U_B-U_A^\top U_B\diag(b)=\diag(a)W-W\diag(b)$, with entries $(a_i-b_j)W_{ij}$.
+\newline (b) The same computation with $f(A)=U_A\diag(f(a))U_A^\top$ and $f(B)=U_B\diag(f(b))U_B^\top$.
+\newline (c) $\norm{f(A)-f(B)}_\F^2=\sum_{i,j}(f(a_i)-f(b_j))^2W_{ij}^2\le L^2\sum_{i,j}(a_i-b_j)^2W_{ij}^2=L^2\norm{A-B}_\F^2$.
+
+\sol{Exercise}{ex:fractional}
+$\abs{f'(\lambda)}=\nu(\lambda+\delta)^{-\nu-1}\le\nu\delta^{-\nu-1}$ on $[0,\infty)$; the mean value theorem gives the
+Lipschitz constant, and Guided proof~\ref{gp:lipschitz} the matrix bound.
+
+\sol{Exercise}{ex:projector}
+With $P=VV^\top$ and $P'=V'V'^\top$: $\norm{P-P'}_\F^2=\tr P+\tr P'-2\tr(PP')=2k-2\tr(PP')$, and
+$\tr(PP')=\tr(V'^\top VV^\top V')=\norm{V^\top V'}_\F^2=\sum_i\cos^2\theta_i$, which also equals $\norm{PP'}_\F^2$. So
+$\norm{P-P'}_\F^2=2\sum_i(1-\cos^2\theta_i)=2\sum_i\sin^2\theta_i$. $\Pi_k(A)=f(A)$ with $f$ the indicator of
+$[\lambda_k,\infty)$, which jumps; its stability comes from the gap at the cut, through Remark~\ref{rem:dk}.
+
+\sol{Warm-up}{wu:pinching}
+$\norm{A-UMU^\top}_\F=\norm{U^\top AU-M}_\F$. A diagonal $M$ changes only diagonal entries; the best choice is
+$M=\Diag(U^\top AU)$, which leaves the off-diagonal entries $u_i^\top Au_j$. Also
+$\tr\mathcal{P}_U(A)=\sum_iu_i^\top Au_i=\tr(U^\top AU)=\tr A$.
+
+\sol{Guided proof}{gp:kyfan}
+(a) $x_i^\top Ax_i=\sum_j\lambda_j(u_j^\top x_i)^2$; sum over $i$ and use $\sum_i(u_j^\top x_i)^2=\norm{X^\top u_j}^2$.
+\newline (b) $X^\top u_j$ holds the coefficients of the projection of the unit vector $u_j$ onto $\spn(x_1,\dots,x_k)$, so
+$c_j\le1$ (Bessel). $\sum_jc_j=\sum_i\sum_j(u_j^\top x_i)^2=\sum_i\norm{x_i}^2=k$.
+\newline (c) $\sum_j\lambda_jc_j-\sum_{j\le k}\lambda_j=\sum_{j\le k}\lambda_j(c_j-1)+\sum_{j>k}\lambda_jc_j\le\lambda_k\sum_{j\le k}(c_j-1)+\lambda_k\sum_{j>k}c_j=\lambda_k\bigl(\sum_jc_j-k\bigr)=0$,
+using $c_j-1\le0$ and $\lambda_j\ge\lambda_k$ for $j\le k$, and $\lambda_j\le\lambda_k$ for $j>k$.
+\newline (d) Apply (c) to the $k$ columns of $U$ with the largest Rayleigh quotients. For $k=D$ both sums equal $\tr A$.
+\newline (e) $k=1$ gives the maximum. For the minimum, subtract the case $k=D-1$ from the equal totals.
+
+%----------------------------------------------------------------------
+\subsection*{Section~\ref{sec:next}}
+
+\sol{Guided proof}{gp:motion}
+(a) $U'^\top U+U^\top U'=0$.
+\newline (b) $A'=U'\Lambda U^\top+U\Lambda'U^\top+U\Lambda U'^\top$, so $U^\top A'U=W\Lambda+\Lambda'+\Lambda W^\top=\Lambda'+W\Lambda-\Lambda W$.
+\newline (c) The diagonal of $W\Lambda-\Lambda W$ is zero, so $\lambda_k'=(U^\top A'U)_{kk}=u_k^\top A'u_k$. Off the diagonal,
+$(U^\top A'U)_{ij}=(\lambda_j-\lambda_i)W_{ij}$. With $E=A'$ and $W_{jk}=u_j^\top u_k'$, this is
+Guided proof~\ref{gp:firstorder}(b) and~(c).
+\newline (d) If the spectrum is stable, $\Lambda'\approx0$ and $U^\top A'U$ is nearly off-diagonal; its entries divided by the
+gaps are the rotation rates.
+
+\sol{Exercise}{ex:dyson}
+(a) $hW_{ij}\approx u_i^\top\Delta Au_j/(\lambda_j-\lambda_i)=\sigma\sqrt h\,u_i^\top Gu_j/(\lambda_j-\lambda_i)$, and
+$u_i^\top Gu_j\sim\mathcal{N}(0,1)$ by Exercise~\ref{ex:typical}(a): variance $\sigma^2h/(\lambda_i-\lambda_j)^2$. The
+eigenvalue changes by $\sigma\sqrt h\,u_k^\top Gu_k$, with variance $2\sigma^2h$.
+\newline (b) $(U^\top A'U)_{ij}=(\lambda_j-\lambda_i)W_{ij}$ now grows with the gap. Nearly tied pairs rotate as fast as all
+others but barely change the matrix; well separated pairs produce the largest entries.
+\newline (c) Measure the rotation of eigenvector pairs, or the loss of capture of single eigenvectors, over a fixed lag and plot
+it against the gap. Isotropic noise gives slope $-2$ in log--log coordinates (for the squared rotation); frame
+diffusion gives a flat line. Replays that save eigenvectors at nearby steps give this directly.

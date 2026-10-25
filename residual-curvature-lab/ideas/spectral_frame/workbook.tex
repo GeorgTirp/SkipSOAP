@@ -1,0 +1,1247 @@
+% Spectrum and frame, Part I, as a workbook. Build instructions: README.md in this folder.
+% workbook.tex builds the version without solutions; workbook_solutions.tex defines \withsolutions and inputs this
+% file, which then also inputs solutions.tex. Hints are in hints.tex (always included).
+% Numbers from synthetic computations come from generated/numbers.tex (written by make_figures.py).
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+
+\input{generated/numbers.tex}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Orth}{\mathrm{O}}
+\newcommand{\Sym}{\mathbb{S}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Diag}{Diag}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Dir}{Dirichlet}
+\DeclareMathOperator{\spn}{span}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\study}[1]{\path{#1}}
+\newcommand{\evL}{\textsc{[l]}}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{fact}[proposition]{Fact}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{warmup}[proposition]{Warm-up}
+\newtheorem{exercise}[proposition]{Exercise}
+\newtheorem{guided}[proposition]{Guided proof}
+\newtheorem{compute}[proposition]{Compute}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{question}{Question}
+
+% Steps of a guided proof: (a), (b), ...; \ref gives e.g. 2.6(c).
+\newlist{steps}{enumerate}{1}
+\setlist[steps]{label=(\alph*),ref=\theproposition(\alph*),leftmargin=2.2em,itemsep=2pt,topsep=3pt}
+
+\newenvironment{reading}{\begin{list}{}{\leftmargin=1.5em\rightmargin=0pt\topsep=6pt}\small\item[]%
+  \textcolor{blue!50!black}{\textbf{Reading.}}\ }{\end{list}}
+\newenvironment{labbox}{\begin{list}{}{\leftmargin=1.5em\rightmargin=0pt\topsep=6pt}\small\item[]%
+  \textcolor{green!35!black}{\textbf{Lab connection} (\evL).}\ }{\end{list}}
+
+\ifdefined\withsolutions
+  \newcommand{\versionline}{Version with solutions (Appendix~\ref{app:solutions})}
+\else
+  \newcommand{\versionline}{Version without solutions; they are in \texttt{workbook\_solutions.pdf}}
+\fi
+
+\title{Spectrum and frame: a workbook\\[0.3em]
+\large Part I: One PSD matrix, power-law spectra, and what they say about eigenvectors}
+\author{Working notes --- G.~Tirpitz and Claude (Opus 5.5)}
+\date{24 October 2026 (workbook version 0.1)\\[0.2em]\small\versionline}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%======================================================================
+\section*{How to use this workbook}\addcontentsline{toc}{section}{How to use this workbook}
+%======================================================================
+
+This workbook is the learning version of \texttt{spectral\_frame.pdf} (Part~I). It covers the same mathematics, adds
+the background each part needs, and turns the results into exercises that you prove yourself. The compact note stays
+as a reference: read it afterwards to see the whole argument in fourteen pages.
+
+\paragraph{Kinds of items.}
+\begin{description}[leftmargin=1.2em,itemsep=1pt]
+\item[Fact:] a background result you may use without proof. Each comes with a reading pointer.
+\item[Warm-up:] a few lines. It checks that a definition has landed. Do all of them.
+\item[Exercise:] a standard proof or computation, usually less than half a page.
+\item[Guided proof:] a result broken into steps (a), (b), \ldots. Each step is a small exercise. Later steps may use
+  earlier ones, even if you skipped them, so you can enter a proof in the middle.
+\item[Compute:] a short numpy experiment that runs in under a minute on a laptop. The expected numbers are given;
+  \texttt{make\_figures.py} in this folder is a reference solution.
+\item[Reading] and \textbf{Lab connection} boxes say where to read the background and what the lab measured. Lab
+  results name the study; \evL{} marks local measurements at fixed training states.
+\end{description}
+Hints for every item are in Appendix~\ref{app:hints}, in order. Full solutions are in a separate file, the same
+document with an Appendix~B: \texttt{workbook\_solutions.pdf}. Try a step for a while before you look.
+
+\paragraph{Prerequisites.} Eigenvalues and eigenvectors, orthogonal matrices and the trace; Gaussian random
+vectors, expectation and variance; integrals and first-order Taylor expansion. Everything else is introduced where
+it is needed.
+
+\paragraph{Route.} Sections~\ref{sec:frame} and~\ref{sec:faces} are the base. Sections~\ref{sec:controls},
+\ref{sec:distribution} and~\ref{sec:perturbation} are independent of each other and can be read in any order.
+Section~\ref{sec:next} uses all of them and opens Part~II.
+
+\paragraph{Why this matters.} Three results from the lab's CIFAR-10 studies (a depth-6 ViT; per-tensor generalized
+Gauss--Newton (GGN) blocks) motivate the notes.
+\begin{enumerate}[(1),itemsep=1pt]
+\item Late in training the per-tensor GGN spectrum is a nearly fixed power law with exponent $\alpha\approx1$, while
+  its eigenvectors rotate. A top-16 subspace cached 10 steps earlier keeps only 0.84--0.88 of the current top-16
+  curvature (\study{spectral_rotation_20261020}, \evL).
+\item A spectrum alone cannot precondition the bulk: a power-law diagonal reaches only the level of the exact
+  diagonal. A few curvature products can (\study{bulk_krylov_20261014}, \evL).
+\item The best power of the curvature falls from about $3/4$ early in training to $1/2$ late, as the noise scales of
+  strongly preconditioned steps grow (\study{noise_scale_20261021}, \evL).
+\end{enumerate}
+SOAP already has the structure that the first result suggests: an eigenbasis refreshed rarely and a diagonal
+second-moment estimate refreshed every step. The question behind these notes is whether a model of spectrum and
+frame can explain that design and improve it. Part~I treats one fixed matrix. By the end you will have proved three
+things. The spectrum is a probability distribution, and it fixes every rotation-invariant quantity. It says nothing
+about the frame. And a power law implies that eigenvalues survive perturbations much deeper down the spectrum than
+eigenvectors do. That asymmetry is the mathematical reason why ``stable spectrum, rotating frame'' is the natural
+picture.
+
+\paragraph{Notation.}
+$\Sym^D$ is the set of real symmetric $D\times D$ matrices and $\Sym^D_+$ its positive semi-definite (PSD) subset;
+$\Orth(D)$ is the group of orthogonal matrices. Eigenvalues are sorted, $\lambda_1\ge\dots\ge\lambda_D$.
+$\norm{\cdot}_\op$ is the operator norm (largest singular value) and $\norm{\cdot}_\F$ the Frobenius norm. $\delta_x$
+is the point mass at $x$. $H_n=\sum_{k\le n}1/k$ is the harmonic number; we use $H_n=\ln n+\gamma+O(1/n)$ with
+Euler's constant $\gamma\approx0.5772$. $\zeta(s)=\sum_{k\ge1}k^{-s}$ is the Riemann zeta function, and
+$\zeta(2)=\pi^2/6$.
+
+%======================================================================
+\section{Spectrum and frame}\label{sec:frame}
+%======================================================================
+
+A symmetric matrix is a rotated diagonal matrix. This section separates the two parts of that sentence: the
+diagonal, which we call the \emph{spectrum}, and the rotation, which we call the \emph{frame}. We count how many
+numbers each part holds, and we ask which quantities depend on which part. The answers are short, but every later
+section uses them.
+
+\begin{reading}
+Strang (2019), Part~I, explains the spectral theorem and functions of matrices in the language of data. Horn \&
+Johnson (2013), Sections~2.5 (the spectral theorem) and~4.1 (Hermitian matrices), are the standard reference. Golub
+\& Van Loan (2013), Section~8.1, is a compact summary that also contains the perturbation results of
+Section~\ref{sec:perturbation}.
+\end{reading}
+
+\subsection{The spectral theorem and functions of a matrix}
+
+\begin{fact}[Spectral theorem]\label{fact:spectral}
+Every $A\in\Sym^D$ can be written $A=U\Lambda U^\top$ with $U\in\Orth(D)$ and $\Lambda=\diag(\lambda_1,\dots,\lambda_D)$
+real. The columns $u_k$ of $U$ are orthonormal eigenvectors, $Au_k=\lambda_ku_k$, and $A=\sum_k\lambda_ku_ku_k^\top$.
+\end{fact}
+
+\begin{definition}[Spectrum, frame, functions of a matrix]\label{def:frame}
+Sort the eigenvalues, $\lambda_1\ge\dots\ge\lambda_D$. The vector $\sigma(A)=(\lambda_1,\dots,\lambda_D)$ is the
+\emph{spectrum} of $A$, and any $U$ as in Fact~\ref{fact:spectral} is a \emph{frame} of $A$. $A$ is \emph{positive
+semi-definite} (PSD) if $v^\top Av\ge0$ for all $v$. For a function $f$ defined on the spectrum,
+$f(A)=U\diag(f(\lambda_1),\dots,f(\lambda_D))\,U^\top$.
+\end{definition}
+
+The definition of $f(A)$ hides a question. If eigenvalues repeat, the frame is not unique, so is $f(A)$ well defined?
+Exercise~\ref{ex:fwelldef} answers it.
+
+\begin{warmup}[What the spectrum alone determines]\label{wu:spectrum}
+Let $A=U\Lambda U^\top$. Show:
+\begin{steps}
+\item $\tr A=\sum_k\lambda_k$ and $\norm{A}_\F^2=\sum_k\lambda_k^2$;
+\item $\norm{A}_\op=\max_k\abs{\lambda_k}$;
+\item $\lambda_D\norm{v}^2\le v^\top Av\le\lambda_1\norm{v}^2$ for all $v$, with equality at $v=u_D$ and at $v=u_1$;
+\item $A$ is PSD if and only if $\lambda_D\ge0$.
+\end{steps}
+\end{warmup}
+
+\begin{warmup}\label{wu:orthogonal}
+If $Au=\lambda u$ and $Aw=\mu w$ with $\lambda\ne\mu$, then $u^\top w=0$.
+\end{warmup}
+
+\begin{exercise}[A function of a matrix does not depend on the frame]\label{ex:fwelldef}
+\begin{steps}
+\item Let $p$ be a polynomial with $p(\lambda_k)=f(\lambda_k)$ for every $k$. It exists by Lagrange interpolation
+  on the distinct values among the $\lambda_k$. Show $U\diag(f(\lambda_1),\dots,f(\lambda_D))U^\top=p(A)$.
+\item Conclude that $f(A)$ is the same for every frame of $A$.
+\item Show that $f(A)$ commutes with $A$. Check that $A^2$, $(A+\delta I)^{-1}$ (for $\delta>-\lambda_D$) and, for
+  PSD $A$, $A^{1/2}$ and $(A+\delta I)^{-\nu}$ (for $\delta>0$) are functions of $A$ in this sense.
+\end{steps}
+\end{exercise}
+
+\begin{warmup}[Rotating a matrix]\label{wu:rotate}
+Let $Q\in\Orth(D)$. Show that $\norm{Qv}=\norm{v}$, that $QAQ^\top$ has the spectrum of $A$ and the eigenvectors
+$Qu_k$, and that $Qf(A)Q^\top=f(QAQ^\top)$.
+\end{warmup}
+
+\subsection{How many numbers are in the spectrum, and how many in the frame}
+
+A symmetric matrix has $D(D+1)/2$ free entries. The spectrum accounts for $D$ of them, so the frame should account
+for the remaining $D(D-1)/2$. The guided proof below makes this count precise. It finds all directions in which a
+matrix can move while its spectrum stays fixed.
+
+\begin{definition}[Orbit of a spectrum]\label{def:orbit}
+For a fixed diagonal $\Lambda$, the \emph{orbit} $\mathcal{O}_\Lambda=\{Q\Lambda Q^\top:Q\in\Orth(D)\}$ is the set
+of symmetric matrices with the spectrum of $\Lambda$ (by Fact~\ref{fact:spectral} and Warm-up~\ref{wu:rotate}).
+\end{definition}
+
+\begin{guided}[The orbit has $D(D-1)/2$ directions]\label{gp:orbit}
+Let $\Lambda=\diag(\lambda_1,\dots,\lambda_D)$.
+\begin{steps}
+\item\label{st:orbit-skew} Let $Q(t)$ be a differentiable curve in $\Orth(D)$ with $Q(0)=I$. Differentiate
+  $Q(t)^\top Q(t)=I$ and show that $W=Q'(0)$ is skew-symmetric, $W^\top=-W$. Conversely, show that
+  $Q(t)=e^{tW}$ is orthogonal for every skew-symmetric $W$.
+\item The skew-symmetric $D\times D$ matrices form a vector space of dimension $D(D-1)/2$.
+\item Along $A(t)=Q(t)\Lambda Q(t)^\top$, show $A'(0)=W\Lambda-\Lambda W$.
+\item\label{st:orbit-entries} Show $(W\Lambda-\Lambda W)_{ij}=(\lambda_j-\lambda_i)W_{ij}$. In particular the
+  diagonal of $A'(0)$ is zero.
+\item\label{st:orbit-distinct} Suppose the $\lambda_k$ are distinct. Show that $W\mapsto W\Lambda-\Lambda W$ is
+  injective on skew-symmetric matrices, and that its image is the space of symmetric matrices with zero diagonal.
+  Conclude that $\Lambda$ can move along its orbit in $D(D-1)/2$ independent directions, and that these together
+  with the $D$ diagonal directions (changes of the spectrum) span all of $\Sym^D$.
+\item If the distinct values have multiplicities $m_1,\dots,m_r$ (and $\Lambda$ lists equal values next to each
+  other), show that the kernel of $W\mapsto W\Lambda-\Lambda W$ consists of the block-diagonal skew-symmetric
+  matrices, of dimension $\sum_jm_j(m_j-1)/2$. The orbit then has $D(D-1)/2-\sum_jm_j(m_j-1)/2$ directions.
+\item\label{st:orbit-unique} (Uniqueness of the frame.) If the $\lambda_k$ are distinct and $Q\Lambda Q^\top=\Lambda$
+  for some $Q\in\Orth(D)$, show that $Q$ is diagonal with entries $\pm1$. Hence the frame of a matrix with distinct
+  eigenvalues is unique up to the signs of its columns.
+\end{steps}
+\end{guided}
+
+\begin{remark}[The seed of Part~II]\label{rem:seed}
+Step~\ref{st:orbit-entries} is the most important formula in this workbook. Written in the eigenbasis, a rotation
+of the frame changes only off-diagonal entries, and a change of the spectrum changes only diagonal entries. To
+produce an off-diagonal entry of size $x$ at position $(i,j)$, the frame must rotate by $x/(\lambda_j-\lambda_i)$:
+small gaps mean large rotations. The same formula returns as first-order perturbation theory (Guided
+proof~\ref{gp:firstorder}) and as the equation of motion of the frame (Guided proof~\ref{gp:motion}).
+\end{remark}
+
+\begin{labbox}
+For the $64\times64$ weight blocks of the lab's ViT ($D=4{,}096$) the spectrum is $4{,}096$ numbers and the frame
+\NumFrameParamsFourK. For the $64\times256$ blocks ($D=16{,}384$) they are $16{,}384$ and \NumFrameParamsSixteenK.
+A power-law fit compresses the spectrum to two or three numbers. ``The spectrum is stable'' therefore constrains a
+vanishing part of the matrix; almost all of its information is in the frame.
+\end{labbox}
+
+\subsection{Invariant and equivariant maps}
+
+Some quantities do not depend on the frame at all, and some maps rotate along with the matrix. These two classes
+organise the rest of the workbook. Everything a power law says belongs to the first class, and every preconditioner
+that needs no stored eigenvectors belongs to the second.
+
+\begin{definition}[Invariant and equivariant]\label{def:invariant}
+$F:\Sym^D\to\R$ is \emph{invariant} if $F(QAQ^\top)=F(A)$ for all $Q\in\Orth(D)$. $G:\Sym^D\to\Sym^D$ is
+\emph{equivariant} if $G(QAQ^\top)=Q\,G(A)\,Q^\top$ for all $Q\in\Orth(D)$.
+\end{definition}
+
+\begin{exercise}\label{ex:invariant}
+Show that $F$ is invariant if and only if $F(A)$ depends on $A$ only through $\sigma(A)$.
+\end{exercise}
+
+\begin{warmup}[Examples]\label{wu:examples}
+\begin{steps}
+\item Which of these are invariant: $\tr A$, $\det A$, $\lambda_1(A)$, $A_{11}$, $\norm{A}_\F$, and $v^\top Av$ for
+  a fixed $v$?
+\item Which of these are equivariant: $A^2$; $(A+\delta I)^{-1}$; the diagonal part $\Diag(A)$, which keeps the
+  entries $A_{11},\dots,A_{DD}$ and sets all others to zero; the projector $\Pi_k(A)$ onto the top-$k$ eigenvectors,
+  on matrices with $\lambda_k>\lambda_{k+1}$; and $A+B_0$ for a fixed matrix $B_0$?
+\end{steps}
+\end{warmup}
+
+\begin{guided}[Equivariant maps are functions of the matrix]\label{gp:equivariant}
+Let $G$ be equivariant and $A=\sum_k\lambda_ku_ku_k^\top$.
+\begin{steps}
+\item Show that the reflection $R_k=I-2u_ku_k^\top$ is orthogonal and symmetric, that $R_ku_k=-u_k$ and $R_ku_j=u_j$
+  for $j\ne k$, and that the eigenspace of $R_k$ for the eigenvalue $-1$ is $\spn(u_k)$.
+\item Show $R_kAR_k^\top=A$.
+\item Deduce $R_kG(A)R_k=G(A)$.
+\item Apply both sides of (c) to $u_k$ and conclude that $G(A)u_k=\varphi_ku_k$ for some number $\varphi_k$.
+\item Conclude $G(A)=\sum_k\varphi_ku_ku_k^\top$, so $G(A)$ commutes with $A$. If the eigenvalues are distinct, show
+  $G(A)=p(A)$ for a polynomial $p$ (which may depend on $A$).
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Krylov methods are jointly equivariant]\label{ex:krylovequiv}
+Let $F(A,b)=p_{A,b}(A)\,b$, where $p_{A,b}$ is a polynomial whose coefficients depend on $(A,b)$ only through the
+numbers $b^\top A^ib$, $i=0,1,2,\dots$. Show $F(QAQ^\top,Qb)=Q\,F(A,b)$ for all $Q\in\Orth(D)$. Conjugate gradients
+and Lanczos produce iterates of this form (Section~\ref{sec:krylov}). By contrast, consider
+$x=U_{\mathrm{old}}\diag(\varphi)U_{\mathrm{old}}^\top b$ with a stored frame $U_{\mathrm{old}}$. What happens to $x$
+if you rotate $A$ and $b$ but not $U_{\mathrm{old}}$?
+\end{exercise}
+
+\begin{remark}[What this means for us]\label{rem:invariance}
+Every statement about ``the spectrum'' (a power law, a trace, a condition number) is an invariant function: it takes
+the same value on the whole orbit and says nothing about the frame. A preconditioner that must not depend on an
+unknown frame must be equivariant, hence a function of the current matrix, and it can be applied with matrix--vector
+products alone. Krylov methods are of this kind. A stored eigenbasis (SOAP, PARSEC-L) is the other choice: it carries
+frame information from the past into the present, and Section~\ref{sec:perturbation} asks when that information is
+still valid.
+\end{remark}
+
+%======================================================================
+\section{Power laws: four faces}\label{sec:faces}
+%======================================================================
+
+The lab fits straight lines to log--log plots of sorted eigenvalues against their rank. This section shows that such
+a plot describes a probability distribution, read from its top, and that a power law can be stated in four
+equivalent ways. Each answers a different question: how large is the $k$-th eigenvalue (\emph{rank}); how many
+eigenvalues exceed a threshold (\emph{counting}); which eigenvalue does a randomly chosen eigen-direction have
+(\emph{distribution}); and how many directions lie within a given depth below the top (\emph{depth}).
+
+\begin{reading}
+Newman (2005), Sections~1--2, compares rank plots with histograms and explains why cumulative plots are preferred;
+that is exactly the rank/counting equivalence below. Clauset, Shalizi \& Newman (2009) show how straight lines on
+log--log plots mislead, and how to fit and test power laws properly. Martin \& Mahoney (2021) study heavy-tailed
+spectra of trained weight matrices, and Xie et al.\ (2022) power-law Hessian spectra; both are ML readings for this
+section.
+\end{reading}
+
+\subsection{Spectral distribution, counting function and rank function}
+
+\begin{definition}\label{def:esd}
+The \emph{empirical spectral distribution} (ESD) of $A$ is the probability measure
+$\mu_A=\frac1D\sum_{k=1}^D\delta_{\lambda_k}$. Its \emph{counting function} is
+$N_A(t)=\#\{k:\lambda_k\ge t\}=D\,\mu_A([t,\infty))$. The \emph{rank function} is $k\mapsto\lambda_k$.
+\end{definition}
+
+Think of $\mu_A$ as the law of the eigenvalue of a uniformly chosen eigen-direction. Section~\ref{sec:distribution}
+shows that it is also the law of the curvature along a random direction, which is the reason to care about it.
+
+\begin{warmup}\label{wu:small}
+Let $A=\diag(3,1,1,0)$. Write down $\mu_A$, sketch $N_A(t)$ for all real $t$, and list the rank function. Check that
+$N_A(t)\ge k$ holds exactly when $\lambda_k\ge t$, for $k=2,3,4$ and $t=1$.
+\end{warmup}
+
+\begin{exercise}[A rank plot is a quantile plot]\label{ex:quantile}
+\begin{steps}
+\item\label{st:quantile-a} Show that $\lambda_k\ge t$ if and only if $N_A(t)\ge k$.
+\item\label{st:quantile-b} Deduce $\lambda_k=\max\{t:N_A(t)\ge k\}$.
+\item Define the upper quantile function $Q_A(p)=\max\{t:\mu_A([t,\infty))\ge p\}$ for $0<p\le1$. Show
+  $\lambda_k=Q_A(k/D)$.
+\end{steps}
+So a log--log rank plot is a log--log plot of the upper quantiles of $\mu_A$.
+\end{exercise}
+
+\subsection{A power law and its four faces}
+
+\begin{definition}[Power law on a rank window]\label{def:law}
+$A$ follows a \emph{power law} with exponent $\alpha>0$ and scale $c>0$ on the window $\{1,\dots,K\}$, $K\le D$, if
+$\lambda_k=c\,k^{-\alpha}$ for $k\le K$. The law is \emph{pure} if $K=D$. In data the statement is statistical:
+$\log\lambda_k=\log c-\alpha\log k+r_k$ with small residuals $r_k$, fitted on a chosen window.
+\end{definition}
+
+\begin{fact}[Pareto distribution]\label{fact:pareto}
+A random variable $X$ is Pareto with \emph{tail index} $a>0$ and minimum $x_0>0$ if $\Pr(X\ge t)=(t/x_0)^{-a}$ for
+$t\ge x_0$. Its density is $a\,x_0^at^{-a-1}$ on $[x_0,\infty)$, and $\E X^q<\infty$ if and only if $q<a$.
+\end{fact}
+
+\begin{guided}[Four faces of a power law]\label{gp:faces}
+Let $\lambda_k=c\,k^{-\alpha}$ for $k\le K$, with $\lambda_{K+1}<\lambda_K$ if $K<D$. Fix $t$ with
+$\lambda_K\le t\le c$.
+\begin{steps}
+\item Show that no rank $k>K$ is counted in $N_A(t)$.
+\item For $k\le K$, show that $\lambda_k\ge t$ if and only if $k\le(c/t)^{1/\alpha}$, and that $(c/t)^{1/\alpha}\le K$.
+\item\label{st:faces-count} \emph{Counting face.} Conclude $N_A(t)=\floor{(c/t)^{1/\alpha}}$.
+\item \emph{Distribution face.} Deduce $\mu_A([t,\infty))=\floor{(c/t)^{1/\alpha}}/D$. Ignoring the floor, compare
+  with Fact~\ref{fact:pareto}: on $[\lambda_K,c]$, $\mu_A$ looks like the upper tail of a Pareto law with tail index
+  $1/\alpha$, carrying mass $K/D$. Show that the smoothed density is $\rho(t)=c^{1/\alpha}t^{-1-1/\alpha}/(\alpha D)$.
+\item \emph{Depth face.} Let $v=\ln(c/t)$ be the depth below the top eigenvalue, measured in nats. Show that the
+  number of eigenvalues within depth $v$ is $\floor{e^{v/\alpha}}$ for $0\le v\le\alpha\ln K$. A power law in rank
+  is an exponential law in log-depth.
+\item \emph{Converse.} Suppose $N_A(t)=\floor{(c/t)^{1/\alpha}}$ for all $t\ge c\,K^{-\alpha}$. Use
+  Exercise~\ref{ex:quantile}\ref{st:quantile-b} to show $\lambda_k=c\,k^{-\alpha}$ for $k\le K$.
+\end{steps}
+\end{guided}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/faces.pdf}
+\caption{Four faces of a pure power law $\lambda_k=k^{-\alpha}$, $D=4{,}096$ (synthetic). (a) The rank law.
+(b) Its counting function, with slope $-1/\alpha$ (Guided proof~\ref{gp:faces}). (c) Eigenvalues per 0.1 decade:
+most eigen-directions sit near the bottom (Exercise~\ref{ex:reading}). (d) Share of the trace per full octave below
+$\lambda_1$: top-heavy for $\alpha=2$, flat for $\alpha=1$, bottom-heavy for $\alpha=0.7$
+(Exercise~\ref{ex:octave}).}
+\label{fig:faces}
+\end{figure}
+
+\begin{exercise}[Reading the exponent]\label{ex:reading}
+\begin{steps}
+\item Show $\lambda_{2k}/\lambda_k=2^{-\alpha}$: doubling the rank lowers the eigenvalue by $\alpha$ octaves.
+\item Show that going one octave deeper ($t\mapsto t/2$) multiplies $N_A(t)$ by $2^{1/\alpha}$, up to rounding. For
+  $\alpha=1$ each octave holds twice as many directions as the one above it, so most directions sit near the bottom
+  (Figure~\ref{fig:faces}c).
+\item Take a pure law with $\alpha=1$ and $D=4{,}096$. What percentage of the eigen-directions lies within a factor
+  10 of $\lambda_1$, and what percentage within a factor 1{,}000? Which share of the trace does each group carry?
+  (Answers: \NumDirWithinTen\% of the directions carry \NumTraceWithinTen{} of the trace; \NumDirWithinThousand\%
+  carry \NumTraceWithinThousand.)
+\end{steps}
+\end{exercise}
+
+\begin{exercise}[Transformations of a law]\label{ex:transform}
+\begin{steps}
+\item Show that $A\mapsto sA$ ($s>0$) changes $c$ to $sc$ and keeps $\alpha$: the exponent is scale-free.
+\item Show that $A\mapsto A^p$ ($p>0$, $A$ PSD) gives exponent $\alpha p$ and scale $c^p$.
+\item Precondition $A\succ0$ by a power of itself, $P=A^{-\nu}$ with $0\le\nu<1$. Show $P^{1/2}AP^{1/2}=A^{1-\nu}$,
+  and give its exponent and its condition number $\lambda_1/\lambda_K$ on the window. (This is the fractional-Newton
+  family of \study{noise_scale_20261021}: $\nu=0$ is the gradient step and $\nu=1$ Newton.)
+\item Now precondition with a function of a \emph{different} matrix. Let $A=\diag(1,\varepsilon)$ with
+  $0<\varepsilon<1$, and $P=B^{-1}$ with $B=\diag(\varepsilon,1)$: the same spectrum in the swapped frame. Compute
+  the condition number of $P^{1/2}AP^{1/2}$ and compare it with that of $A$. What does this say about statements like
+  (c) when $P$ has a different frame from $A$?
+\end{steps}
+\end{exercise}
+
+\begin{remark}[Head law and global law]\label{rem:window}
+A fit on ranks $1,\dots,K$ with $K\ll D$ describes only the top $K/D$ of $\mu_A$. The lab fits ranks 1--200 in
+blocks with $D$ between 640 and 16{,}384, that is, the top 31\% down to the top 1.2\% of the eigen-directions. The
+rest of $\mu_A$, where most directions live, is not covered by the fit. Section~\ref{sec:controls} works out which
+quantities the fit nevertheless decides.
+\end{remark}
+
+\begin{exercise}[Broken laws]\label{ex:broken}
+Let $\lambda_k=c\,k^{-\alpha_1}$ for $k\le k_b$ and $\lambda_k=c\,k_b^{-\alpha_1}(k/k_b)^{-\alpha_2}$ for
+$k_b<k\le K$, so the law is continuous at the break $k_b$. Write down $N_A(t)$ on $[\lambda_K,c]$, ignoring rounding.
+Show that on this range $\mu_A$ consists of two Pareto pieces, and give their tail indices.
+\end{exercise}
+
+\begin{labbox}
+Early in training the lab's whitened per-tensor GGN spectra are broken. Ranks 1--16 fall roughly as $k^{-1}$ and
+ranks 17--200 with $\alpha_{\text{bulk}}=1.79$--$2.10$ at steps 10--25; the break flattens by step 100. A single
+law extrapolated from the top 16 then underestimates $\lambda_{17}$ by a factor 1.6--2.4
+(\study{bulk_krylov_20261014}). The raw per-tensor GGN fits on ranks 1--200 go from $\alpha\approx1.8$--$2.1$ at
+step 10 to $\alpha\approx0.9$--$1.1$ at steps 250--500, with $R^2\approx0.99$ (\study{spectral_rotation_20261020}).
+\end{labbox}
+
+\subsection{Kronecker products bend a law}
+
+SOAP's eigenbasis is the Kronecker product of the eigenbases of two small factor matrices. This subsection shows that
+exact power laws in the two factors do not give an exact power law in the product.
+
+\begin{warmup}[Eigenpairs of a Kronecker product]\label{wu:kron}
+For $R\in\Sym^n$ and $L\in\Sym^m$, show $(R\otimes L)(v\otimes w)=(Rv)\otimes(Lw)$. Deduce: if $Rv_j=r_jv_j$ and
+$Lw_i=\ell_iw_i$, then $v_j\otimes w_i$ is an eigenvector of $R\otimes L$ with eigenvalue $r_j\ell_i$, and these $mn$
+vectors are orthonormal when the $v_j$ and the $w_i$ are.
+\end{warmup}
+
+\begin{guided}[Counting a product of two laws]\label{gp:kron}
+Let $\ell_i=i^{-\alpha}$ ($i\le m$) and $r_j=j^{-\alpha}$ ($j\le n$). By Warm-up~\ref{wu:kron} the eigenvalues of
+$R\otimes L$ are $(ij)^{-\alpha}$. Fix $t$, set $x=t^{-1/\alpha}$, and assume $x\le\min(m,n)$.
+\begin{steps}
+\item Show $N(t)=\#\{(i,j):ij\le x\}=\sum_{i\le x}\floor{x/i}$.
+\item Using $x/i-1<\floor{x/i}\le x/i$ and $H_n=\ln n+O(1)$, show $N(t)=x\ln x+O(x)$.
+\item (Optional: Dirichlet's hyperbola trick.) Every lattice point under the hyperbola $ij\le x$ has $i\le\sqrt x$ or
+  $j\le\sqrt x$. Count the two strips and subtract the square counted twice:
+  $N=2\sum_{i\le\sqrt x}\floor{x/i}-\floor{\sqrt x}^2$. Deduce $N=x\ln x+(2\gamma-1)x+O(\sqrt x)$.
+\item Invert. If $k=x\ln x$, show $x=k/\ln x$ and $\ln x=\ln k-\ln\ln x$. Hence $x=(k/\ln k)(1+o(1))$ and
+  $\lambda_k\approx(k/\ln k)^{-\alpha}$: a power law up to a logarithm.
+\item Using $k\approx x\ln x$, show that the local log--log slope is $d\ln\lambda/d\ln k=-\alpha/(1+1/\ln x)$,
+  shallower than $-\alpha$.
+\end{steps}
+\end{guided}
+
+\begin{compute}\label{cp:kron}
+Build the $64\cdot256$ eigenvalues $(ij)^{-1}$ of the product of two pure $\alpha=1$ laws with $m=64$ and $n=256$,
+sort them, and fit a straight line to $\log\lambda_k$ against $\log k$ on ranks 17--200. You should find the exponent
+\NumKronSlope. Step~(e), evaluated at the geometric mean rank $k$ of the window with $x=k/\ln k$, predicts
+\NumKronPred. (Reference: the end of \texttt{checks} in \texttt{make\_figures.py}.)
+\end{compute}
+
+\begin{remark}
+Exact power laws in SOAP's two factors therefore appear shallower, and not exactly straight, in the product. A fitted
+exponent of a Kronecker-structured matrix should not be compared one-to-one with that of an unstructured matrix.
+\end{remark}
+
+%======================================================================
+\section{What the exponent decides}\label{sec:controls}
+%======================================================================
+
+Many quantities that an optimizer cares about are sums over the spectrum: the trace, the Frobenius norm,
+$\tr A^{-1}$, the effective dimension under damping. For a power law each such sum is dominated either by the few
+largest eigenvalues (the \emph{head}) or by the very many small ones (the \emph{tail}), and the exponent decides
+which. This matters because the lab fits only the head. A fit decides head-dominated quantities and leaves
+tail-dominated ones open.
+
+\begin{reading}
+Graham, Knuth \& Patashnik (1994), Section~6.3, on harmonic numbers, and Chapter~9 on asymptotics and Euler's
+summation formula, the precise version of Warm-up~\ref{wu:integral}. Hastie, Tibshirani \& Friedman (2009),
+Section~3.4.1, introduce the effective degrees of freedom of ridge regression, which is the effective dimension of
+Section~\ref{sec:deff}.
+\end{reading}
+
+\subsection{Sums and integrals}
+
+\begin{warmup}[Sums against integrals]\label{wu:integral}
+Let $f\ge0$ be decreasing on $[m,\infty)$. Draw rectangles of width 1 under and over the graph of $f$ and show
+\[\int_m^{M+1}f(x)\,dx\le\sum_{k=m}^Mf(k)\le f(m)+\int_m^Mf(x)\,dx.\]
+Deduce $\ln(n+1)\le H_n\le1+\ln n$.
+\end{warmup}
+
+\begin{guided}[Power sums in three regimes]\label{gp:sums}
+Let $S_s(K)=\sum_{k=1}^Kk^{-s}$.
+\begin{steps}
+\item ($s>1$.) Show $\sum_{k>m}k^{-s}\le m^{1-s}/(s-1)$. So the first $m$ ranks carry all but a fraction of at most
+  $m^{1-s}/((s-1)\zeta(s))$ of the full sum $\zeta(s)$. For $s=2$ and $m=16$ the bound is \NumTailBoundTwo, and the
+  true fraction is \NumTailTrueTwo.
+\item ($s=1$.) Show that each dyadic block of ranks $\{2^j,\dots,2^{j+1}-1\}$ contributes $\ln2+O(2^{-j})$ to $H_K$:
+  every block contributes about the same.
+\item ($0\le s<1$.) Show $S_s(K)=K^{1-s}/(1-s)+O(1)$, and that the ranks above $K/2$ carry a fraction
+  $1-2^{s-1}+o(1)$ of $S_s(K)$.
+\item ($s<0$.) The terms now increase. Reverse the inequalities of Warm-up~\ref{wu:integral} and show
+  $S_s(K)=K^{1-s}/(1-s)\,(1+o(1))$.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Which part of a pure law decides a trace functional]\label{ex:table}
+Let $\lambda_k=c\,k^{-\alpha}$ for $k=1,\dots,D$, so $\tr A^q=c^qS_{\alpha q}(D)$. Fill in the table. A functional is
+decided by the head when it converges as $D\to\infty$, so that a fixed number of top ranks carries almost all of it.
+Give the growth of $\tr A^{-1}$ with $D$.
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Functional & decided by the head when & marginal at & decided by the tail when\\
+\midrule
+$\tr A^2=\norm{A}_\F^2$ & \hspace{6em} & \hspace{4em} & \hspace{6em}\\
+$\tr A$ & & & \\
+$\tr A^{1/2}$ & & & \\
+$\tr A^{-1}$ & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+Which of these does a fit on ranks 1--200 decide when $\alpha\approx1$? Keep in mind that preconditioning uses
+negative powers.
+\end{exercise}
+
+\begin{exercise}[At $\alpha=1$ every octave carries the same trace]\label{ex:octave}
+Let $\alpha=1$.
+\begin{steps}
+\item Show that the eigenvalues in a full octave $[t,2t)$ carry trace $c\ln2+O(t)$.
+\item Show that the top-$k$ share of the trace is $H_k/H_D\approx\ln k/\ln D$.
+\item Compute it for $k=16$ and $D=640$, $4{,}096$ and $16{,}384$. (Answers: \NumShareSixForty, \NumShareFourK{} and
+  \NumShareSixteenK.)
+\end{steps}
+\end{exercise}
+
+\begin{labbox}
+In \study{spectral_rotation_20261020} (raw per-tensor GGN on one fixed batch), the late fits (steps 250--500) give
+$\alpha\approx0.9$--$1.1$ on ranks 1--200, with a slightly flatter head ($\alpha_{\text{top}}=0.65$--$0.86$) and
+$\alpha_{\text{bulk}}=0.96$--$1.17$. The median top-16 share of the exact block trace over the 39 tensors is
+0.35--0.45 at step 400 and 0.33--0.42 at step 500. A pure $\alpha=1$ law over all ranks gives \NumShareFourK{} for the
+24 blocks with $D=4{,}096$ and \NumShareSixteenK{} for the 12 with $D=16{,}384$. The trace is the only measured
+quantity that sees the whole spectrum, and it is consistent with the law extending well below rank 200. It is one
+number per tensor, so this is a consistency check, not a test.
+
+Measured spectra also leave any power law at the bottom (finite data, symmetries). In \study{noise_scale_20261021}
+the smallest Ritz value of a damped whitened block $K+\delta I$ was $0.9987\,\delta$, so at least one block has
+eigenvalues at numerical zero. The tail-dominated rows of Exercise~\ref{ex:table} are then set by the damping, not
+by the law.
+\end{labbox}
+
+\subsection{Effective dimension under damping}\label{sec:deff}
+
+A damped preconditioner $(A+\delta I)^{-1}$ treats directions with $\lambda\gg\delta$ as curved and directions with
+$\lambda\ll\delta$ as flat. The \emph{effective dimension}
+\[d_\delta(A)=\tr A(A+\delta I)^{-1}=\sum_k\frac{\lambda_k}{\lambda_k+\delta}\]
+counts the curved directions softly: each contributes a number between 0 and 1. In ridge regression it is the
+effective degrees of freedom.
+
+\begin{warmup}\label{wu:deff}
+For $A\in\Sym^D_+$ and $\delta>0$ show $\tfrac12N_A(\delta)\le d_\delta(A)\le N_A(\delta)+\delta^{-1}\sum_{\lambda_k<\delta}\lambda_k$.
+\end{warmup}
+
+\begin{guided}[Effective dimension of a power law]\label{gp:deff}
+Let $\lambda_k=c\,k^{-\alpha}$ and $a=\delta/c$.
+\begin{steps}
+\item Let $f(x)=1/(1+ax^\alpha)$. Show that $d_\delta=\sum_kf(k)$, that $f$ is decreasing with $f(0)=1$, and that
+  for $D=\infty$ and $\alpha>1$, $0\le\int_0^\infty f-\sum_{k\ge1}f(k)\le1$.
+\item Substitute $u=a^{1/\alpha}x$ to get $\int_0^\infty f=a^{-1/\alpha}\int_0^\infty du/(1+u^\alpha)$.
+\item Substitute $w=u^\alpha$ and use the Beta-function identity $\int_0^\infty w^{s-1}/(1+w)\,dw=\pi/\sin(\pi s)$
+  for $0<s<1$ (a Fact; see any text on the Gamma function) to get
+  $\int_0^\infty du/(1+u^\alpha)=(\pi/\alpha)/\sin(\pi/\alpha)$. Check the case $\alpha=2$ by hand.
+\item Conclude $\abs[\big]{d_\delta-(c/\delta)^{1/\alpha}\,(\pi/\alpha)/\sin(\pi/\alpha)}\le1$. Damping truncates
+  the law near rank $N_A(\delta)\approx(c/\delta)^{1/\alpha}$, with a factor $(\pi/\alpha)/\sin(\pi/\alpha)>1$ from
+  the soft edge.
+\item ($\alpha=1$, finite $D$.) Show $\abs[\big]{d_\delta-(c/\delta)\ln(1+D\delta/c)}\le1$. Here the directions below
+  $\delta$ add a logarithmic factor.
+\end{steps}
+\end{guided}
+
+\begin{compute}\label{cp:deff}
+Check (d) for $\alpha=2$ and $\delta=10^{-6}c$, summing to rank $10^7$: \NumDdeltaExact{} against \NumDdeltaAsym.
+Check (e) for $\alpha=1$, $D=4{,}096$ and $\delta=10^{-3}c$: \NumDdeltaLogExact{} against \NumDdeltaLogAsym. The
+same damping keeps very different numbers of directions active for different exponents.
+\end{compute}
+
+%======================================================================
+\section{The spectrum as a probability distribution}\label{sec:distribution}
+%======================================================================
+
+Suppose you know the spectrum of $A$ exactly but nothing about its frame. What should you believe about the curvature
+$v^\top Av$ along a direction $v$ you care about? The natural model puts the uniform distribution on the frame. You
+will show that the curvature along $v$ is then an average of the eigenvalues with random weights, that the weights
+have mean $1/D$, and that the average concentrates around $\tr A/D$ at a rate set by the spread of the spectrum. This
+is the precise sense in which ``the spectrum is a distribution''. The second half of the section asks what changes
+once we compute: a matrix--vector product reveals the spectrum \emph{as seen from} a vector.
+
+\begin{reading}
+Meckes (2019), Chapter~1, defines Haar measure on $\Orth(D)$ and gives several constructions; Mezzadri (2007) shows
+how to sample it correctly (QR of a Gaussian matrix with a sign fix). Vershynin (2018), Chapter~3, covers Gaussian
+vectors, the uniform distribution on the sphere and concentration of the norm. Gelman et al.\ (2013), Appendix~A,
+lists the Gamma and Dirichlet laws. Trefethen \& Bau (1997), Lectures~36--38, derive Lanczos, its link to Gauss
+quadrature and conjugate gradients; Golub \& Meurant (2010) is the full treatment. Hennig, Osborne \& Kersting
+(2022), the part on linear algebra, reads these methods as inference.
+\end{reading}
+
+\subsection{Spectrum known, frame unknown: the Haar model}
+
+\begin{fact}[Haar measure]\label{fact:haar}
+There is a unique probability distribution on $\Orth(D)$, the \emph{Haar} distribution, that is invariant under
+multiplication: if $Q$ is Haar distributed and $R\in\Orth(D)$ is fixed, then $RQ$ and $QR$ are Haar distributed too.
+\end{fact}
+
+\begin{fact}[Direction and length of a Gaussian vector]\label{fact:gauss}
+Let $g\sim\mathcal{N}(0,I_D)$. Then $g/\norm{g}$ is uniformly distributed on the unit sphere and independent of
+$\norm{g}$.
+\end{fact}
+
+\begin{definition}[Haar model]\label{def:haar}
+Fix $\Lambda$, draw $Q$ from the Haar distribution, and set $A=Q\Lambda Q^\top$. This models a matrix whose spectrum
+is known and whose frame is not. For a fixed unit vector $v$ let $w_k=(q_k^\top v)^2$, with $q_k$ the columns of $Q$.
+\end{definition}
+
+\begin{warmup}\label{wu:haar}
+\begin{steps}
+\item If $g\sim\mathcal{N}(0,I_D)$ and $R\in\Orth(D)$, then $Rg\sim\mathcal{N}(0,I_D)$.
+\item In the Haar model, $Q^\top v$ is uniformly distributed on the unit sphere. (Use Fact~\ref{fact:haar}.)
+\item $\sum_kw_k=1$, and $\E w_k=1/D$ for every $k$.
+\end{steps}
+\end{warmup}
+
+\begin{guided}[The curvature along a direction when the frame is unknown]\label{gp:haar}
+Let $\psi=Q^\top v$, so that $w_k=\psi_k^2$.
+\begin{steps}
+\item Show $v^\top f(A)v=\sum_kf(\lambda_k)\,w_k$ for every $f$.
+\item Write $\psi=g/\norm{g}$ with $g\sim\mathcal{N}(0,I_D)$ (Warm-up~\ref{wu:haar} and Fact~\ref{fact:gauss}). Use the
+  independence in Fact~\ref{fact:gauss} to show $\E[g_k^4]=\E[\norm{g}^4]\,\E[w_k^2]$ and
+  $\E[g_k^2g_l^2]=\E[\norm{g}^4]\,\E[w_kw_l]$.
+\item Using $\E g_k^4=3$, show $\E\norm{g}^4=D(D+2)$. Deduce $\E w_k^2=3/(D(D+2))$ and, for $k\ne l$,
+  $\E w_kw_l=1/(D(D+2))$.
+\item Deduce $\Var w_k=2(D-1)/(D^2(D+2))$ and $\Cov(w_k,w_l)=-2/(D^2(D+2))$ for $k\ne l$.
+\item\label{st:haar-var} Show $\E[v^\top f(A)v]=\int f\,d\mu_A$ and
+  \[\Var[v^\top f(A)v]=\frac{2\Var_{\mu_A}(f)}{D+2},\qquad\Var_{\mu_A}(f)=\frac1D\sum_kf(\lambda_k)^2-\Bigl(\frac1D\sum_kf(\lambda_k)\Bigr)^2.\]
+\item The relative standard deviation of the Rayleigh quotient $v^\top Av$ is therefore
+  $\sqrt{2/(D+2)}$ times the coefficient of variation of $\mu_A$. Compute it for a pure $\alpha=1$ law with
+  $D=4{,}096$. (Answer: \NumHaarRelSd.)
+\end{steps}
+\end{guided}
+
+\begin{exercise}[The Dirichlet law (optional)]\label{ex:dirichlet}
+\begin{steps}
+\item Show that $g_k^2$ has the $\chi^2_1$ law, which is the Gamma law with shape $\frac12$ and scale 2.
+\item Use the fact that independent Gamma variables with a common scale, divided by their sum, are Dirichlet
+  distributed (Gelman et al.\ 2013, Appendix~A) to show $(w_1,\dots,w_D)\sim\Dir(\frac12,\dots,\frac12)$.
+\item The Dirichlet$(a_1,\dots,a_D)$ moments are $\E w_k=a_k/a_0$, $\Var w_k=a_k(a_0-a_k)/(a_0^2(a_0+1))$ and
+  $\Cov(w_k,w_l)=-a_ka_l/(a_0^2(a_0+1))$, with $a_0=\sum_ka_k$. Check them against Guided proof~\ref{gp:haar}(d).
+\end{steps}
+\end{exercise}
+
+\begin{exercise}[The spectrum as a predictive distribution]\label{ex:mixture}
+In the Haar model, draw an index $I$ with $\Pr(I=k\mid Q)=w_k$. Show that $\Pr(I=k)=1/D$, so $\lambda_I\sim\mu_A$, and
+that $v^\top f(A)v=\E[f(\lambda_I)\mid Q]$.
+\end{exercise}
+
+\begin{compute}\label{cp:haar}
+Check Guided proof~\ref{gp:haar}\ref{st:haar-var} for $f(\lambda)=\lambda$ by Monte Carlo, with a pure $\alpha=1$ law
+and $D=256$. You need not sample $Q$: by Warm-up~\ref{wu:haar}, sample $\psi=g/\norm{g}$ directly. With
+\NumHaarMCDraws{} draws, the ratio of the empirical to the predicted variance was \NumHaarMCVarRatio{} and the ratio
+of the means \NumHaarMCMeanRatio. (Reference: \texttt{checks} in \texttt{make\_figures.py}.)
+\end{compute}
+
+\begin{remark}[The probabilistic-numerics reading]\label{rem:pn}
+Exercise~\ref{ex:mixture} is the precise sense of ``the spectrum is a distribution''. When nothing is known about the
+frame, $\mu_A$ is the prior predictive distribution of the curvature that any direction will meet. A matrix--vector
+product $Av$ is an observation that changes this: it reveals part of the spectral measure seen from $v$
+(Section~\ref{sec:seen}). In the language of probabilistic numerics (Hennig 2015; Wenger \& Hennig 2020; Hennig,
+Osborne \& Kersting 2022), the spectrum plays the role of the prior, and computation (the products) is inference about
+the frame relative to the vectors we care about. Part~III develops this.
+\end{remark}
+
+\subsection{The spectral measure seen from a vector}\label{sec:seen}
+
+\begin{definition}\label{def:seen}
+For $v\in\R^D$, the \emph{spectral measure of $A$ seen from $v$} is $\mu_{A,v}=\sum_k(u_k^\top v)^2\,\delta_{\lambda_k}$.
+Its total mass is $\norm{v}^2$; its normalisation is $\nu_{A,v}=\mu_{A,v}/\norm{v}^2$.
+\end{definition}
+
+\begin{warmup}\label{wu:seen}
+\begin{steps}
+\item Show $\int f\,d\mu_{A,v}=v^\top f(A)v$ for every $f$, and that the total mass is $\norm{v}^2$.
+\item Show $\mu_{QAQ^\top,\,Qv}=\mu_{A,v}$ for all $Q\in\Orth(D)$.
+\item In the Haar model, show $\E\,\mu_{A,v}=\norm{v}^2\mu_A$ (as measures: the expected weight of each atom).
+\item Let $A=\diag(\lambda_1,\dots,\lambda_D)$ with distinct entries. Compute $\nu_{A,v}$ for $v=e_1$ and for
+  $v=(1,\dots,1)/\sqrt D$. The same matrix looks entirely different from different vectors.
+\end{steps}
+\end{warmup}
+
+\subsection{Krylov methods read only the measure seen from the start vector}\label{sec:krylov}
+
+\begin{fact}[Lanczos]\label{fact:lanczos}
+Let $v_1$ be a unit vector, and assume that the Krylov space
+\[\mathcal{K}_m=\spn\{v_1,Av_1,\dots,A^{m-1}v_1\}\]
+has dimension $m$. The Lanczos iteration builds an orthonormal basis $V_m=[v_1,\dots,v_m]$ of $\mathcal{K}_m$ and a
+symmetric tridiagonal $T_m=V_m^\top AV_m$ such that
+\[AV_m=V_mT_m+\beta_mv_{m+1}e_m^\top,\]
+with $v_{m+1}\perp\mathcal{K}_m$ a unit vector and $e_m$ the last unit vector of $\R^m$.
+\end{fact}
+
+\begin{fact}[Conjugate gradients]\label{fact:cg}
+For $A\succ0$, the CG iterate $x_m$ for $Ax=b$, started at $x_0=0$, minimises $\norm{x-y}_A$ over $y\in\mathcal{K}_m(A,b)$,
+where $\norm{z}_A^2=z^\top Az$.
+\end{fact}
+
+\begin{guided}[Lanczos computes a Gauss quadrature rule]\label{gp:lanczos}
+\begin{steps}
+\item Show that $T_m^je_1$ has non-zero entries only in its first $j+1$ positions.
+\item Show by induction that $A^jv_1=V_mT_m^je_1$ for $0\le j\le m-1$. Where do you need $j\le m-1$?
+\item Show $v_1^\top A^iv_1=e_1^\top T_m^ie_1$ for $0\le i\le2m-1$. (Treat even $i=2j$ and odd $i=2j+1$ separately.)
+\item Write $T_m=S\Theta S^\top$ with nodes $\Theta=\diag(\theta_1,\dots,\theta_m)$ and weights $\tau_j=S_{1j}^2$.
+  Show $\sum_j\tau_j\theta_j^i=\int\lambda^i\,d\nu_{A,v_1}(\lambda)$ for $0\le i\le2m-1$. The $m$-point measure
+  $\sum_j\tau_j\delta_{\theta_j}$ matches $2m$ moments of $\nu_{A,v_1}$: this is the $m$-point Gauss quadrature rule
+  of $\nu_{A,v_1}$.
+\item Interpret: $m$ matrix--vector products reveal $2m$ moments of the spectrum seen from $v_1$. Show that $T_m$
+  depends on $A$ only through these moments, so two matrices that agree on them give the same output, however
+  different their frames are elsewhere.
+\end{steps}
+\end{guided}
+
+\begin{guided}[The CG error is a spectral integral]\label{gp:cg}
+Let $A\succ0$, $x=A^{-1}b$, and $x_m$ the CG iterate.
+\begin{steps}
+\item Write any $y\in\mathcal{K}_m(A,b)$ as $y=q(A)b$ with $\deg q<m$. Show $x-y=p(A)x$ with $p(\lambda)=1-\lambda q(\lambda)$,
+  so $\deg p\le m$ and $p(0)=1$. Conversely, every such $p$ arises from some $q$.
+\item Show $\norm{p(A)x}_A^2=b^\top A^{-1}p(A)^2b=\int p(\lambda)^2\lambda^{-1}\,d\mu_{A,b}(\lambda)$.
+\item Conclude
+  \[\norm{x-x_m}_A^2=\min\Bigl\{\int p(\lambda)^2\lambda^{-1}\,d\mu_{A,b}(\lambda):\deg p\le m,\ p(0)=1\Bigr\}.\]
+  Two matrices with different frames but the same measure seen from $b$ produce the same CG errors at every step.
+\item If $\mu_{A,b}$ has only $r$ atoms, show that CG is exact after $r$ steps.
+\end{steps}
+\end{guided}
+
+The \texttt{weights} returned by the lab's \path{noise_scale_20261021/scripts/lanczos.py} are exactly the $\tau_j$ of
+Guided proof~\ref{gp:lanczos}(d).
+
+\subsection{One step on a quadratic, and the value of curvature}
+
+\begin{exercise}[The best step along a direction]\label{ex:step}
+Let $A\succ0$, $g\in\R^D$ and $q(x)=\frac12x^\top Ax-g^\top x$. For $f>0$ on the spectrum, show that the best decrease
+along $x=\eta f(A)g$, $\eta\in\R$, is
+\[\max_\eta\bigl[q(0)-q(\eta f(A)g)\bigr]=\frac{\bigl(\int f\,d\mu_{A,g}\bigr)^2}{2\int\lambda f(\lambda)^2\,d\mu_{A,g}(\lambda)}.\]
+\end{exercise}
+
+\begin{guided}[Kantorovich's inequality]\label{gp:kantorovich}
+Let $\nu$ be a probability measure on $[m,M]$ with $0<m<M$, and $\kappa=M/m$.
+\begin{steps}
+\item Use Exercise~\ref{ex:step} to show that the ratio of the best decreases of Newton ($f=1/\lambda$) and of a tuned
+  gradient step ($f=1$) is $\E_\nu[\lambda]\,\E_\nu[\lambda^{-1}]$ with $\nu=\nu_{A,g}$.
+\item Show $\E_\nu[\lambda]\,\E_\nu[\lambda^{-1}]\ge1$ (Cauchy--Schwarz or Jensen).
+\item For $\lambda\in[m,M]$, show $(\lambda-m)(M-\lambda)\ge0$ and deduce $\lambda+mM/\lambda\le m+M$.
+\item Integrate against $\nu$ and use $2\sqrt{xy}\le x+y$ to show
+  $\E_\nu[\lambda]\,\E_\nu[\lambda^{-1}]\le(m+M)^2/(4mM)=(\kappa+1)^2/(4\kappa)$.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Uniform weights on a power law]\label{ex:kantpower}
+Let $\lambda_k=c/k$, $k=1,\dots,D$, and $\nu=\mu_A$ (a gradient with equal weight on every eigen-direction). Show
+$\E_\mu[\lambda]\,\E_\mu[\lambda^{-1}]=H_D(D+1)/(2D)\approx\frac12\ln D$. Compute it for $D=4{,}096$ and $16{,}384$
+(answers: \NumKantFourK{} and \NumKantSixteenK) and compare with Kantorovich's worst case for $\kappa=D=4{,}096$,
+which is \NumKantWorstFourK. What decides the value of curvature: the spectrum or the weights?
+\end{exercise}
+
+\begin{remark}[Two measures decide a step]\label{rem:twomeasures}
+With batch noise of covariance $\Sigma$, the denominator in Exercise~\ref{ex:step} gains the term
+$(1/B-1/N)\int\lambda f^2\,d\mu_{A,\Sigma}$, where $\mu_{A,\Sigma}=\sum_k(u_k^\top\Sigma u_k)\,\delta_{\lambda_k}$
+(\texttt{batch\_noise.md}, T1). For one step, all that matters about $A$ is the pair $(\mu_{A,\bar g},\mu_{A,\Sigma})$:
+how the signal and the noise are spread over the spectrum. The frame enters only through these weights. Two questions
+follow for training. Does the gradient's measure $\nu_{A,\bar g}$ stay stationary while the frame rotates, that is,
+does the gradient co-rotate with the frame? And how do it and $\mu_{A,\Sigma}$ change during training? The forms
+$z^\top A^qz$, $q\in[-1,1]$, measured in \study{noise_scale_20261021} are moments of exactly these measures.
+\end{remark}
+
+%======================================================================
+\section{Perturbation: what a power law implies about the frame}\label{sec:perturbation}
+%======================================================================
+
+Curvature matrices in training are never known exactly. A different batch, a later step or a cheaper estimator gives
+$B=A+E$ instead of $A$. This section asks how far eigenvalues and eigenvectors move. The answer is asymmetric.
+Eigenvalues move by at most the size of $E$, whatever the spectrum. Eigenvectors move by the size of $E$ divided by
+the gap to the neighbouring eigenvalues. A power law has gaps that shrink like $\lambda_k/k$, so going down the
+spectrum, eigenvectors are lost much earlier than eigenvalues.
+
+\begin{reading}
+Bhatia (1997) is the best single source: Chapter~III (variational principles, Weyl), Chapter~VI (Hoffman--Wielandt),
+Chapter~VII (Davis--Kahan $\sin\Theta$ theorems) and Chapter~X (perturbation of matrix functions). Horn \& Johnson
+(2013), Sections~4.2--4.3, cover Courant--Fischer, Weyl and Schur's majorization. Yu, Wang \& Samworth (2015) is a
+short paper written for statisticians that states the Davis--Kahan version we use; Davis \& Kahan (1970) is the
+original, and Stewart \& Sun (1990) the standard monograph. Kato (1976), Chapter~II, treats analytic perturbation in
+finite dimensions.
+\end{reading}
+
+\begin{warmup}[Everything in a $2\times2$ matrix]\label{wu:twobytwo}
+Let $A=\diag(a,b)$ with gap $g=a-b>0$, and $E=\delta\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$ with $\delta>0$.
+\begin{steps}
+\item Show that the eigenvalues of $A+E$ are $\frac{a+b}2\pm\sqrt{g^2/4+\delta^2}$. Each moves by
+  $\sqrt{g^2/4+\delta^2}-g/2$, which lies in $[0,\delta]$ and is about $\delta^2/g$ when $\delta\ll g$.
+\item Show that the top eigenvector of $A+E$ is $(\cos\theta,\sin\theta)$ with $\tan2\theta=2\delta/g$.
+\item For $a=1$, $b=0.99$ and $\delta=0.01$, compute both. (Answers: the eigenvalues move by \NumTwoShift, the
+  eigenvector rotates by \NumTwoAngle$^\circ$.)
+\item Let $g\to0$ with $\delta$ fixed. What happens to $\theta$, and what does that say about who decides the
+  eigenvector, $A$ or $E$?
+\end{steps}
+\end{warmup}
+
+\subsection{Eigenvalues are stable}
+
+\begin{guided}[Courant--Fischer]\label{gp:courant}
+Show $\lambda_k(A)=\max_{\dim S=k}\ \min_{v\in S,\,\norm{v}=1}v^\top Av$, the maximum over subspaces $S$ of dimension $k$.
+\begin{steps}
+\item For $S=\spn(u_1,\dots,u_k)$, show that the inner minimum is $\lambda_k$.
+\item For any $S$ of dimension $k$, show $S\cap\spn(u_k,\dots,u_D)\ne\{0\}$ by counting dimensions.
+\item For a unit $v$ in that intersection show $v^\top Av\le\lambda_k$, and conclude.
+\end{steps}
+\end{guided}
+
+\begin{guided}[Weyl's inequality]\label{gp:weyl}
+Let $B=A+E$. Show $\abs{\lambda_k(B)-\lambda_k(A)}\le\norm{E}_\op$ for every $k$.
+\begin{steps}
+\item Show $v^\top Bv\le v^\top Av+\norm{E}_\op$ for every unit $v$.
+\item Insert this into Courant--Fischer to get $\lambda_k(B)\le\lambda_k(A)+\norm{E}_\op$. Swap the roles of $A$ and
+  $B$.
+\end{steps}
+\end{guided}
+
+\begin{fact}[Birkhoff--von Neumann]\label{fact:birkhoff}
+A matrix with non-negative entries whose rows and columns all sum to 1 is \emph{doubly stochastic}. Every doubly
+stochastic matrix is a convex combination of permutation matrices. Hence a linear function on the doubly stochastic
+matrices attains its maximum at a permutation matrix. (Bhatia 1997, Chapter~II.)
+\end{fact}
+
+\begin{exercise}[Rearrangement inequality]\label{ex:rearrange}
+Let $a_1\ge\dots\ge a_D$ and $b_1\ge\dots\ge b_D$. Show $\sum_ia_ib_{\pi(i)}\le\sum_ia_ib_i$ for every permutation
+$\pi$. Start with two indices: if $i<j$ but $\pi(i)>\pi(j)$, swapping the two values does not decrease the sum.
+\end{exercise}
+
+\begin{guided}[Hoffman--Wielandt]\label{gp:hw}
+Let $A=U_A\diag(a)U_A^\top$ and $B=U_B\diag(b)U_B^\top$ with sorted spectra $a$ and $b$. Show
+$\sum_k(a_k-b_k)^2\le\norm{A-B}_\F^2$.
+\begin{steps}
+\item Show $\norm{A-B}_\F^2=\sum_ia_i^2+\sum_jb_j^2-2\tr(AB)$.
+\item With $W=U_A^\top U_B$, show $\tr(AB)=\sum_{i,j}a_ib_jW_{ij}^2$.
+\item Show that the matrix $P=(W_{ij}^2)$ is doubly stochastic.
+\item Use Fact~\ref{fact:birkhoff} and Exercise~\ref{ex:rearrange} to show $\tr(AB)\le\sum_ia_ib_i$, and conclude.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Spectra are close as distributions]\label{ex:wasserstein}
+For two probability measures on $\R$ that put mass $1/D$ on each of $D$ points, an optimal coupling for the
+Wasserstein-2 distance can be taken to be a permutation (Fact~\ref{fact:birkhoff} again; Santambrogio 2015,
+Chapter~2). Use Exercise~\ref{ex:rearrange} to show that the sorted coupling is optimal, and deduce
+$W_2(\mu_A,\mu_B)\le\norm{A-B}_\F/\sqrt D$.
+\end{exercise}
+
+\subsection{Eigenvectors are only as stable as their gaps}
+
+\begin{guided}[A one-vector $\sin\theta$ theorem]\label{gp:sintheta}
+Let $B=A+E$, fix $k$, and let $g_k=\min_{j\ne k}\abs{\lambda_j(A)-\lambda_k(A)}>0$ be the gap of $\lambda_k(A)$ to the
+rest of the spectrum. Let $u=u_k(A)$, $v=u_k(B)$, $\mu=\lambda_k(B)$, and $P=I-uu^\top$. Then
+$\sin\angle(u,v)=\norm{Pv}$.
+\begin{steps}
+\item Show $(A-\mu I)v=-Ev$.
+\item Show that $P$ commutes with $A$, so $P(A-\mu I)v=(A-\mu I)Pv$.
+\item $Pv$ lies in $\spn\{u_j:j\ne k\}$. Show that on this span $\norm{(A-\mu I)z}\ge\min_{j\ne k}\abs{\lambda_j-\mu}\,\norm{z}$,
+  and use Weyl to get $\min_{j\ne k}\abs{\lambda_j-\mu}\ge g_k-\norm{E}_\op$.
+\item Combine (a)--(c) with $\norm{PEv}\le\norm{E}_\op$ to get $\sin\angle(u,v)\le\norm{E}_\op/(g_k-\norm{E}_\op)$
+  when $\norm{E}_\op<g_k$.
+\item Conclude $\sin\angle(u,v)\le2\norm{E}_\op/g_k$ in all cases.
+\end{steps}
+\end{guided}
+
+\begin{remark}[The subspace version]\label{rem:dk}
+The same idea, with $P$ replaced by the projector onto the complement of the top-$k$ eigenspace, gives the version of
+Yu, Wang \& Samworth (2015) for the top-$k$ subspaces: $\norm{\sin\Theta}_\F\le2\min(\sqrt k\norm{E}_\op,\norm{E}_\F)/(\lambda_k-\lambda_{k+1})$,
+where $\sin\Theta$ collects the sines of the principal angles between the two subspaces. Only the gap at the cut
+enters, not the gaps inside the subspace.
+\end{remark}
+
+\begin{exercise}[Gaps of a power law]\label{ex:gaps}
+Let $\lambda_k=c\,k^{-\alpha}$.
+\begin{steps}
+\item Show that $h(x)=1-(1+x)^{-\alpha}$ is concave with $h(0)=0$, and deduce $xh'(x)\le h(x)\le xh'(0)$ for $x\ge0$.
+\item With $x=1/k$, deduce $\frac{\alpha}{k}(1+\frac1k)^{-\alpha-1}\le(\lambda_k-\lambda_{k+1})/\lambda_k\le\frac{\alpha}{k}$.
+\item Show that consecutive gaps decrease, so that for $2\le k<D$ the gap $g_k$ of Guided proof~\ref{gp:sintheta} is
+  $\lambda_k-\lambda_{k+1}$ (and $g_1=\lambda_1-\lambda_2$).
+\end{steps}
+\end{exercise}
+
+\begin{guided}[Two resolution limits]\label{gp:resolution}
+Let $A$ follow a pure law $(c,\alpha)$, let $\norm{B-A}_\op\le\eta$, and let $s\in(0,1]$.
+\begin{steps}
+\item Show $\abs{\lambda_k(B)-\lambda_k(A)}\le s\lambda_k(A)$ for every $k\le K_{\text{val}}:=(sc/\eta)^{1/\alpha}$.
+\item Use Exercise~\ref{ex:gaps} and $1+1/k\le2$ to show $g_k\ge\alpha c\,k^{-\alpha-1}2^{-\alpha-1}$ for $k<D$.
+\item Use Guided proof~\ref{gp:sintheta} to show $\sin\angle(u_k(A),u_k(B))\le s$ for every $k<D$ with
+  $k\le K_{\text{vec}}:=\bigl(s\alpha c/(2^{\alpha+2}\eta)\bigr)^{1/(\alpha+1)}$.
+\item Show $K_{\text{vec}}/K_{\text{val}}\to0$ as $\eta\to0$: for small perturbations far more eigenvalues than
+  eigenvectors are resolved. Eigenvalues are resolved to depth $\propto\eta^{-1/\alpha}$, eigenvectors only to
+  $\propto\eta^{-1/(\alpha+1)}$.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Numbers for the guarantees]\label{ex:resnumbers}
+Take $\alpha=1$, $c=1$, $s=1/2$ and $\eta=\NumSimEtaScaled\times10^{-4}$, the operator norm of the Gaussian
+perturbation used in Figure~\ref{fig:resolution}. Compute $K_{\text{val}}$ and $K_{\text{vec}}$. (Answers:
+\NumKvalWeyl{} and \NumKvecWorst.) The simulation in Figure~\ref{fig:resolution} resolves eigenvalues to rank
+\NumKvalSim{} and eigenvectors to rank \NumKvecSim. Which guarantee is more pessimistic, and why might a worst-case
+bound be pessimistic for a random $E$?
+\end{exercise}
+
+\subsection{Typical perturbations: first-order theory}
+
+Worst-case bounds assume that $E$ is aligned as badly as possible with the frame of $A$. A random $E$ is not. First-order
+perturbation theory gives the typical sizes with explicit constants.
+
+\begin{guided}[First-order perturbation theory]\label{gp:firstorder}
+Let $A$ have distinct eigenvalues and $A(\varepsilon)=A+\varepsilon E$. Accept (Kato 1976, Chapter~II) that
+$\lambda_k(\varepsilon)$ and unit eigenvectors $u_k(\varepsilon)$ can be chosen differentiable near $\varepsilon=0$.
+Write $'$ for $d/d\varepsilon$ at $\varepsilon=0$.
+\begin{steps}
+\item Differentiate $A(\varepsilon)u_k(\varepsilon)=\lambda_k(\varepsilon)u_k(\varepsilon)$ to get
+  $Eu_k+Au_k'=\lambda_k'u_k+\lambda_ku_k'$.
+\item Multiply by $u_k^\top$ to get $\lambda_k'=u_k^\top Eu_k$.
+\item Multiply by $u_j^\top$, $j\ne k$, to get $u_j^\top u_k'=u_j^\top Eu_k/(\lambda_k-\lambda_j)$.
+\item Differentiate $u_k^\top u_k=1$ to get $u_k^\top u_k'=0$. Conclude
+  \[u_k'=\sum_{j\ne k}\frac{u_j^\top Eu_k}{\lambda_k-\lambda_j}\,u_j,\qquad
+  \sin\angle(u_k(0),u_k(\varepsilon))=\varepsilon\norm{u_k'}+O(\varepsilon^2).\]
+  Compare with Guided proof~\ref{gp:orbit}\ref{st:orbit-entries}.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Typical sizes for Gaussian noise]\label{ex:typical}
+Let $E=\varepsilon G$, where $G$ is symmetric with independent centred Gaussian entries, of variance 1 off the
+diagonal and 2 on it. Then $Q^\top GQ$ has the law of $G$ for every fixed $Q\in\Orth(D)$ (accept this), and
+$\norm{E}_\op\approx2\varepsilon\sqrt D$.
+\begin{steps}
+\item Show that $u_j^\top Gu_k$, $j\ne k$, are independent $\mathcal{N}(0,1)$ and $u_k^\top Gu_k\sim\mathcal{N}(0,2)$.
+  Deduce that, to first order, $\E\sin^2\angle(u_k(A),u_k(B))\approx\varepsilon^2\sum_{j\ne k}(\lambda_k-\lambda_j)^{-2}$,
+  and that an eigenvalue moves by about $\sqrt2\varepsilon$.
+\item For a pure law, split the sum, and use $g_k\approx\alpha c\,k^{-\alpha-1}$. Show that the neighbouring ranks
+  contribute $\sum_{m\ne0}(mg_k)^{-2}\approx2\zeta(2)k^{2\alpha+2}/(\alpha^2c^2)$, and that the many much smaller
+  eigenvalues contribute about $Dk^{2\alpha}/c^2$.
+\item Show that the neighbours dominate once $k\gtrsim\alpha\sqrt{D/(2\zeta(2))}$. For $\alpha=1$ and
+  $D=\NumSimDim$ this is about \NumNeighbourRank.
+\item Show that the typical eigenvector resolution limit, where the sine reaches $s$, is
+  $k_{\text{vec}}\approx\bigl(s\alpha c/(\sqrt{2\zeta(2)}\,\varepsilon)\bigr)^{1/(\alpha+1)}$. For $\alpha=1$, $c=1$,
+  $s=1/2$ and $\varepsilon=10^{-5}$ this is \NumKvecPred.
+\end{steps}
+\end{exercise}
+
+\begin{compute}\label{cp:resolution}
+Reproduce Figure~\ref{fig:resolution}(a) and~(b). Take $\lambda_k=1/k$ with $D=\NumSimDim$, $E=\varepsilon(Z+Z^\top)/\sqrt2$
+with $Z$ a standard Gaussian matrix and $\varepsilon=10^{-5}$, and compute the eigen-decomposition of
+$\diag(\lambda)+E$. Why may you take $A$ diagonal? Over three draws (medians) you should find relative eigenvalue
+errors below $\NumRelValTopScaled\times10^{-3}$ in the top 100 ranks, reaching 0.5 only at rank \NumKvalSim, and
+eigenvector sines reaching 0.5 at rank \NumKvecSim{} (predicted \NumKvecPred). (Reference: \texttt{figure\_resolution}
+in \texttt{make\_figures.py}.)
+\end{compute}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/resolution.pdf}
+\caption{Resolution limits (synthetic). A pure $\alpha=1$ law, $D=\NumSimDim$, perturbed by a symmetric Gaussian
+matrix with entry scale $\varepsilon=10^{-5}$; medians of three draws. (a) Relative eigenvalue errors, with Weyl's
+bound and the isolated-eigenvalue estimate $\sqrt2\varepsilon/\lambda_k$. (b) Eigenvector angles, with the
+first-order formula of Exercise~\ref{ex:typical}. (c) Relative Frobenius error of the top-$k$ projector (hard cut)
+and of the soft cut $A(A+\lambda_kI)^{-1}$ at the same place (Remark~\ref{rem:cut}).}
+\label{fig:resolution}
+\end{figure}
+
+\subsection{Functions of the matrix: hard and soft cuts}
+
+A preconditioner is a function of an estimated matrix. Which functions survive a perturbation? Smooth ones do, in the
+Frobenius norm, whatever the eigenvectors did. A hard cut onto the top $k$ eigenvectors survives only as well as the
+gap at the cut.
+
+\begin{guided}[Lipschitz spectral functions are as stable as the matrix]\label{gp:lipschitz}
+Let $f$ be $L$-Lipschitz on an interval that contains the spectra of $A=U_A\diag(a)U_A^\top$ and
+$B=U_B\diag(b)U_B^\top$. Show $\norm{f(A)-f(B)}_\F\le L\norm{A-B}_\F$.
+\begin{steps}
+\item With $W=U_A^\top U_B$, show that $U_A^\top(A-B)U_B$ has entries $(a_i-b_j)W_{ij}$.
+\item Show that $U_A^\top(f(A)-f(B))U_B$ has entries $(f(a_i)-f(b_j))W_{ij}$.
+\item Use that the Frobenius norm is unchanged by orthogonal factors, and compare the two matrices entry by entry.
+\end{steps}
+In the operator norm the same statement fails with constant $L$; see Bhatia (1997), Chapter~X.
+\end{guided}
+
+\begin{exercise}[Damping sets the stability of a fractional step]\label{ex:fractional}
+Show that $f(\lambda)=(\lambda+\delta)^{-\nu}$, $\nu>0$, is $\nu\delta^{-\nu-1}$-Lipschitz on $[0,\infty)$. Deduce
+$\norm{(A+\delta I)^{-\nu}-(B+\delta I)^{-\nu}}_\F\le\nu\delta^{-\nu-1}\norm{A-B}_\F$ for PSD $A$ and $B$, whatever
+the eigenvectors did.
+\end{exercise}
+
+\begin{exercise}[Distance between projectors]\label{ex:projector}
+Let $P$ and $P'$ be orthogonal projectors of rank $k$, and let $\cos^2\theta_1,\dots,\cos^2\theta_k$ be the squared
+singular values of $V^\top V'$ for orthonormal bases $V$ and $V'$ of their ranges. Show
+$\norm{P-P'}_\F^2=2(k-\norm{PP'}_\F^2)=2\sum_i\sin^2\theta_i=2\norm{\sin\Theta}_\F^2$. With Remark~\ref{rem:dk}, the
+top-$k$ projector $\Pi_k$ satisfies
+$\norm{\Pi_k(A)-\Pi_k(B)}_\F\le2\sqrt2\min(\sqrt k\norm{E}_\op,\norm{E}_\F)/(\lambda_k-\lambda_{k+1})$: no bound of
+the kind in Guided proof~\ref{gp:lipschitz} holds, because the indicator of $\{\lambda\ge\lambda_k\}$ is not Lipschitz.
+\end{exercise}
+
+\begin{remark}[A cut or a smooth function?]\label{rem:cut}
+The two bounds have different strengths, and Figure~\ref{fig:resolution}c shows both effects. A hard cut where the
+gap is large is far more stable than a smooth ``soft cut'' $A(A+\lambda_kI)^{-1}$ at the same place: at $k=16$ the
+relative errors are \NumHardSixteen{} (hard) and \NumSoftSixteen{} (soft). The smooth function acts on every direction
+and pays for the perturbation everywhere; its error is controlled by $\norm{E}_\F$, which grows like $\varepsilon D$.
+Deep in the spectrum, where gaps are tiny, the order reverses: at $k\approx1{,}000$ the errors are \NumHardThousand{}
+(hard) and \NumSoftThousand{} (soft). The curves cross at $k\approx\NumCrossCut$, about twice the eigenvector
+resolution limit. (Soft-cut values are on a grid of cut positions; the ones quoted are at \NumSoftCuts.)
+
+The design rule this suggests is not ``never store a frame'' but: cut only where the frame is resolved, and use
+smooth functions of the current matrix beyond that. PARSEC-L's brake $I-\sum_{k\le r}\frac{\kappa_k}{1+\kappa_k}w_kw_k^\top$
+with $\kappa_k=c_{\mathrm b}\eta\lambda_k$ is exactly the soft function $\lambda/(\lambda+1/(c_{\mathrm b}\eta))$
+applied inside a hard top-$r$ cut. Its fully smooth version is $(I+c_{\mathrm b}\eta K)^{-1}$, which needs no
+eigenvectors.
+\end{remark}
+
+\subsection{Stale frame, fresh diagonal}
+
+SOAP and EKFAC keep a frame $U$ computed from an earlier matrix and refresh only a diagonal in that frame. What is
+the best diagonal for a given frame, and what does a stale frame cost?
+
+\begin{warmup}[Pinching]\label{wu:pinching}
+For a frame $U$ and $A\in\Sym^D$ let
+\[\mathcal{P}_U(A)=U\diag(u_1^\top Au_1,\dots,u_D^\top Au_D)\,U^\top.\]
+Among the matrices $UMU^\top$ with $M$ diagonal, show that $\mathcal{P}_U(A)$ is the closest to $A$ in Frobenius
+norm, and that $\norm{A-\mathcal{P}_U(A)}_\F^2=\sum_{i\ne j}(u_i^\top Au_j)^2$. Show also $\tr\mathcal{P}_U(A)=\tr A$.
+\end{warmup}
+
+\begin{guided}[Ky Fan's principle and Schur's majorization]\label{gp:kyfan}
+\begin{steps}
+\item Let $x_1,\dots,x_k$ be orthonormal and $X=[x_1,\dots,x_k]$. Show $\sum_ix_i^\top Ax_i=\sum_j\lambda_jc_j$ with
+  $c_j=\norm{X^\top u_j}^2$.
+\item Show $0\le c_j\le1$ and $\sum_jc_j=k$.
+\item Show that $\sum_j\lambda_jc_j$ under these constraints is at most $\lambda_1+\dots+\lambda_k$.
+\item Apply this to the $k$ columns of $U$ with the largest Rayleigh quotients $u_i^\top Au_i$. Conclude that the
+  Rayleigh quotients are \emph{majorised} by the eigenvalues: for every $k$ the sum of the $k$ largest is at most
+  $\lambda_1+\dots+\lambda_k$, with equality for $k=D$.
+\item Deduce $\max_iu_i^\top Au_i\le\lambda_1(A)$ and $\min_iu_i^\top Au_i\ge\lambda_D(A)$: a stale frame flattens
+  the effective spectrum.
+\end{steps}
+\end{guided}
+
+\begin{remark}[The bridge to SOAP]\label{rem:soap}
+This is the structure of EKFAC and SOAP: a frame refreshed rarely and a diagonal refreshed every step.
+Warm-up~\ref{wu:pinching} is the Frobenius-optimality argument that George et al.\ (2018) give for EKFAC's diagonal,
+and Eschenhagen et al.\ (2025) analyse Shampoo and SOAP in the same Frobenius terms. Guided proof~\ref{gp:kyfan} adds
+what a stale frame costs spectrally: the effective spectrum is flattened, with the top lowered and the bottom raised,
+the more so the further the frame has drifted. That is the direction of the shrinkage that rotationally invariant
+estimators from random-matrix statistics apply when eigenvectors are unreliable (Bun, Bouchaud \& Potters 2017). Two
+cautions for Part~III: SOAP's diagonal is an exponential average of squared rotated gradients, a second moment of the
+gradient rather than the GGN; and it enters through a square root.
+\end{remark}
+
+\begin{labbox}
+Late in training, the 10-step capture of a cached top-$k$ subspace rises with $k$: 0.78--0.84 at $k=1$ and 0.87--0.91
+at $k=200$ (\study{spectral_rotation_20261020}). The study read this as mixing within nearly tied groups, which is
+what Guided proof~\ref{gp:resolution} and Exercise~\ref{ex:typical} predict for a power law. But the late head is
+flatter ($\alpha_{\text{top}}=0.65$--$0.86$), so the relative gap below the top eigenvalue is
+$1-2^{-\alpha_{\text{top}}}\approx0.36$--$0.45$, which is not small. Losing 16--22\% of the top direction's curvature
+in 10 steps therefore means the 10-step change is not small compared with the top gap. Part~II has to allow changes
+that are large at the top, not only mixing among near-ties. Rotation also exceeds batch noise: at fixed weights
+another batch's top-16 subspace captures 0.93--0.999.
+\end{labbox}
+
+%======================================================================
+\section{Towards Part II}\label{sec:next}
+%======================================================================
+
+Part~I treated one matrix. Part~II lets it move. The first guided proof below is the equation of motion of spectrum
+and frame; you have already met it twice.
+
+\begin{guided}[How spectrum and frame move]\label{gp:motion}
+Let $A(t)=U(t)\Lambda(t)U(t)^\top$ be differentiable with distinct eigenvalues and differentiable $U(t)\in\Orth(D)$.
+\begin{steps}
+\item Show that $W=U^\top U'$ is skew-symmetric.
+\item Show $U^\top A'U=\Lambda'+W\Lambda-\Lambda W$.
+\item Deduce $\lambda_k'=u_k^\top A'u_k$ and, for $i\ne j$, $W_{ij}=u_i^\top A'u_j/(\lambda_j-\lambda_i)$. Check that
+  this is Guided proof~\ref{gp:firstorder} with $E=A'$.
+\item Interpret: ``stable spectrum, rotating frame'' means that $A'$ is nearly off-diagonal in the current eigenbasis.
+  The rotation rate of a pair of eigenvectors is the off-diagonal entry of $A'$ divided by their gap.
+\end{steps}
+\end{guided}
+
+\begin{exercise}[Two fingerprints]\label{ex:dyson}
+\begin{steps}
+\item (Isotropic noise.) Suppose that over a short time $h$ the matrix changes by $\Delta A=\sigma\sqrt h\,G$, with $G$
+  as in Exercise~\ref{ex:typical} and independent of the past. To first order, show that the rotation of the pair
+  $(i,j)$ over that time, $hW_{ij}$, has variance $\sigma^2h/(\lambda_i-\lambda_j)^2$, while $\lambda_k$ changes with
+  variance $2\sigma^2h$, independent of the gaps. Pairs with small gaps rotate fastest. (With the second-order terms
+  this becomes Dyson Brownian motion; Tao 2012 and Allez \& Bouchaud 2012.)
+\item (Frame diffusion.) Suppose instead $U'=UW$ with $W$ a random skew-symmetric matrix whose law does not depend
+  on $\Lambda$, and $\Lambda'=0$. How large are the off-diagonal entries of $U^\top A'U$ now, as a function of the
+  gaps?
+\item Which measurement on saved spectra and eigenvectors would tell the two pictures apart?
+\end{steps}
+\end{exercise}
+
+\paragraph{The plan for Part~II.}
+\begin{enumerate}[(1),itemsep=1pt]
+\item Three stochastic pictures with different fingerprints: isotropic matrix noise (rotation rate $\propto$
+  gap$^{-2}$), frame diffusion (rate independent of the gaps) and deterministic drift (ballistic, hence predictable).
+  Their fingerprints are capture against lag (linear or quadratic onset), rotation against gap, and replicas forked
+  with different data orders.
+\item Structure: the change of a GGN under a weight step is not isotropic. What is its structure?
+\item Data: \study{spectral_rotation_20261020} saved spectra and captures; replays (10--12 minutes per trajectory)
+  give eigenvectors. \study{noise_scale_20261021}'s forms give moments of the gradient's and the noise's spectral
+  measures at 36 states without new compute.
+\end{enumerate}
+
+\subsection*{What is known (searches of 23 October 2026)}
+
+References marked $^*$ were checked online on 23 October 2026, at least at the level of the abstract; the others are
+cited from memory.
+\begin{itemize}[itemsep=1pt]
+\item \textbf{EKFAC} (George et al.\ 2018$^*$): the eigenbasis is recomputed rarely and the diagonal tracked every
+  step, justified by cost and a Frobenius argument (Warm-up~\ref{wu:pinching}). No model of how the eigenbasis moves.
+\item \textbf{SOAP} (Vyas et al.\ 2024$^*$): Adam in Shampoo's eigenbasis. The refresh interval is studied
+  empirically; there is no model of eigenbasis drift against eigenvalue drift and no theory of the optimal interval.
+\item \textbf{Purifying Shampoo} (Eschenhagen et al.\ 2025$^*$): decouples eigenvalue and eigenbasis updates and
+  proposes an adaptive refresh criterion that controls the current approximation error. It does not forecast the
+  error from a model of the frame's motion.
+\item \textbf{Power-law Hessian spectra}: Xie et al.\ (2022$^*$) and Tang et al.\ (2025$^*$). \textbf{Eigenvector
+  dynamics}: Gur-Ari, Roberts \& Dyer (2018); Marjankowska, Modugno \& Barucca (2026$^*$).
+\item \textbf{Random-matrix statistics}: rotationally invariant estimators (Ledoit \& P\'ech\'e 2011; Bun et al.\
+  2016$^*$; Bun, Bouchaud \& Potters 2017$^*$); eigenvector dynamics of exponentially weighted covariance matrices,
+  the estimator family of SOAP's statistics (Allez \& Bouchaud 2012).
+\item \textbf{Probabilistic numerics}: Hennig \& Kiefel (2013); Hennig (2015); de Roos \& Hennig (2019$^*$); Wenger \&
+  Hennig (2020); Tatzel et al.\ (2025$^*$).
+\end{itemize}
+As far as these searches show, no published work treats the spectral law as (nearly) stationary and the frame as a
+latent process, and derives SOAP's refresh schedule, averaging windows or treatment of momentum from such a model.
+Searches can miss work; this should be re-checked before any claim of novelty. The compact note,
+\texttt{spectral\_frame.pdf}, Section~7, has the full list with comments.
+
+\subsection*{Questions for us}
+\begin{question}
+Which matrix should the theory treat first: the GGN, which we measured, or SOAP's own statistic, Kronecker factors of
+gradient second moments (Guided proof~\ref{gp:kron})?
+\end{question}
+\begin{question}
+Is a scale-free law the right null hypothesis, given that the trace grows 1.3--1.6$\times$ during the learning-rate
+decay while the shape does not (\study{spectral_rotation_20261020})?
+\end{question}
+\begin{question}
+Which prior on the frame: uniform (Haar), or concentrated around SOAP's current basis (a matrix Bingham or
+von~Mises--Fisher law)?
+\end{question}
+\begin{question}
+Which first measurement: rotation against gap from replays (Exercise~\ref{ex:dyson}), or the gradient's spectral
+measure, which the forms saved by \study{noise_scale_20261021} give for free?
+\end{question}
+
+%======================================================================
+\appendix
+\input{hints.tex}
+\ifdefined\withsolutions
+\input{solutions.tex}
+\fi
+
+%======================================================================
+\begin{thebibliography}{99}\setlength{\itemsep}{2pt}\small
+\bibitem{allez} R.~Allez and J.-P.~Bouchaud. Eigenvector dynamics: general theory and some applications.
+  \emph{Physical Review E} 86, 046202, 2012.
+\bibitem{bhatia} R.~Bhatia. \emph{Matrix Analysis}. Graduate Texts in Mathematics 169, Springer, 1997.
+\bibitem{bunrie} J.~Bun, R.~Allez, J.-P.~Bouchaud and M.~Potters. Rotational invariant estimator for general noisy
+  matrices. \emph{IEEE Transactions on Information Theory}, 2016. arXiv:1502.06736.$^*$
+\bibitem{bun} J.~Bun, J.-P.~Bouchaud and M.~Potters. Cleaning large correlation matrices: tools from random matrix
+  theory. \emph{Physics Reports} 666, 2017. arXiv:1610.08104.$^*$
+\bibitem{clauset} A.~Clauset, C.~R.~Shalizi and M.~E.~J.~Newman. Power-law distributions in empirical data.
+  \emph{SIAM Review} 51(4), 2009.
+\bibitem{davis} C.~Davis and W.~M.~Kahan. The rotation of eigenvectors by a perturbation.~III. \emph{SIAM Journal on
+  Numerical Analysis} 7(1), 1970.
+\bibitem{deroos} F.~de Roos and P.~Hennig. Active probabilistic inference on matrices for pre-conditioning in
+  stochastic optimization. \emph{AISTATS}, 2019. arXiv:1902.07557.$^*$
+\bibitem{eschenhagen} R.~Eschenhagen, A.~Defazio, T.-H.~Lee, R.~E.~Turner and H.-J.~M.~Shi. Purifying Shampoo:
+  investigating Shampoo's heuristics by decomposing its preconditioner. \emph{NeurIPS}, 2025. arXiv:2506.03595.$^*$
+\bibitem{gelman} A.~Gelman, J.~B.~Carlin, H.~S.~Stern, D.~B.~Dunson, A.~Vehtari and D.~B.~Rubin. \emph{Bayesian Data
+  Analysis}, 3rd edition. CRC Press, 2013.
+\bibitem{george} T.~George, C.~Laurent, X.~Bouthillier, N.~Ballas and P.~Vincent. Fast approximate natural gradient
+  descent in a Kronecker-factored eigenbasis. \emph{NeurIPS}, 2018. arXiv:1806.03884.$^*$
+\bibitem{golub} G.~H.~Golub and G.~Meurant. \emph{Matrices, Moments and Quadrature with Applications}. Princeton
+  University Press, 2010.
+\bibitem{gvl} G.~H.~Golub and C.~F.~Van Loan. \emph{Matrix Computations}, 4th edition. Johns Hopkins University
+  Press, 2013.
+\bibitem{gkp} R.~L.~Graham, D.~E.~Knuth and O.~Patashnik. \emph{Concrete Mathematics}, 2nd edition. Addison-Wesley,
+  1994.
+\bibitem{gurari} G.~Gur-Ari, D.~A.~Roberts and E.~Dyer. Gradient descent happens in a tiny subspace.
+  arXiv:1812.04754, 2018.
+\bibitem{esl} T.~Hastie, R.~Tibshirani and J.~Friedman. \emph{The Elements of Statistical Learning}, 2nd edition.
+  Springer, 2009.
+\bibitem{hennig15} P.~Hennig. Probabilistic interpretation of linear solvers. \emph{SIAM Journal on Optimization}
+  25(1), 2015.
+\bibitem{hennigkiefel} P.~Hennig and M.~Kiefel. Quasi-Newton methods: a new direction. \emph{Journal of Machine
+  Learning Research} 14, 2013.
+\bibitem{pnbook} P.~Hennig, M.~A.~Osborne and H.~P.~Kersting. \emph{Probabilistic Numerics: Computation as Machine
+  Learning}. Cambridge University Press, 2022.
+\bibitem{horn} R.~A.~Horn and C.~R.~Johnson. \emph{Matrix Analysis}, 2nd edition. Cambridge University Press, 2013.
+\bibitem{kato} T.~Kato. \emph{Perturbation Theory for Linear Operators}, 2nd edition. Springer, 1976 (reprinted
+  1995).
+\bibitem{ledoit} O.~Ledoit and S.~P\'ech\'e. Eigenvectors of some large sample covariance matrix ensembles.
+  \emph{Probability Theory and Related Fields} 151, 2011.
+\bibitem{marjankowska} M.~Marjankowska, V.~Modugno and P.~Barucca. Characterizing optimizer-dependent training
+  dynamics through Hessian eigenvector displacement and localization. HiLD workshop at ICML, 2026.
+  arXiv:2606.30226.$^*$
+\bibitem{martin} C.~H.~Martin and M.~W.~Mahoney. Implicit self-regularization in deep neural networks: evidence from
+  random matrix theory and implications for learning. \emph{Journal of Machine Learning Research} 22, 2021.
+\bibitem{meckes} E.~S.~Meckes. \emph{The Random Matrix Theory of the Classical Compact Groups}. Cambridge University
+  Press, 2019.
+\bibitem{mezzadri} F.~Mezzadri. How to generate random matrices from the classical compact groups. \emph{Notices of
+  the AMS} 54(5), 2007.
+\bibitem{newman} M.~E.~J.~Newman. Power laws, Pareto distributions and Zipf's law. \emph{Contemporary Physics} 46(5),
+  2005.
+\bibitem{santambrogio} F.~Santambrogio. \emph{Optimal Transport for Applied Mathematicians}. Birkh\"auser, 2015.
+\bibitem{stewart} G.~W.~Stewart and J.-G.~Sun. \emph{Matrix Perturbation Theory}. Academic Press, 1990.
+\bibitem{strang} G.~Strang. \emph{Linear Algebra and Learning from Data}. Wellesley-Cambridge Press, 2019.
+\bibitem{tang} Tang et al. Investigating the overlooked Hessian structure: from CNNs to LLMs. \emph{ICML}, 2025.$^*$
+\bibitem{tao} T.~Tao. \emph{Topics in Random Matrix Theory}. Graduate Studies in Mathematics 132, American
+  Mathematical Society, 2012.
+\bibitem{tatzel} L.~Tatzel, B.~Mucs\'anyi, O.~Hackel and P.~Hennig. Debiasing mini-batch quadratics for applications
+  in deep learning. \emph{ICLR}, 2025. arXiv:2410.14325.$^*$
+\bibitem{trefethen} L.~N.~Trefethen and D.~Bau. \emph{Numerical Linear Algebra}. SIAM, 1997.
+\bibitem{vershynin} R.~Vershynin. \emph{High-Dimensional Probability}. Cambridge University Press, 2018.
+\bibitem{vyas} N.~Vyas, D.~Morwani, R.~Zhao, I.~Shapira, D.~Brandfonbrener, L.~Janson and S.~Kakade. SOAP: improving
+  and stabilizing Shampoo using Adam. arXiv:2409.11321, 2024 (ICLR 2025).$^*$
+\bibitem{wenger} J.~Wenger and P.~Hennig. Probabilistic linear solvers for machine learning. \emph{NeurIPS}, 2020.
+\bibitem{xie} Z.~Xie et al. On the power-law Hessian spectrums in deep learning. arXiv:2201.13011, 2022.$^*$
+\bibitem{yu} Y.~Yu, T.~Wang and R.~J.~Samworth. A useful variant of the Davis--Kahan theorem for statisticians.
+  \emph{Biometrika} 102(2), 2015.
+\end{thebibliography}
+
+\end{document}

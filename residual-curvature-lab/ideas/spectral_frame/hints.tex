@@ -1,0 +1,140 @@
+% Appendix A of workbook.tex: hints, in the order of the items. Input by workbook.tex after \appendix.
+\section{Hints}\label{app:hints}
+
+Hints are short on purpose. If a hint gives too much away, read only its first sentence.
+
+\newcommand{\hint}[2]{\item[#1~\ref{#2}.]}
+\newenvironment{hintlist}{\begin{description}[leftmargin=0pt,itemsep=3pt,font=\normalfont\bfseries]}{\end{description}}
+
+\subsection*{Section~\ref{sec:frame}}
+\begin{hintlist}
+\hint{Warm-up}{wu:spectrum} (a) $\tr(XY)=\tr(YX)$, and $\norm{A}_\F^2=\tr(A^\top A)$. (b), (c) Write $v=Uz$; then
+$\norm{v}=\norm{z}$ and $v^\top Av=\sum_k\lambda_kz_k^2$. (d) For ``only if'', test $v=u_D$.
+\hint{Warm-up}{wu:orthogonal} Compute $u^\top Aw$ in two ways.
+\hint{Exercise}{ex:fwelldef} (a) $A^i=U\Lambda^iU^\top$. (b) $p(A)$ is computed from $A$ alone. (c) Powers of $A$
+commute with $A$. For the inverse, multiply $(A+\delta I)$ by $U\diag(1/(\lambda_k+\delta))U^\top$.
+\hint{Warm-up}{wu:rotate} $(QAQ^\top)(Qu_k)=QAu_k$. For $f$, use the polynomial $p$ of Exercise~\ref{ex:fwelldef}.
+\hint{Guided proof}{gp:orbit} (a) Product rule at $t=0$; $(e^{tW})^\top=e^{tW^\top}$. (b) Which entries of a
+skew-symmetric matrix are free? (c) Product rule, with $Q(0)=I$ and $Q'(0)^\top=-W$. (d) $(W\Lambda)_{ij}=W_{ij}\lambda_j$.
+(e) For the image: given $S$, try $W_{ij}=S_{ij}/(\lambda_j-\lambda_i)$. (f) $(\lambda_j-\lambda_i)W_{ij}=0$ allows
+$W_{ij}\ne0$ exactly when $\lambda_i=\lambda_j$. (g) $Q\Lambda=\Lambda Q$; compare entries as in (d).
+\hint{Exercise}{ex:invariant} Choose $Q=U^\top$.
+\hint{Warm-up}{wu:examples} Test with $Q=U^\top$, where $U$ is a frame of a $2\times2$ matrix with non-zero
+off-diagonal entries, or with a permutation matrix.
+\hint{Guided proof}{gp:equivariant} (a) $R_k^2=I$. (b) Check $R_kAR_k$ on the basis $u_1,\dots,u_D$. (c) Take $Q=R_k$
+in the definition. (d) $R_kG(A)u_k=G(A)R_ku_k$. (e) Interpolate as in Exercise~\ref{ex:fwelldef}.
+\hint{Exercise}{ex:krylovequiv} $(QAQ^\top)^i=QA^iQ^\top$, so the numbers $b^\top A^ib$ do not change.
+
+\end{hintlist}
+
+\subsection*{Section~\ref{sec:faces}}
+\begin{hintlist}
+\hint{Warm-up}{wu:small} $N_A$ is a step function that jumps at $t=3$, $1$ and $0$; decide which value it takes at
+each jump point.
+\hint{Exercise}{ex:quantile} (a) The spectrum is sorted. (b) What is the set $\{t:N_A(t)\ge k\}$? (c) Divide by $D$.
+\hint{Guided proof}{gp:faces} (a) Sorted spectrum. (b) $t\ge\lambda_K=cK^{-\alpha}$. (c) Count integers. (d)
+Differentiate the tail and change its sign. (e) $t=ce^{-v}$. (f) Evaluate $N_A$ at $t=ck^{-\alpha}$ and just above it.
+\hint{Exercise}{ex:reading} (c) $\lambda_k\ge\lambda_1/10$ if and only if $k\le10$; the trace share is $H_{10}/H_{4096}$.
+\hint{Exercise}{ex:transform} (b), (c) Functions of $A$ keep its frame. (d) $P^{1/2}=\diag(\varepsilon^{-1/2},1)$.
+\hint{Exercise}{ex:broken} On the lower piece, solve $c\,k_b^{-\alpha_1}(k/k_b)^{-\alpha_2}\ge t$ for $k$.
+\hint{Warm-up}{wu:kron} Mixed-product rule $(X\otimes Y)(Z\otimes T)=(XZ)\otimes(YT)$, and
+$(v\otimes w)^\top(v'\otimes w')=(v^\top v')(w^\top w')$.
+\hint{Guided proof}{gp:kron} (a) For fixed $i$, which $j$ are allowed? Why is $j\le n$ automatic? (b)
+$\sum_{i\le x}x/i=xH_{\floor x}$. (c) Use $H_s=\ln s+\gamma+O(1/s)$ with $s=\floor{\sqrt x}$, and $s^2=x+O(\sqrt x)$.
+(d) Take logarithms. (e) Compute $d\ln k/d\ln x$ for $k=x\ln x$.
+
+\end{hintlist}
+
+\subsection*{Section~\ref{sec:controls}}
+\begin{hintlist}
+\hint{Warm-up}{wu:integral} For $k\ge m$: $f(k+1)\le\int_k^{k+1}f\le f(k)$. Sum.
+\hint{Guided proof}{gp:sums} (a) Compare the tail with $\int_m^\infty x^{-s}dx$. (b) The warm-up with $f(x)=1/x$ on one
+block. (c) The warm-up with $m=1$; for the share, compute $S_s(K)-S_s(K/2)$. (d) For increasing $f$:
+$\int_{k-1}^kf\le f(k)\le\int_k^{k+1}f$.
+\hint{Exercise}{ex:table} $\tr A^q$ is a power sum with $s=\alpha q$; Guided proof~\ref{gp:sums} has one case for each
+column. For $q=-1$, $s=-\alpha<0$.
+\hint{Exercise}{ex:octave} (a) The eigenvalues in $[t,2t)$ have ranks $c/(2t)<k\le c/t$. (b) Divide two harmonic
+numbers.
+\hint{Warm-up}{wu:deff} Split the sum at $\delta$: $\lambda/(\lambda+\delta)\ge\frac12$ if and only if $\lambda\ge\delta$,
+and $\lambda/(\lambda+\delta)\le\lambda/\delta$.
+\hint{Guided proof}{gp:deff} (a) $\lambda_k/(\lambda_k+\delta)=1/(1+\delta/\lambda_k)$. For the comparison, use
+$f(k)\le\int_{k-1}^kf$ and $\int_k^{k+1}f\le f(k)$, plus $\int_0^1f\le1$. (b) $dx=a^{-1/\alpha}du$. (c)
+$du=\frac1\alpha w^{1/\alpha-1}dw$, so $s=1/\alpha$; for $\alpha=2$ the integral is an arctangent. (e) The same
+comparison on $[0,D]$.
+\hint{Compute}{cp:deff} $10^7$ float64 values take 80\,MB; summing them in one numpy call is fine.
+
+\end{hintlist}
+
+\subsection*{Section~\ref{sec:distribution}}
+\begin{hintlist}
+\hint{Warm-up}{wu:haar} (a) A linear map of a Gaussian vector is Gaussian; compute the covariance. (b)
+$R(Q^\top v)=(QR^\top)^\top v$. The uniform law is the only rotation-invariant law on the sphere. (c) Take $R$ a
+permutation matrix in (b).
+\hint{Guided proof}{gp:haar} (a) $f(A)=Qf(\Lambda)Q^\top$. (b) $g_k=\norm{g}\psi_k$. (c) Expand
+$\norm{g}^4=(\sum_kg_k^2)^2$. (d) $\Var X=\E X^2-(\E X)^2$. (e) $\Var\sum_kf_kw_k=\sum_{k,l}f_kf_l\Cov(w_k,w_l)$;
+separate $k=l$ from $k\ne l$. (f) Use $\sum_kk^{-2}\approx\zeta(2)$, or compute numerically.
+\hint{Exercise}{ex:dirichlet} (a) Change variables $y=g^2$ in the Gaussian density. (c) $a_k=\frac12$ and $a_0=D/2$.
+\hint{Exercise}{ex:mixture} Average $\Pr(I=k\mid Q)=w_k$ over $Q$.
+\hint{Compute}{cp:haar} Draw $g$ in batches of, say, 20{,}000 rows to keep memory small. Use the population variance
+of the eigenvalues for $\Var_{\mu_A}$.
+\hint{Warm-up}{wu:seen} (a) $f(A)=\sum_kf(\lambda_k)u_ku_k^\top$. (b) The eigenvectors of $QAQ^\top$ are $Qu_k$. (c)
+Warm-up~\ref{wu:haar}(c). (d) Here $u_k=e_k$.
+\hint{Guided proof}{gp:lanczos} (a) Induction: multiplying by a tridiagonal matrix extends the support by one
+position. (b) $AV_mT_m^je_1=V_mT_m^{j+1}e_1+\beta_mv_{m+1}(e_m^\top T_m^je_1)$; when is the last factor zero? (c)
+$v_1^\top A^{2j}v_1=\norm{A^jv_1}^2$ and $v_1^\top A^{2j+1}v_1=(A^jv_1)^\top A(A^jv_1)$, with $V_m^\top AV_m=T_m$. (d)
+$e_1^\top T_m^ie_1=e_1^\top S\Theta^iS^\top e_1$.
+\hint{Guided proof}{gp:cg} (a) $b=Ax$. (b) Functions of $A$ commute. (d) Choose $p(\lambda)=\prod_j(1-\lambda/\lambda_j)$
+over the atoms.
+\hint{Exercise}{ex:step} The objective is a quadratic in $\eta$; then use Warm-up~\ref{wu:seen}(a).
+\hint{Guided proof}{gp:kantorovich} (a) Insert $f=1/\lambda$ and $f=1$ into Exercise~\ref{ex:step} and divide. (b)
+$1=(\E[\lambda^{1/2}\lambda^{-1/2}])^2$. (c) Expand and divide by $\lambda>0$. (d) Apply $2\sqrt{xy}\le x+y$ to
+$x=\E_\nu\lambda$ and $y=mM\,\E_\nu\lambda^{-1}$.
+\hint{Exercise}{ex:kantpower} $\E_\mu\lambda=\frac1D\sum_kc/k$ and $\E_\mu\lambda^{-1}=\frac1D\sum_kk/c$.
+
+\end{hintlist}
+
+\subsection*{Section~\ref{sec:perturbation}}
+\begin{hintlist}
+\hint{Warm-up}{wu:twobytwo} (a) Characteristic polynomial. (b) Write the two rows of the eigenvector equation,
+multiply them by $\sin\theta$ and $\cos\theta$, and subtract. (d) $\tan2\theta\to\infty$.
+\hint{Guided proof}{gp:courant} (a) $v=\sum_{i\le k}z_iu_i$. (b) $k+(D-k+1)>D$. (c) $v=\sum_{i\ge k}z_iu_i$.
+\hint{Guided proof}{gp:weyl} (a) $v^\top Ev\le\norm{E}_\op$ for unit $v$. (b) Apply (a) to every $v$ in every $S$.
+\hint{Exercise}{ex:rearrange} Swapping an inversion changes the sum by $(a_i-a_j)(b_{\pi(j)}-b_{\pi(i)})$.
+\hint{Guided proof}{gp:hw} (b) $\tr(AB)=\tr(\diag(a)\,W\diag(b)\,W^\top)$. (c) Rows and columns of an orthogonal matrix
+are unit vectors. (d) $\tr(AB)$ is linear in $P$.
+\hint{Exercise}{ex:wasserstein} For a permutation coupling the cost is $\frac1D\sum_i(a_i-b_{\pi(i)})^2$; expand the
+square.
+\hint{Guided proof}{gp:sintheta} (b) $Auu^\top=\lambda_kuu^\top=uu^\top A$. (c) Expand $z$ in the eigenvectors $u_j$,
+$j\ne k$. (d) $\norm{(A-\mu I)Pv}=\norm{PEv}$. (e) Consider $\norm{E}_\op\le g_k/2$ and $\norm{E}_\op>g_k/2$
+separately.
+\hint{Exercise}{ex:gaps} (a) Concave functions lie below their tangents. (b) $(\lambda_k-\lambda_{k+1})/\lambda_k=h(1/k)$.
+(c) $x\mapsto cx^{-\alpha}$ is convex.
+\hint{Guided proof}{gp:resolution} (a) Weyl. (b) $(1+1/k)^{-\alpha-1}\ge2^{-\alpha-1}$. (c) Solve $2\eta/g_k\le s$ for
+$k$. (d) The ratio is a power of $\eta$.
+\hint{Exercise}{ex:resnumbers} With $\alpha=c=1$: $K_{\text{val}}=s/\eta$ and $K_{\text{vec}}=(s/(8\eta))^{1/2}$. On
+which pair of directions would a worst-case $E$ put its size?
+\hint{Guided proof}{gp:firstorder} (b) $u_k^\top A=\lambda_ku_k^\top$, so two terms cancel. (c) $u_j^\top u_k=0$. (d)
+Expand $u_k'$ in the basis $u_1,\dots,u_D$.
+\hint{Exercise}{ex:typical} (a) Take $Q=U$. (b) For $\abs{m}\ll k$, $\lambda_k-\lambda_{k+m}\approx-mg_k$, and
+$\sum_{m\ne0}m^{-2}=2\zeta(2)$; for $j\gg k$, $(\lambda_k-\lambda_j)^{-2}\approx\lambda_k^{-2}$. (d) Set
+$\varepsilon\sqrt{2\zeta(2)}k^{\alpha+1}/(\alpha c)=s$.
+\hint{Compute}{cp:resolution} $(Z+Z^\top)/\sqrt2$ has off-diagonal variance 1 and diagonal variance 2.
+The function \texttt{eigh} in \texttt{numpy.linalg} returns ascending eigenvalues; reverse them. The sine of the $k$-th angle is
+$\sqrt{1-(e_k^\top v_k)^2}$.
+\hint{Guided proof}{gp:lipschitz} (a) $U_A^\top A=\diag(a)U_A^\top$ and $BU_B=U_B\diag(b)$. (c) Entrywise,
+$\abs{f(a_i)-f(b_j)}\le L\abs{a_i-b_j}$.
+\hint{Exercise}{ex:fractional} Bound the derivative.
+\hint{Exercise}{ex:projector} $\norm{P-P'}_\F^2=\tr P+\tr P'-2\tr(PP')$ and $\tr(PP')=\norm{V^\top V'}_\F^2$.
+\hint{Warm-up}{wu:pinching} $\norm{A-UMU^\top}_\F=\norm{U^\top AU-M}_\F$.
+\hint{Guided proof}{gp:kyfan} (a) Expand $x_i$ in the eigenvectors. (b) Bessel's inequality. (c) Moving weight to a
+larger $\lambda_j$ never decreases the sum. (e) $k=1$, and the case $k=D-1$ subtracted from the trace.
+
+\end{hintlist}
+
+\subsection*{Section~\ref{sec:next}}
+\begin{hintlist}
+\hint{Guided proof}{gp:motion} (a) Differentiate $U^\top U=I$. (b) Differentiate $A=U\Lambda U^\top$ and multiply by
+$U^\top$ on the left and $U$ on the right. (c) Guided proof~\ref{gp:orbit}\ref{st:orbit-entries}.
+\hint{Exercise}{ex:dyson} (a) Exercise~\ref{ex:typical}(a) with $\Delta A$ in place of $E$. (b) Read off
+$(U^\top A'U)_{ij}=(\lambda_j-\lambda_i)W_{ij}$. (c) Plot a measured rotation against the gap.
+\end{hintlist}

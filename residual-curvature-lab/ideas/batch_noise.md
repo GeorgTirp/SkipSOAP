@@ -265,7 +265,8 @@ act as a static noise filter.
    - The tuned runs therefore had decay timescales 1/(lr·wd) of about 2,000, 667 and 222 steps, i.e. about 4K,
      0.7K and 0.1K. This is not a fixed fraction of the horizon, which the EMA-timescale view of Wang & Aitchison
      (cited by Islamov et al.) would suggest.
-6. **Curvature-estimation noise in T1** (from R8; hypothesis).
+6. **Curvature-estimation noise in T1** (from R8; hypothesis; derivation for Gaussian least squares in
+   [batch_noise_quantities/three_quantities.pdf](batch_noise_quantities/three_quantities.pdf), Proposition 6).
    - T1 treats A as exact. With P = Â^{−ν} built from an estimate Â, the quadratic and noise terms use the
      evaluation curvature: gᵀP C_eval P g and tr(P C_eval P Σ).
    - Errors in Â's small eigenvalues inflate P exactly where C_eval is then larger than assumed. That would lower the
@@ -296,6 +297,13 @@ act as a static noise filter.
   - It adds the tuned-step noise-scale law (T1), the break batch size (T2), the exact toy for the optimal exponent
     (T3), the drift-against-noise bound transplanted from Islamov et al. (T4), and their token-budget regimes (T5).
   - It adds a post-hoc recomputation of ranking agreement in the transfer-law study (R3).
+- **2026-10-23:** derivation note [batch_noise_quantities/three_quantities.pdf](batch_noise_quantities/three_quantities.pdf)
+  added (no new study).
+  - It derives the share law and the surviving share 1/(1 + r) (T1, T7), and the compute-optimal batch
+    B* = √(K·B_ov).
+  - It adds the curvature-noise channel: for Gaussian least squares the kept share is κ(n, D)/(1 + r), from
+    inverse-Wishart moments, with a threshold near n ≈ D. This is a candidate mechanism for open test 6.
+  - All synthetic checks are in `make_figure.py`.
 - **2026-10-21 (evening):** R8 added from `noise_scale_20261021`.
   - Open tests 1–2 are marked tested; tests 6 (curvature-estimation noise) and 7 (training test) are added.
   - T1 is annotated with its observed optimism under second-batch selection, and the companion list now includes
